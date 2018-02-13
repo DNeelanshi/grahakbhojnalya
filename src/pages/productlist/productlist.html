@@ -1,0 +1,99 @@
+<!--
+  Generated template for the ProductlistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="theme-header">
+    <ion-title>
+     Menu
+      
+    </ion-title>
+
+
+     <ion-buttons end (click)="cart()">
+      <button ion-button icon-only class="btnprofile">
+      <div class="iconprf">
+          <img src="assets/img/whitestore.png">
+          <p><span>{{no_of_products}}</span></p>
+       </div>
+      </button>     
+    </ion-buttons>
+  </ion-navbar>
+</ion-header> 
+
+
+<ion-content>
+	<div class="content-sec">
+		<ion-list *ngFor="let pro of array">
+	    <ion-item>
+	      <ion-thumbnail item-start>
+	        <img src="{{pro?.product_image0}}">
+	      </ion-thumbnail>
+	      <h2 (click)="dishview(pro)"> <img class="imgicon" width="11px" src="assets/img/acicon.png" >{{pro?.product_name}}</h2>
+	      <p>{{pro?.product_ingredients}}</p>
+              <h3>Per plate ${{pro?.product_price}}</h3>
+	      <button ion-button outline item-end (click)="cart(pro)">ADD TO CART</button>	       
+	    </ion-item>
+<!--	      <ion-item>
+	      <ion-thumbnail item-start>
+	        <img src="assets/img/southfod.png">
+	      </ion-thumbnail>
+	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">South indian food</h2>
+	      <p>Idli,sambhar, Kerla</p>
+	      <h3>Per plate $40.00</h3>
+	      <button ion-button outline item-end>ADD TO CART</button>	       
+	    </ion-item>
+	      <ion-item>
+	      <ion-thumbnail item-start>
+	        <img src="assets/img/southfod.png">
+	      </ion-thumbnail>
+	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">South indian food</h2>
+	      <p>Idli,sambhar, Kerla</p>
+	      <h3>Per plate $40.00</h3>
+	      <button ion-button outline item-end>ADD TO CART</button>	       
+	    </ion-item>
+	      <ion-item>
+	      <ion-thumbnail item-start>
+	        <img src="assets/img/southfod.png">
+	      </ion-thumbnail>
+	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">South indian food</h2>
+	      <p>Idli,sambhar, Kerla</p>
+	      <h3>Per plate $40.00</h3>
+	      <button ion-button outline item-end>ADD TO CART</button>	       
+	    </ion-item>
+	      <ion-item>
+	      <ion-thumbnail item-start>
+	        <img src="assets/img/southfod.png">
+	      </ion-thumbnail>
+	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">South indian food</h2>
+	      <p>Idli,sambhar, Kerla</p>
+	      <h3>Per plate $40.00</h3>
+	      <button ion-button outline item-end>ADD TO CART</button>	       
+	    </ion-item>
+	      <ion-item>
+	      <ion-thumbnail item-start>
+	        <img src="assets/img/southfod.png">
+	      </ion-thumbnail>
+	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">South indian food</h2>
+	      <p>Idli,sambhar, Kerla</p>
+	      <h3>Per plate $40.00</h3>
+	      <button ion-button outline item-end>ADD TO CART</button>	       
+	    </ion-item>
+	      <ion-item>
+	      <ion-thumbnail item-start>
+	        <img src="assets/img/southfod.png">
+	      </ion-thumbnail>
+	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">South indian food</h2>
+	      <p>Idli,sambhar, Kerla</p>
+	      <h3>Per plate $40.00</h3>
+	      <button ion-button outline item-end>ADD TO CART</button>	       
+	    </ion-item>-->
+	     
+	
+	   
+	</ion-list>
+	</div>
+</ion-content>

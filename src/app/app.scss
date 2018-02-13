@@ -1,0 +1,115 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+.back-button-text.back-button-text-ios{
+	display: none;
+}
+.ion-md-arrow-back:before{ 
+    content: "\f3cf";
+}
+.button.activated{
+    background-color: #e24f3b;
+    color: #fff;
+}
+.toolbar-title {
+	font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+.tabs-ios .tab-button:hover:not(.disable-hover), .tabs-ios .tab-button[aria-selected=true] {
+    color: #f27241;
+    }
+    .tabs-ios .tab-button[aria-selected=true] .tab-button-icon {
+    color: #f27241;
+}
+.tabs-md .tab-button[aria-selected=true]{
+	color: #f27241;
+}
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon{
+	color: #f27241;
+}
+// android css include here
+ion-header .toolbar-content.toolbar-content-md{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: fit-content;
+}
+.header ion-toolbar .toolbar-content-md{
+    position: relative;
+}
+ion-toolbar .title{position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+    left: 0;
+    right: 0;
+    padding: 0 23px;
+}
+.back-button-md{
+    z-index: 9999;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    min-width: 20px;
+}
+.back-button-icon-md{
+    font-size: 3.4rem;
+}
+.segment-sec .toolbar-content.toolbar-content-md{
+    position: static !important;
+}
+.col{
+    position: initial !important;
+}
+.footer .toolbar-md{
+    min-height: 30px;
+}
+
+
+
+.loadimg {
+    width: 100%;
+    min-height: 40vh;
+    position: relative;
+    text-align: center;
+    float: left;
+}
+
+.loadimg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.loading-wrapper{
+    width: 135px;
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: none;
+    padding: 20px;
+    border-radius: 7px !important;
+}

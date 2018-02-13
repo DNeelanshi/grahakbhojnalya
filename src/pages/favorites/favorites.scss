@@ -1,0 +1,71 @@
+page-favorites {
+	.segment-sec{
+		width: 100%;
+		float: left;
+	}
+	.segment-sec .toolbar{
+		width: 100%;
+		float: left;
+	}
+	.segment-sec .toolbar .toolbar-background{
+		border: none !important;
+	}
+	.segment-sec .toolbar .segment{
+		width: 100%;
+		float: left;
+		padding: 0 20px;
+	}
+	.segment-sec .toolbar .segment .segment-button{
+	    width: 100%;
+        max-width: 100%;
+	}
+	.content{
+		width: 100%;
+		float: left;
+	}
+    .content-sec{
+		width: 100%;
+	    float: left;
+	    padding: 7px;
+	   
+	}
+	.content-sec .grid .main-sec{
+		width: 100%;
+		float: left;
+		position: relative;
+	}
+	.content-sec .grid .main{
+		width: 100%;
+		float: left;
+                height: 120px;
+                overflow: hidden;
+	}
+	.content-sec .grid .main img{
+		width: 100%;
+		float: left;
+                height: 100%;
+	}
+	.content-sec .grid .main-sec .heart{
+		position: absolute;
+		top: 4px;
+		left: 4px;
+	}
+	 .content-sec .grid{
+	 	padding:0px;
+	 }
+          .hrtbtn{
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: #fff;
+            color: #ff563f;
+            position: relative;
+            
+            .icon{
+                height: 25px;
+                font-size: 1.8em;
+                line-height: 25px;
+            }
+        }
+	
+}
