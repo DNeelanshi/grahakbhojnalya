@@ -14,6 +14,7 @@ import { Device } from '@ionic-native/device';
 import { FCM } from '@ionic-native/fcm';
 import { Geolocation } from '@ionic-native/geolocation';
 import { NominatimapPage } from '../nominatimap/nominatimap';
+import { CountryPickerModule, CountryPickerService } from 'angular2-countrypicker';
 /**
  * Generated class for the SignupPage page.
  *
@@ -27,6 +28,7 @@ import { NominatimapPage } from '../nominatimap/nominatimap';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
+    public countries: any[];
   key: boolean = false;
   date: any;
   arr;
@@ -57,18 +59,24 @@ export class SignupPage {
     private device: Device,
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    private countryPickerService: CountryPickerService
   ) {
-//fcm.getToken().then(token=>{
-//     this.devicetoken = token;
-//     })
-//     fcm.onNotification().subscribe(data=>{
-//  if(data.wasTapped){
-//    console.log("Received in background");
-//  } else {
-//    console.log("Received in foreground");
-//  };
-//})
+  this.countryPickerService.getCountries().subscribe(countries => {
+  this.countries = countries
+  console.log(countries);
+  });
+//  alert('updatehogai');
+ fcm.getToken().then(token=>{
+      this.devicetoken = token;
+      })
+      fcm.onNotification().subscribe(data=>{
+   if(data.wasTapped){
+     console.log("Received in background");
+   } else {
+     console.log("Received in foreground");
+   };
+ })
 // this.GetLocation();
 // this.cities()
  
@@ -247,6 +255,20 @@ this.http.post('http://nominatim.openstreetmap.org/search/'+adr+'?format=json&ad
               this.ToastMsg('You have succesfully registered');
               
                 localStorage.setItem('UserDetail',JSON.stringify(response.data));
+             var userdetail = JSON.parse(localStorage.getItem('UserDetail'));
+                 var postdata2 = {
+            user_id: userdetail._id,
+             saved_address: userdetail.address
+       }
+       
+          console.log(postdata2)
+           var Serialized = this.serializeObj(postdata2);
+            this.http.post(this.appsetting.myGlobalVar + 'user/add_saved_address', Serialized, options).map(res => res.json()).subscribe(response2 => {
+                console.log(response2);
+                if(response2.status == true){
+                 localStorage.setItem('UserDetail',JSON.stringify(response2.data[0]));
+                 }
+            })    
                  this.appsetting.svd.push(response.data.address);
                     localStorage.setItem('Svedaddress',JSON.stringify(this.appsetting.svd));
                   this.navCtrl.push(TabsPage);
@@ -457,7 +479,7 @@ this.http.post('http://nominatim.openstreetmap.org/search/'+adr+'?format=json&ad
   }
   
   openmapmodal() {
-    let modal = this.modalCtrl.create(MapmodalPage);
+    let modal = this.modalCtrl.create(NominatimapPage);
     modal.onDidDismiss(data => { 
     this.data.address=data.address;
     console.log(this.data.address)

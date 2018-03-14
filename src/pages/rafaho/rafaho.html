@@ -42,15 +42,15 @@
 	<div [ngSwitch]="pet">
 	<!-- pending order include hear -->
 	  <ion-list *ngSwitchCase="'puppies'">
-
-	   <ion-item *ngFor="let dats of pendingorder">
+ <div *ngIf="show1 != 1" >
+	   <ion-item *ngFor="let dats of pendingorder" (click)="order(dats)">
 	      <ion-thumbnail item-start>
 	        <img [src]="dats?.products[0].image">
 	      </ion-thumbnail>
 	      <div class="main">
 	      	<div class="image">
                     <img *ngIf="dats?.user_data[0].user_image" [src]="dats?.user_data[0].user_image">
-	      		<img *ngIf="!dats?.user_data[0].user_image" src="assets/img/amanda.png">
+	      		<img *ngIf="!dats?.user_data[0].user_image" src="assets/img/us.png">
 	      	</div>
 	      	<h1>{{dats?.user_data[0].firstname}}</h1>
 	      	<div class="right-sec">
@@ -59,11 +59,11 @@
 	      		<button ion-button clear class="imgbtn" style="background-image:url('assets/img/chat.png'); background-size:cover; width: 18px;"></button>
 	      	</div>
 	      </div>
-	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png" (click)="order(dats)">{{dats?.products[0].product_name}}</h2>
+	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png" >{{dats?.products[0].product_name}}</h2>
 <!--	      <p>Idli,sambhar, Kerla</p>
 	      <h3>Per plate $40.00</h3>
 	      <h3>Number of plate 5 x $40<span style="float: right;">$200.00</span></h3>-->
-	    </ion-item>
+	    </ion-item></div>
               <p *ngIf="show1 == 1">No Order placed</p>
 	
 	  </ion-list>
@@ -72,14 +72,16 @@
           
           
 	    <ion-list *ngSwitchCase="'kittens'">
-	    <ion-item  *ngFor="let dat of activeorder">
+              <div *ngIf="show != 1" >
+	    <ion-item  *ngFor="let dat of activeorder" (click)="order(dat)">
+                  
 	      <ion-thumbnail item-start>
 	        <img [src]="dat?.products[0].image">
 	      </ion-thumbnail>
 	      <div class="main">
 	      	<div class="image">
 	      		<img *ngIf="dat?.userimage" [src]="dat?.userimage">
-                        <img *ngIf="!dat?.userimage" src="assets/img/amanda.png">
+                        <img *ngIf="!dat?.userimage" src="assets/img/us.png">
 	      	</div>
 	      	<h1>{{dat?.chefname}}</h1>
 	      	<div class="right-sec">
@@ -88,11 +90,13 @@
 	      		<button ion-button clear class="imgbtn" style="background-image:url('assets/img/chat.png'); background-size:cover; width: 18px;"></button>
 	      	</div>
 	      </div>
-	      <h2 (click)="order(dat)"> <img class="imgicon" width="11px" src="assets/img/acicon.png">{{dat?.products[0].product_name}}</h2>
+	      <h2 > <img class="imgicon" width="11px" src="assets/img/acicon.png">{{dat?.products[0].product_name}}</h2>
 	      <!--<p>{{dat?.products[0].product_name}}</p>-->
 <!--	      <h3>Per plate $</h3>
 	      <h3>Number of plate 5 x $40<span style="float: right;">$200.00</span></h3>-->
-	    </ion-item>
+	    
+            </ion-item>
+</div>
 	    <p *ngIf="show == 1">No Active Orders </p>
 
 	  </ion-list>
@@ -103,8 +107,8 @@
           
           
 	  <ion-list *ngSwitchCase="'History'">
-	 
-	   <ion-item *ngFor="let daatt of completedorders">
+	
+	   <ion-item *ngFor="let daatt of completedorders" (click)="order(daatt)">
 	      <ion-thumbnail item-start style="width: 65px !important; height: 55px !important;">
 	        <img [src]="daatt?.products[0].image" style="opacity: 0.5;">
 	        <p style="background-color: #2bb600;">Compeleted</p>
@@ -112,20 +116,22 @@
 	      <div class="main">
 	      	<div class="image">
 	      		 <img *ngIf="daatt?.user_data[0].user_image" [src]="daatt?.user_data[0].user_image">
-	      		<img *ngIf="!daatt?.user_data[0].user_image" src="assets/img/amanda.png">
+	      		<img *ngIf="!daatt?.user_data[0].user_image" src="assets/img/us.png">
 	      	</div>
 	      	<h1>{{daatt?.user_data[0].firstname}}</h1>
 	      	<div class="right-sec">
 	      		<button ion-button class="rating histry">3/5</button>
 	      	</div>
 	      </div>
-	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png" (click)="order(daatt)">{{daatt?.products[0].product_name}}</h2>
+	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png" >{{daatt?.products[0].product_name}}</h2>
 <!--	      <p>Idli,sambhar, Kerla</p>
 	      <h3>Per plate $40.00</h3>
 	      <h3>Number of plate 5 x $40<span style="float: right;">$200.00</span></h3>-->
 	    </ion-item>
+             
               
-	    <ion-item  *ngFor="let daatts of canceledorders">
+              <div  *ngIf="show2 != 1" >
+	    <ion-item  *ngFor="let daatts of canceledorders"  (click)="order(daatts)">
 	      <ion-thumbnail item-start style="width: 65px !important; height: 55px !important;">
 	        <img [src]="daatts?.products[0].image" style="opacity: 0.5;">
 	        <p>Cancelled</p>
@@ -133,18 +139,18 @@
 	      <div class="main">
 	      	<div class="image">
 	      		 <img *ngIf="daatts?.user_data[0].user_image" [src]="daatts?.user_data[0].user_image">
-	      		<img *ngIf="!daatts?.user_data[0].user_image" src="assets/img/amanda.png">
+	      		<img *ngIf="!daatts?.user_data[0].user_image" src="assets/img/us.png">
 	      	</div>
 	      	<h1>{{daatts?.user_data[0].firstname}} </h1>
 	      	<div class="right-sec">
 	      		<button ion-button class="rating histry">3/5</button>
 	      	</div>
 	      </div>
-	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png" (click)="order(daatts)">{{daatts?.products[0].product_name}}</h2>
+	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png" >{{daatts?.products[0].product_name}}</h2>
 <!--	      <p>Idli,sambhar, Kerla</p>
 	      <h3>Per plate $40.00</h3>
 	      <h3>Number of plate 5 x $40<span style="float: right;">$200.00</span></h3>-->
-	    </ion-item>
+	    </ion-item></div>
                <p *ngIf="show2 == 1">No Orders in History </p>
 	  </ion-list>
 	</div>

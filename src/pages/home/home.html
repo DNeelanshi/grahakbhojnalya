@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-navbar color="theme-header">
+  <ion-toolbar  color="theme-header">
     <ion-title>
       Chef List
       <!--<p>Online Chef list</p>-->
     </ion-title>
-     <ion-buttons end >
+     <ion-buttons end right>
       <button ion-button icon-only class="" (click)="cartpage()">
       <div class="iconprf">
           <img src="assets/img/whitestore.png">
@@ -12,7 +12,7 @@
        </div>
       </button>     
     </ion-buttons>
-  </ion-navbar>
+  </ion-toolbar>
     
     
     
@@ -56,12 +56,12 @@
 
   <ion-toolbar class="dateleft">
       <p>Main Date</p>
-            <ion-datetime placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}" max="3000" [(ngModel)]= "data.datetime" name="datetime" #datetime="ngModel" ></ion-datetime>
+            <ion-datetime  placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm"  min="{{date}}" [(ngModel)]= "data.datetime" name="datetime" #datetime="ngModel" ></ion-datetime>
   </ion-toolbar>
       
     <ion-toolbar class="dateleftr">
         <p>Alternative Date</p>
-            <ion-datetime placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}" max="3000" [(ngModel)]= "data.altdate" name="altdate" #altdate="ngModel" ></ion-datetime>
+            <ion-datetime  placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}" [(ngModel)]= "data.altdate" name="altdate" #altdate="ngModel" ></ion-datetime>
             
     </ion-toolbar> 
     
@@ -111,7 +111,7 @@
           
         <ion-avatar item-start>
              <img *ngIf ="dat?.user_image"  src="{{dat?.user_image}}">
-             <img *ngIf ="!dat?.user_image" src="assets/img/amanda.png">
+             <img *ngIf ="!dat?.user_image" src="assets/img/us.png">
          
         </ion-avatar>
         <h3>{{dat?.firstname}} {{dat?.lastname}}</h3>
@@ -123,13 +123,13 @@
         </div>
         <div class="leftbtn">
           <button ion-button icon-left clear>
-             <ion-icon name="radio-button-on" style="color: #2bb600;"></ion-icon>
+             <ion-icon name="radio-button-on" style="color: #2bb600; line-height: 1;float: left; width: 34px;"></ion-icon>
             Available Today
           </button>
         </div>
         <div class="right">
           <button ion-button icon-left clear>
-             <ion-icon name="radio-button-on" style="color: #dcca00;"></ion-icon>
+             <ion-icon name="radio-button-on" style="color: #dcca00; line-height: 1; float: left; width: 34px;"></ion-icon>
             Alternative date available
           </button>
         </div>
@@ -193,7 +193,7 @@
         <div class="main">
           <div  class="image">
             <img *ngIf ="dats?.user_image"  src="{{dats?.user_image}}">
-             <img *ngIf ="!dats?.user_image" src="assets/img/amanda.png">
+             <img *ngIf ="!dats?.user_image" src="assets/img/us.png">
           </div>
           <h1>{{dats?.firstname}} {{dats?.lastname}} </h1>
           <div class="right-sec">
@@ -208,14 +208,14 @@
             BOOK NOW
           </button>
         </div>
-         <div class="btn-rght">
-          <button ion-button outline>
-            COOK AT HOME
+<!--         <div class="btn-rght"  *ngFor="let prods of dats.products">
+          <button ion-button outline *ngIf="prods?.bit == 0" >
+           {{prods.order_prefrence}}
           </button>
-        </div>
-       <div *ngFor="let proods of dats.products">
-          <div class="hor" style="width: 25px; float: left;" *ngIf="proods?.bit == 0" ><ion-icon name="time"></ion-icon><span  >{{proods?.cocking_time_at_user_home}}h</span></div>
-     </div>
+        </div>-->
+<!--       <div *ngFor="let proods of dats.products">
+          <div class="hor" style="width: 25px; float: left;" ><ion-icon name="time"></ion-icon><span *ngIf="proods?.bit == 0" >{{cookingtime}}h</span></div>
+     </div>-->
       </ion-item>
     
   </ion-list>

@@ -1,4 +1,7 @@
 page-home {
+	.header ion-toolbar .toolbar-content-md{
+		position: static;
+	}
     	.header .iconprf{
 		position: relative;
 	}
@@ -123,7 +126,10 @@ page-home {
 	.content-sec .list .item p{
 	    color: #6a6a6a;
 	    font-weight: 400;
-	    font-size: 12px;
+		font-size: 12px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
 	}
 	.content-sec .list .item p span{
 		color: #000;
@@ -136,7 +142,7 @@ page-home {
 		    border-radius: 4px;
 		    margin-right: 0px;
 		    position: absolute;
-		    top: 8px;
+		    top: 6px;
 		    right: 10px;
 		    margin-left: 0px;
 	}

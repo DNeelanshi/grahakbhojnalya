@@ -116,6 +116,7 @@ export class RafahoPage {
                 value.products.forEach(function(prodvalue,prodkey){
                     res.data.products.forEach(function(prod1value,prod1key){
                         if(prodvalue.product_id == prod1value._id){
+                            
                             prodvalue.image = prod1value.product_image0;
                             prodvalue.minorder = prod1value.minimum_order;
                             prodvalue.productprice = prod1value.product_price;
@@ -160,9 +161,10 @@ export class RafahoPage {
                 value.user_data.forEach(function(value1,key1){
                    value.products.forEach(function(value2,key2){
                        value1.products.forEach(function(value3,key3){
+                            if(value2.product_id == value3._id){
                           value2.image = value3.product_image0;
                            value2.minimumorder = value3.minimum_order;
-                            value2.productprice = value3.product_price;
+                            value2.productprice = value3.product_price;}
                    })
                    })
 
@@ -205,9 +207,11 @@ export class RafahoPage {
                 value.user_data.forEach(function(value1,key1){
                    value.products.forEach(function(value2,key2){
                        value1.products.forEach(function(value3,key3){
+                           if(value2.product_id == value3._id){
+                                if(value2.product_id == value3._id){
                           value2.image = value3.product_image0;
                            value2.minimumorder = value3.minimum_order;
-                            value2.productprice = value3.product_price;
+                            value2.productprice = value3.product_price;}}
                    })
                    })
 
@@ -251,9 +255,10 @@ export class RafahoPage {
                 value.user_data.forEach(function(value1,key1){
                    value.products.forEach(function(value2,key2){
                        value1.products.forEach(function(value3,key3){
+                            if(value2.product_id == value3._id){
                           value2.image = value3.product_image0;
                            value2.minimumorder = value3.minimum_order;
-                            value2.productprice = value3.product_price;
+                            value2.productprice = value3.product_price;}
                    })
                    })
 

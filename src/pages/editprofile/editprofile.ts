@@ -227,16 +227,33 @@ export class EditprofilePage {
     dismissOnPageChange:true
         });
         Loading.present().then(() => {
+            
       this.http.post(this.appsetting.myGlobalVar + 'user_data_update', serialized, options)
         .map(res => res.json())
         .subscribe(data => {
           console.log(data);
           if (data.status == true) {
+                localStorage.setItem('UserDetail',JSON.stringify(data.data));
+                
+             var userdetail = JSON.parse(localStorage.getItem('UserDetail'));
+                 var postdata2 = {
+            user_id: userdetail._id,
+             saved_address: userdetail.address
+       }
+       
+          console.log(postdata2)
+           var Serialized = this.serializeObj(postdata2);
+            this.http.post(this.appsetting.myGlobalVar + 'user/add_saved_address', Serialized, options).map(res => res.json()).subscribe(response2 => {
+                console.log(response2);
+                if(response2.status == true){
+                 localStorage.setItem('UserDetail',JSON.stringify(response2.data[0]));
+                 }
+            })    
                   localStorage.setItem('UserDetail',JSON.stringify(data.data));
-                  console.log(data.data.address);
-                  this.appsetting.svd.push(data.data.address);
-                    localStorage.setItem('Svedaddress',JSON.stringify(this.appsetting.svd));
-                    console.log(this.appsetting.svd);
+//                  console.log(data.data.address);
+//                  this.appsetting.svd.push(data.data.address);
+//                    localStorage.setItem('Svedaddress',JSON.stringify(this.appsetting.svd));
+//                    console.log(this.appsetting.svd);
             Loading.dismiss();
             let toast = this.toastCtrl.create({
               message: "Profile is updated",
@@ -245,7 +262,7 @@ export class EditprofilePage {
             });
             toast.present();
 
-            this.navCtrl.pop();
+            this.navCtrl.push(ProfilePage);
             console.log(this.navCtrl);
           }
         },(err)=>{

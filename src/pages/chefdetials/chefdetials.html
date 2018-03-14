@@ -25,7 +25,7 @@
 			<ion-col col-3 style="padding-left: 0px">
 				<div class="image">
 					<img *ngIf ="dat?.user_image"  src="{{dat?.user_image}}">
-             <img *ngIf ="!dat?.user_image" src="assets/img/amanda.png">
+             <img *ngIf ="!dat?.user_image" src="assets/img/us.png">
 				</div>
 			</ion-col>
 			<ion-col col-9>
@@ -62,8 +62,8 @@
                                
 			      </ion-thumbnail>
 			      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">{{spec?.specialties_product}}</h2>
-			      <p>Idli,sambhar, Kerla</p>
-			      <ion-note item-end="" class="note note-ios">3/4</ion-note>
+			      <p>{{spec?.add_ingredients}}</p>
+			      <!--<ion-note item-end="" class="note note-ios">3/4</ion-note>-->
 		    </ion-item>
 <!--		     <ion-item>
 			      <ion-thumbnail item-start>

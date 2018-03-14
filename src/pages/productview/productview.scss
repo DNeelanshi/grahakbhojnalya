@@ -80,8 +80,13 @@ page-productview {
 	    bottom: 2px;
 	}
 	.banner .text h1{
-		color: #fff;
-    	font-weight: 400;
+		color: #000000;
+		font-size: 17px;
+		font-weight: 500;
+		width: fit-content;
+		padding: 3px 8px;
+		border-radius: 5px;
+		background-color: rgba(255, 255, 255, 0.7);
 	}
 	.right{
 		width: 100%;
@@ -240,6 +245,26 @@ page-productview {
                 height: 25px;
                 font-size: 2em;
                 line-height: 28px;
-            }
+            }                   
         }
+         .select-sec{
+                width: 100%;
+                float: left;
+                padding: 16px 16px 16px 16px;
+                background-color: #fff;         
+            }
+             .select-sec .item{
+                    border: 1px solid #bbb9b8;
+                    border-radius: 5px;                   
+                }
+             .select-sec ion-select{
+                        font-size: 14px;
+                        max-width: 65% !important;
+                    }
+                   .select-sec .label{
+                        font-size: 13px;
+                    }
+
+
+
 }

@@ -62,7 +62,10 @@ data:any={};
         });
         Loading.present().then(() => {
     this.http.post(this.appsetting.myGlobalVar + 'userinfo', serialized, options).map(res => res.json()).subscribe(data => {
-      Loading.dismiss();
+       setTimeout(() => {
+    Loading.dismiss();
+  }, 3000);
+
       console.log(data);
       console.log(data.data.latitude+','+data.data.longitude);
       this.geo(parseFloat(data.data.latitude), parseFloat(data.data.longitude));

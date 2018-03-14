@@ -113,3 +113,65 @@ ion-toolbar .title{position: absolute;
     padding: 20px;
     border-radius: 7px !important;
 }
+.red{
+    color: #ff0000 !important;
+}
+
+
+.eyemain {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+// tab image css
+
+// .tabs-ios {
+//     a[aria-selected=false]{
+//        .tab-button-icon[ng-reflect-name=rsvp], .tab-button-icon[aria-label="rsvp"] {
+//         background-image: url(assets/image/rafaho.png);
+//         background-repeat: no-repeat;
+//       }
+//     }
+//    a[aria-selected=true] {
+//      //führ eventuellen text
+//      //span {
+//         //color: #f00; //whatever colour you want to use for the text
+//       //}
+//       .tab-button-icon[ng-reflect-name=rsvp], .tab-button-icon[aria-label=rsvp] {
+//         background-image: url(assets/image/rafaho2.png);
+//         background-repeat: no-repeat;
+//       }
+     
+//     }
+//   }
+  
+  .tabs-md {
+    a[aria-selected=false]{
+       .tab-button-icon[ng-reflect-name=rsvp], .tab-button-icon[aria-label="rsvp"] {
+        background-image: url(../assets/img/rafaho2.png);
+        background-repeat: no-repeat;
+        background-size: 24px;
+      }
+     
+    }
+  
+   a[aria-selected=true] {
+     //führ eventuellen text
+     //span {
+        //color: #f00; //whatever colour you want to use for the text
+      //}
+      .tab-button-icon[ng-reflect-name=rsvp], .tab-button-icon[aria-label=rsvp] {
+        background-image: url(../assets/img/rafaho.png);
+        background-repeat: no-repeat;
+        background-size: 24px;
+      }
+     
+    }
+  }
+  
+  
+  .ion-md-rsvp{
+      width: 24px;
+      height: 24px;
+  }
+  

@@ -27,7 +27,9 @@ export class ProductviewPage {
  disharray:any =[];
  cart1:any;
  cartid:any;
+ data:any={};
  result:any;
+ services:any=[];
  iconname:any='heart-outline'
  no_of_products:any;
  quantity:any;
@@ -38,13 +40,12 @@ export class ProductviewPage {
        private alertCtrl:AlertController,
        private myService:Service,
        public loadingCtrl: LoadingController) {
-      if (JSON.parse(localStorage.getItem('proctnumberincart'))){
-         this.no_of_products =  JSON.parse(localStorage.getItem('proctnumberincart'));
-         
-          this.a = JSON.parse(localStorage.getItem('UserDetail'));
-      console.log(this.a);
-      }
+//       alert('happy');
+
+
        this.pet = "Description";
+  
+//       console.log(this.data.service);
   }
   favproduct(){
       let headers = new Headers();
@@ -159,6 +160,15 @@ cartpro(){
     console.log('ionViewDidLoad ProductviewPage');
      console.log(window.navigator.onLine);
      this.getdishdetail();
+              
+          this.a = JSON.parse(localStorage.getItem('UserDetail'));
+      console.log(this.a);
+            if (JSON.parse(localStorage.getItem('proctnumberincart'))){
+         this.no_of_products =  JSON.parse(localStorage.getItem('proctnumberincart'));
+         console.log(  this.no_of_products );
+ }else{
+     this.no_of_products =0;
+ }
     if (window.navigator.onLine == true) {
     } else {
       let toast = this.toastCtrl.create({
@@ -190,6 +200,46 @@ for(var i = 0; i < str_array.length; i++) {
          }
         this.price = this.splarr.product_price;
         this.quantity = this.splarr.minimum_order;
+        if((this.splarr.take_away)||(this.splarr.cook_at_user_place)||(this.splarr.home_delivery)){
+            
+        }
+              if(this.splarr.take_away == 0){
+          if(this.splarr.cook_at_user_place == 0){
+//              if(this.splarr.home_delivery == 0){
+//                  return null;
+//              }else{
+                  this.services.push('Home Delivery');
+              
+          }else{
+               if(this.splarr.home_delivery == 0){
+                 this.services.push('Cook at MY Place');
+              }
+              else{
+                   this.services.push('Home Delivery')
+                   this.services.push('Cook at My Place')
+              }
+          }
+      }else{
+          if(this.splarr.cook_at_user_place == 0){
+              if(this.splarr.home_delivery == 0){
+                   this.services.push('Cook at Chef place')
+              }else{
+                  this.services.push('Home Delivery')
+                   this.services.push('Cook at Chef place')
+              }
+          }else{
+               if(this.splarr.home_delivery == 0){
+                this.services.push('Cook at MY Place')
+                   this.services.push('Cook at Chef place')
+              }
+              else{
+                    this.services.push('Cook at MY Place')
+                   this.services.push('Cook at Chef place')
+                     this.services.push('Home Delivery')
+              }
+          }
+      }
+      console.log(this.services);
         console.log(this.price,this.quantity);
   }
   crt11(dish1){
@@ -202,7 +252,20 @@ let options = new RequestOptions({ headers: headers})
       console.log(b); 
       var c = JSON.parse(localStorage.getItem('Bookingdatetime'));
       console.log(c); 
-      
+      console.log(this.data.service);
+      if(this.data.service != undefined){
+      if(this.data.service == 'Home Delivery'){
+          console.log('home')
+          this.data.service = 3;
+      }else if(this.data.service == 'Cook at My Place'){
+         console.log('my place')
+        this.data.service = 2;
+      }else {
+         console.log('chef place')
+           this.data.service = 1;
+      }
+      console.log(this.data.service);
+      console.log(this.a)
      var postdata = {
     user_id:this.a._id,
     user_address :this.a.address,
@@ -217,7 +280,8 @@ let options = new RequestOptions({ headers: headers})
     minimum_order:this.splarr.minimum_order,
      product_image0 :this.splarr.product_image0,
      product_ingredients:this.splarr.product_ingredients,
-     discount:this.splarr.discount
+     discount:this.splarr.discount,
+     order_prefrence:this.data.service
       }
         console.log(postdata)
 
@@ -234,19 +298,30 @@ let options = new RequestOptions({ headers: headers})
        console.log(response);
 
       if(response.status == true){
-      this.navCtrl.push(CartPage);
-
+            let toast = this.toastCtrl.create({
+    message: "Product added Succesfully to Cart",
+    duration: 1500,
+    position: 'middle'
+  });
+   localStorage.setItem('proctnumberincart', JSON.stringify(response.data.products.length));
+    this.no_of_products =  JSON.parse(localStorage.getItem('proctnumberincart'));
+         console.log(  this.no_of_products );
       console.log( this.appsetting.cartid );
+  toast.present();
+//      this.navCtrl.push(CartPage);
+ 
       
       }else{
         this.ToastMsg(response.message);
-        this.navCtrl.push(CartPage);
+//        this.navCtrl.push(CartPage);
       }
   },(err)=>{
      this.ToastMsg('Something went wrong');
       Loading.dismissAll();
       console.log(err);
-  });    })
+  });    }) } else{
+       this.ToastMsg('Select a Service');
+  }
   }
  
    

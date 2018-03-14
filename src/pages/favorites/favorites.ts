@@ -56,7 +56,38 @@ nodata=0;
     }, 2000);
   }
   
+  productview(data){
+      console.log(data);
+      let headers = new Headers();
+  headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+  let options = new RequestOptions({ headers: headers });
+  var postdata= {
+      path:data.favorite_product_id
+  }
+  var Serialized = this.serializeObj(postdata);
+  var Loading = this.loadingCtrl.create({
+    spinner: 'hide',
+    cssClass: 'loader',
+    content: "<img src='assets/img/icons3.gif'>",
+    dismissOnPageChange:true
+  });
+
+  Loading.present().then(() => {
+  this.http.post(this.appsetting.myGlobalVar+'users/sigleProductdata',Serialized,options).map(res=>res.json()).subscribe(response=>{
+  console.log(response);
+  console.log(response.data[0].products);
+  for(var p =0; p< response.data[0].products.length ;p++){
+      if(response.data[0].products[p]._id == data.favorite_product_id ){
+          var products = response.data[0].products[p]
+          localStorage.setItem('producttss', JSON.stringify(products))
+          this.navCtrl.push(ProductviewPage);
+      }
+  }
+  Loading.dismiss()
+  })
+  })
   
+  }
 getfavourites(){
     this.user = JSON.parse(localStorage.getItem('UserDetail'));
     let headers = new Headers();
@@ -77,11 +108,14 @@ getfavourites(){
   Loading.present().then(() => {
   this.http.post(this.appsetting.myGlobalVar+'user/get_favarite_products',Serialized,options).map(res=>res.json()).subscribe(response=>{
   console.log(response);
+ 
   this.iconname ='heart';
   console.log(response.data[0].favorite)
    if(response.data[0].favorite == ''){
-       this.nodata =1;
-   }
+       this.nodata = 1;
+       console.log('hogya kam');
+   }else{  this.nodata = 0;}
+ 
   this.favourites = response.data[0].favorite;
   console.log( this.favourites);
    Loading.dismiss();

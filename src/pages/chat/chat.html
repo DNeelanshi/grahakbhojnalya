@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="theme-header">
-    <ion-title>Booking Calender</ion-title>
+    <ion-title>Chat</ion-title>
   </ion-navbar>
 
   <div class="segment-sec">
@@ -20,23 +20,23 @@
 <ion-content padding>
 <div [ngSwitch]="pet">
 <div class="chatsec" *ngSwitchCase="'chat'">
-	<ul>
-		<li>
+	<ul *ngFor="let msg of chat">
+		<li *ngIf="msg.sender_id == msg.chef_id">
 			<span class="userimg"><img src="assets/img/chatimg.png"></span>
 			<div class="chattxt">
-				<p>Hi, How are you?</p>
+				<p>{{msg.message}}</p>
 				<span class="timedate"> 12:20am</span>
 			</div>
 		</li>
 
-		<li class="rightchat">
+		<li class="rightchat"  *ngIf="msg.sender_id == user._id">
 			<div class="chattxt">
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
-				<span class="timedate"> 12:20am</span>
+				<p>{{msg.message}}</p>
+				<span class="timedate">{{date}}</span>
 			</div>
 		</li>
 
-		<li>
+<!--		<li>
 			<span class="userimg"><img src="assets/img/chatimg.png"></span>
 			<div class="chattxt">
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
@@ -55,7 +55,7 @@
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
 				<span class="timedate"> 12:20am</span>
 			</div>
-		</li>
+		</li>-->
 	</ul>
 </div>
 	<ion-list *ngSwitchCase="'archived'">
@@ -111,10 +111,10 @@
 <ion-footer>
   <ion-toolbar>
 		<div class="text">
-			 <ion-textarea class="enter" placeholder="Enter your text"></ion-textarea>
+			 <ion-textarea class="enter" placeholder="Enter your text" [(ngModel)]="data.message" name="message"></ion-textarea>
 		</div>
 		<ion-buttons end>
-      <button ion-button icon-only class="btnprofile"><ion-icon name="paper-plane"></ion-icon></button>     
+      <button ion-button icon-only class="btnprofile" (click)="addmessage(data.message)"><ion-icon name="paper-plane"></ion-icon></button>     
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>

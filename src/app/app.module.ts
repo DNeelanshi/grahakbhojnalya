@@ -45,6 +45,10 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { Camera } from '@ionic-native/camera';
 import { Service } from '../providers/service';
+import { CountryPickerModule } from 'angular2-countrypicker';
+import { MdSelectDispatcher } from 'md-select';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -81,7 +85,9 @@ import { Service } from '../providers/service';
   ],
   imports: [
     BrowserModule,
-  
+    CountryPickerModule.forRoot({
+      baseUrl: 'assets/'
+    }),
     HttpModule,
     MomentModule,
     IonicModule.forRoot(MyApp)
@@ -129,9 +135,11 @@ import { Service } from '../providers/service';
     Appsetting,
      Device,
      FCM,
-    Geolocation,
+InAppBrowser,
+  Geolocation,
     NativeGeocoder,
     Camera,
+    MdSelectDispatcher,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

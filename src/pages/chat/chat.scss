@@ -95,6 +95,7 @@ span.userimg img {
     color: #565656;
 	font-size: 13px;
 	font-weight: 500;
+	min-width: 59px;
 
 }
 .chattxt:after{
@@ -117,10 +118,11 @@ span.userimg img {
 span.timedate {
     position: absolute;
     right: 4px;
-    bottom: -18px;
+    bottom: -15px;
     color: #929292;
-	font-size: 12px;
-	font-weight: 500;
+	font-size: 10px;
+	font-weight: 400;
+	text-align: right;
 }
 .rightchat .chattxt{
 	float: right;
@@ -129,7 +131,8 @@ span.timedate {
     margin-right: 10px;
     background: #f27242;
     font-size: 13px;
-    font-weight: 500;
+	font-weight: 500;
+	min-width: 59px;
 }
 .rightchat .chattxt:after{
         content: '';
@@ -146,9 +149,9 @@ span.timedate {
 }
 
 .rightchat .timedate{
-	 color: #929292;
+	color: #929292;
 	left: 4px;
-	font-weight: 500;
+	text-align: left;
 }
 .item{
 	padding: 0;
@@ -161,7 +164,7 @@ span.timedate {
     margin: 0;
     width: 100%;
     float: left;
-    margin-top: 0;
+    margin-top: 0 !important;
 }
 
 

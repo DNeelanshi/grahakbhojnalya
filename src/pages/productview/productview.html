@@ -7,9 +7,8 @@
 <ion-header>
 
    <ion-navbar color="theme-header">
-    <ion-title>
-      {{splarr.specialties_product}}
-      <p style="font: bold;">Product Details</p>
+    <ion-title>     
+     Product Details
     </ion-title>
 
 
@@ -65,7 +64,23 @@
 			<h3>{{quantity}} x ${{splarr.product_price}} = ${{quantity * splarr.product_price}}</h3>
 		</div>
 	</div>
-	
+            <div>
+
+                <div class="select-sec">
+        <ion-item>
+             <ion-label>SELECT SERVICE</ion-label>
+            <ion-select class="active"   [(ngModel)]="data.service" name='service' required>
+              
+                <div *ngFor = "let data of services" >
+                
+                 <ion-option [value]="data" >{{data}}</ion-option>
+                </div>
+
+         </ion-select>
+        </ion-item>
+                </div>
+ 
+            </div>
 		 <div class="segment-section" style="background-color: #fff; padding: 0 16px 15px 16px;">
 		  <ion-toolbar style="min-height: 27px;">
 		  <ion-segment color="pink" [(ngModel)]="pet">

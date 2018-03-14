@@ -36,7 +36,7 @@
 				    <ion-label stacked>EMAIL</ion-label>
 				    <ion-input type="email" [(ngModel)]="data.email" name="email" #email="ngModel" pattern="^[a-z0-9]+(\.[_a-z0-9]+)+([@{1}])+(\.[a-z0-9-]+)+([.{1}])(\.[a-z]{1,15})$"  required></ion-input>
                                   </ion-item> 
-                                    <div class="alert alert-danger" color="danger">
+                                    <div class="alert alert-danger red" color="danger">
                                            <div *ngIf="email.errors && (email.dirty || email.touched)">
                                              <div [hidden]="!email.errors.required">
                                                Email is required
@@ -46,13 +46,16 @@
                                              </div>
                                            </div>
                                         </div>
-                                    
-                                      <div class="itemouter">
-				  <ion-item>
+                                    <!--<div style="position:initial !important">-->
+                                      
+				  <ion-item >
 				    <ion-label stacked>PASSWORD</ion-label>
 				    <ion-input type="{{ptype}}" [(ngModel)]="data.password" name="password" #password="ngModel" minlength="6" required></ion-input>
-                                    
+                                     <button class="eyemain" ion-button clear type="button" color="dark" item-right>
+                    <ion-icon name="{{iconname}}" (click)="showPassword()" ></ion-icon>
+                  </button>
                                   </ion-item>
+                                        <div class="alert alert-danger red" color="danger"> 
                                     <div *ngIf="password.errors && (password.dirty || password.touched)">
                                      <div [hidden]="!password.errors.required">
                                        Password is required
@@ -61,9 +64,9 @@
                                       Password must be at least 6 digits
                                        </div>
                                    </div>
-                                    <ion-icon name="{{iconname}}" (click)="showPassword()" ></ion-icon>
+                                    <!--<ion-icon name="{{iconname}}" (click)="showPassword()" ></ion-icon>-->
 					 
-                                 </div>
+                                 </div>  <!--</div>-->
                             
                             </ion-list>
 					<div class="frgtpwd">

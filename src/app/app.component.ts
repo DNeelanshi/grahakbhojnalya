@@ -32,7 +32,8 @@ export class MyApp {
   private platform: Platform, private toastCtrl:ToastController, private alertCtrl: AlertController,
   public appsetting: Appsetting)
         {
-            
+           
+             alert('Welcome to Rafaho.');
    platform.ready().then(() => {
 
 //           

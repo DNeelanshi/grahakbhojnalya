@@ -24,7 +24,7 @@
 <ion-content >
 	<div class="top-sec">
 			<ion-grid>
-				<ion-row>
+				<ion-row *ngIf = "nodata == 0">
 					<ion-col col-6 class="left">
 					  <div class="chef">
 						<h5>{{chef.firstname}} {{chef.lastname}}</h5>
@@ -37,6 +37,7 @@
 					  </div>
 					</ion-col>
 				</ion-row>
+                            <p  *ngIf = "nodata == 1"> </p>
 			</ion-grid>
 		</div>
 	<div class="text-sec">
@@ -50,7 +51,7 @@
 			<ion-list>
 				<ion-item >
 					<h5 item-start class="strt">Booking Date & Time</h5>
-                                        <ion-datetime placeholder="MMM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}" max="3000" [(ngModel)]= "data.bookdt" name="bookdt" #bookdt="ngModel" ></ion-datetime>
+                                        <ion-datetime placeholder="MMM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}"  [(ngModel)]= "data.bookdt" name="bookdt" #bookdt="ngModel" ></ion-datetime>
 <!--					<p>{{bookdt}}</p>
 					<p item-end class="ennd"></p>-->
 				</ion-item>

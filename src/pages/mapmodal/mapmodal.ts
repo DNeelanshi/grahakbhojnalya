@@ -55,6 +55,7 @@ export class MapmodalPage{
     description:any;
     markers:any=[];
   public longi:any;
+  userdetail:any=[];
  
   bb:any = [];
    geocoder = new google.maps.Geocoder();
@@ -83,6 +84,9 @@ export class MapmodalPage{
    private nativeGeocoder: NativeGeocoder,
    public places: ElementRef) {
     //  this.initMap();
+   alert('hello');
+     this.userdetail = JSON.parse(localStorage.getItem('UserDetail'));
+     console.log(this.userdetail);
    this.cities();
    console.log(this.appsetting.saved);
   }
@@ -188,6 +192,10 @@ else{
             }
   }
   fav(auto){
+      var productid;
+      let headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+let options = new RequestOptions({ headers: headers})
      console.log("place")
      console.log(auto);
      if(auto == ''){
@@ -214,6 +222,27 @@ else{
               console.log(this.appsetting.saved);
         this.appsetting.saved.pop(auto);
           console.log(this.appsetting.saved);
+           this.userdetail = JSON.parse(localStorage.getItem('UserDetail'));
+     console.log(this.userdetail);
+     for (var z = 0; z < this.userdetail.favorite_address.length;z++){
+         if(this.userdetail.favorite_address[z].favorite_address == auto ){
+             productid = this.userdetail.favorite_address[z]._id;
+         }
+     }
+           var postdata1 = {
+            user_id: this.userdetail._id,
+              favorite_address_id:productid
+       }
+       
+          console.log(postdata1)
+           var Serialized = this.serializeObj(postdata1);
+            this.http.post(this.appsetting.myGlobalVar + 'user/delete_favarite_address', Serialized, options).map(res => res.json()).subscribe(response1 => {
+                console.log(response1);
+                if(response1.status == true){
+                 localStorage.setItem('UserDetail',JSON.stringify(response1.data[0]));
+                 }
+            })  
+             localStorage.setItem('Favaddress',JSON.stringify(postdata1));
         localStorage.setItem('Favaddress',JSON.stringify(this.appsetting.saved));
 
           }
@@ -242,7 +271,21 @@ else{
               console.log(this.appsetting.saved);
         this.appsetting.saved.push(auto);
         console.log(this.appsetting.saved);
-        localStorage.setItem('Favaddress',JSON.stringify(this.appsetting.saved));
+        var postdata = {
+            user_id: this.userdetail._id,
+              favorite_address:auto
+       }
+       
+          console.log(postdata)
+           var Serialized = this.serializeObj(postdata);
+            this.http.post(this.appsetting.myGlobalVar + 'user/add_favarite_address', Serialized, options).map(res => res.json()).subscribe(response => {
+                console.log(response);
+                if(response.status == true){
+                 localStorage.setItem('UserDetail',JSON.stringify(response.data[0]));
+                 }
+            })
+             localStorage.setItem('Favaddress',JSON.stringify(postdata));
+//        localStorage.setItem('Favaddress',JSON.stringify(this.appsetting.saved));
 
           }
         }
@@ -316,12 +359,12 @@ console.log('not matched');
 
 if(this.number == true){
         //let self = this; 
-    
-    let config = { 
+    setTimeout(()=>{    //<<<---    using ()=> syntax
+     let config = { 
     //types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
     input: this.autocomplete.query, 
 //    componentRestrictions: {  } 
-//    componentRestrictions: {country: 'co'}
+    componentRestrictions: {country: 'co'}
     }
     this.acService.getPlacePredictions(config, ((predictions, status)=> {
     console.log('modal > getPlacePredictions > status > ', status);
@@ -333,19 +376,26 @@ if(this.number == true){
     }else{
       this.omega = 0;
     this.autocompleteItems = [];   
-    console.log(predictions)         
-    predictions.forEach(((prediction)=> {   
-      console.log("abc")           
-    this.autocompleteItems.push(prediction);
-   
-    })
-   
-   ); }
+    console.log(predictions) 
+    for(var e = 0; e<=1; e++){
+     this.autocompleteItems.push(predictions[e]);
+    }     
+    console.log( this.autocompleteItems);   
+//    predictions.forEach(((prediction)=> {   
+//      console.log("abc")           
+//    this.autocompleteItems.push(prediction);
+//   
+//    })
+//   
+//   );
+    }
    // return false;
     })
     
    );
     this.number = true
+ },8000);
+ 
     
    
   }
@@ -370,7 +420,7 @@ var adr = this.autocomplete.query
 console.log(adr);
 if(!this.number){
     console.log('its hitting');
-this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?format=json&addressdetails=1&limit=1&polygon_svg=1',options).map(res => res.json()).subscribe(response => {
+this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?countrycodes=co&format=json&addressdetails=1&limit=1&polygon_svg=1',options).map(res => res.json()).subscribe(response => {
     console.log(response[0] );
     if( (response[0]== undefined)){
             
@@ -764,7 +814,7 @@ this.boundsSet = false;
            long:this.long
         }
            var Serialized = this.serializeObj(postdata);
-    this.http.post('  http://rafao.us-west-2.elasticbeanstalk.com/api/home/reverse_geocoding', Serialized, options).map(res => res.json()).subscribe(response => {
+    this.http.post('http://rafao.us-west-2.elasticbeanstalk.com/api/home/reverse_geocoding', Serialized, options).map(res => res.json()).subscribe(response => {
             console.log(response.data == '{"message":"Result not found"}');
                     var resso = JSON.parse(response.data)
             console.log(resso.response)
@@ -1541,6 +1591,10 @@ clsmodel(){
 }
 
   closeModal() {
+       let headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+let options = new RequestOptions({ headers: headers})
+      this.userdetail = JSON.parse(localStorage.getItem('UserDetail'));
       console.log(this.data.additional)
    if(this.data.additional == undefined){
        this.data.additional = '';
@@ -1558,6 +1612,19 @@ clsmodel(){
                this.long=this.long
                console.log('nomi')
            }
+       var postdata2 = {
+            user_id: this.userdetail._id,
+             saved_address:this.autocomplete.query
+       }
+       
+          console.log(postdata2)
+           var Serialized = this.serializeObj(postdata2);
+            this.http.post(this.appsetting.myGlobalVar + 'user/add_saved_address', Serialized, options).map(res => res.json()).subscribe(response2 => {
+                console.log(response2);
+                if(response2.status == true){
+                 localStorage.setItem('UserDetail',JSON.stringify(response2.data[0]));
+                 }
+            })    
       this.viewCtrl.dismiss({
          
         address:this.data.additional + ' '+ this.autocomplete.query,

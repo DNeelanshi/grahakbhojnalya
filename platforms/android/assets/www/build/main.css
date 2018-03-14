@@ -51374,6 +51374,32 @@ ion-toolbar .title {
   border-radius: 7px !important;
 }
 
+.red {
+  color: #ff0000 !important;
+}
+
+.eyemain {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+.tabs-md a[aria-selected=false] .tab-button-icon[ng-reflect-name=rsvp], .tabs-md a[aria-selected=false] .tab-button-icon[aria-label="rsvp"] {
+  background-image: url(../assets/img/rafaho2.png);
+  background-repeat: no-repeat;
+  background-size: 24px;
+}
+
+.tabs-md a[aria-selected=true] .tab-button-icon[ng-reflect-name=rsvp], .tabs-md a[aria-selected=true] .tab-button-icon[aria-label=rsvp] {
+  background-image: url(../assets/img/rafaho.png);
+  background-repeat: no-repeat;
+  background-size: 24px;
+}
+
+.ion-md-rsvp {
+  width: 24px;
+  height: 24px;
+}
+
 page-addwallet .title .toolbar-title p {
   margin: 0;
   font-size: 12px;
@@ -52136,6 +52162,7 @@ page-chat .chattxt {
   color: #565656;
   font-size: 13px;
   font-weight: 500;
+  min-width: 59px;
 }
 
 page-chat .chattxt:after {
@@ -52158,10 +52185,11 @@ page-chat .chattxt p {
 page-chat span.timedate {
   position: absolute;
   right: 4px;
-  bottom: -18px;
+  bottom: -15px;
   color: #929292;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 10px;
+  font-weight: 400;
+  text-align: right;
 }
 
 page-chat .rightchat .chattxt {
@@ -52172,6 +52200,7 @@ page-chat .rightchat .chattxt {
   background: #f27242;
   font-size: 13px;
   font-weight: 500;
+  min-width: 59px;
 }
 
 page-chat .rightchat .chattxt:after {
@@ -52191,7 +52220,7 @@ page-chat .rightchat .chattxt:after {
 page-chat .rightchat .timedate {
   color: #929292;
   left: 4px;
-  font-weight: 500;
+  text-align: left;
 }
 
 page-chat .item {
@@ -52206,7 +52235,7 @@ page-chat .item h2 {
   margin: 0;
   width: 100%;
   float: left;
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 page-chefdetials {
@@ -52269,6 +52298,7 @@ page-chefdetials .top .image {
 page-chefdetials .top .image img {
   width: 100%;
   float: left;
+  height: 100%;
 }
 
 page-chefdetials .top ul {
@@ -53260,6 +53290,10 @@ page-home {
   /*===============================================*/
 }
 
+page-home .header ion-toolbar .toolbar-content-md {
+  position: static;
+}
+
 page-home .header .iconprf {
   position: relative;
 }
@@ -53404,6 +53438,9 @@ page-home .content-sec .list .item p {
   color: #6a6a6a;
   font-weight: 400;
   font-size: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 page-home .content-sec .list .item p span {
@@ -53418,7 +53455,7 @@ page-home .content-sec .list .item .rightbtn {
   border-radius: 4px;
   margin-right: 0px;
   position: absolute;
-  top: 8px;
+  top: 6px;
   right: 10px;
   margin-left: 0px;
 }
@@ -54035,6 +54072,7 @@ page-mapmodal input.searchbar-input {
 page-mapmodal .searchbar {
   margin: 0 !important;
   padding-bottom: 0;
+  padding-top: 1px !important;
 }
 
 page-mapmodal .select {
@@ -54072,7 +54110,7 @@ page-mapmodal .searchouter {
 page-mapmodal .favbtn {
   position: absolute;
   right: 5px;
-  top: 15px;
+  top: 8px;
   background: no-repeat;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -54089,6 +54127,77 @@ page-mapmodal .searchouter .list {
 page-nominatimap #map {
   height: 100%;
   width: 100%;
+}
+
+page-nominatimap .bar-button-clear-ios, page-nominatimap .bar-button-default.bar-button-ios-clear, page-nominatimap .bar-button-clear-ios-clear {
+  color: #000;
+  background-color: transparent;
+}
+
+page-nominatimap .list-ios {
+  margin: -1px 0 32px;
+  position: absolute;
+  z-index: 9999;
+}
+
+page-nominatimap input.searchbar-input {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #ddd;
+}
+
+page-nominatimap .searchbar {
+  margin: 0 !important;
+  padding-bottom: 0;
+}
+
+page-nominatimap .select {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #ddd;
+}
+
+page-nominatimap .text-input {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #ddd;
+  margin: 0px;
+  padding: 8px 10px;
+  background: #fff;
+  width: 100%;
+}
+
+page-nominatimap .searchbar-input {
+  padding: 3px 39px 3px 44px !important;
+  margin-bottom: 3px;
+  font-size: 14px !important;
+}
+
+page-nominatimap .toolbar_top .toolbar-background {
+  background: #fff;
+}
+
+page-nominatimap .searchouter {
+  width: 100%;
+  padding-right: 50px;
+  position: relative;
+}
+
+page-nominatimap .favbtn {
+  position: absolute;
+  right: 5px;
+  top: 15px;
+  background: no-repeat;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid #ddd;
+  color: #f27242;
+  margin-top: -6px;
+  width: 43px;
+}
+
+page-nominatimap .searchouter .list {
+  margin: 0;
 }
 
 page-orderdetial .content {
@@ -54669,8 +54778,15 @@ page-productview .banner .text {
 }
 
 page-productview .banner .text h1 {
-  color: #fff;
-  font-weight: 400;
+  color: #000000;
+  font-size: 17px;
+  font-weight: 500;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 3px 8px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 page-productview .right {
@@ -54843,6 +54959,27 @@ page-productview .hrtbtn .icon {
   height: 25px;
   font-size: 2em;
   line-height: 28px;
+}
+
+page-productview .select-sec {
+  width: 100%;
+  float: left;
+  padding: 16px 16px 16px 16px;
+  background-color: #fff;
+}
+
+page-productview .select-sec .item {
+  border: 1px solid #bbb9b8;
+  border-radius: 5px;
+}
+
+page-productview .select-sec ion-select {
+  font-size: 14px;
+  max-width: 65% !important;
+}
+
+page-productview .select-sec .label {
+  font-size: 13px;
 }
 
 page-profile .content {
