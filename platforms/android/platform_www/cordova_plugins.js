@@ -63,6 +63,15 @@ module.exports = [
     "runs": true
   },
   {
+    "id": "cordova-plugin-inappbrowser.inappbrowser",
+    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+    "pluginId": "cordova-plugin-inappbrowser",
+    "clobbers": [
+      "cordova.InAppBrowser.open",
+      "window.open"
+    ]
+  },
+  {
     "id": "cordova-plugin-nativegeocoder.NativeGeocoder",
     "file": "plugins/cordova-plugin-nativegeocoder/www/NativeGeocoder.js",
     "pluginId": "cordova-plugin-nativegeocoder",
@@ -94,15 +103,6 @@ module.exports = [
       "cordova.plugins.Keyboard"
     ],
     "runs": true
-  },
-  {
-    "id": "cordova-plugin-inappbrowser.inappbrowser",
-    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-    "pluginId": "cordova-plugin-inappbrowser",
-    "clobbers": [
-      "cordova.InAppBrowser.open",
-      "window.open"
-    ]
   }
 ];
 module.exports.metadata = 
@@ -113,13 +113,13 @@ module.exports.metadata =
   "cordova-plugin-device": "1.1.4",
   "cordova-plugin-fcm": "2.1.2",
   "cordova-plugin-geolocation": "2.4.3",
+  "cordova-plugin-inappbrowser": "2.0.2",
   "cordova-plugin-ionic-webview": "1.1.11",
   "cordova-plugin-nativegeocoder": "2.0.4",
   "cordova-plugin-splashscreen": "4.0.3",
   "cordova-plugin-statusbar": "2.3.1-dev",
   "cordova-plugin-whitelist": "1.3.1",
-  "ionic-plugin-keyboard": "2.2.1",
-  "cordova-plugin-inappbrowser": "2.0.2"
+  "ionic-plugin-keyboard": "2.2.1"
 };
 // BOTTOM OF METADATA
 });

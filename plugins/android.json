@@ -19,6 +19,9 @@
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "io.rafaho"
     },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "io.rafaho"
+    },
     "cordova-plugin-ionic-webview": {
       "PACKAGE_NAME": "io.rafaho"
     },
@@ -35,9 +38,6 @@
       "PACKAGE_NAME": "io.rafaho"
     },
     "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "io.rafaho"
-    },
-    "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "io.rafaho"
     }
   },

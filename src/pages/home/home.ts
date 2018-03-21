@@ -8,14 +8,17 @@ import {CartPage} from "../cart/cart";
 import {ProductlistPage} from '../productlist/productlist';
 import {Http, RequestOptions, Headers} from "@angular/http";
 import {Appsetting} from "../../providers/appsetting";
+
 import {NativeGeocoder, NativeGeocoderForwardResult} from '@ionic-native/native-geocoder';
 import * as moment from 'moment';
-import { Geolocation } from '@ionic-native/geolocation';
+import {Geolocation,GeolocationOptions ,Geoposition ,PositionError} from '@ionic-native/geolocation';
+declare var google;
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
 })
 export class HomePage {
+    geocoder = new google.maps.Geocoder();
     pet: string;
     searcharray: any = [];
     searcharray1: any = [];
@@ -38,83 +41,185 @@ export class HomePage {
     blurclass: any;
     no_of_products: any;
     chefsearch: any = {};
+    rating:any=0;
     constructor(public navCtrl: NavController, public modalCtrl: ModalController,
         public appsetting: Appsetting,
         private platform: Platform,
         public http: Http,
         private nativeGeocoder: NativeGeocoder,
-         private geolocation: Geolocation,
+        public geolocation: Geolocation,
+        public GeolocationOptions:Geolocation,
         public loadingCtrl: LoadingController,
         private alertCtrl: AlertController,
         public toastCtrl: ToastController,
         public events: Events,
     ) {
+//        alert('constructor');
+//        this.getcurrentlocationanddata();
+              this.firsthit();
+                this.get();
+//        this.platform.ready().then(() => {
+//            var lastTimeBackPress = 0;
+//            var timePeriodToExit = 2000;
+//
+//            this.platform.registerBackButtonAction(() => {
+//                // get current active page
+//                let view = this.navCtrl.getActive();
+//                if (new Date().getTime() - lastTimeBackPress < timePeriodToExit) {
+//                    this.platform.exitApp(); //Exit from app
+//                } else {
+//                    // alert('Press back again to exit App?');
+//                    let toast = this.toastCtrl.create({
+//                        message: 'Press back again to exit from app?',
+//                        duration: 3000,
+//                        position: 'bottom'
+//                    });
+//                    toast.present();
+//                    lastTimeBackPress = new Date().getTime();
+//                }
+//            });
+//        });
 
-        
-        this.platform.ready().then(() => {
-            var lastTimeBackPress = 0;
-            var timePeriodToExit = 2000;
-
-            this.platform.registerBackButtonAction(() => {
-                // get current active page
-                let view = this.navCtrl.getActive();
-                if (new Date().getTime() - lastTimeBackPress < timePeriodToExit) {
-                    this.platform.exitApp(); //Exit from app
-                } else {
-                    // alert('Press back again to exit App?');
-                    let toast = this.toastCtrl.create({
-                        message: 'Press back again to exit from app?',
-                        duration: 3000,
-                        position: 'bottom'
-                    });
-                    toast.present();
-                    lastTimeBackPress = new Date().getTime();
-                }
-            });
-        });
-
-        this.firsthit();
         this.userdetail = JSON.parse(localStorage.getItem('UserDetail'));
         console.log(this.userdetail);
         this.pet = "kittens";
-        //      if (this.appsetting.home1 == 1){
-        //          console.log('homepageactivated');
-        //      }
-        // events.subscribe('index', (res) => {
-        //     console.log(res);
-        // this.firsthit();
-        //    })
+    
+        events.subscribe('index', (res) => {
+            console.log(res);
+            if (res == 0) {
+        
+                this.firsthit();
+                this.get();
+
+
+            } else {
+            
+            }
+        })
+        //                    
+        //                events.subscribe('homepage', (home) =>         {
+        //      console.log(home)        ;
+        //      clearInterval(this.appsetting.interval)        ;
+        //      this.lookbooklist()        ;
+        //    });
+
     }
     firsthit() {
-        var Loading = this.loadingCtrl.create({
-            spinner: 'hide',
-            cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
-            dismissOnPageChange: true
-        });
-        Loading.present().then(() => {
+//        alert('firsthit');
 
-            this.data.datetime = this.date;
-//            alert(this.data.datetime);
-            if (JSON.parse(localStorage.getItem('proctnumberincart'))) {
-                this.no_of_products = JSON.parse(localStorage.getItem('proctnumberincart'));
-                console.log(this.no_of_products);
+                      this.data.datetime = this.date;
+        //            alert(this.data.datetime);
+        if (JSON.parse(localStorage.getItem('proctnumberincart'))) {
+            this.no_of_products = JSON.parse(localStorage.getItem('proctnumberincart'));
+            console.log(this.no_of_products);
+        }
+        else {
+            this.no_of_products = 0;
+        }
+              var options : GeolocationOptions
+       this.geolocation.getCurrentPosition(options).then((resp) => {
+//            alert('aagya');
+        
+            this.lat = resp.coords.latitude;
+            this.long = resp.coords.longitude;
+
+            console.log(resp.coords.latitude);
+            console.log(resp.coords.longitude);
+
+
+
+
+            let headers = new Headers();
+            headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+            let options = new RequestOptions({headers: headers});
+            var postdata = {
+                lat: this.lat,
+                long: this.long
             }
-            else {
-                this.no_of_products = 0;
-            }
-            Loading.dismiss();
+            let latLng = new google.maps.LatLng(this.lat, this.long);
+            var Serialized = this.serializeObj(postdata);
+           
+                this.http.post('  http://rafao.us-west-2.elasticbeanstalk.com/api/home/reverse_geocoding', Serialized, options).map(res => res.json()).subscribe(response => {
+                    console.log(response.data);
+                    //            alert(response.data);
+                    var resso = JSON.parse(response.data)
+                    console.log(resso.response)
+                    //            console.log(resso.response.properties.address);
+
+                    if ((response.data == '{"message":"Result not found"}') || (resso.response.properties.address == null)||(resso.response == undefined)) {
+
+                        //               alert('noresult');
+                        this.geocoder.geocode({'location': latLng}, ((results, status) => {
+                            //                        alert('googlegeocoding');
+                            if (status == google.maps.GeocoderStatus.OK) {
+                                if (results == '') {
+                                    this.ToastMsg('Invalid Location')
+                                    this.lat = '';
+                                    this.long = '';
+
+                                }
+                                else {
+                                    if (results[0]) {
+                                        //                                    alert(results[0].formatted_address);
+                                        console.log(results[0].place_id);
+                                        console.log(results[0].formatted_address);
+                                        this.chefsearch.search = results[0].formatted_address
+
+                                    }
+                                    else if (results[1]) {
+                                        //                                    alert(results[1].formatted_address);
+                                        this.chefsearch.search = results[1].formatted_address;
+                                        console.log(results[1].formatted_address);
+
+                                    }
+                                }
+                            }
+                            //		
+                        })
+                        )
+                    } else {
+                        //                var resso = JSON.parse(response.data)
+                        //            alert('lupap address');
+                        console.log(resso.response.message)
+                        if (resso.response.message == "Result not found") {
+                            this.ToastMsg('Not found');
+                            this.lat = '';
+                            this.long = '';
+
+                        }
+                        else {
+                            //                     alert('lupap address');
+                            var addr = resso.response.properties.address
+                            console.log(resso.response)
+                            if (addr == null) {
+
+                            }
+                            this.chefsearch.search = addr + resso.response.properties.city;
+
+                            console.log(this.chefsearch.search);
+
+                        }
+                    }
+                });
+                this.get();
+
+        }, err=>{
+//            alert(err);
         })
+        
+
+  
+       
     }
     doRefresh(refresher) {
         console.log('Begin async operation', refresher);
 
         setTimeout(() => {
-            this.get();
             this.firsthit();
+             this.get();
             console.log('Async operation has ended');
             refresher.complete();
-        }, 2000);
+        }, 3000);
     }
     cartpage() {
         this.navCtrl.push(CartPage);
@@ -238,17 +343,17 @@ export class HomePage {
             if (response1.status == true) {
                 localStorage.setItem('UserDetail', JSON.stringify(response1.data[0]));
             }
-                })
-//               
-//      console.log(ind        ex);
-//      this.searcharray1.pop(ind        ex);
-//      this.appsetting.saved=this.searchar        ray1
-//       console.log(this.searcharr        ay1)
-//         localStorage.setItem('Favaddress',JSON.stringify( this.appsetting.saved));
+        })
+        //               
+        //      console.log(ind        ex);
+        //      this.searcharray1.pop(ind        ex);
+        //      this.appsetting.saved=this.searchar        ray1
+        //       console.log(this.searcharr        ay1)
+        //         localStorage.setItem('Favaddress',JSON.stringify( this.appsetting.saved));
 
     }
     getItem(item) {
-//        alert(item);
+        //        alert(item);
 
         var Loading = this.loadingCtrl.create({
             spinner: 'hide',
@@ -258,8 +363,8 @@ export class HomePage {
         });
         Loading.present().then(() => {
             this.chefsearch.search = item;
-//            alert('inside alert')
-//            alert(this.chefsearch.search);
+            //            alert('inside alert')
+            //            alert(this.chefsearch.search);
             this.nativeGeocoder.forwardGeocode(item).then((coordinates: NativeGeocoderForwardResult) => {
                 console.log('The coordinates are latitude=' + coordinates.latitude + ' and longitude=' + coordinates.longitude)
                 this.lat = coordinates.latitude
@@ -269,10 +374,10 @@ export class HomePage {
                 this.openllist = 0;
                 this.blurclass = 'blurbg1'
                 this.get();
-                
-//                alert(this.lat);
+
+                //                alert(this.lat);
             }).catch((error: any) => {
-//                alert(JSON.stringify("err " + error))
+                //                alert(JSON.stringify("err " + error))
                 Loading.dismiss();
             });
             //   setTimeout(() => {
@@ -298,7 +403,7 @@ export class HomePage {
             this.lat = data.lati
             this.long = data.longi
 
-//    this.searcharray=[];
+            //    this.searcharray=[];
 
             this.openllist = 0;
             this.blurclass = 'blurbg1'
@@ -308,6 +413,9 @@ export class HomePage {
         modal.present();
     }
     get() {
+        var temp=this;
+        var totalvalue =0;
+//         alert('get');
         let headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
         let options = new RequestOptions({headers: headers});
@@ -343,6 +451,26 @@ export class HomePage {
                         if (data.data.length > 0) {
                             this.array = data.data;
                             console.log(this.array);
+                          this.array.forEach(function(value,key){
+                               temp.rating =0;
+                                    value.comments_and_ratings.forEach(function(value1,key1){
+                            if(value1 == []){
+                                value1.avgrating=0;
+                            }else{
+                            console.log(value1.rating);
+                        console.log( value.comments_and_ratings.length);
+                      console.log( temp.rating);
+                            temp.rating =(temp.rating+value1.rating);
+                            console.log(temp.rating);
+                        
+                          }
+                          totalvalue = temp.rating/value.comments_and_ratings.length   
+                            totalvalue = Number((totalvalue).toFixed(1));
+                             value.avgrating =  totalvalue;
+                               
+                                 })})
+                       
+                            
                             this.bit = 1;
                             this.arr1 = 1;
                         } else {
@@ -380,6 +508,8 @@ export class HomePage {
         toast.present();
     }
     searchaa(val) {
+        var temp = this
+        var totalvalue:any;
         console.log(val);
         if (val == '') {
             this.get();
@@ -407,9 +537,33 @@ export class HomePage {
             this.http.post(this.appsetting.myGlobalVar + 'prefrence/searchbychefname', serialized, options).map(res => res.json()).subscribe(data => {
                 console.log(data);
                 if (data.status == true) {
+
                     this.arr1 = 1;
                     this.bit = 1;
                     if (data.data) {
+                     if (data.data.length > 0) {
+                            this.array = data.data;
+                            console.log(this.array);
+                          this.array.forEach(function(value,key){
+                               temp.rating =0;
+                                    value.comments_and_ratings.forEach(function(value1,key1){
+                            if(value1 == []){
+                                value1.avgrating=0;
+                            }else{
+                            console.log(value1.rating);
+                        console.log( value.comments_and_ratings.length);
+                      console.log( temp.rating);
+                            temp.rating =(temp.rating+value1.rating);
+                            console.log(temp.rating);
+                        
+                          }
+                          totalvalue = temp.rating/value.comments_and_ratings.length   
+                            totalvalue = Number((totalvalue).toFixed(1));
+                             value.avgrating =  totalvalue;
+                               
+                                 })
+                                 })
+                        }
                         this.array = data.data;
                         this.bit = 1;
                         this.arr1 = 1;
@@ -423,12 +577,23 @@ export class HomePage {
                 }
             }, (err) => {
                 this.ToastMsg('Something went wrong');
-                console.log('error')});
+                console.log('error')
+            });
         }
 
     }
+        dismiss1(){
+      
+          console.log('here');
+                    this.array = null;
+                    this.bit = null
+                    this.arr1 = 1;
+                     this.get();
+    }
     searchdish(vali) {
         var cookingtime;
+        var temp1 = this;
+        var totalvalue1:any;
         console.log(vali);
         //    if(!vali){
         //        console.log('here');
@@ -493,7 +658,29 @@ export class HomePage {
 
                             }
                         }
-
+               if (data.data.length > 0) {
+                            this.array = data.data;
+                            console.log(this.array);
+                          this.array.forEach(function(value,key){
+                               temp1.rating =0;
+                                    value.comments_and_ratings.forEach(function(value1,key1){
+                            if(value1 == []){
+                                value1.avgrating=0;
+                            }else{
+                            console.log(value1.rating);
+                        console.log( value.comments_and_ratings.length);
+                      console.log( temp1.rating);
+                            temp1.rating =(temp1.rating+value1.rating);
+                            console.log(temp1.rating);
+                        
+                          }
+                          totalvalue1 = temp1.rating/value.comments_and_ratings.length   
+                            totalvalue1 = Number((totalvalue1).toFixed(1));
+                             value.avgrating =  totalvalue1;
+                               
+                                 })
+                                 })
+                        }
                         console.log(this.arr);
 
                     }
@@ -513,9 +700,21 @@ export class HomePage {
             console.log(this.arr);
             console.log('nothing');
 
-            }
-    //}
+        }
+        //}
 
+    }
+    dismiss(){
+      
+         this.arr = null;
+            this.arry = true;
+            console.log(this.arr);
+            console.log('nothing');
+             console.log('here');
+                    this.array = null;
+                    this.bit = null
+                    this.arr1 = 1;
+                     this.get();
     }
     AlertMsg(msg) {
         let alert = this.alertCtrl.create({
@@ -544,20 +743,8 @@ export class HomePage {
     ionViewDidLoad() {
 
         console.log('ionViewDidLoad HomePage');
-      
-          this.geolocation.getCurrentPosition().then((resp) => {
-    this.lat = resp.coords.latitude;
-  this.long= resp.coords.longitude;
 
- console.log(resp.coords.latitude);
-  console.log(resp.coords.longitude);
-
-  this.get();
- 
-  })
-        
-//    alert('ara h');/
-
+        this.firsthit();
         console.log(window.navigator.onLine);
         if (window.navigator.onLine == true) {
         } else {
@@ -569,16 +756,24 @@ export class HomePage {
             toast.present();
         }
     }
+//    ionViewDidEnter(){
+//        alert('enter');
+//         this.firsthit();
+//    }
+    isReadonly() {
+        return this.isReadonly;   //return true/false 
+    }
+
     ngOnInit() {
+
         this.date = moment(new Date()).format('YYYY-MM-DD[T]hh:mm');
-       var ddate = this.date;
-   console.log(ddate);
+        var ddate = this.date;
+        console.log(ddate);
 
 
         this.data.datetime = this.date;
         console.log(new Date().toISOString())
-//        alert( this.data.datetime );
-        //    this.GetLocation();
+    
 
     }
 }

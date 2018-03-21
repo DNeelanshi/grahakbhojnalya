@@ -32,6 +32,7 @@ import { CartPage } from '../pages/cart/cart';
 import { PaymentPage } from '../pages/payment/payment';
 import { ChefdetialsPage } from '../pages/chefdetials/chefdetials';
 import { ReviewsPage } from '../pages/reviews/reviews';
+import { RatingPage } from '../pages/rating/rating';
 import { SelectdishPage } from '../pages/selectdish/selectdish';
 import { ProductlistPage } from '../pages/productlist/productlist';
 import { LocationPage } from '../pages/location/location';
@@ -48,6 +49,7 @@ import { Service } from '../providers/service';
 import { CountryPickerModule } from 'angular2-countrypicker';
 import { MdSelectDispatcher } from 'md-select';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { Ionic2RatingModule } from 'ionic2-rating';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     PaymentPage,
     ChefdetialsPage,
     ReviewsPage,
+    RatingPage,
     SelectdishPage,
     ProductlistPage,
     LocationPage,
@@ -90,6 +93,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     }),
     HttpModule,
     MomentModule,
+    Ionic2RatingModule ,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -113,6 +117,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     FeedbackPage,
     OrderdetialPage,
     ForgtpwdPage,
+    RatingPage,
     ChangepwdPage,
     NominatimapPage,
     FilterPage,

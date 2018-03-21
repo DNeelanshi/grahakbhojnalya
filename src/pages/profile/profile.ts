@@ -36,10 +36,22 @@ data:any={};
     public appsetting: Appsetting,
      public app:App
   ) {
-//     events.subscribe('index', (res) => {
-//     console.log(res);
-//      this.Userprofile();
-//    })
+      setTimeout(() => {
+      console.log('Async operation has ended');
+       this.Userprofile();
+
+    }, 1000);
+         events.subscribe('index', (res) => {
+             console.log(res);
+       if(res == 4){
+          
+             setTimeout(() => {
+      
+      this.Userprofile();
+
+    }, 500);
+       }
+            })
   }
   Userprofile() {
     let headers = new Headers();
@@ -147,20 +159,21 @@ editpr(){
       // this.rootPage = TabsPage;
     }
   }
-  doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
-     this.Userprofile();
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      refresher.complete();
-
-    }, 2000);
-  }
+//  doRefresh(refresher) {
+//    console.log('Begin async operation', refresher);
+//     this.Userprofile();
+//    setTimeout(() => {
+//      console.log('Async operation has ended');
+//      refresher.complete();
+//
+//    }, 2000);
+//  }
 
     ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
-    this.Userprofile();
-      console.log('Rahul Maurya');
+  
+
+      console.log('Neelanshi');
     console.log(window.navigator.onLine);
     if (window.navigator.onLine == true) {
     } else {

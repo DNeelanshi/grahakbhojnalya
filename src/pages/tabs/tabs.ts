@@ -74,7 +74,9 @@ tabIndex(event){
     var split = domevent.split('-');
     var target = split[2];
     console.log(target)
+    
     if (target == '1') {
+        console.log('hogya');
       this.events.publish('index', '1');     
     } else if (target == '2') {
       this.events.publish('index', '2'); 
@@ -83,7 +85,7 @@ tabIndex(event){
     }
      else if(target == '4'){
          this.events.publish('index', '4');
-    }else{
+    }else if(target == '0'){
         this.events.publish('index','0');
     }
 }

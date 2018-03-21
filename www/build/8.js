@@ -1,14 +1,14 @@
 webpackJsonp([8],{
 
-/***/ 463:
+/***/ 469:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductlistPageModule", function() { return ProductlistPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductviewPageModule", function() { return ProductviewPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__productlist__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__productview__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ProductlistPageModule = (function () {
-    function ProductlistPageModule() {
+var ProductviewPageModule = (function () {
+    function ProductviewPageModule() {
     }
-    return ProductlistPageModule;
+    return ProductviewPageModule;
 }());
-ProductlistPageModule = __decorate([
+ProductviewPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__productlist__["a" /* ProductlistPage */],
+            __WEBPACK_IMPORTED_MODULE_2__productview__["a" /* ProductviewPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__productlist__["a" /* ProductlistPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__productview__["a" /* ProductviewPage */]),
         ],
     })
-], ProductlistPageModule);
+], ProductviewPageModule);
 
-//# sourceMappingURL=productlist.module.js.map
+//# sourceMappingURL=productview.module.js.map
 
 /***/ })
 

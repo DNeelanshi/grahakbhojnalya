@@ -18,31 +18,15 @@
     <ion-refresher-content refreshingText="Refreshing..." refreshingSpinner="bubbles" pullingText="Pull to refresh"></ion-refresher-content>
   </ion-refresher>
     
-	<div class="top-sec">
-		<ion-list>
+	<div class="top-sec" #scrollMe style="overflow: scroll; height: xyz;">
+		<ion-list *ngFor="let dat of array">
 		  <ion-item>
 		    <ion-avatar item-start>
 		      <img src="assets/img/user.png">
 		    </ion-avatar>
-		    <h3>Username</h3>
-		    <p>Posted 19 june 2017</p>
-		    <h6>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</h6>
-		  </ion-item>
-		   <ion-item>
-		    <ion-avatar item-start>
-		      <img src="assets/img/user.png">
-		    </ion-avatar>
-		    <h3>Username</h3>
-		    <p>Posted 19 june 2017</p>
-		    <h6>Contrary to popular belief, Lorem Ipsum is not simply random text.</h6>
-		  </ion-item>
-		   <ion-item>
-		    <ion-avatar item-start>
-		      <img src="assets/img/user.png">
-		    </ion-avatar>
-		    <h3>Username</h3>
-		    <p>Posted 19 june 2017</p>
-		    <h6>Contrary to popular belief, Lorem Ipsum is not simply random text.</h6>
+		    <h3>{{dat?.name}}</h3>
+		    <p>Posted {{dat.created_at}}</p>
+		    <h6>{{dat?.feedback}}</h6>
 		  </ion-item>
 		</ion-list>
 	</div>

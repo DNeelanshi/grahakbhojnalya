@@ -4,9 +4,9 @@ page-reviews {
 	    margin: 0;
 	    display: inline-block;
 	    list-style: none;
-	    width: 100%;
-	    float: left;
-	    text-align: center;
+	    width: 100%;	   
+		text-align: center;
+		float: left;
 	}
 	.top{
 		width: 100%;
@@ -83,6 +83,7 @@ page-reviews {
 	}
 	.bottom .item{
 		border: none !important;
+		align-items: start;
 	}
 	.bottom .item:last-child .item-inner{
 		    border-bottom: 0.55px solid #c8c7cc !important;
@@ -90,7 +91,7 @@ page-reviews {
    .item ion-thumbnail {
 		width: 55px !important;
 		height: 55px !important;
-		margin: 0 8px 0 0 !important;
+		margin: 13px 8px 0 0 !important;
         min-width: auto;
         min-height: auto;
 
@@ -106,6 +107,7 @@ page-reviews {
 		font-weight: 500;
 		width: 100%;
 		float: left;
+		margin-top: 0 !important;
 	}
 	.bottom h2 span{
 		font-size: 12px;
@@ -120,6 +122,25 @@ page-reviews {
 		font-weight: 400;
 		white-space: normal;
     	letter-spacing: 0.5px;
+	}
+	.ftrbtn{
+		margin: 0;
+    	box-shadow: none;
+	}
+	.footer .toolbar{
+		padding: 0;
+	}
+	.bottom ul{
+		padding: 0;
+	    width: 100%;
+	    float: left;
+	    margin: 0;
+	}
+	.bottom ul li{
+    display: inline-block;
+	}
+	.bottom ul li .icon{
+		font-size: 15px;
 	}
 	/*.footer .star{
 		float: left;

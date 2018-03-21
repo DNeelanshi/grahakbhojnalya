@@ -43,7 +43,9 @@
 	<div class="text-sec">
 		
 		<div class="mid-sec">
-			<h5>Customer Address: <button ion-button clear class="imgbtn" style="background-image:url('assets/img/creat.gif'); background-size:cover"></button></h5>
+			<h5>Customer Address: 
+                            <!--<button ion-button clear class="imgbtn" style="background-image:url('assets/img/creat.gif'); background-size:cover"></button>-->
+                        </h5>
 			<p>{{str1}}</p>
 			<p>{{str2}}</p>
 		</div>
@@ -67,8 +69,8 @@
 	      </ion-thumbnail>
 	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">{{item.product_name}}</h2>
 	      <!--<p>{{item.product_ingredients}}</p>-->
-	      <p item-end class="left-p" >${{item.price_per_plate*item.quantity}}</p>
-	      <h3>Per plate ${{item.price_per_plate}}</h3>
+	      <p item-end class="left-p" >${{item.quantity*item.price_per_plate| number}}</p>
+	      <h3>Per plate ${{item.price_per_plate| number}}</h3>
 	      <div class="itembottom" style="width: 100%; float: left; padding-top: 3px;">
 	      <div class="counter_sec">
 			   <button ion-button clear><ion-icon name="remove"  (click)="remove(item.quantity,item._id)"></ion-icon></button>
@@ -76,7 +78,7 @@
 			   <button ion-button clear><ion-icon name="add" (click)="add(item.quantity,item._id)"></ion-icon></button>
 			  
 		  </div>
-		  <span>${{item.price_per_plate}} x {{item.quantity}}</span>
+		  <span>${{item.price_per_plate| number}} x {{item.quantity}}</span>
 		  </div>
 	      <div class="rghtbtn">
 	      	<button ion-button (click)="delproduct(item._id)">Delete</button>
@@ -87,7 +89,7 @@
 </div>
 <div class="total">
 	<h2 class="left">Subtotal</h2>
-	<h2 class="right">${{total1}}</h2>
+	<h2 class="right">${{total1 | number}}</h2>
 </div>
 </ion-content>
 <ion-footer>

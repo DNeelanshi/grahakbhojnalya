@@ -6,168 +6,111 @@
 -->
 <ion-header>
 
-  <ion-navbar color="theme-header">
-    <ion-title>
-      Chef Details
-      <p>Online Chef list</p>
-    </ion-title>
-    
-  </ion-navbar>
+	<ion-navbar color="theme-header">
+		<ion-title>
+			Chef Details
+			<!--<p>Online Chef list</p>-->
+		</ion-title>
+
+	</ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
 	<div class="top-sec" padding>
-	<div class="top">
-		<ion-grid style="padding: 0px;">
-		<ion-row *ngFor="let dat of array">
-			<ion-col col-3 style="padding-left: 0px">
-				<div class="image">
-					<img *ngIf ="dat?.user_image"  src="{{dat?.user_image}}">
-             <img *ngIf ="!dat?.user_image" src="assets/img/us.png">
-				</div>
-			</ion-col>
-			<ion-col col-9>
-                            <div class="text"  >
-					<h2>{{dat?.firstname}} {{dat?.lastname}}</h2>
-				    <h3><span><ion-icon name="pin"></ion-icon></span>{{dat?.address}}</h3>
-				    <p>$500 Min order</p>
-				    <h5 (click)="review()">
-				     <ul>
-				     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>
-				     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>
-				     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>
-				     	<li><ion-icon name="star" color="lightgray"></ion-icon></li>
-				     	<li><ion-icon name="star" color="lightgray"></ion-icon></li>
-				     </ul>
-				    View Reviews</h5>
-				</div>
-				
-			</ion-col>
-			
-		</ion-row>
-	</ion-grid>
-	</div>
-</div>
-	
-	<div class="special" *ngFor="let dats of array">
-		<h3>Specialities</h3>
-		<ion-list *ngFor="let spec of dats.specialties">
-			 <ion-item >
-			      <ion-thumbnail item-start>
-                                    
-			        <img *ngIf="spec?.specialities_product_image1" src="{{spec?.specialities_product_image1}}">
-                               <img *ngIf="!spec?.specialities_product_image1" src="assets/img/option.png">
-                               
-			      </ion-thumbnail>
-			      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">{{spec?.specialties_product}}</h2>
-			      <p>{{spec?.add_ingredients}}</p>
-			      <!--<ion-note item-end="" class="note note-ios">3/4</ion-note>-->
-		    </ion-item>
-<!--		     <ion-item>
-			      <ion-thumbnail item-start>
-			        <img src="assets/img/southfod.png">
-			      </ion-thumbnail>
-			      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">South indian food</h2>
-			      <p>Idli,sambhar, Kerla</p>
-			      <ion-note item-end="" class="note note-ios">3/4</ion-note>
-		    </ion-item>-->
-		</ion-list>
-	</div>
-	<div class="product" padding>
-		<ion-grid style="padding:0px;"  *ngFor="let datss of array" >
-			<div class="text">
-					<h3>Our Products</h3>
-				</div>
-                          
-			<ion-row>
-				
-				<ion-col col-12 style="padding-left: 0px">
-                                    <ion-slides slidesPerView="3">
-                                         <ion-slide  *ngFor="let prod of datss.products">
-                                            <ion-row >
-                                             <ion-col>
-                                             <div class="colm" (click)="dishview(prod)">
-						<div class="image" style="width: 100%; float: left; height:90px;">
-							<img *ngIf ="prod?.product_image0" src="{{prod?.product_image0}}" style="width: 100%; float: left; height:100%;">
-                                                         <img *ngIf = "!prod?.product_image0" src="assets/img/option.png" >
+		<div class="top">
+			<ion-grid style="padding: 0px;">
+				<ion-row *ngFor="let dat of array">
+					<ion-col col-3 style="padding-left: 0px">
+						<div class="image">
+							<img *ngIf="dat?.user_image" src="{{dat?.user_image}}">
+							<img *ngIf="!dat?.user_image" src="assets/img/us.png">
 						</div>
-						<div class="text" style="position: absolute; text-align: center;">
-							<p>{{prod?.product_name}}</p>
+					</ion-col>
+					<ion-col col-9>
+						<div class="text">
+							<h2>{{dat?.firstname}} {{dat?.lastname}}</h2>
+							<h3>
+								<span>
+									<ion-icon name="pin"></ion-icon>
+								</span>{{dat?.address}}</h3>
+							<p>$500 Min order</p>
+							<h5 (click)="review()">
+								<ul>
+									<li>
+										<ion-icon name="{{starone}}" color="theme-header"></ion-icon>
+									</li>
+									<li>
+										<ion-icon name="{{startwo}}" color="theme-header"></ion-icon>
+									</li>
+									<li>
+										<ion-icon name="{{starthree}}" color="theme-header"></ion-icon>
+									</li>
+									<li>
+										<ion-icon name="{{starfour}}" color="theme-header"></ion-icon>
+									</li>
+									<li>
+										<ion-icon name="{{starfive}}" color="theme-header"></ion-icon>
+									</li>
+								</ul>
+								View Reviews</h5>
 						</div>
-<!--						<div class="offer" style="position: absolute; background-color: #2bb600; right: 4px; top: 4px; border-radius:2px; padding: 2px 5px;">
+
+					</ion-col>
+
+				</ion-row>
+			</ion-grid>
+		</div>
+	</div>
+	<div class="product" style="width: 100%; float: left; padding-top:5px !important;">
+		<h3>Our Products</h3>
+		<ion-list *ngFor="let datss of array">
+                    <div   *ngFor="let prod of datss.products">
+			<ion-item (click)="dishview(prod)" *ngIf="prod?.status == 1">
+				<ion-thumbnail item-start (click)="dishview(prod)">
+					<img *ngIf ="prod?.product_image0" src="{{prod?.product_image0}}">
+             <img *ngIf = "!prod?.product_image0" src="assets/img/option.png">
+				</ion-thumbnail>
+				<h2>{{prod?.product_name}}</h2>
+                                <p style="    max-height: 27px; overflow: hidden;" [innerHTML]="prod?.product_description"></p>
+				<p>${{prod?.product_price | number}}</p>
+				<!--						<div class="offer" style="position: absolute; background-color: #2bb600; right: 4px; top: 4px; border-radius:2px; padding: 2px 5px;">
 							<p style="margin: 0; font-size: 11px; color: #fff; font-weight: 400;">20% off</p>
 						</div>-->
-					</div>
-                                             </ion-col>
-<!--                                                  <ion-col col-4 >
-                                             <div class="colm" (click)="dishview(prod)">
-						<div class="image" style="width: 100%; float: left;">
-							<img *ngIf ="prod?.product_image0" src="{{prod?.product_image0}}" style="width: 100%; float: left;">
-                                                      
-                                                         <img *ngIf ="!prod?.product_image0" src="assets/img/option.png">
-						</div>
-						<div class="text" style="position: absolute; text-align: center;">
-							<p>{{prod?.product_name}}</p>
-						</div>
-						<div class="offer" style="position: absolute; background-color: #2bb600; right: 4px; top: 4px; border-radius:2px; padding: 2px 5px;">
-							<p style="margin: 0; font-size: 11px; color: #fff; font-weight: 400;">20% off</p>
-						</div>
-					</div>
-                                             </ion-col>
-                                                  <ion-col col-4 >
-                                             <div class="colm" (click)="dishview(prod)">
-						<div class="image" style="width: 100%; float: left;">
-							<img *ngIf ="prod?.product_image0" src="{{prod?.product_image0}}" style="width: 100%; float: left;">
-                                                      
-                                                         <img *ngIf ="!prod?.product_image0" src="assets/img/option.png">
-						</div>
-						<div class="text" style="position: absolute; text-align: center;">
-							<p>{{prod?.product_name}}</p>
-						</div>
-						<div class="offer" style="position: absolute; background-color: #2bb600; right: 4px; top: 4px; border-radius:2px; padding: 2px 5px;">
-							<p style="margin: 0; font-size: 11px; color: #fff; font-weight: 400;">20% off</p>
-						</div>
-					</div>
-                                             </ion-col>-->
-                                                </ion-row>
-  
-  </ion-slide>
-                    
+			</ion-item>
 
-					
-                                    </ion-slides>
-				</ion-col>
-<!--				<ion-col col-4 style="padding: 5px 2.5px;">
-					<div class="colm">
-						<div class="image" style="width: 100%; float: left;">
-							<img src="assets/img/productone.png" style="width: 100%; float: left;">
-						</div>
-						<div class="text" style="position: absolute; text-align: center;">
-							<p>Honey-Chipotle Shrimp Salad</p>
-						</div>
-					</div>
-				</ion-col>
-				<ion-col col-4 style="padding-right: 0px">
-					<div class="colm">
-						<div class="image" style="width: 100%; float: left;">
-							<img src="assets/img/productone.png" style="width: 100%; float: left;">
-						</div>
-						<div class="text" style="position: absolute; text-align: center;">
-							<p>Honey-Chipotle Shrimp Salad</p>
-						</div>
-						<div class="offer" style="position: absolute; background-color: #ffe400; right: 4px; top: 4px; border-radius:2px; padding: 2px 5px;">
-							<p style="margin: 0; font-size: 11px; color: #000; font-weight: 400;">10% off</p>
-						</div>
-					</div>
-				</ion-col>-->
-			</ion-row>
-		</ion-grid>
+		
+                        </div>
+		</ion-list>
+
 	</div>
+	<div class="special" >
+		<h3>Specialities</h3>
+              
+		<ion-list *ngFor="let dats of array" >
+                    <div *ngFor="let spec of dats.specialties">
+			<ion-item>
+				<ion-thumbnail item-start>
+
+					<img *ngIf="spec?.specialities_product_image1" src="{{spec?.specialities_product_image1}}">
+					<img *ngIf="!spec?.specialities_product_image1" src="assets/img/option.png">
+
+				</ion-thumbnail>
+				<h2>
+					{{spec?.specialties_product}}</h2>
+				<!--<p>{{spec?.add_ingredients}}</p>-->
+				<!--<ion-note item-end="" class="note note-ios">3/4</ion-note>-->
+			</ion-item>
+					     
+                    </div>
+		</ion-list>
+	</div>
+
 	<div class="about">
 		<h3>About Me</h3>
-		<p>Speaking enthusiastically about and demonstrating their passion for food, flavours and delectable culinary creations from every corner of the globe, our celebrity chefs have unrivalled knowledge and expertise when it comes to all things culinary!</p>
+		<p>Speaking enthusiastically about and demonstrating their passion for food, flavours and delectable culinary creations from
+			every corner of the globe, our celebrity chefs have unrivalled knowledge and expertise when it comes to all things culinary!</p>
 	</div>
 	<!-- <div class="acrdin">
 

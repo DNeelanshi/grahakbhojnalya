@@ -430,6 +430,14 @@ let options = new RequestOptions({ headers: headers})
   remove(qntity){
       if(this.quantity == this.splarr.minimum_order){
           console.log(this.quantity)
+          let toast = this.toastCtrl.create({
+    message: 'Minimum order quantity must be :'+' '+this.splarr.minimum_order,
+    duration: 1000,
+    position: 'top'
+  });
+;
+
+  toast.present();
       }
           else{
           this.quantity = parseFloat(qntity)-1;

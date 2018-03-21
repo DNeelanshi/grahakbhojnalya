@@ -305,6 +305,7 @@ export class CartPage {
             var proname:any=[];
              var proquant:any=[];
              var orderservice:any=[];
+             var proprice:any=[];
              console.log(this.data.bookdt.length);
            if(this.data.bookdt.length < 17){
                console.log(this.datetosend)
@@ -327,6 +328,7 @@ export class CartPage {
         proname.push(this.getcrt[j].product_name)
         proquant.push(this.getcrt[j].quantity)
         orderservice.push(this.getcrt[j].order_prefrence)
+        proprice.push(this.getcrt[j].price_per_plate)
     }
     console.log(proid,proname,proquant,orderservice);
             proid = proid.join(':');
@@ -345,7 +347,8 @@ export class CartPage {
     products_name:proname,
     order_prefrence:orderservice,
     payment_status:1,
-    txn_id:  this.trans_id
+    txn_id:  this.trans_id,
+    product_price:proprice
            }
            console.log(postdata);
      var Serialized = this.serializeObj(postdata);

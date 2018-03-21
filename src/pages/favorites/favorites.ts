@@ -29,22 +29,24 @@ nodata=0;
     public toastCtrl:ToastController,
     public loadingCtrl:LoadingController,
     public events: Events) {
-     var Loading = this.loadingCtrl.create({
-    spinner: 'hide',
-    cssClass: 'loader',
-    content: "<img src='assets/img/icons3.gif'>",
-    dismissOnPageChange:true
-  });
-
-  Loading.present().then(() => {
-    this.getfavourites();
-    Loading.dismiss();
-    })
-    
-//      events.subscribe('index', (res) => {
-//     console.log(res);
-//      this.getfavourites();
+//     var Loading = this.loadingCtrl.create({
+//    spinner: 'hide',
+//    cssClass: 'loader',
+//    content: "<img src='assets/img/icons3.gif'>",
+//    dismissOnPageChange:true
+//  });
+//
+//  Loading.present().then(() => {
+//    this.getfavourites();
+//    Loading.dismiss();
 //    })
+    
+         events.subscribe('index', (res) => {
+             console.log(res);
+       if(res == 1){
+           this.getfavourites();
+       }
+            })
   }
     doRefresh(refresher) {
     console.log('Begin async operation', refresher);

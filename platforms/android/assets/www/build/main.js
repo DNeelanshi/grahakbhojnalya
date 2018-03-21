@@ -1,6 +1,6 @@
-webpackJsonp([25],{
+webpackJsonp([26],{
 
-/***/ 118:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45,7 +45,7 @@ AddwalletPage = __decorate([
 
 /***/ }),
 
-/***/ 119:
+/***/ 120:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -53,12 +53,12 @@ AddwalletPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mapmodal_mapmodal__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signin_signin__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signin_signin__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__nominatimap_nominatimap__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_geolocation__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_geolocation__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_native_geocoder__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_moment__);
@@ -502,7 +502,7 @@ LocationPage = __decorate([
 
 /***/ }),
 
-/***/ 120:
+/***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -511,7 +511,7 @@ LocationPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(7);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -534,6 +534,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var FavoritesPage = (function () {
     function FavoritesPage(navCtrl, navParams, appsetting, http, alertCtrl, toastCtrl, loadingCtrl, events) {
+        //     var Loading = this.loadingCtrl.create({
+        //    spinner: 'hide',
+        //    cssClass: 'loader',
+        //    content: "<img src='assets/img/icons3.gif'>",
+        //    dismissOnPageChange:true
+        //  });
+        //
+        //  Loading.present().then(() => {
+        //    this.getfavourites();
+        //    Loading.dismiss();
+        //    })
         var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -546,20 +557,12 @@ var FavoritesPage = (function () {
         this.favourites = [];
         this.iconname = 'heart';
         this.nodata = 0;
-        var Loading = this.loadingCtrl.create({
-            spinner: 'hide',
-            cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
-            dismissOnPageChange: true
+        events.subscribe('index', function (res) {
+            console.log(res);
+            if (res == 1) {
+                _this.getfavourites();
+            }
         });
-        Loading.present().then(function () {
-            _this.getfavourites();
-            Loading.dismiss();
-        });
-        //      events.subscribe('index', (res) => {
-        //     console.log(res);
-        //      this.getfavourites();
-        //    })
     }
     FavoritesPage.prototype.doRefresh = function (refresher) {
         var _this = this;
@@ -726,16 +729,16 @@ FavoritesPage = __decorate([
 
 /***/ }),
 
-/***/ 121:
+/***/ 122:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RafahoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__orderdetial_orderdetial__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__selectdish_selectdish__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__orderdetial_orderdetial__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__selectdish_selectdish__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_appsetting__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -762,6 +765,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var RafahoPage = (function () {
     function RafahoPage(navCtrl, navParams, alertCtrl, loadCtrl, appsetting, toastCtrl, events, http, modalCtrl) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.alertCtrl = alertCtrl;
@@ -780,14 +784,15 @@ var RafahoPage = (function () {
         this.historycompleted();
         this.historycanceled();
         this.pet = "kittens";
-        //      events.subscribe('index', (res) => {
-        //     console.log(res);
-        //  this.activeorders();
-        //           this.pendingorders();
-        //           this.historycompleted();
-        //           this.historycanceled();
-        //           this.pet = "kittens";
-        //    })
+        events.subscribe('index', function (res) {
+            console.log(res);
+            if (res == 2) {
+                _this.activeorders();
+                _this.pendingorders();
+                _this.historycompleted();
+                _this.historycanceled();
+            }
+        });
     }
     RafahoPage.prototype.doRefresh = function (refresher) {
         var _this = this;
@@ -1043,14 +1048,14 @@ RafahoPage = __decorate([
 
 /***/ }),
 
-/***/ 122:
+/***/ 123:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderdetialPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1137,7 +1142,7 @@ OrderdetialPage = __decorate([
 
 /***/ }),
 
-/***/ 123:
+/***/ 124:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1186,16 +1191,16 @@ SelectdishPage = __decorate([
 
 /***/ }),
 
-/***/ 124:
+/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChefdetialsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reviews_reviews__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reviews_reviews__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__productview_productview__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_appsetting__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1219,11 +1224,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ChefdetialsPage = (function () {
-    // diseases = [
-    //   { title: "About Me", description: "Speaking enthusiastically about and demonstrating their passion for food, flavours and delectable culinary creations from every corner of the globe, our celebrity chefs have unrivalled knowledge and expertise when it comes to all things culinary!" },
-    //   { title: "Work History", description: "Multiple sclerosis (MS) is an autoimmune disease in which the body's immune system mistakenly attacks myelin, the fatty substance that surrounds and protects the nerve fibers in the central nervous system." },
-    //   { title: "list of award", description: "Crohn's disease and ulcerative colitis (UC), both also known as inflammatory bowel diseases (IBD), are autoimmune diseases in which the body's immune system attacks the intestines." }
-    // ];
     function ChefdetialsPage(navCtrl, appsetting, http, navParams, toastCtrl) {
         this.navCtrl = navCtrl;
         this.appsetting = appsetting;
@@ -1232,6 +1232,11 @@ var ChefdetialsPage = (function () {
         this.toastCtrl = toastCtrl;
         this.array = [];
         this.splarray = [];
+        this.starone = 'star-outline';
+        this.startwo = 'star-outline';
+        this.starthree = 'star-outline';
+        this.starfour = 'star-outline';
+        this.starfive = 'star-outline';
         //       alert('hjhh');
     }
     ChefdetialsPage.prototype.ionViewDidLoad = function () {
@@ -1254,8 +1259,76 @@ var ChefdetialsPage = (function () {
             this.array.push(JSON.parse(localStorage.getItem('Chefdetail')));
             console.log(this.array);
             console.log(this.array[0].products);
+            console.log(this.array[0].avgrating);
+            if (this.array[0].avgrating == 1) {
+                this.starone = 'star';
+            }
+            else if (this.array[0].avgrating == 2) {
+                this.starone = 'star';
+                this.startwo = 'star';
+            }
+            else if (this.array[0].avgrating == 3) {
+                this.starone = 'star';
+                this.startwo = 'star';
+                this.starthree = 'star';
+            }
+            else if (this.array[0].avgrating == 4) {
+                this.starone = 'star';
+                this.startwo = 'star';
+                this.starthree = 'star';
+                this.starfour = 'star';
+            }
+            else if (this.array[0].avgrating == 5) {
+                this.starone = 'star';
+                this.startwo = 'star';
+                this.starthree = 'star';
+                this.starfour = 'star';
+                this.starfive = 'star';
+            }
+            else if ((1.1 <= this.array[0].avgrating) && (this.array[0].avgrating <= 1.5)) {
+                this.starone = 'star-half';
+            }
+            else if ((1.6 <= this.array[0].avgrating) && (this.array[0].avgrating <= 1.9)) {
+                this.starone = 'star';
+                this.startwo = 'star';
+            }
+            else if ((2.1 <= this.array[0].avgrating) && (this.array[0].avgrating <= 2.5)) {
+                this.starone = 'star';
+                this.startwo = 'star';
+                this.starthree = 'star-half';
+            }
+            else if ((2.6 <= this.array[0].avgrating) && (this.array[0].avgrating <= 2.9)) {
+                this.starone = 'star';
+                this.startwo = 'star';
+                this.starthree = 'star';
+            }
+            else if ((3.1 <= this.array[0].avgrating) && (this.array[0].avgrating <= 3.5)) {
+                this.starone = 'star';
+                this.startwo = 'star';
+                this.starthree = 'star';
+                this.starfour = 'star-half';
+            }
+            else if ((3.6 <= this.array[0].avgrating) && (this.array[0].avgrating <= 3.9)) {
+                this.starone = 'star';
+                this.startwo = 'star';
+                this.starthree = 'star';
+                this.starfour = 'star';
+            }
+            else if ((4.1 <= this.array[0].avgrating) && (this.array[0].avgrating <= 4.5)) {
+                this.starone = 'star';
+                this.startwo = 'star';
+                this.starthree = 'star';
+                this.starfour = 'star-half';
+            }
+            else if ((4.6 <= this.array[0].avgrating) && (this.array[0].avgrating <= 4.9)) {
+                this.starone = 'star';
+                this.startwo = 'star';
+                this.starthree = 'star';
+                this.starfour = 'star';
+                this.starfive = 'star';
+            }
             this.splarray = JSON.parse(localStorage.getItem('Chefdetail'));
-            console.log(this.splarray.products);
+            console.log(this.splarray.productss);
         }
     };
     ChefdetialsPage.prototype.dishview = function (prod) {
@@ -1271,7 +1344,7 @@ var ChefdetialsPage = (function () {
 }());
 ChefdetialsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-chefdetials',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\chefdetials\chefdetials.html"*/'<!--\n  Generated template for the ChefdetialsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="theme-header">\n    <ion-title>\n      Chef Details\n      <p>Online Chef list</p>\n    </ion-title>\n    \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n	<div class="top-sec" padding>\n	<div class="top">\n		<ion-grid style="padding: 0px;">\n		<ion-row *ngFor="let dat of array">\n			<ion-col col-3 style="padding-left: 0px">\n				<div class="image">\n					<img *ngIf ="dat?.user_image"  src="{{dat?.user_image}}">\n             <img *ngIf ="!dat?.user_image" src="assets/img/us.png">\n				</div>\n			</ion-col>\n			<ion-col col-9>\n                            <div class="text"  >\n					<h2>{{dat?.firstname}} {{dat?.lastname}}</h2>\n				    <h3><span><ion-icon name="pin"></ion-icon></span>{{dat?.address}}</h3>\n				    <p>$500 Min order</p>\n				    <h5 (click)="review()">\n				     <ul>\n				     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="star" color="lightgray"></ion-icon></li>\n				     	<li><ion-icon name="star" color="lightgray"></ion-icon></li>\n				     </ul>\n				    View Reviews</h5>\n				</div>\n				\n			</ion-col>\n			\n		</ion-row>\n	</ion-grid>\n	</div>\n</div>\n	\n	<div class="special" *ngFor="let dats of array">\n		<h3>Specialities</h3>\n		<ion-list *ngFor="let spec of dats.specialties">\n			 <ion-item >\n			      <ion-thumbnail item-start>\n                                    \n			        <img *ngIf="spec?.specialities_product_image1" src="{{spec?.specialities_product_image1}}">\n                               <img *ngIf="!spec?.specialities_product_image1" src="assets/img/option.png">\n                               \n			      </ion-thumbnail>\n			      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">{{spec?.specialties_product}}</h2>\n			      <p>{{spec?.add_ingredients}}</p>\n			      <!--<ion-note item-end="" class="note note-ios">3/4</ion-note>-->\n		    </ion-item>\n<!--		     <ion-item>\n			      <ion-thumbnail item-start>\n			        <img src="assets/img/southfod.png">\n			      </ion-thumbnail>\n			      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">South indian food</h2>\n			      <p>Idli,sambhar, Kerla</p>\n			      <ion-note item-end="" class="note note-ios">3/4</ion-note>\n		    </ion-item>-->\n		</ion-list>\n	</div>\n	<div class="product" padding>\n		<ion-grid style="padding:0px;"  *ngFor="let datss of array" >\n			<div class="text">\n					<h3>Our Products</h3>\n				</div>\n                          \n			<ion-row>\n				\n				<ion-col col-12 style="padding-left: 0px">\n                                    <ion-slides slidesPerView="3">\n                                         <ion-slide  *ngFor="let prod of datss.products">\n                                            <ion-row >\n                                             <ion-col>\n                                             <div class="colm" (click)="dishview(prod)">\n						<div class="image" style="width: 100%; float: left; height:90px;">\n							<img *ngIf ="prod?.product_image0" src="{{prod?.product_image0}}" style="width: 100%; float: left; height:100%;">\n                                                         <img *ngIf = "!prod?.product_image0" src="assets/img/option.png" >\n						</div>\n						<div class="text" style="position: absolute; text-align: center;">\n							<p>{{prod?.product_name}}</p>\n						</div>\n<!--						<div class="offer" style="position: absolute; background-color: #2bb600; right: 4px; top: 4px; border-radius:2px; padding: 2px 5px;">\n							<p style="margin: 0; font-size: 11px; color: #fff; font-weight: 400;">20% off</p>\n						</div>-->\n					</div>\n                                             </ion-col>\n<!--                                                  <ion-col col-4 >\n                                             <div class="colm" (click)="dishview(prod)">\n						<div class="image" style="width: 100%; float: left;">\n							<img *ngIf ="prod?.product_image0" src="{{prod?.product_image0}}" style="width: 100%; float: left;">\n                                                      \n                                                         <img *ngIf ="!prod?.product_image0" src="assets/img/option.png">\n						</div>\n						<div class="text" style="position: absolute; text-align: center;">\n							<p>{{prod?.product_name}}</p>\n						</div>\n						<div class="offer" style="position: absolute; background-color: #2bb600; right: 4px; top: 4px; border-radius:2px; padding: 2px 5px;">\n							<p style="margin: 0; font-size: 11px; color: #fff; font-weight: 400;">20% off</p>\n						</div>\n					</div>\n                                             </ion-col>\n                                                  <ion-col col-4 >\n                                             <div class="colm" (click)="dishview(prod)">\n						<div class="image" style="width: 100%; float: left;">\n							<img *ngIf ="prod?.product_image0" src="{{prod?.product_image0}}" style="width: 100%; float: left;">\n                                                      \n                                                         <img *ngIf ="!prod?.product_image0" src="assets/img/option.png">\n						</div>\n						<div class="text" style="position: absolute; text-align: center;">\n							<p>{{prod?.product_name}}</p>\n						</div>\n						<div class="offer" style="position: absolute; background-color: #2bb600; right: 4px; top: 4px; border-radius:2px; padding: 2px 5px;">\n							<p style="margin: 0; font-size: 11px; color: #fff; font-weight: 400;">20% off</p>\n						</div>\n					</div>\n                                             </ion-col>-->\n                                                </ion-row>\n  \n  </ion-slide>\n                    \n\n					\n                                    </ion-slides>\n				</ion-col>\n<!--				<ion-col col-4 style="padding: 5px 2.5px;">\n					<div class="colm">\n						<div class="image" style="width: 100%; float: left;">\n							<img src="assets/img/productone.png" style="width: 100%; float: left;">\n						</div>\n						<div class="text" style="position: absolute; text-align: center;">\n							<p>Honey-Chipotle Shrimp Salad</p>\n						</div>\n					</div>\n				</ion-col>\n				<ion-col col-4 style="padding-right: 0px">\n					<div class="colm">\n						<div class="image" style="width: 100%; float: left;">\n							<img src="assets/img/productone.png" style="width: 100%; float: left;">\n						</div>\n						<div class="text" style="position: absolute; text-align: center;">\n							<p>Honey-Chipotle Shrimp Salad</p>\n						</div>\n						<div class="offer" style="position: absolute; background-color: #ffe400; right: 4px; top: 4px; border-radius:2px; padding: 2px 5px;">\n							<p style="margin: 0; font-size: 11px; color: #000; font-weight: 400;">10% off</p>\n						</div>\n					</div>\n				</ion-col>-->\n			</ion-row>\n		</ion-grid>\n	</div>\n	<div class="about">\n		<h3>About Me</h3>\n		<p>Speaking enthusiastically about and demonstrating their passion for food, flavours and delectable culinary creations from every corner of the globe, our celebrity chefs have unrivalled knowledge and expertise when it comes to all things culinary!</p>\n	</div>\n	<!-- <div class="acrdin">\n\n		  <ion-list style="margin-bottom: 0px;">\n		  <ion-item *ngFor="let d of diseases; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">\n		    <h3>\n		      {{d.title}}\n		      <ion-icon color="success" item-right [name]="isGroupShown(i) ? \'arrow-up\' : \'arrow-forward\'" style="margin: 0; float: right;"></ion-icon>\n		    </h3>\n		    <div class="dsprtion" *ngIf="isGroupShown(i)">{{d.description}}</div>\n		  </ion-item>\n		</ion-list>\n	</div> -->\n\n\n\n\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\chefdetials\chefdetials.html"*/,
+        selector: 'page-chefdetials',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\chefdetials\chefdetials.html"*/'<!--\n  Generated template for the ChefdetialsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n	<ion-navbar color="theme-header">\n		<ion-title>\n			Chef Details\n			<!--<p>Online Chef list</p>-->\n		</ion-title>\n\n	</ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n	<div class="top-sec" padding>\n		<div class="top">\n			<ion-grid style="padding: 0px;">\n				<ion-row *ngFor="let dat of array">\n					<ion-col col-3 style="padding-left: 0px">\n						<div class="image">\n							<img *ngIf="dat?.user_image" src="{{dat?.user_image}}">\n							<img *ngIf="!dat?.user_image" src="assets/img/us.png">\n						</div>\n					</ion-col>\n					<ion-col col-9>\n						<div class="text">\n							<h2>{{dat?.firstname}} {{dat?.lastname}}</h2>\n							<h3>\n								<span>\n									<ion-icon name="pin"></ion-icon>\n								</span>{{dat?.address}}</h3>\n							<p>$500 Min order</p>\n							<h5 (click)="review()">\n								<ul>\n									<li>\n										<ion-icon name="{{starone}}" color="theme-header"></ion-icon>\n									</li>\n									<li>\n										<ion-icon name="{{startwo}}" color="theme-header"></ion-icon>\n									</li>\n									<li>\n										<ion-icon name="{{starthree}}" color="theme-header"></ion-icon>\n									</li>\n									<li>\n										<ion-icon name="{{starfour}}" color="theme-header"></ion-icon>\n									</li>\n									<li>\n										<ion-icon name="{{starfive}}" color="theme-header"></ion-icon>\n									</li>\n								</ul>\n								View Reviews</h5>\n						</div>\n\n					</ion-col>\n\n				</ion-row>\n			</ion-grid>\n		</div>\n	</div>\n	<div class="product" style="width: 100%; float: left; padding-top:5px !important;">\n		<h3>Our Products</h3>\n		<ion-list *ngFor="let datss of array">\n                    <div   *ngFor="let prod of datss.products">\n			<ion-item (click)="dishview(prod)" *ngIf="prod?.status == 1">\n				<ion-thumbnail item-start (click)="dishview(prod)">\n					<img *ngIf ="prod?.product_image0" src="{{prod?.product_image0}}">\n             <img *ngIf = "!prod?.product_image0" src="assets/img/option.png">\n				</ion-thumbnail>\n				<h2>{{prod?.product_name}}</h2>\n                                <p style="    max-height: 27px; overflow: hidden;" [innerHTML]="prod?.product_description"></p>\n				<p>${{prod?.product_price}}</p>\n				<!--						<div class="offer" style="position: absolute; background-color: #2bb600; right: 4px; top: 4px; border-radius:2px; padding: 2px 5px;">\n							<p style="margin: 0; font-size: 11px; color: #fff; font-weight: 400;">20% off</p>\n						</div>-->\n			</ion-item>\n\n		\n                        </div>\n		</ion-list>\n\n	</div>\n	<div class="special" >\n		<h3>Specialities</h3>\n              \n		<ion-list *ngFor="let dats of array" >\n                    <div *ngFor="let spec of dats.specialties">\n			<ion-item>\n				<ion-thumbnail item-start>\n\n					<img *ngIf="spec?.specialities_product_image1" src="{{spec?.specialities_product_image1}}">\n					<img *ngIf="!spec?.specialities_product_image1" src="assets/img/option.png">\n\n				</ion-thumbnail>\n				<h2>\n					{{spec?.specialties_product}}</h2>\n				<!--<p>{{spec?.add_ingredients}}</p>-->\n				<!--<ion-note item-end="" class="note note-ios">3/4</ion-note>-->\n			</ion-item>\n					     \n                    </div>\n		</ion-list>\n	</div>\n\n	<div class="about">\n		<h3>About Me</h3>\n		<p>Speaking enthusiastically about and demonstrating their passion for food, flavours and delectable culinary creations from\n			every corner of the globe, our celebrity chefs have unrivalled knowledge and expertise when it comes to all things culinary!</p>\n	</div>\n	<!-- <div class="acrdin">\n\n		  <ion-list style="margin-bottom: 0px;">\n		  <ion-item *ngFor="let d of diseases; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">\n		    <h3>\n		      {{d.title}}\n		      <ion-icon color="success" item-right [name]="isGroupShown(i) ? \'arrow-up\' : \'arrow-forward\'" style="margin: 0; float: right;"></ion-icon>\n		    </h3>\n		    <div class="dsprtion" *ngIf="isGroupShown(i)">{{d.description}}</div>\n		  </ion-item>\n		</ion-list>\n	</div> -->\n\n\n\n\n</ion-content>'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\chefdetials\chefdetials.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_5__providers_appsetting__["a" /* Appsetting */],
@@ -1283,13 +1356,16 @@ ChefdetialsPage = __decorate([
 
 /***/ }),
 
-/***/ 125:
+/***/ 126:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewsPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RatingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reviews_reviews__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1301,34 +1377,131 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
+
+
 /**
- * Generated class for the ReviewsPage page.
+ * Generated class for the RatingPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ReviewsPage = (function () {
-    function ReviewsPage(navCtrl, navParams) {
+var RatingPage = (function () {
+    function RatingPage(navCtrl, navParams, viewCtrl, appsetting, platform, http, loadingCtrl, alertCtrl, toastCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.appsetting = appsetting;
+        this.platform = platform;
+        this.http = http;
+        this.loadingCtrl = loadingCtrl;
+        this.alertCtrl = alertCtrl;
+        this.toastCtrl = toastCtrl;
+        this.data = {};
     }
-    ReviewsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ReviewsPage');
+    RatingPage.prototype.onModelChange = function (number) {
+        console.log(number);
+        this.rating = number;
     };
-    return ReviewsPage;
+    RatingPage.prototype.adddata = function () {
+        var _this = this;
+        console.log(this.data.comment);
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["RequestOptions"]({ headers: headers });
+        var userid = JSON.parse(localStorage.getItem('UserDetail'))._id;
+        if (localStorage.getItem('Chefdetail')) {
+            var chefid = JSON.parse(localStorage.getItem('Chefdetail'))._id;
+        }
+        var postdata = {
+            user_id: userid,
+            rating: this.rating,
+            chef_id: chefid,
+            comment: this.data.comment
+        };
+        console.log(postdata);
+        var Serialized = this.serializeObj(postdata);
+        this.http.post(this.appsetting.myGlobalVar + 'user/add_comment_and_rating', Serialized, options).map(function (res) { return res.json(); }).subscribe(function (response) {
+            console.log(response);
+            if (response.message == 'User Comment already exits!!') {
+                _this.AlertMsg('Your comment already exists!!<br>First delete your comment');
+            }
+            else if (response.status == true) {
+                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__reviews_reviews__["a" /* ReviewsPage */]);
+            }
+            else if (response.message == "Unable to add Comment and Rating!!") {
+                _this.AlertMsg1('Rate this chef');
+            }
+        });
+    };
+    RatingPage.prototype.AlertMsg = function (msg) {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'RAFAHO',
+            message: msg,
+            buttons: [
+                {
+                    text: 'ok',
+                    role: 'ok',
+                    handler: function () {
+                        console.log('Continue clicked');
+                        _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__reviews_reviews__["a" /* ReviewsPage */]);
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    RatingPage.prototype.AlertMsg1 = function (msg) {
+        var alert = this.alertCtrl.create({
+            title: 'RAFAHO',
+            message: msg,
+            buttons: [
+                {
+                    text: 'ok',
+                    role: 'ok',
+                    handler: function () {
+                        console.log('Continue clicked');
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    RatingPage.prototype.serializeObj = function (obj) {
+        var result = [];
+        for (var property in obj)
+            result.push(encodeURIComponent(property) + "=" + encodeURIComponent(obj[property]));
+        return result.join("&");
+    };
+    RatingPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RatingPage');
+    };
+    RatingPage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    return RatingPage;
 }());
-ReviewsPage = __decorate([
+RatingPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-reviews',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\reviews\reviews.html"*/'<!--\n  Generated template for the ReviewsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="theme-header">\n    <ion-title>View Reviews</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n	<div class="top">\n		<ion-list style="margin: 0;">\n		  <ion-item>\n		    <ion-avatar item-start>\n		      <img src="assets/img/profile.png">\n		    </ion-avatar>\n		    <h2>Chef Samuel Linder</h2>\n			<h3><span><ion-icon name="pin"></ion-icon></span> New York</h3>\n\n		      <div class="btn" item-end>\n		      		<ul>\n				     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="star" color="lightgray"></ion-icon></li>\n				     	<li><ion-icon name="star" color="lightgray"></ion-icon></li>\n				     </ul>\n				    <h4>262 Reviews</h4>\n		      </div>     \n		 \n		  </ion-item>\n		</ion-list>\n	</div>\n	<div class="bottom">\n		<ion-list>\n		  <ion-item>\n		    <ion-thumbnail item-start>\n		        <img src="assets/img/southfod.png">\n		    </ion-thumbnail>\n		    <h2>Good Chef <span>12/06/2017</span></h2>\n		    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>\n		  </ion-item>\n		   <ion-item>\n		    <ion-thumbnail item-start>\n	          <img src="assets/img/southfood.png">\n	        </ion-thumbnail>\n		    <h2>Good Chef <span>12/06/2017</span></h2>\n		    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>\n		  </ion-item>\n		   <ion-item>\n		    <ion-thumbnail item-start>\n		        <img src="assets/img/southfod.png">\n		    </ion-thumbnail>\n		    <h2>Good Chef <span>12/06/2017</span></h2>\n		    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>\n		  </ion-item>\n		</ion-list>\n	</div>\n</ion-content>\n<!-- <ion-footer>\n  <ion-toolbar style="padding: 6px;">\n		<div class="text">\n			 <ion-textarea class="enter" placeholder="Enter your text"></ion-textarea>\n		</div>\n		<div>\n			<div class="star">\n				<ul>\n			     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>\n			     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>\n			     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>\n			     	<li><ion-icon name="star" color="lightgray"></ion-icon></li>\n			     	<li><ion-icon name="star" color="lightgray"></ion-icon></li>\n			    </ul>\n			</div>\n			<ion-buttons end>\n		      <button ion-button icon-only class="btnprofile">Submit</button>     \n		    </ion-buttons>\n		</div>\n		\n  </ion-toolbar>\n</ion-footer> -->\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\reviews\reviews.html"*/,
+        selector: 'page-rating',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\rating\rating.html"*/'<!--\n  Generated template for the RatingPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="theme-header">\n    <ion-buttons start icon-only (click)="dismiss()">\n      <button ion-button clear>\n         <ion-icon name="close"></ion-icon>\n         </button>\n    </ion-buttons>\n\n    <ion-title>Add Rating</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n   \n    \n  <div class="content-sec" padding>\n \n    <div class="star">\n         <rating class="star" \n           \n            [(ngModel)]="rate" \n        readOnly="false" \n        max="5" \n        min=\'0\'\n        emptyStarIconName="star-outline" \n        halfStarIconName="star-half"\n        starIconName="star"\n        nullable="false"\n        (ngModelChange)="onModelChange($event)"> \n</rating>\n      </div>\n     \n  <div class="text">\n    <ion-textarea class="enter" placeholder="Add Comment..."  [(ngModel)]="data.comment" name="comment" #comment="ngModel"></ion-textarea>\n </div>\n  <button ion-button icon-only class="btnprofile" (click)="adddata()">Submit</button>     \n</div> \n \n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\rating\rating.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
-], ReviewsPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__["a" /* Appsetting */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]])
+], RatingPage);
 
-//# sourceMappingURL=reviews.js.map
+//# sourceMappingURL=rating.js.map
 
 /***/ }),
 
-/***/ 126:
+/***/ 127:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1337,7 +1510,7 @@ ReviewsPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cart_cart__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__productview_productview__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_appsetting__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1690,7 +1863,7 @@ ProductlistPage = __decorate([
 
 /***/ }),
 
-/***/ 127:
+/***/ 128:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1698,7 +1871,7 @@ ProductlistPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1790,7 +1963,7 @@ WhyrafahoPage = __decorate([
 
 /***/ }),
 
-/***/ 128:
+/***/ 129:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1798,7 +1971,7 @@ WhyrafahoPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1890,7 +2063,7 @@ HelpPage = __decorate([
 
 /***/ }),
 
-/***/ 129:
+/***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1898,7 +2071,7 @@ HelpPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1990,16 +2163,16 @@ TermsPage = __decorate([
 
 /***/ }),
 
-/***/ 130:
+/***/ 131:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditprofilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mapmodal_mapmodal__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_camera__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_native_geocoder__ = __webpack_require__(25);
@@ -2507,7 +2680,7 @@ EditprofilePage = __decorate([
 
 /***/ }),
 
-/***/ 131:
+/***/ 132:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2515,12 +2688,12 @@ EditprofilePage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mapmodal_mapmodal__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__nominatimap_nominatimap__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_geolocation__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_map__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_geolocation__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_map__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_native_geocoder__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_moment__ = __webpack_require__(1);
@@ -2988,7 +3161,7 @@ EditprefrencePage = __decorate([
 
 /***/ }),
 
-/***/ 132:
+/***/ 133:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2996,7 +3169,7 @@ EditprefrencePage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3088,14 +3261,14 @@ FrequentquestionPage = __decorate([
 
 /***/ }),
 
-/***/ 133:
+/***/ 134:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FeedbackPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3125,14 +3298,29 @@ var FeedbackPage = (function () {
         this.alertCtrl = alertCtrl;
         this.appsetting = appsetting;
         this.toastCtrl = toastCtrl;
+        this.array = [];
         this.data = {};
+        this.getfeedback();
     }
+    FeedbackPage.prototype.scrollToBottom = function () {
+        try {
+            this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+        }
+        catch (err) { }
+    };
+    FeedbackPage.prototype.ngAfterViewChecked = function () {
+        this.scrollToBottom();
+    };
+    FeedbackPage.prototype.ngOnInit = function () {
+        this.scrollToBottom();
+    };
     FeedbackPage.prototype.postfeedback = function (feedbackdata) {
+        var _this = this;
         console.log(feedbackdata);
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
         var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["RequestOptions"]({ headers: headers });
-        var userid = JSON.parse(localStorage.getItem('UserInfo'))._id;
+        var userid = JSON.parse(localStorage.getItem('UserDetail'))._id;
         console.log(userid);
         var postdata = {
             user_id: userid,
@@ -3142,23 +3330,28 @@ var FeedbackPage = (function () {
         console.log(postdata);
         this.http.post(this.appsetting.myGlobalVar + 'postfeedback', serialized, options).map(function (res) { return res.json(); }).subscribe(function (data) {
             // this.Loading.dismiss();
+            _this.getfeedback();
+            _this.data.feedback = '';
+            _this.scrollToBottom();
             console.log(data);
         });
     };
     FeedbackPage.prototype.getfeedback = function () {
+        var _this = this;
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
         var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["RequestOptions"]({ headers: headers });
-        var userid = JSON.parse(localStorage.getItem('UserInfo'))._id;
-        console.log(userid);
+        this.userid = JSON.parse(localStorage.getItem('UserDetail'))._id;
+        console.log(this.userid);
         var postdata = {
-            user_id: userid
+            user_id: this.userid
         };
         var serialized = this.serializeObj(postdata);
         console.log(postdata);
         this.http.post(this.appsetting.myGlobalVar + 'getfeedback', serialized, options).map(function (res) { return res.json(); }).subscribe(function (response) {
             // this.Loading.dismiss();
             console.log(response);
+            _this.array = response.data;
         });
     };
     FeedbackPage.prototype.serializeObj = function (obj) {
@@ -3193,9 +3386,13 @@ var FeedbackPage = (function () {
     };
     return FeedbackPage;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('scrollMe'),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+], FeedbackPage.prototype, "myScrollContainer", void 0);
 FeedbackPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-feedback',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\feedback\feedback.html"*/'<!--\n  Generated template for the FeedbackPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="theme-header">\n    <ion-title>Rafaho Feedback</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>  \n    <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingText="Refreshing..." refreshingSpinner="bubbles" pullingText="Pull to refresh"></ion-refresher-content>\n  </ion-refresher>\n    \n	<div class="top-sec">\n		<ion-list>\n		  <ion-item>\n		    <ion-avatar item-start>\n		      <img src="assets/img/user.png">\n		    </ion-avatar>\n		    <h3>Username</h3>\n		    <p>Posted 19 june 2017</p>\n		    <h6>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</h6>\n		  </ion-item>\n		   <ion-item>\n		    <ion-avatar item-start>\n		      <img src="assets/img/user.png">\n		    </ion-avatar>\n		    <h3>Username</h3>\n		    <p>Posted 19 june 2017</p>\n		    <h6>Contrary to popular belief, Lorem Ipsum is not simply random text.</h6>\n		  </ion-item>\n		   <ion-item>\n		    <ion-avatar item-start>\n		      <img src="assets/img/user.png">\n		    </ion-avatar>\n		    <h3>Username</h3>\n		    <p>Posted 19 june 2017</p>\n		    <h6>Contrary to popular belief, Lorem Ipsum is not simply random text.</h6>\n		  </ion-item>\n		</ion-list>\n	</div>\n	\n	\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n      <form #feedbackform="ngForm" novalidate (submit)="postfeedback(feedbackform)">\n  	<div class="bottom-sec">\n		<div class="text">\n			 <ion-textarea class="enter" placeholder="Enter your feedback...." [(ngModel)]="data.feedback" name="feedback" #feedback="ngModel"></ion-textarea>\n		</div>\n		<div class="send"><button ion-button>Send</button></div>\n	</div>\n  </form>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\feedback\feedback.html"*/,
+        selector: 'page-feedback',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\feedback\feedback.html"*/'<!--\n  Generated template for the FeedbackPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="theme-header">\n    <ion-title>Rafaho Feedback</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>  \n    <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingText="Refreshing..." refreshingSpinner="bubbles" pullingText="Pull to refresh"></ion-refresher-content>\n  </ion-refresher>\n    \n	<div class="top-sec" #scrollMe style="overflow: scroll; height: xyz;">\n		<ion-list *ngFor="let dat of array">\n		  <ion-item>\n		    <ion-avatar item-start>\n		      <img src="assets/img/user.png">\n		    </ion-avatar>\n		    <h3>{{dat?.name}}</h3>\n		    <p>Posted {{dat.created_at}}</p>\n		    <h6>{{dat?.feedback}}</h6>\n		  </ion-item>\n		</ion-list>\n	</div>\n	\n	\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n      <form #feedbackform="ngForm" novalidate (submit)="postfeedback(feedbackform)">\n  	<div class="bottom-sec">\n		<div class="text">\n			 <ion-textarea class="enter" placeholder="Enter your feedback...." [(ngModel)]="data.feedback" name="feedback" #feedback="ngModel"></ion-textarea>\n		</div>\n		<div class="send"><button ion-button>Send</button></div>\n	</div>\n  </form>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\feedback\feedback.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
@@ -3210,16 +3407,16 @@ FeedbackPage = __decorate([
 
 /***/ }),
 
-/***/ 134:
+/***/ 135:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChangepwdPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signin_signin__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signin_signin__ = __webpack_require__(37);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3418,17 +3615,17 @@ ChangepwdPage = __decorate([
 
 /***/ }),
 
-/***/ 135:
+/***/ 136:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForgtpwdPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_signup__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_signup__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__signin_signin__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__signin_signin__ = __webpack_require__(37);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3560,7 +3757,7 @@ ForgtpwdPage = __decorate([
 
 /***/ }),
 
-/***/ 143:
+/***/ 144:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -3573,112 +3770,116 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 143;
+webpackEmptyAsyncContext.id = 144;
 
 /***/ }),
 
-/***/ 185:
+/***/ 186:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/addwallet/addwallet.module": [
-		447,
-		24
+		451,
+		25
 	],
 	"../pages/cart/cart.module": [
-		449,
-		23
+		452,
+		24
 	],
 	"../pages/change/change.module": [
-		448,
+		453,
 		1
 	],
 	"../pages/changepwd/changepwd.module": [
-		450,
-		22
+		454,
+		23
 	],
 	"../pages/chefdetials/chefdetials.module": [
-		451,
-		21
+		455,
+		22
 	],
 	"../pages/editprefrence/editprefrence.module": [
-		452,
-		20
+		456,
+		21
 	],
 	"../pages/editprofile/editprofile.module": [
-		453,
-		19
+		457,
+		20
 	],
 	"../pages/favorites/favorites.module": [
-		454,
-		18
+		458,
+		19
 	],
 	"../pages/feedback/feedback.module": [
-		455,
-		17
+		459,
+		18
 	],
 	"../pages/forgtpwd/forgtpwd.module": [
-		456,
-		16
+		460,
+		17
 	],
 	"../pages/frequentquestion/frequentquestion.module": [
-		457,
-		15
+		461,
+		16
 	],
 	"../pages/help/help.module": [
-		458,
-		14
+		462,
+		15
 	],
 	"../pages/location/location.module": [
-		460,
-		13
+		463,
+		14
 	],
 	"../pages/mapmodal/mapmodal.module": [
-		459,
-		12
+		464,
+		13
 	],
 	"../pages/nominatimap/nominatimap.module": [
-		461,
-		11
+		465,
+		12
 	],
 	"../pages/orderdetial/orderdetial.module": [
-		462,
-		10
+		466,
+		11
 	],
 	"../pages/payment/payment.module": [
-		464,
-		9
+		467,
+		10
 	],
 	"../pages/productlist/productlist.module": [
-		463,
-		8
+		468,
+		9
 	],
 	"../pages/productview/productview.module": [
-		467,
-		7
+		469,
+		8
 	],
 	"../pages/rafaho/rafaho.module": [
-		466,
+		470,
+		7
+	],
+	"../pages/rating/rating.module": [
+		471,
 		6
 	],
 	"../pages/reviews/reviews.module": [
-		465,
+		472,
 		5
 	],
 	"../pages/selectdish/selectdish.module": [
-		469,
+		473,
 		4
 	],
 	"../pages/southfood/southfood.module": [
-		468,
+		474,
 		0
 	],
 	"../pages/terms/terms.module": [
-		470,
+		475,
 		3
 	],
 	"../pages/whyrafaho/whyrafaho.module": [
-		471,
+		476,
 		2
 	]
 };
@@ -3693,19 +3894,19 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 185;
+webpackAsyncContext.id = 186;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 188:
+/***/ 189:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3825,7 +4026,7 @@ ChatPage = __decorate([
 
 /***/ }),
 
-/***/ 189:
+/***/ 190:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3858,24 +4059,24 @@ Service = __decorate([
 
 /***/ }),
 
-/***/ 190:
+/***/ 191:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filter_filter__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chefdetials_chefdetials__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filter_filter__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chefdetials_chefdetials__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mapmodal_mapmodal__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cart_cart__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__productlist_productlist__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__productlist_productlist__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_appsetting__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_native_geocoder__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3899,7 +4100,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = (function () {
-    function HomePage(navCtrl, modalCtrl, appsetting, platform, http, nativeGeocoder, geolocation, loadingCtrl, alertCtrl, toastCtrl, events) {
+    function HomePage(navCtrl, modalCtrl, appsetting, platform, http, nativeGeocoder, geolocation, GeolocationOptions, loadingCtrl, alertCtrl, toastCtrl, events) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.modalCtrl = modalCtrl;
@@ -3908,10 +4109,12 @@ var HomePage = (function () {
         this.http = http;
         this.nativeGeocoder = nativeGeocoder;
         this.geolocation = geolocation;
+        this.GeolocationOptions = GeolocationOptions;
         this.loadingCtrl = loadingCtrl;
         this.alertCtrl = alertCtrl;
         this.toastCtrl = toastCtrl;
         this.events = events;
+        this.geocoder = new google.maps.Geocoder();
         this.searcharray = [];
         this.searcharray1 = [];
         this.arry = true;
@@ -3919,69 +4122,146 @@ var HomePage = (function () {
         this.ar = [];
         this.data = {};
         this.chefsearch = {};
-        this.platform.ready().then(function () {
-            var lastTimeBackPress = 0;
-            var timePeriodToExit = 2000;
-            _this.platform.registerBackButtonAction(function () {
-                // get current active page
-                var view = _this.navCtrl.getActive();
-                if (new Date().getTime() - lastTimeBackPress < timePeriodToExit) {
-                    _this.platform.exitApp(); //Exit from app
-                }
-                else {
-                    // alert('Press back again to exit App?');
-                    var toast = _this.toastCtrl.create({
-                        message: 'Press back again to exit from app?',
-                        duration: 3000,
-                        position: 'bottom'
-                    });
-                    toast.present();
-                    lastTimeBackPress = new Date().getTime();
-                }
-            });
-        });
+        this.rating = 0;
+        //        alert('constructor');
+        //        this.getcurrentlocationanddata();
         this.firsthit();
+        this.get();
+        //        this.platform.ready().then(() => {
+        //            var lastTimeBackPress = 0;
+        //            var timePeriodToExit = 2000;
+        //
+        //            this.platform.registerBackButtonAction(() => {
+        //                // get current active page
+        //                let view = this.navCtrl.getActive();
+        //                if (new Date().getTime() - lastTimeBackPress < timePeriodToExit) {
+        //                    this.platform.exitApp(); //Exit from app
+        //                } else {
+        //                    // alert('Press back again to exit App?');
+        //                    let toast = this.toastCtrl.create({
+        //                        message: 'Press back again to exit from app?',
+        //                        duration: 3000,
+        //                        position: 'bottom'
+        //                    });
+        //                    toast.present();
+        //                    lastTimeBackPress = new Date().getTime();
+        //                }
+        //            });
+        //        });
         this.userdetail = JSON.parse(localStorage.getItem('UserDetail'));
         console.log(this.userdetail);
         this.pet = "kittens";
-        //      if (this.appsetting.home1 == 1){
-        //          console.log('homepageactivated');
-        //      }
-        // events.subscribe('index', (res) => {
-        //     console.log(res);
-        // this.firsthit();
-        //    })
-    }
-    HomePage.prototype.firsthit = function () {
-        var _this = this;
-        var Loading = this.loadingCtrl.create({
-            spinner: 'hide',
-            cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
-            dismissOnPageChange: true
-        });
-        Loading.present().then(function () {
-            _this.data.datetime = _this.date;
-            //            alert(this.data.datetime);
-            if (JSON.parse(localStorage.getItem('proctnumberincart'))) {
-                _this.no_of_products = JSON.parse(localStorage.getItem('proctnumberincart'));
-                console.log(_this.no_of_products);
+        events.subscribe('index', function (res) {
+            console.log(res);
+            if (res == 0) {
+                _this.firsthit();
+                _this.get();
             }
             else {
-                _this.no_of_products = 0;
             }
-            Loading.dismiss();
+        });
+        //                    
+        //                events.subscribe('homepage', (home) =>         {
+        //      console.log(home)        ;
+        //      clearInterval(this.appsetting.interval)        ;
+        //      this.lookbooklist()        ;
+        //    });
+    }
+    HomePage.prototype.firsthit = function () {
+        //        alert('firsthit');
+        var _this = this;
+        this.data.datetime = this.date;
+        //            alert(this.data.datetime);
+        if (JSON.parse(localStorage.getItem('proctnumberincart'))) {
+            this.no_of_products = JSON.parse(localStorage.getItem('proctnumberincart'));
+            console.log(this.no_of_products);
+        }
+        else {
+            this.no_of_products = 0;
+        }
+        var options;
+        this.geolocation.getCurrentPosition(options).then(function (resp) {
+            //            alert('aagya');
+            _this.lat = resp.coords.latitude;
+            _this.long = resp.coords.longitude;
+            console.log(resp.coords.latitude);
+            console.log(resp.coords.longitude);
+            var headers = new __WEBPACK_IMPORTED_MODULE_7__angular_http__["Headers"]();
+            headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+            var options = new __WEBPACK_IMPORTED_MODULE_7__angular_http__["RequestOptions"]({ headers: headers });
+            var postdata = {
+                lat: _this.lat,
+                long: _this.long
+            };
+            var latLng = new google.maps.LatLng(_this.lat, _this.long);
+            var Serialized = _this.serializeObj(postdata);
+            _this.http.post('  http://rafao.us-west-2.elasticbeanstalk.com/api/home/reverse_geocoding', Serialized, options).map(function (res) { return res.json(); }).subscribe(function (response) {
+                console.log(response.data);
+                //            alert(response.data);
+                var resso = JSON.parse(response.data);
+                console.log(resso.response);
+                //            console.log(resso.response.properties.address);
+                if ((response.data == '{"message":"Result not found"}') || (resso.response.properties.address == null) || (resso.response == undefined)) {
+                    //               alert('noresult');
+                    _this.geocoder.geocode({ 'location': latLng }, (function (results, status) {
+                        //                        alert('googlegeocoding');
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            if (results == '') {
+                                _this.ToastMsg('Invalid Location');
+                                _this.lat = '';
+                                _this.long = '';
+                            }
+                            else {
+                                if (results[0]) {
+                                    //                                    alert(results[0].formatted_address);
+                                    console.log(results[0].place_id);
+                                    console.log(results[0].formatted_address);
+                                    _this.chefsearch.search = results[0].formatted_address;
+                                }
+                                else if (results[1]) {
+                                    //                                    alert(results[1].formatted_address);
+                                    _this.chefsearch.search = results[1].formatted_address;
+                                    console.log(results[1].formatted_address);
+                                }
+                            }
+                        }
+                        //		
+                    }));
+                }
+                else {
+                    //                var resso = JSON.parse(response.data)
+                    //            alert('lupap address');
+                    console.log(resso.response.message);
+                    if (resso.response.message == "Result not found") {
+                        _this.ToastMsg('Not found');
+                        _this.lat = '';
+                        _this.long = '';
+                    }
+                    else {
+                        //                     alert('lupap address');
+                        var addr = resso.response.properties.address;
+                        console.log(resso.response);
+                        if (addr == null) {
+                        }
+                        _this.chefsearch.search = addr + resso.response.properties.city;
+                        console.log(_this.chefsearch.search);
+                    }
+                }
+            });
+            _this.get();
+        }, function (err) {
+            //            alert(err);
         });
     };
     HomePage.prototype.doRefresh = function (refresher) {
         var _this = this;
         console.log('Begin async operation', refresher);
         setTimeout(function () {
-            _this.get();
             _this.firsthit();
+            _this.get();
             console.log('Async operation has ended');
             refresher.complete();
-        }, 2000);
+        }, 3000);
     };
     HomePage.prototype.cartpage = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__cart_cart__["a" /* CartPage */]);
@@ -4165,6 +4445,9 @@ var HomePage = (function () {
     };
     HomePage.prototype.get = function () {
         var _this = this;
+        var temp = this;
+        var totalvalue = 0;
+        //         alert('get');
         var headers = new __WEBPACK_IMPORTED_MODULE_7__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
         var options = new __WEBPACK_IMPORTED_MODULE_7__angular_http__["RequestOptions"]({ headers: headers });
@@ -4198,6 +4481,24 @@ var HomePage = (function () {
                         if (data.data.length > 0) {
                             _this.array = data.data;
                             console.log(_this.array);
+                            _this.array.forEach(function (value, key) {
+                                temp.rating = 0;
+                                value.comments_and_ratings.forEach(function (value1, key1) {
+                                    if (value1 == []) {
+                                        value1.avgrating = 0;
+                                    }
+                                    else {
+                                        console.log(value1.rating);
+                                        console.log(value.comments_and_ratings.length);
+                                        console.log(temp.rating);
+                                        temp.rating = (temp.rating + value1.rating);
+                                        console.log(temp.rating);
+                                    }
+                                    totalvalue = temp.rating / value.comments_and_ratings.length;
+                                    totalvalue = Number((totalvalue).toFixed(1));
+                                    value.avgrating = totalvalue;
+                                });
+                            });
                             _this.bit = 1;
                             _this.arr1 = 1;
                         }
@@ -4235,6 +4536,8 @@ var HomePage = (function () {
     };
     HomePage.prototype.searchaa = function (val) {
         var _this = this;
+        var temp = this;
+        var totalvalue;
         console.log(val);
         if (val == '') {
             this.get();
@@ -4262,6 +4565,28 @@ var HomePage = (function () {
                     _this.arr1 = 1;
                     _this.bit = 1;
                     if (data.data) {
+                        if (data.data.length > 0) {
+                            _this.array = data.data;
+                            console.log(_this.array);
+                            _this.array.forEach(function (value, key) {
+                                temp.rating = 0;
+                                value.comments_and_ratings.forEach(function (value1, key1) {
+                                    if (value1 == []) {
+                                        value1.avgrating = 0;
+                                    }
+                                    else {
+                                        console.log(value1.rating);
+                                        console.log(value.comments_and_ratings.length);
+                                        console.log(temp.rating);
+                                        temp.rating = (temp.rating + value1.rating);
+                                        console.log(temp.rating);
+                                    }
+                                    totalvalue = temp.rating / value.comments_and_ratings.length;
+                                    totalvalue = Number((totalvalue).toFixed(1));
+                                    value.avgrating = totalvalue;
+                                });
+                            });
+                        }
                         _this.array = data.data;
                         _this.bit = 1;
                         _this.arr1 = 1;
@@ -4280,9 +4605,18 @@ var HomePage = (function () {
             });
         }
     };
+    HomePage.prototype.dismiss1 = function () {
+        console.log('here');
+        this.array = null;
+        this.bit = null;
+        this.arr1 = 1;
+        this.get();
+    };
     HomePage.prototype.searchdish = function (vali) {
         var _this = this;
         var cookingtime;
+        var temp1 = this;
+        var totalvalue1;
         console.log(vali);
         //    if(!vali){
         //        console.log('here');
@@ -4344,6 +4678,28 @@ var HomePage = (function () {
                                 }
                             }
                         }
+                        if (data.data.length > 0) {
+                            _this.array = data.data;
+                            console.log(_this.array);
+                            _this.array.forEach(function (value, key) {
+                                temp1.rating = 0;
+                                value.comments_and_ratings.forEach(function (value1, key1) {
+                                    if (value1 == []) {
+                                        value1.avgrating = 0;
+                                    }
+                                    else {
+                                        console.log(value1.rating);
+                                        console.log(value.comments_and_ratings.length);
+                                        console.log(temp1.rating);
+                                        temp1.rating = (temp1.rating + value1.rating);
+                                        console.log(temp1.rating);
+                                    }
+                                    totalvalue1 = temp1.rating / value.comments_and_ratings.length;
+                                    totalvalue1 = Number((totalvalue1).toFixed(1));
+                                    value.avgrating = totalvalue1;
+                                });
+                            });
+                        }
                         console.log(_this.arr);
                     }
                 }
@@ -4363,6 +4719,17 @@ var HomePage = (function () {
             console.log('nothing');
         }
         //}
+    };
+    HomePage.prototype.dismiss = function () {
+        this.arr = null;
+        this.arry = true;
+        console.log(this.arr);
+        console.log('nothing');
+        console.log('here');
+        this.array = null;
+        this.bit = null;
+        this.arr1 = 1;
+        this.get();
     };
     HomePage.prototype.AlertMsg = function (msg) {
         var alert = this.alertCtrl.create({
@@ -4388,16 +4755,8 @@ var HomePage = (function () {
         return result.join("&");
     };
     HomePage.prototype.ionViewDidLoad = function () {
-        var _this = this;
         console.log('ionViewDidLoad HomePage');
-        this.geolocation.getCurrentPosition().then(function (resp) {
-            _this.lat = resp.coords.latitude;
-            _this.long = resp.coords.longitude;
-            console.log(resp.coords.latitude);
-            console.log(resp.coords.longitude);
-            _this.get();
-        });
-        //    alert('ara h');/
+        this.firsthit();
         console.log(window.navigator.onLine);
         if (window.navigator.onLine == true) {
         }
@@ -4410,26 +4769,32 @@ var HomePage = (function () {
             toast.present();
         }
     };
+    //    ionViewDidEnter(){
+    //        alert('enter');
+    //         this.firsthit();
+    //    }
+    HomePage.prototype.isReadonly = function () {
+        return this.isReadonly; //return true/false 
+    };
     HomePage.prototype.ngOnInit = function () {
         this.date = __WEBPACK_IMPORTED_MODULE_10_moment__(new Date()).format('YYYY-MM-DD[T]hh:mm');
         var ddate = this.date;
         console.log(ddate);
         this.data.datetime = this.date;
         console.log(new Date().toISOString());
-        //        alert( this.data.datetime );
-        //    this.GetLocation();
     };
     return HomePage;
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-home',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\home\home.html"*/'<ion-header>\n  <ion-toolbar  color="theme-header">\n    <ion-title>\n      Chef List\n      <!--<p>Online Chef list</p>-->\n    </ion-title>\n     <ion-buttons end right>\n      <button ion-button icon-only class="" (click)="cartpage()">\n      <div class="iconprf">\n          <img src="assets/img/whitestore.png">\n           <p><span>{{no_of_products}}</span></p>\n       </div>\n      </button>     \n    </ion-buttons>\n  </ion-toolbar>\n    \n    \n    \n<div class="searchouter">\n<ion-searchbar placeholder="Fill Address..." (click)="openlist()" [(ngModel)]="chefsearch.search" name="search" #search="ngModel" >\n </ion-searchbar>\n\n    <div class="listout">  \n<ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="openllist == 1" >\n     \n     <ion-list-header style="background: #f2f2f2; margin: 0;"> Saved Addresses: </ion-list-header>\n     \n    <ion-item *ngFor ="let opt of searcharray;let i = index"\n        (click)="getItem(opt)">\n        {{opt}}\n        <ion-icon name="close" small item-end (click)="del(i)"></ion-icon>\n    </ion-item>\n     \n      <ion-list-header style="background: #f2f2f2; margin: 0;"> Favourite Addresses: </ion-list-header>\n      \n       <ion-item *ngFor ="let opt1 of searcharray1;let i = index" \n        (click)="getItem(opt1)">\n        {{opt1}}\n        <ion-icon name="close" small item-end (click)="del1(i)"></ion-icon>\n    </ion-item>\n       \n     <ion-item>\n         <button (click)= "openmapmodal()" outline ion-button color="dark" icon-right round>Go To Other Address <ion-icon name="navigate"></ion-icon> </button>\n         <button ion-button color="danger" outline round icon-right  (click)="cancellist()"> Cancel <ion-icon name="close"></ion-icon></button>\n     </ion-item>\n     \n       \n</ion-list> \n    </div>\n       \n</div>\n    \n\n    \n\n\n  <ion-toolbar class="dateleft">\n      <p>Main Date</p>\n            <ion-datetime  placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm"  min="{{date}}" [(ngModel)]= "data.datetime" name="datetime" #datetime="ngModel" ></ion-datetime>\n  </ion-toolbar>\n      \n    <ion-toolbar class="dateleftr">\n        <p>Alternative Date</p>\n            <ion-datetime  placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}" [(ngModel)]= "data.altdate" name="altdate" #altdate="ngModel" ></ion-datetime>\n            \n    </ion-toolbar> \n    \n\n  <div class="segment-sec">\n      \n  <ion-toolbar>\n  <ion-segment [(ngModel)]="pet">\n    <ion-segment-button value="kittens">\n      chef Search\n    </ion-segment-button>\n    <ion-segment-button value="puppies">\n      Dish Search\n    </ion-segment-button>\n  </ion-segment>\n  </ion-toolbar>\n</div>\n</ion-header>\n<ion-content  class="{{blurclass}}" style="padding: 0;">\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content\n        pullingIcon="arrow-dropdown"\n      pullingText="Pull to refresh"\n      refreshingSpinner="circles"\n      refreshingText="Refreshing..."></ion-refresher-content>\n  </ion-refresher>\n\n    <div class="overlayn" (click)="cancellist()" ></div>\n    \n  <div class="banner">\n  <img src="assets/img/off.png">\n</div>\n  \n  <div class="content-sec">\n    \n\n  <div [ngSwitch]="pet">\n    <ion-list *ngSwitchCase="\'kittens\'">\n        <div class="serch">\n  <ion-searchbar placeholder="Search by chef..." [(ngModel)]="data.dat" name="dat" #dat="ngModel" (input)="searchaa(data.dat)" ></ion-searchbar>\n  <div class="option">\n      <img src="assets/img/option.png" (click)="fltr_opn()">\n  </div>\n</div>\n  <ion-list>\n      <ion-item *ngFor="let dat of array" (click)="detail(dat)">\n          \n        <ion-avatar item-start>\n             <img *ngIf ="dat?.user_image"  src="{{dat?.user_image}}">\n             <img *ngIf ="!dat?.user_image" src="assets/img/us.png">\n         \n        </ion-avatar>\n        <h3>{{dat?.firstname}} {{dat?.lastname}}</h3>\n          <div *ngIf="dat?.status == true">\n              <p> <span>Specialities</span><span *ngFor="let spec of dat.specialties">{{spec?.specialties_product}},</span></p>\n        <p><span>Experience </span>Private Chef, Personal,</p>\n        <div class="rightbtn green" item-end>\n          <h3><span> <img src="assets/img/star.png"></span>3/4</h3>\n        </div>\n        <div class="leftbtn">\n          <button ion-button icon-left clear>\n             <ion-icon name="radio-button-on" style="color: #2bb600; line-height: 1;float: left; width: 34px;"></ion-icon>\n            Available Today\n          </button>\n        </div>\n        <div class="right">\n          <button ion-button icon-left clear>\n             <ion-icon name="radio-button-on" style="color: #dcca00; line-height: 1; float: left; width: 34px;"></ion-icon>\n            Alternative date available\n          </button>\n        </div>\n          </div>\n      </ion-item> </ion-list>\n\n<!--      <ion-item>\n        <ion-avatar item-start>\n          <img src="assets/img/arenda.png">\n        </ion-avatar>\n        <h3>Andrea Beaman</h3>\n        <p><span>Specialities</span>Idli,sambhar, Kerla</p>\n        <p><span>Experience </span>Private Chef, Personal,</p>\n        <div class="rightbtn green" item-end>\n          <h3><span> <img src="assets/img/star.png"></span>3/4</h3>\n        </div>\n        <div class="leftbtn">\n          <button ion-button icon-left clear>\n             <ion-icon name="radio-button-on" style="color: #fe4600;"></ion-icon>\n            Not available today\n          </button>\n        </div>\n        <div class="right">\n          <button ion-button icon-left clear>\n             <ion-icon name="radio-button-on" style="color: #dcca00;"></ion-icon>\n            Alternative date available\n          </button>\n        </div>\n      </ion-item>-->\n<div *ngIf="bit == null"><div class="loadimg"><img width="220px" src="assets/img/RafahoLogo-03.png"></div></div>\n<div *ngIf="arr1 == null"><div class="loadimg"><img width="220px" src="assets/img/RafahoLogo-02.png"></div></div>\n    </ion-list>\n  </div>\n\n\n\n\n\n  <div [ngSwitch]="pet">\n\n  <div class="serch-text" *ngSwitchCase="\'puppies\'">\n      <div class="serch">\n          <ion-searchbar placeholder="Search by dish..." [(ngModel)]="data.dats" name="dats" #dats="ngModel" (input)="searchdish(data.dats)" ></ion-searchbar>\n      <div class="option">\n      <img src="assets/img/option.png" (click)="fltr_opn()">\n      </div>\n     </div>\n  \n      <ion-list *ngIf= "arr != null">\n      <ion-item *ngFor="let dats of arr">\n<!--        <span >-->\n        \n        <ion-thumbnail item-start  >\n            <div *ngFor="let prodds of dats.products">\n              <img  *ngIf="prodds?.bit == 0" src="{{prodds?.product_image0}}">\n                <!--<img *ngIf="!prodds?.bit == 0" src="assets/img/frvttwo.png"">-->\n                </div>\n              </ion-thumbnail>\n      <!--</span>-->\n     \n        <div class="main">\n          <div  class="image">\n            <img *ngIf ="dats?.user_image"  src="{{dats?.user_image}}">\n             <img *ngIf ="!dats?.user_image" src="assets/img/us.png">\n          </div>\n          <h1>{{dats?.firstname}} {{dats?.lastname}} </h1>\n          <div class="right-sec">\n            <button ion-button class="rating histry">3/5</button>\n          </div>\n        </div>\n      \n<!--        <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">South indian food</h2>-->\n       <div *ngFor="let prods of dats.products"> <p *ngIf="prods?.bit == 0">{{prods?.product_name}}</p></div>\n        <div class="btn-left">\n          <button ion-button outline (click)="prdlist(dats.products)">\n            BOOK NOW\n          </button>\n        </div>\n<!--         <div class="btn-rght"  *ngFor="let prods of dats.products">\n          <button ion-button outline *ngIf="prods?.bit == 0" >\n           {{prods.order_prefrence}}\n          </button>\n        </div>-->\n<!--       <div *ngFor="let proods of dats.products">\n          <div class="hor" style="width: 25px; float: left;" ><ion-icon name="time"></ion-icon><span *ngIf="proods?.bit == 0" >{{cookingtime}}h</span></div>\n     </div>-->\n      </ion-item>\n    \n  </ion-list>\n      <div *ngIf="arry == true"><div class="loadimg"><img width="120px" src="assets/img/srchimg.png"></div></div>\n      <div *ngIf="arry == null"><div class="loadimg"><img width="220px" src="assets/img/RafahoLogo-03.png"></div></div>\n  </div>\n    <!-- <div class="serch-contant" *ngSwitchCase="\'puppies\'">\n        <div class="image">\n            <img src="../assets/img/srchimg.png">\n        </div>\n        <h5>Search Dish</h5>\n        <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>\n    </div> -->\n  </div>\n\n</div>\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\home\home.html"*/'<ion-header>\n  <ion-toolbar  color="theme-header">\n    <ion-title>\n      Chef List\n      <!--<p>Online Chef list</p>-->\n    </ion-title>\n     <ion-buttons end right>\n      <button ion-button icon-only class="" (click)="cartpage()">\n      <div class="iconprf">\n          <img src="assets/img/whitestore.png">\n           <p><span>{{no_of_products}}</span></p>\n       </div>\n      </button>     \n    </ion-buttons>\n  </ion-toolbar>\n    \n    \n    \n<div class="searchouter" style="position: relative;">\n<ion-input class="srch" placeholder="Fill Address..." (click)="openlist()" [readonly]="isReadonly()" [(ngModel)]="chefsearch.search" name="search" #search="ngModel">\n   </ion-input>\n    <ion-icon name="arrow-down" class="go" (click)="openlist()"></ion-icon>\n\n    <div class="listout">  \n<ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="openllist == 1" >\n   \n      <ion-item>\n         <button (click)= "openmapmodal()" outline ion-button color="dark" icon-right round>Go To Other Address <ion-icon name="navigate"></ion-icon> </button>\n         <button ion-button color="danger" outline round icon-right  (click)="cancellist()"> Close</button>\n     </ion-item>\n  \n     <ion-list-header style="background: #f2f2f2; margin: 0;"> Favourite Addresses: </ion-list-header>\n       <div class="fvtaddress">\n       <ion-item *ngFor ="let opt1 of searcharray1;let i = index" \n        (click)="getItem(opt1)">\n        {{opt1}}\n        <ion-icon name="trash" small item-end (click)="del1(i)"></ion-icon>\n    </ion-item>        \n       </div>     \n     \n     <ion-list-header style="background: #f2f2f2; margin: 0;"><span>  <ion-icon name="search"></ion-icon>\n </span> Recent Searches</ion-list-header>\n    <div class="savedaddress"> \n    <ion-item *ngFor ="let opt of searcharray;let i = index"\n        (click)="getItem(opt)">\n        {{opt}}\n        <ion-icon name="trash" small item-end (click)="del(i)"></ion-icon>\n    </ion-item>\n    </div>   \n</ion-list> \n    </div>\n       \n</div>\n    \n\n    \n\n\n  <ion-toolbar class="dateleft">\n      <p>Main Date</p>\n            <ion-datetime  placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm"  min="{{date}}" [(ngModel)]= "data.datetime" name="datetime" #datetime="ngModel" ></ion-datetime>\n  </ion-toolbar>\n      \n    <ion-toolbar class="dateleftr">\n        <p>Alternative Date</p>\n            <ion-datetime  placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}" [(ngModel)]= "data.altdate" name="altdate" #altdate="ngModel" ></ion-datetime>\n            \n    </ion-toolbar> \n    \n\n  <div class="segment-sec">\n      \n  <ion-toolbar>\n  <ion-segment [(ngModel)]="pet">\n    <ion-segment-button value="kittens">\n      chef Search\n    </ion-segment-button>\n    <ion-segment-button value="puppies">\n      Dish Search\n    </ion-segment-button>\n  </ion-segment>\n  </ion-toolbar>\n</div>\n</ion-header>\n<ion-content  class="{{blurclass}}" style="padding: 0;">\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content\n        pullingIcon="arrow-dropdown"\n      pullingText="Pull to refresh"\n      refreshingSpinner="circles"\n      refreshingText="Refreshing..."></ion-refresher-content>\n  </ion-refresher>\n\n    <div class="overlayn" (click)="cancellist()" ></div>\n    \n  <div class="banner">\n  <img src="assets/img/off.png">\n</div>\n  \n  <div class="content-sec">\n    \n\n  <div [ngSwitch]="pet">\n    <ion-list *ngSwitchCase="\'kittens\'">\n        <div class="serch">\n  <ion-searchbar placeholder="Search by chef..." [(ngModel)]="data.dat" name="dat" #dat="ngModel" (input)="searchaa(data.dat)" (ionClear)="dismiss1()" ></ion-searchbar>\n  <div class="option">\n      <img src="assets/img/option.png" (click)="fltr_opn()">\n  </div>\n</div>\n  <ion-list>\n      <ion-item *ngFor="let dat of array" (click)="detail(dat)">\n          \n        <ion-avatar item-start>\n             <img *ngIf ="dat?.user_image"  src="{{dat?.user_image}}">\n             <img *ngIf ="!dat?.user_image" src="assets/img/us.png">\n         \n        </ion-avatar>\n        <h3>{{dat?.firstname}} {{dat?.lastname}}</h3>\n          <div *ngIf="dat?.status == true">\n              <p> <span>Specialities</span><span *ngFor="let spec of dat.specialties">{{spec?.specialties_product}},</span></p>\n        <p><span>Experience </span>Private Chef, Personal,</p>\n        <div class="rightbtn green" item-end *ngIf="dat?.avgrating">\n          <h3 ><span> <img src="assets/img/star.png"></span>{{dat?.avgrating}}/5</h3>\n        </div>\n        <div class="leftbtn">\n          <button ion-button icon-left clear>\n             <ion-icon name="radio-button-on" style="color: #2bb600; line-height: 1;float: left; width: 34px;"></ion-icon>\n            Available Today\n          </button>\n        </div>\n        <div class="right">\n          <button ion-button icon-left clear>\n             <ion-icon name="radio-button-on" style="color: #dcca00; line-height: 1; float: left; width: 34px;"></ion-icon>\n            Alternative date available\n          </button>\n        </div>\n          </div>\n      </ion-item> </ion-list>\n\n<!--      <ion-item>\n        <ion-avatar item-start>\n          <img src="assets/img/arenda.png">\n        </ion-avatar>\n        <h3>Andrea Beaman</h3>\n        <p><span>Specialities</span>Idli,sambhar, Kerla</p>\n        <p><span>Experience </span>Private Chef, Personal,</p>\n        <div class="rightbtn green" item-end>\n          <h3><span> <img src="assets/img/star.png"></span>3/4</h3>\n        </div>\n        <div class="leftbtn">\n          <button ion-button icon-left clear>\n             <ion-icon name="radio-button-on" style="color: #fe4600;"></ion-icon>\n            Not available today\n          </button>\n        </div>\n        <div class="right">\n          <button ion-button icon-left clear>\n             <ion-icon name="radio-button-on" style="color: #dcca00;"></ion-icon>\n            Alternative date available\n          </button>\n        </div>\n      </ion-item>-->\n<div *ngIf="bit == null"><div class="loadimg"><img width="220px" src="assets/img/RafahoLogo-03.png"></div></div>\n<div *ngIf="arr1 == null"><div class="loadimg"><img width="220px" src="assets/img/RafahoLogo-02.png"></div></div>\n    </ion-list>\n  </div>\n\n\n\n\n\n  <div [ngSwitch]="pet">\n\n  <div class="serch-text" *ngSwitchCase="\'puppies\'">\n      <div class="serch">\n          <ion-searchbar placeholder="Search by dish..." [(ngModel)]="data.dats" name="dats" #dats="ngModel" (input)="searchdish(data.dats)"    (ionClear)="dismiss()"></ion-searchbar>\n      <div class="option">\n      <img src="assets/img/option.png" (click)="fltr_opn()">\n      </div>\n     </div>\n  \n      <ion-list *ngIf= "arr != null">\n      <ion-item *ngFor="let dats of arr">\n<!--        <span >-->\n        \n        <ion-thumbnail item-start  >\n            <div *ngFor="let prodds of dats.products">\n              <img  *ngIf="prodds?.bit == 0" src="{{prodds?.product_image0}}">\n                <!--<img *ngIf="!prodds?.bit == 0" src="assets/img/frvttwo.png"">-->\n                </div>\n              </ion-thumbnail>\n      <!--</span>-->\n     \n        <div class="main">\n          <div  class="image">\n            <img *ngIf ="dats?.user_image"  src="{{dats?.user_image}}">\n             <img *ngIf ="!dats?.user_image" src="assets/img/us.png">\n          </div>\n          <h1>{{dats?.firstname}} {{dats?.lastname}} </h1>\n<!--          <div class="right-sec">\n            <button ion-button class="rating histry">{{dats?.avgrating}}/5</button>\n          </div>-->\n            <div class="rightbtn green" item-end *ngIf="dats?.avgrating">\n          <h3 ><span> <img src="assets/img/star.png"></span>{{dats?.avgrating}}/5</h3>\n        </div>\n        </div>\n      \n<!--        <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">South indian food</h2>-->\n       <div *ngFor="let prods of dats.products"> <p *ngIf="prods?.bit == 0">{{prods?.product_name}}</p></div>\n        <div class="btn-left">\n          <button ion-button outline (click)="prdlist(dats.products)">\n            BOOK NOW\n          </button>\n        </div>\n<!--         <div class="btn-rght"  *ngFor="let prods of dats.products">\n          <button ion-button outline *ngIf="prods?.bit == 0" >\n           {{prods.order_prefrence}}\n          </button>\n        </div>-->\n<!--       <div *ngFor="let proods of dats.products">\n          <div class="hor" style="width: 25px; float: left;" ><ion-icon name="time"></ion-icon><span *ngIf="proods?.bit == 0" >{{cookingtime}}h</span></div>\n     </div>-->\n      </ion-item>\n    \n  </ion-list>\n      <div *ngIf="arry == true"><div class="loadimg"><img width="120px" src="assets/img/srchimg.png"></div></div>\n      <div *ngIf="arry == null"><div class="loadimg"><img width="220px" src="assets/img/RafahoLogo-03.png"></div></div>\n  </div>\n    <!-- <div class="serch-contant" *ngSwitchCase="\'puppies\'">\n        <div class="image">\n            <img src="../assets/img/srchimg.png">\n        </div>\n        <h5>Search Dish</h5>\n        <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>\n    </div> -->\n  </div>\n\n</div>\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */],
         __WEBPACK_IMPORTED_MODULE_8__providers_appsetting__["a" /* Appsetting */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */],
         __WEBPACK_IMPORTED_MODULE_7__angular_http__["Http"],
         __WEBPACK_IMPORTED_MODULE_9__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
+        __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__["a" /* Geolocation */],
         __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__["a" /* Geolocation */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
@@ -4441,7 +4806,7 @@ HomePage = __decorate([
 
 /***/ }),
 
-/***/ 191:
+/***/ 192:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4480,18 +4845,18 @@ FilterPage = __decorate([
 
 /***/ }),
 
-/***/ 35:
+/***/ 36:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_chat__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__favorites_favorites__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rafaho_rafaho__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_chat__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__favorites_favorites__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rafaho_rafaho__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular__ = __webpack_require__(4);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4564,6 +4929,7 @@ var TabsPage = (function () {
         var target = split[2];
         console.log(target);
         if (target == '1') {
+            console.log('hogya');
             this.events.publish('index', '1');
         }
         else if (target == '2') {
@@ -4575,7 +4941,7 @@ var TabsPage = (function () {
         else if (target == '4') {
             this.events.publish('index', '4');
         }
-        else {
+        else if (target == '0') {
             this.events.publish('index', '0');
         }
     };
@@ -4599,21 +4965,21 @@ TabsPage = __decorate([
 
 /***/ }),
 
-/***/ 36:
+/***/ 37:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SigninPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_signup__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__forgtpwd_forgtpwd__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_signup__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__forgtpwd_forgtpwd__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_fcm__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__tabs_tabs__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_fcm__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__tabs_tabs__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4640,7 +5006,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var SigninPage = (function () {
     function SigninPage(navCtrl, navParams, appsetting, http, fcm, alertCtrl, toastCtrl, loadingCtrl) {
-        var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.appsetting = appsetting;
@@ -4654,18 +5019,16 @@ var SigninPage = (function () {
         this.iconname = 'eye';
         this.showpass = false;
         //    alert('Neelanshi');
-        fcm.getToken().then(function (token) {
-            _this.devicetoken = token;
-        });
-        fcm.onNotification().subscribe(function (data) {
-            if (data.wasTapped) {
-                console.log("Received in background");
-            }
-            else {
-                console.log("Received in foreground");
-            }
-            ;
-        });
+        //     fcm.getToken().then(token=>{
+        //      this.devicetoken = token;
+        //      })
+        //      fcm.onNotification().subscribe(data=>{
+        //   if(data.wasTapped){
+        //     console.log("Received in background");
+        //   } else {
+        //     console.log("Received in foreground");
+        //   };
+        // })
     }
     SigninPage.prototype.showPassword = function () {
         console.log('showpassword');
@@ -4816,7 +5179,7 @@ SigninPage = __decorate([
 
 /***/ }),
 
-/***/ 369:
+/***/ 371:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4871,13 +5234,13 @@ PaymentPage = __decorate([
 
 /***/ }),
 
-/***/ 370:
+/***/ 372:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(371);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(389);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(373);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(391);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -4885,63 +5248,65 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 389:
+/***/ 391:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(441);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_keyboard__ = __webpack_require__(442);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_fcm__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_keyboard__ = __webpack_require__(444);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_fcm__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_mapmodal_mapmodal__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_nominatimap_nominatimap__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_chat_chat__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_favorites_favorites__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_tabs_tabs__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_signin_signin__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_signup_signup__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_rafaho_rafaho__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_editprefrence_editprefrence__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_profile_profile__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_whyrafaho_whyrafaho__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_help_help__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_terms_terms__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_editprofile_editprofile__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_addwallet_addwallet__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_frequentquestion_frequentquestion__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_feedback_feedback__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_orderdetial_orderdetial__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_forgtpwd_forgtpwd__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_changepwd_changepwd__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_filter_filter__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_chat_chat__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_favorites_favorites__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_tabs_tabs__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_signin_signin__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_signup_signup__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_rafaho_rafaho__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_editprefrence_editprefrence__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_profile_profile__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_whyrafaho_whyrafaho__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_help_help__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_terms_terms__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_editprofile_editprofile__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_addwallet_addwallet__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_frequentquestion_frequentquestion__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_feedback_feedback__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_orderdetial_orderdetial__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_forgtpwd_forgtpwd__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_changepwd_changepwd__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_filter_filter__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_productview_productview__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_cart_cart__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_payment_payment__ = __webpack_require__(369);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_chefdetials_chefdetials__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_reviews_reviews__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_selectdish_selectdish__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_productlist_productlist__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_location_location__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__ionic_native_status_bar__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__ionic_native_splash_screen__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40_angular2_moment__ = __webpack_require__(443);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40_angular2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_40_angular2_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__ionic_native_device__ = __webpack_require__(311);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__ionic_native_geolocation__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__ionic_native_native_geocoder__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__ionic_native_camera__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__providers_service__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46_angular2_countrypicker__ = __webpack_require__(312);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46_angular2_countrypicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_46_angular2_countrypicker__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47_md_select__ = __webpack_require__(446);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47_md_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_47_md_select__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__ionic_native_in_app_browser__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_payment_payment__ = __webpack_require__(371);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_chefdetials_chefdetials__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_reviews_reviews__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_rating_rating__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_selectdish_selectdish__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_productlist_productlist__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_location_location__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__providers_appsetting__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__ionic_native_status_bar__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__ionic_native_splash_screen__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41_angular2_moment__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41_angular2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_41_angular2_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__ionic_native_device__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__ionic_native_geolocation__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__ionic_native_native_geocoder__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__ionic_native_camera__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__providers_service__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47_angular2_countrypicker__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47_angular2_countrypicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_47_angular2_countrypicker__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48_md_select__ = __webpack_require__(448);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48_md_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_48_md_select__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__ionic_native_in_app_browser__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50_ionic2_rating__ = __webpack_require__(449);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4952,6 +5317,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 //import { NavController} from 'ionic-angular';
+
+
 
 
 
@@ -5032,24 +5399,26 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_30__pages_payment_payment__["a" /* PaymentPage */],
             __WEBPACK_IMPORTED_MODULE_31__pages_chefdetials_chefdetials__["a" /* ChefdetialsPage */],
             __WEBPACK_IMPORTED_MODULE_32__pages_reviews_reviews__["a" /* ReviewsPage */],
-            __WEBPACK_IMPORTED_MODULE_33__pages_selectdish_selectdish__["a" /* SelectdishPage */],
-            __WEBPACK_IMPORTED_MODULE_34__pages_productlist_productlist__["a" /* ProductlistPage */],
-            __WEBPACK_IMPORTED_MODULE_35__pages_location_location__["a" /* LocationPage */],
+            __WEBPACK_IMPORTED_MODULE_33__pages_rating_rating__["a" /* RatingPage */],
+            __WEBPACK_IMPORTED_MODULE_34__pages_selectdish_selectdish__["a" /* SelectdishPage */],
+            __WEBPACK_IMPORTED_MODULE_35__pages_productlist_productlist__["a" /* ProductlistPage */],
+            __WEBPACK_IMPORTED_MODULE_36__pages_location_location__["a" /* LocationPage */],
             __WEBPACK_IMPORTED_MODULE_7__pages_nominatimap_nominatimap__["a" /* NominatimapPage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_mapmodal_mapmodal__["a" /* MapmodalPage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_46_angular2_countrypicker__["CountryPickerModule"].forRoot({
+            __WEBPACK_IMPORTED_MODULE_47_angular2_countrypicker__["CountryPickerModule"].forRoot({
                 baseUrl: 'assets/'
             }),
-            __WEBPACK_IMPORTED_MODULE_37__angular_http__["HttpModule"],
-            __WEBPACK_IMPORTED_MODULE_40_angular2_moment__["MomentModule"],
+            __WEBPACK_IMPORTED_MODULE_38__angular_http__["HttpModule"],
+            __WEBPACK_IMPORTED_MODULE_41_angular2_moment__["MomentModule"],
+            __WEBPACK_IMPORTED_MODULE_50_ionic2_rating__["a" /* Ionic2RatingModule */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                 links: [
                     { loadChildren: '../pages/addwallet/addwallet.module#AddwalletPageModule', name: 'AddwalletPage', segment: 'addwallet', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/change/change.module#ChangePageModule', name: 'ChangePage', segment: 'change', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/cart/cart.module#CartPageModule', name: 'CartPage', segment: 'cart', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/change/change.module#ChangePageModule', name: 'ChangePage', segment: 'change', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/changepwd/changepwd.module#ChangepwdPageModule', name: 'ChangepwdPage', segment: 'changepwd', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/chefdetials/chefdetials.module#ChefdetialsPageModule', name: 'ChefdetialsPage', segment: 'chefdetials', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/editprefrence/editprefrence.module#EditprefrencePageModule', name: 'EditprefrencePage', segment: 'editprefrence', priority: 'low', defaultHistory: [] },
@@ -5059,17 +5428,18 @@ AppModule = __decorate([
                     { loadChildren: '../pages/forgtpwd/forgtpwd.module#ForgtpwdPageModule', name: 'ForgtpwdPage', segment: 'forgtpwd', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/frequentquestion/frequentquestion.module#FrequentquestionPageModule', name: 'FrequentquestionPage', segment: 'frequentquestion', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/help/help.module#HelpPageModule', name: 'HelpPage', segment: 'help', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/mapmodal/mapmodal.module#MapmodalPageModule', name: 'MapmodalPage', segment: 'mapmodal', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/location/location.module#LocationPageModule', name: 'LocationPage', segment: 'location', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/mapmodal/mapmodal.module#MapmodalPageModule', name: 'MapmodalPage', segment: 'mapmodal', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/nominatimap/nominatimap.module#NominatimapPageModule', name: 'NominatimapPage', segment: 'nominatimap', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/orderdetial/orderdetial.module#OrderdetialPageModule', name: 'OrderdetialPage', segment: 'orderdetial', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/productlist/productlist.module#ProductlistPageModule', name: 'ProductlistPage', segment: 'productlist', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/payment/payment.module#PaymentPageModule', name: 'PaymentPage', segment: 'payment', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/reviews/reviews.module#ReviewsPageModule', name: 'ReviewsPage', segment: 'reviews', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/rafaho/rafaho.module#RafahoPageModule', name: 'RafahoPage', segment: 'rafaho', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/productlist/productlist.module#ProductlistPageModule', name: 'ProductlistPage', segment: 'productlist', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/productview/productview.module#ProductviewPageModule', name: 'ProductviewPage', segment: 'productview', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/southfood/southfood.module#SouthfoodPageModule', name: 'SouthfoodPage', segment: 'southfood', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/rafaho/rafaho.module#RafahoPageModule', name: 'RafahoPage', segment: 'rafaho', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/rating/rating.module#RatingPageModule', name: 'RatingPage', segment: 'rating', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/reviews/reviews.module#ReviewsPageModule', name: 'ReviewsPage', segment: 'reviews', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/selectdish/selectdish.module#SelectdishPageModule', name: 'SelectdishPage', segment: 'selectdish', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/southfood/southfood.module#SouthfoodPageModule', name: 'SouthfoodPage', segment: 'southfood', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/terms/terms.module#TermsPageModule', name: 'TermsPage', segment: 'terms', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/whyrafaho/whyrafaho.module#WhyrafahoPageModule', name: 'WhyrafahoPage', segment: 'whyrafaho', priority: 'low', defaultHistory: [] }
                 ]
@@ -5096,6 +5466,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_23__pages_feedback_feedback__["a" /* FeedbackPage */],
             __WEBPACK_IMPORTED_MODULE_24__pages_orderdetial_orderdetial__["a" /* OrderdetialPage */],
             __WEBPACK_IMPORTED_MODULE_25__pages_forgtpwd_forgtpwd__["a" /* ForgtpwdPage */],
+            __WEBPACK_IMPORTED_MODULE_33__pages_rating_rating__["a" /* RatingPage */],
             __WEBPACK_IMPORTED_MODULE_26__pages_changepwd_changepwd__["a" /* ChangepwdPage */],
             __WEBPACK_IMPORTED_MODULE_7__pages_nominatimap_nominatimap__["a" /* NominatimapPage */],
             __WEBPACK_IMPORTED_MODULE_27__pages_filter_filter__["a" /* FilterPage */],
@@ -5104,289 +5475,30 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_30__pages_payment_payment__["a" /* PaymentPage */],
             __WEBPACK_IMPORTED_MODULE_31__pages_chefdetials_chefdetials__["a" /* ChefdetialsPage */],
             __WEBPACK_IMPORTED_MODULE_32__pages_reviews_reviews__["a" /* ReviewsPage */],
-            __WEBPACK_IMPORTED_MODULE_33__pages_selectdish_selectdish__["a" /* SelectdishPage */],
-            __WEBPACK_IMPORTED_MODULE_34__pages_productlist_productlist__["a" /* ProductlistPage */],
-            __WEBPACK_IMPORTED_MODULE_35__pages_location_location__["a" /* LocationPage */],
+            __WEBPACK_IMPORTED_MODULE_34__pages_selectdish_selectdish__["a" /* SelectdishPage */],
+            __WEBPACK_IMPORTED_MODULE_35__pages_productlist_productlist__["a" /* ProductlistPage */],
+            __WEBPACK_IMPORTED_MODULE_36__pages_location_location__["a" /* LocationPage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_mapmodal_mapmodal__["a" /* MapmodalPage */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_38__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_39__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_39__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_40__ionic_native_splash_screen__["a" /* SplashScreen */],
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_keyboard__["a" /* Keyboard */],
-            __WEBPACK_IMPORTED_MODULE_45__providers_service__["a" /* Service */],
-            __WEBPACK_IMPORTED_MODULE_36__providers_appsetting__["a" /* Appsetting */],
-            __WEBPACK_IMPORTED_MODULE_41__ionic_native_device__["a" /* Device */],
+            __WEBPACK_IMPORTED_MODULE_46__providers_service__["a" /* Service */],
+            __WEBPACK_IMPORTED_MODULE_37__providers_appsetting__["a" /* Appsetting */],
+            __WEBPACK_IMPORTED_MODULE_42__ionic_native_device__["a" /* Device */],
             __WEBPACK_IMPORTED_MODULE_5__ionic_native_fcm__["a" /* FCM */],
-            __WEBPACK_IMPORTED_MODULE_48__ionic_native_in_app_browser__["a" /* InAppBrowser */],
-            __WEBPACK_IMPORTED_MODULE_42__ionic_native_geolocation__["a" /* Geolocation */],
-            __WEBPACK_IMPORTED_MODULE_43__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
-            __WEBPACK_IMPORTED_MODULE_44__ionic_native_camera__["a" /* Camera */],
-            __WEBPACK_IMPORTED_MODULE_47_md_select__["MdSelectDispatcher"],
+            __WEBPACK_IMPORTED_MODULE_49__ionic_native_in_app_browser__["a" /* InAppBrowser */],
+            __WEBPACK_IMPORTED_MODULE_43__ionic_native_geolocation__["a" /* Geolocation */],
+            __WEBPACK_IMPORTED_MODULE_44__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
+            __WEBPACK_IMPORTED_MODULE_45__ionic_native_camera__["a" /* Camera */],
+            __WEBPACK_IMPORTED_MODULE_48_md_select__["MdSelectDispatcher"],
             { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicErrorHandler */] }
         ]
     })
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ 419:
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./af": 193,
-	"./af.js": 193,
-	"./ar": 194,
-	"./ar-dz": 195,
-	"./ar-dz.js": 195,
-	"./ar-kw": 196,
-	"./ar-kw.js": 196,
-	"./ar-ly": 197,
-	"./ar-ly.js": 197,
-	"./ar-ma": 198,
-	"./ar-ma.js": 198,
-	"./ar-sa": 199,
-	"./ar-sa.js": 199,
-	"./ar-tn": 200,
-	"./ar-tn.js": 200,
-	"./ar.js": 194,
-	"./az": 201,
-	"./az.js": 201,
-	"./be": 202,
-	"./be.js": 202,
-	"./bg": 203,
-	"./bg.js": 203,
-	"./bm": 204,
-	"./bm.js": 204,
-	"./bn": 205,
-	"./bn.js": 205,
-	"./bo": 206,
-	"./bo.js": 206,
-	"./br": 207,
-	"./br.js": 207,
-	"./bs": 208,
-	"./bs.js": 208,
-	"./ca": 209,
-	"./ca.js": 209,
-	"./cs": 210,
-	"./cs.js": 210,
-	"./cv": 211,
-	"./cv.js": 211,
-	"./cy": 212,
-	"./cy.js": 212,
-	"./da": 213,
-	"./da.js": 213,
-	"./de": 214,
-	"./de-at": 215,
-	"./de-at.js": 215,
-	"./de-ch": 216,
-	"./de-ch.js": 216,
-	"./de.js": 214,
-	"./dv": 217,
-	"./dv.js": 217,
-	"./el": 218,
-	"./el.js": 218,
-	"./en-au": 219,
-	"./en-au.js": 219,
-	"./en-ca": 220,
-	"./en-ca.js": 220,
-	"./en-gb": 221,
-	"./en-gb.js": 221,
-	"./en-ie": 222,
-	"./en-ie.js": 222,
-	"./en-nz": 223,
-	"./en-nz.js": 223,
-	"./eo": 224,
-	"./eo.js": 224,
-	"./es": 225,
-	"./es-do": 226,
-	"./es-do.js": 226,
-	"./es-us": 227,
-	"./es-us.js": 227,
-	"./es.js": 225,
-	"./et": 228,
-	"./et.js": 228,
-	"./eu": 229,
-	"./eu.js": 229,
-	"./fa": 230,
-	"./fa.js": 230,
-	"./fi": 231,
-	"./fi.js": 231,
-	"./fo": 232,
-	"./fo.js": 232,
-	"./fr": 233,
-	"./fr-ca": 234,
-	"./fr-ca.js": 234,
-	"./fr-ch": 235,
-	"./fr-ch.js": 235,
-	"./fr.js": 233,
-	"./fy": 236,
-	"./fy.js": 236,
-	"./gd": 237,
-	"./gd.js": 237,
-	"./gl": 238,
-	"./gl.js": 238,
-	"./gom-latn": 239,
-	"./gom-latn.js": 239,
-	"./gu": 240,
-	"./gu.js": 240,
-	"./he": 241,
-	"./he.js": 241,
-	"./hi": 242,
-	"./hi.js": 242,
-	"./hr": 243,
-	"./hr.js": 243,
-	"./hu": 244,
-	"./hu.js": 244,
-	"./hy-am": 245,
-	"./hy-am.js": 245,
-	"./id": 246,
-	"./id.js": 246,
-	"./is": 247,
-	"./is.js": 247,
-	"./it": 248,
-	"./it.js": 248,
-	"./ja": 249,
-	"./ja.js": 249,
-	"./jv": 250,
-	"./jv.js": 250,
-	"./ka": 251,
-	"./ka.js": 251,
-	"./kk": 252,
-	"./kk.js": 252,
-	"./km": 253,
-	"./km.js": 253,
-	"./kn": 254,
-	"./kn.js": 254,
-	"./ko": 255,
-	"./ko.js": 255,
-	"./ky": 256,
-	"./ky.js": 256,
-	"./lb": 257,
-	"./lb.js": 257,
-	"./lo": 258,
-	"./lo.js": 258,
-	"./lt": 259,
-	"./lt.js": 259,
-	"./lv": 260,
-	"./lv.js": 260,
-	"./me": 261,
-	"./me.js": 261,
-	"./mi": 262,
-	"./mi.js": 262,
-	"./mk": 263,
-	"./mk.js": 263,
-	"./ml": 264,
-	"./ml.js": 264,
-	"./mr": 265,
-	"./mr.js": 265,
-	"./ms": 266,
-	"./ms-my": 267,
-	"./ms-my.js": 267,
-	"./ms.js": 266,
-	"./my": 268,
-	"./my.js": 268,
-	"./nb": 269,
-	"./nb.js": 269,
-	"./ne": 270,
-	"./ne.js": 270,
-	"./nl": 271,
-	"./nl-be": 272,
-	"./nl-be.js": 272,
-	"./nl.js": 271,
-	"./nn": 273,
-	"./nn.js": 273,
-	"./pa-in": 274,
-	"./pa-in.js": 274,
-	"./pl": 275,
-	"./pl.js": 275,
-	"./pt": 276,
-	"./pt-br": 277,
-	"./pt-br.js": 277,
-	"./pt.js": 276,
-	"./ro": 278,
-	"./ro.js": 278,
-	"./ru": 279,
-	"./ru.js": 279,
-	"./sd": 280,
-	"./sd.js": 280,
-	"./se": 281,
-	"./se.js": 281,
-	"./si": 282,
-	"./si.js": 282,
-	"./sk": 283,
-	"./sk.js": 283,
-	"./sl": 284,
-	"./sl.js": 284,
-	"./sq": 285,
-	"./sq.js": 285,
-	"./sr": 286,
-	"./sr-cyrl": 287,
-	"./sr-cyrl.js": 287,
-	"./sr.js": 286,
-	"./ss": 288,
-	"./ss.js": 288,
-	"./sv": 289,
-	"./sv.js": 289,
-	"./sw": 290,
-	"./sw.js": 290,
-	"./ta": 291,
-	"./ta.js": 291,
-	"./te": 292,
-	"./te.js": 292,
-	"./tet": 293,
-	"./tet.js": 293,
-	"./th": 294,
-	"./th.js": 294,
-	"./tl-ph": 295,
-	"./tl-ph.js": 295,
-	"./tlh": 296,
-	"./tlh.js": 296,
-	"./tr": 297,
-	"./tr.js": 297,
-	"./tzl": 298,
-	"./tzl.js": 298,
-	"./tzm": 299,
-	"./tzm-latn": 300,
-	"./tzm-latn.js": 300,
-	"./tzm.js": 299,
-	"./uk": 301,
-	"./uk.js": 301,
-	"./ur": 302,
-	"./ur.js": 302,
-	"./uz": 303,
-	"./uz-latn": 304,
-	"./uz-latn.js": 304,
-	"./uz.js": 303,
-	"./vi": 305,
-	"./vi.js": 305,
-	"./x-pseudo": 306,
-	"./x-pseudo.js": 306,
-	"./yo": 307,
-	"./yo.js": 307,
-	"./zh-cn": 308,
-	"./zh-cn.js": 308,
-	"./zh-hk": 309,
-	"./zh-hk.js": 309,
-	"./zh-tw": 310,
-	"./zh-tw.js": 310
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 419;
 
 /***/ }),
 
@@ -5397,9 +5509,9 @@ webpackContext.id = 419;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapmodalPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5416,7 +5528,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 //import { Geolocation } from '@ionic-native/geolocation';
 
-//  import {googlemaps} from 'googlemaps';
 
 /**
  * Generated class for the MapmodalPage page.
@@ -5521,10 +5632,12 @@ var MapmodalPage = (function () {
                                                 _this.infowindow.setContent(results[0].formatted_address);
                                                 //    
                                                 _this.infowindow.open(_this.map, marker1);
+                                                //           this.data.city = results[0].address_components[0].long_name;
                                                 _this.autocomplete.query = results[0].formatted_address;
                                             }
                                             else if (results[1]) {
                                                 _this.autocomplete.query = results[1].formatted_address;
+                                                //     this.data.city = results[1].address_components[0].long_name;
                                                 console.log(results[1].formatted_address);
                                                 _this.infowindow.setContent(results[1].formatted_address);
                                                 _this.infowindow.open(_this.map, marker1);
@@ -5551,6 +5664,9 @@ var MapmodalPage = (function () {
                                     if (addr == null) {
                                     }
                                     _this.autocomplete.query = addr;
+                                    if (resso.response.properties.city == 'bogota') {
+                                        resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1);
+                                    }
                                     _this.data.city = resso.response.properties.city;
                                     console.log(_this.data.city);
                                     console.log(_this.autocomplete.query);
@@ -5720,6 +5836,42 @@ var MapmodalPage = (function () {
                                                     console.log(results[0].place_id);
                                                     _this.autocomplete.query = results[1].formatted_address;
                                                     console.log(_this.autocomplete.query);
+                                                    var citiie = results[0].formatted_address.split(',');
+                                                    var City = '';
+                                                    _this.data.city = '';
+                                                    console.log(citiie[1]);
+                                                    switch (citiie[1]) {
+                                                        case ' Soacha': {
+                                                            _this.data.city = 'cun_soacha';
+                                                            break;
+                                                        }
+                                                        case ' Mosquera': {
+                                                            _this.data.city = 'cun_mosquera';
+                                                            break;
+                                                        }
+                                                        case ' Facatativá': {
+                                                            _this.data.city = 'Facatativá';
+                                                            break;
+                                                        }
+                                                        case ' Madrid': {
+                                                            _this.data.city = 'cun_madrid';
+                                                            break;
+                                                        }
+                                                        case ' Cajicá': {
+                                                            _this.data.city = 'cun_cajica';
+                                                            break;
+                                                        }
+                                                        case ' Sopó': {
+                                                            _this.data.city = 'cun_sopo';
+                                                            break;
+                                                        }
+                                                        default: {
+                                                            console.log('not found');
+                                                            console.log(citiie[1]);
+                                                        }
+                                                    }
+                                                    console.log(_this.data.city);
+                                                    //            this.data.city = citiie ;
                                                     //          this.infowindow=new google.maps.InfoWindow({
                                                     //              content: results[1].formatted_address,
                                                     //          }); 
@@ -5729,6 +5881,42 @@ var MapmodalPage = (function () {
                                                 else if (results[1]) {
                                                     console.log(results[1].place_id);
                                                     _this.autocomplete.query = results[1].formatted_address;
+                                                    var citiie1 = results[1].formatted_address.split(',');
+                                                    var City = '';
+                                                    _this.data.city = '';
+                                                    console.log(citiie[1]);
+                                                    switch (citiie[1]) {
+                                                        case ' Soacha': {
+                                                            _this.data.city = 'cun_soacha';
+                                                            break;
+                                                        }
+                                                        case ' Mosquera': {
+                                                            _this.data.city = 'cun_mosquera';
+                                                            break;
+                                                        }
+                                                        case ' Facatativá': {
+                                                            _this.data.city = 'Facatativá';
+                                                            break;
+                                                        }
+                                                        case ' Madrid': {
+                                                            _this.data.city = 'cun_madrid';
+                                                            break;
+                                                        }
+                                                        case ' Cajicá': {
+                                                            _this.data.city = 'cun_cajica';
+                                                            break;
+                                                        }
+                                                        case ' Sopó': {
+                                                            _this.data.city = 'cun_sopo';
+                                                            break;
+                                                        }
+                                                        default: {
+                                                            console.log('not found');
+                                                            console.log(citiie[1]);
+                                                        }
+                                                    }
+                                                    console.log(_this.data.city);
+                                                    //            this.data.city = citiie1 ;
                                                     console.log(_this.autocomplete.query);
                                                     //          this.infowindow=new google.maps.InfoWindow({
                                                     //              content: results[1].formatted_address,
@@ -5756,6 +5944,9 @@ var MapmodalPage = (function () {
                                         if (addr == null) {
                                         }
                                         _this.autocomplete.query = addr;
+                                        if (resso.response.properties.city == 'bogota') {
+                                            resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1);
+                                        }
                                         _this.data.city = resso.response.properties.city;
                                         console.log(_this.data.city);
                                         console.log(_this.autocomplete.query);
@@ -5808,7 +5999,7 @@ var MapmodalPage = (function () {
                         // alert("working1");
                     }).catch(function (error) {
                         console.log('Error getting location', error);
-                        _this.ToastMsg('Error getting location' + ',' + error);
+                        _this.ToastMsg('Please Turn On your Loaction!! <br>Error getting location' + ',' + error);
                         Loading.dismissAll();
                         var latLng = new google.maps.LatLng(_this.lat, _this.long);
                         _this.geocoder.geocode({ 'latLng': latLng }, (function (results, status) {
@@ -5907,8 +6098,44 @@ var MapmodalPage = (function () {
                                     if (status == google.maps.GeocoderStatus.OK) {
                                         if (results[0]) {
                                             console.log(results[0].place_id);
-                                            _this.autocomplete.query = results[1].formatted_address;
+                                            _this.autocomplete.query = results[0].formatted_address;
                                             console.log(_this.autocomplete.query);
+                                            var citiie2 = results[0].formatted_address.split(',');
+                                            var City = '';
+                                            _this.data.city = '';
+                                            console.log(citiie2[1]);
+                                            switch (citiie2[1]) {
+                                                case ' Soacha': {
+                                                    _this.data.city = 'cun_soacha';
+                                                    break;
+                                                }
+                                                case ' Mosquera': {
+                                                    _this.data.city = 'cun_mosquera';
+                                                    break;
+                                                }
+                                                case ' Facatativá': {
+                                                    _this.data.city = 'Facatativá';
+                                                    break;
+                                                }
+                                                case ' Madrid': {
+                                                    _this.data.city = 'cun_madrid';
+                                                    break;
+                                                }
+                                                case ' Cajicá': {
+                                                    _this.data.city = 'cun_cajica';
+                                                    break;
+                                                }
+                                                case ' Sopó': {
+                                                    _this.data.city = 'cun_sopo';
+                                                    break;
+                                                }
+                                                default: {
+                                                    console.log('not found');
+                                                    console.log(citiie2[1]);
+                                                }
+                                            }
+                                            console.log(_this.data.city);
+                                            //            this.data.city = citiie2 ;
                                             //          this.infowindow=new google.maps.InfoWindow({
                                             //              content: results[1].formatted_address,
                                             //          }); 
@@ -5918,6 +6145,42 @@ var MapmodalPage = (function () {
                                         else if (results[1]) {
                                             console.log(results[1].place_id);
                                             _this.autocomplete.query = results[1].formatted_address;
+                                            var citiie3 = results[1].formatted_address.split(',');
+                                            var City = '';
+                                            _this.data.city = '';
+                                            console.log(citiie3[1]);
+                                            switch (citiie3[1]) {
+                                                case ' Soacha': {
+                                                    _this.data.city = 'cun_soacha';
+                                                    break;
+                                                }
+                                                case ' Mosquera': {
+                                                    _this.data.city = 'cun_mosquera';
+                                                    break;
+                                                }
+                                                case ' Facatativá': {
+                                                    _this.data.city = 'Facatativá';
+                                                    break;
+                                                }
+                                                case ' Madrid': {
+                                                    _this.data.city = 'cun_madrid';
+                                                    break;
+                                                }
+                                                case ' Cajicá': {
+                                                    _this.data.city = 'cun_cajica';
+                                                    break;
+                                                }
+                                                case ' Sopó': {
+                                                    _this.data.city = 'cun_sopo';
+                                                    break;
+                                                }
+                                                default: {
+                                                    console.log('not found');
+                                                    console.log(citiie3[1]);
+                                                }
+                                            }
+                                            console.log(_this.data.city);
+                                            //            this.data.city = citiie3;
                                             console.log(_this.autocomplete.query);
                                             //          this.infowindow=new google.maps.InfoWindow({
                                             //              content: results[1].formatted_address,
@@ -5942,7 +6205,7 @@ var MapmodalPage = (function () {
             });
         };
         //  this.initMap();
-        alert('hello');
+        //   alert('hello');
         this.userdetail = JSON.parse(localStorage.getItem('UserDetail'));
         console.log(this.userdetail);
         this.cities();
@@ -6097,7 +6360,7 @@ var MapmodalPage = (function () {
             alert1.present();
         }
         else {
-            var alert = this.alertCtrl.create({
+            var alert_1 = this.alertCtrl.create({
                 title: 'RAFAHO',
                 message: 'Save this as favourite address?',
                 buttons: [
@@ -6114,10 +6377,47 @@ var MapmodalPage = (function () {
                             _this.iconname = 'star';
                             console.log(_this.appsetting.saved);
                             _this.appsetting.saved.push(auto);
+                            if (_this.data.city == undefined) {
+                                _this.data.city = 'Bogota';
+                            }
+                            var citytosend;
+                            switch (_this.data.city) {
+                                case 'Bogota': {
+                                    citytosend = 'Bogota';
+                                    break;
+                                }
+                                case 'cun_soacha': {
+                                    citytosend = 'Soacha';
+                                    break;
+                                }
+                                case 'cun_mosquera': {
+                                    citytosend = 'Mosquera';
+                                    break;
+                                }
+                                case 'Facatativá': {
+                                    citytosend = 'Facatativá';
+                                    break;
+                                }
+                                case 'cun_madrid': {
+                                    citytosend = 'Madrid';
+                                    break;
+                                }
+                                case 'cun_cajica': {
+                                    citytosend = 'Cajicá';
+                                    break;
+                                }
+                                case 'cun_sopo': {
+                                    citytosend = 'Sopó';
+                                    break;
+                                }
+                                default: {
+                                    console.log('not found');
+                                }
+                            }
                             console.log(_this.appsetting.saved);
                             var postdata = {
                                 user_id: _this.userdetail._id,
-                                favorite_address: auto
+                                favorite_address: auto + ' ' + citytosend
                             };
                             console.log(postdata);
                             var Serialized = _this.serializeObj(postdata);
@@ -6133,7 +6433,7 @@ var MapmodalPage = (function () {
                     }
                 ]
             });
-            alert.present();
+            alert_1.present();
         }
         console.log(this.appsetting.saved);
         console.log(localStorage.getItem('Favaddress'));
@@ -6424,6 +6724,43 @@ var MapmodalPage = (function () {
                             if (status == google.maps.GeocoderStatus.OK) {
                                 if (results[0]) {
                                     _this.autocomplete.query = results[0].formatted_address;
+                                    var citiie7 = results[0].formatted_address.split(',');
+                                    var City = '';
+                                    _this.data.city = '';
+                                    console.log(citiie7[1]);
+                                    _this.data.city = '';
+                                    switch (citiie7[1]) {
+                                        case ' Soacha': {
+                                            _this.data.city = 'cun_soacha';
+                                            break;
+                                        }
+                                        case ' Mosquera': {
+                                            _this.data.city = 'cun_mosquera';
+                                            break;
+                                        }
+                                        case ' Facatativá': {
+                                            _this.data.city = 'Facatativá';
+                                            break;
+                                        }
+                                        case ' Madrid': {
+                                            _this.data.city = 'cun_madrid';
+                                            break;
+                                        }
+                                        case ' Cajicá': {
+                                            _this.data.city = 'cun_cajica';
+                                            break;
+                                        }
+                                        case ' Sopó': {
+                                            _this.data.city = 'cun_sopo';
+                                            break;
+                                        }
+                                        default: {
+                                            console.log('not found');
+                                            console.log(citiie7[1]);
+                                        }
+                                    }
+                                    console.log(_this.data.city);
+                                    //            this.data.city = citiie7;
                                     console.log(_this.autocomplete.query);
                                     _this.infowindow.setContent(results[0].formatted_address);
                                     _this.infowindow.open(_this.map, marker);
@@ -6444,6 +6781,9 @@ var MapmodalPage = (function () {
                     else {
                         var addr = resso.response.properties.address;
                         _this.autocomplete.query = addr;
+                        if (resso.response.properties.city == 'bogota') {
+                            resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1);
+                        }
                         _this.data.city = resso.response.properties.city;
                         console.log(_this.data.city);
                         console.log(_this.autocomplete.query);
@@ -6527,6 +6867,70 @@ var MapmodalPage = (function () {
                                             if (results[0]) {
                                                 console.log(results[0].place_id);
                                                 _this.autocomplete.query = results[1].formatted_address;
+                                                var citiie4 = results[0].formatted_address.split(',');
+                                                var City = '';
+                                                _this.data.city = '';
+                                                console.log(citiie4[1]);
+                                                switch (citiie4[1]) {
+                                                    case ' Soacha': {
+                                                        _this.data.city = 'cun_soacha';
+                                                        break;
+                                                    }
+                                                    case ' Mosquera': {
+                                                        _this.data.city = 'cun_mosquera';
+                                                        break;
+                                                    }
+                                                    case ' Facatativá': {
+                                                        _this.data.city = 'Facatativá';
+                                                        break;
+                                                    }
+                                                    case ' Madrid': {
+                                                        _this.data.city = 'cun_madrid';
+                                                        break;
+                                                    }
+                                                    case ' Cajicá': {
+                                                        _this.data.city = 'cun_cajica';
+                                                        break;
+                                                    }
+                                                    case ' Sopó': {
+                                                        _this.data.city = 'cun_sopo';
+                                                        break;
+                                                    }
+                                                    default: {
+                                                        console.log('not found');
+                                                        console.log(citiie4[1]);
+                                                    }
+                                                }
+                                                //           if(citiie4[1] == 'Soacha'){
+                                                //               console.log('Soacha');
+                                                //              City = 'cun_soacha'
+                                                //               console.log(City);
+                                                //               this.data.city = City;
+                                                //            }
+                                                //            if(citiie4[1] == 'Mosquera'){
+                                                //            console.log('Mosquera');
+                                                //              City = 'cun_mosquera'
+                                                //               console.log(City);
+                                                //                 this.data.city = City;
+                                                //            }
+                                                //            if(citiie4[1] == 'Facatativá'){
+                                                //            City = 'Facatativá'
+                                                //            this.data.city = City;
+                                                //            }
+                                                //            if(citiie4[1] == 'Madrid'){
+                                                //            City= 'cun_madrid'
+                                                //            this.data.city = City;
+                                                //            }
+                                                //            if(citiie4[1] == 'Cajicá'){
+                                                //             City= 'cun_cajica'
+                                                //             this.data.city = City;
+                                                //            }
+                                                //            if(citiie4[1] == 'Sopó'){
+                                                //             City = 'cun_sopo'
+                                                //             this.data.city = City;
+                                                //            }
+                                                console.log(_this.data.city);
+                                                //            this.data.city = citiie4;
                                                 console.log(_this.autocomplete.query);
                                                 //          this.infowindow=new google.maps.InfoWindow({
                                                 //              content: results[1].formatted_address,
@@ -6537,6 +6941,42 @@ var MapmodalPage = (function () {
                                             else if (results[1]) {
                                                 console.log(results[1].place_id);
                                                 _this.autocomplete.query = results[1].formatted_address;
+                                                var citiie5 = results[1].formatted_address.split(',');
+                                                var City = '';
+                                                _this.data.city = '';
+                                                console.log(citiie5[1]);
+                                                switch (citiie5[1]) {
+                                                    case ' Soacha': {
+                                                        _this.data.city = 'cun_soacha';
+                                                        break;
+                                                    }
+                                                    case ' Mosquera': {
+                                                        _this.data.city = 'cun_mosquera';
+                                                        break;
+                                                    }
+                                                    case ' Facatativá': {
+                                                        _this.data.city = 'Facatativá';
+                                                        break;
+                                                    }
+                                                    case ' Madrid': {
+                                                        _this.data.city = 'cun_madrid';
+                                                        break;
+                                                    }
+                                                    case ' Cajicá': {
+                                                        _this.data.city = 'cun_cajica';
+                                                        break;
+                                                    }
+                                                    case ' Sopó': {
+                                                        _this.data.city = 'cun_sopo';
+                                                        break;
+                                                    }
+                                                    default: {
+                                                        console.log('not found');
+                                                        console.log(citiie5[1]);
+                                                    }
+                                                }
+                                                console.log(_this.data.city);
+                                                //            this.data.city = citiie5;
                                                 console.log(_this.autocomplete.query);
                                                 //          this.infowindow=new google.maps.InfoWindow({
                                                 //              content: results[1].formatted_address,
@@ -6562,6 +7002,9 @@ var MapmodalPage = (function () {
                                     var addr = resso.response.properties.address;
                                     console.log(resso.response);
                                     _this.autocomplete.query = addr;
+                                    if (resso.response.properties.city == 'bogota') {
+                                        resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1);
+                                    }
                                     _this.data.city = resso.response.properties.city;
                                     console.log(_this.data.city);
                                     console.log(_this.autocomplete.query);
@@ -6684,8 +7127,35 @@ var MapmodalPage = (function () {
                                         if (status == google.maps.GeocoderStatus.OK) {
                                             if (results[0]) {
                                                 console.log(results[0].place_id);
-                                                _this.autocomplete.query = results[1].formatted_address;
+                                                _this.autocomplete.query = results[0].formatted_address;
                                                 console.log(_this.autocomplete.query);
+                                                var citiie = results[0].formatted_address.split(',');
+                                                var City = '';
+                                                _this.data.city = '';
+                                                console.log(citiie[1]);
+                                                switch (citiie[1]) {
+                                                    case ' Soacha':
+                                                        _this.data.city = 'cun_soacha';
+                                                        break;
+                                                    case ' Mosquera':
+                                                        _this.data.city = 'cun_mosquera';
+                                                        break;
+                                                    case ' Facatativá':
+                                                        _this.data.city = 'Facatativá';
+                                                        break;
+                                                    case ' Madrid':
+                                                        _this.data.city = 'cun_madrid';
+                                                        break;
+                                                    case ' Cajicá':
+                                                        _this.data.city = 'cun_cajica';
+                                                        break;
+                                                    case ' Sopó':
+                                                        _this.data.city = 'cun_sopo';
+                                                        break;
+                                                    default:
+                                                        console.log('not found');
+                                                        console.log(citiie[1]);
+                                                }
                                                 //          this.infowindow=new google.maps.InfoWindow({
                                                 //              content: results[1].formatted_address,
                                                 //          }); 
@@ -6695,6 +7165,41 @@ var MapmodalPage = (function () {
                                             else if (results[1]) {
                                                 console.log(results[1].place_id);
                                                 _this.autocomplete.query = results[1].formatted_address;
+                                                var citiie = results[1].formatted_address.split(',');
+                                                var City = '';
+                                                _this.data.city = '';
+                                                switch (citiie[1]) {
+                                                    case ' Soacha': {
+                                                        _this.data.city = 'cun_soacha';
+                                                        break;
+                                                    }
+                                                    case ' Mosquera': {
+                                                        _this.data.city = 'cun_mosquera';
+                                                        break;
+                                                    }
+                                                    case ' Facatativá': {
+                                                        _this.data.city = 'Facatativá';
+                                                        break;
+                                                    }
+                                                    case ' Madrid': {
+                                                        _this.data.city = 'cun_madrid';
+                                                        break;
+                                                    }
+                                                    case ' Cajicá': {
+                                                        _this.data.city = 'cun_cajica';
+                                                        break;
+                                                    }
+                                                    case ' Sopó': {
+                                                        _this.data.city = 'cun_sopo';
+                                                        break;
+                                                    }
+                                                    default: {
+                                                        console.log('not found');
+                                                        console.log(citiie[1]);
+                                                    }
+                                                }
+                                                console.log(_this.data.city);
+                                                //            this.data.city = citiie ;
                                                 console.log(_this.autocomplete.query);
                                                 //          this.infowindow=new google.maps.InfoWindow({
                                                 //              content: results[1].formatted_address,
@@ -6722,6 +7227,9 @@ var MapmodalPage = (function () {
                                     var addr = resso.response.properties.address;
                                     console.log(resso.response);
                                     _this.autocomplete.query = addr;
+                                    if (resso.response.properties.city == 'bogota') {
+                                        resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1);
+                                    }
                                     _this.data.city = resso.response.properties.city;
                                     console.log(_this.data.city);
                                     console.log(_this.autocomplete.query);
@@ -6807,11 +7315,52 @@ var MapmodalPage = (function () {
         if (this.data.additional == undefined) {
             this.data.additional = '';
         }
+        //   if(this.data.city == undefined){
+        //       this.data.city = '';
+        //   }
         console.log(this.autocomplete.query);
         if ((this.lat == '') && (this.long == '')) {
             this.ToastMsg('Nothing is saved');
         }
         else {
+            if (this.data.city == undefined) {
+                this.data.city = 'Bogota';
+            }
+            var citytosend;
+            switch (this.data.city) {
+                case 'Bogota': {
+                    citytosend = 'Bogota';
+                    break;
+                }
+                case 'cun_soacha': {
+                    citytosend = 'Soacha';
+                    break;
+                }
+                case 'cun_mosquera': {
+                    citytosend = 'Mosquera';
+                    break;
+                }
+                case 'Facatativá': {
+                    citytosend = 'Facatativá';
+                    break;
+                }
+                case 'cun_madrid': {
+                    citytosend = 'Madrid';
+                    break;
+                }
+                case 'cun_cajica': {
+                    citytosend = 'Cajicá';
+                    break;
+                }
+                case 'cun_sopo': {
+                    citytosend = 'Sopó';
+                    break;
+                }
+                default: {
+                    console.log('not found');
+                    //                   console.log(citiie[1])
+                }
+            }
             if ((this.goglat) && (this.goglong)) {
                 this.lat = this.goglat;
                 this.long = this.goglong;
@@ -6824,7 +7373,7 @@ var MapmodalPage = (function () {
             }
             var postdata2 = {
                 user_id: this.userdetail._id,
-                saved_address: this.autocomplete.query
+                saved_address: this.autocomplete.query + ' ' + citytosend
             };
             console.log(postdata2);
             var Serialized = this.serializeObj(postdata2);
@@ -6835,7 +7384,7 @@ var MapmodalPage = (function () {
                 }
             });
             this.viewCtrl.dismiss({
-                address: this.data.additional + ' ' + this.autocomplete.query,
+                address: this.data.additional + ' ' + this.autocomplete.query + '   ' + citytosend,
                 lati: this.lat,
                 longi: this.long
             });
@@ -6861,33 +7410,301 @@ var MapmodalPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('map'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
 ], MapmodalPage.prototype, "mapElement", void 0);
 MapmodalPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-mapmodal',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\mapmodal\mapmodal.html"*/'<!--\n  Generated template for the MapmodalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <!--<ion-buttons start (click)="dismiss()">\n      <button ion-button icon-only>\n        \n      </button>\n    </ion-buttons>-->\n\n    <ion-title></ion-title>\n    \n    <ion-buttons end (click)="closeModal()">\n        <button clear ion-button>Save</button>\n    </ion-buttons>\n      <ion-buttons start (click)="clsmodel()">\n        <button clear ion-button>Cancel</button>\n    </ion-buttons>\n  </ion-navbar>\n   <ion-toolbar class="toolbar_top" style="padding: 0 7px 0px 7px; background: #fff; min-height: auto; padding-top: 10px;">\n     <ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;" id="cittt" [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n  <ion-option value="Bogota" selected>Bogotá DC, Bogotá DC</ion-option>\n  <ion-option value="cun_soacha ">Soacha, Cundinamarca</ion-option>\n  <ion-option value="cun_mosquera  "> Mosquera, Cundinamarca</ion-option>\n  <ion-option value="cun_madrid  ">Madrid, Cundinamarca</ion-option>\n  <ion-option value="cun_cajica  ">Cajicá, Cundinamarca</ion-option>\n  <ion-option value="cun_soacha ">Soacha, Cundinamarca</ion-option>\n  <ion-option value="cun_sopo">Sopó, Cundinamarca</ion-option>\n  <ion-option value="facatativa ">Facatativá, Cundinamarca</ion-option>\n  <ion-option value="tenjo ">Tenjo,Cundinamarca</ion-option>\n  <ion-option value="tocancipa ">Tocancipa, Cundinamarca</ion-option>\n  <ion-option value="guasca ">Guasca, Cundinamarca</ion-option>\n  <ion-option value="anapoima ">Anapoima, Cundinamarca</ion-option>\n  <ion-option value="villeta ">Villeta, Cundinamarca</ion-option>\n  <ion-option value="la_vega ">La Vega, Cundinamarca</ion-option>\n  <ion-option value="la_mesa ">La Mesa, Cundinamarca</ion-option>\n</ion-select>\n   </ion-toolbar>\n\n<div class="searchouter">\n<ion-searchbar \n   [(ngModel)]="autocomplete.query" \n   [showCancelButton]="true" \n   (ionInput)="updateSearch()" \n   (ionCancel)="dismiss()"\n   placeholder="Start typing and select ..." required>\n </ion-searchbar>\n    <button class="favbtn" (click)="fav(autocomplete.query)" ion-button icon-only>\n<ion-icon name="{{iconname}}" ></ion-icon>\n</button>\n    \n     <ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="omega == 0">\n      <ion-item *ngFor="let item of autocompleteItems;let i = index"\n      (click)="getItem(item)"  >\n     <span > {{ item.description }}</span>\n      </ion-item>\n      </ion-list> \n    <ion-list *ngIf="omega == 1;let i = index">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item.address }}\n      </ion-item>\n      </ion-list> \n     <ion-list *ngIf="omega == 2">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item }}\n      </ion-item>\n      </ion-list>\n</div>\n    \n<ion-toolbar class="toolbar_top" style="padding: 0 7px 7px 7px; background: #fff;">\n\n    \n<!--<ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;"  [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n    <ion-option *ngFor="let cit of arr" [value]="cit.city_code" name="hh">{{cit.city}},{{cit?.state}}</ion-option>\n</ion-select>-->\n   \n\n\n<ion-input type="text" placeholder=\'Additional Address Details\' [(ngModel)]="data.additional" name="additional" #additional="ngModel"  ></ion-input>\n\n    <button ion-button full color="theme-header" *ngIf="omega == 0" (click)="chooseItem()" [disabled]="!isenabled">Search</button>\n     <button ion-button full color="theme-header" *ngIf="omega == 1" (click)="chooseItem1()" [disabled]="!isenabled">Search</button>\n      <button ion-button full color="theme-header" *ngIf="omega == 2" (click)="chooseItem2()" [disabled]="!isenabled" >Search</button>\n</ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n\n<!--    <ion-icon name="star" (click)="fav(autocomplete.query)">Add favourite</ion-icon>\n    <ion-item>\n      </ion-item>-->\n   \n    \n        \n<div #map id="map"></div>\n   \n    <!--<button ion-button (click)="saveaddress">Save Location</button>-->\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\mapmodal\mapmodal.html"*/,
+        selector: 'page-mapmodal',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\mapmodal\mapmodal.html"*/'<!--\n  Generated template for the MapmodalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <!--<ion-buttons start (click)="dismiss()">\n      <button ion-button icon-only>\n        \n      </button>\n    </ion-buttons>-->\n\n    <ion-title></ion-title>\n    \n    <ion-buttons end (click)="closeModal()">\n        <button clear ion-button>Save</button>\n    </ion-buttons>\n      <ion-buttons start (click)="clsmodel()">\n        <button clear ion-button>Cancel</button>\n    </ion-buttons>\n  </ion-navbar>\n   <ion-toolbar class="toolbar_top" style="padding: 0 7px 0px 7px; background: #fff; min-height: auto; padding-top: 10px;">\n     <ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;" id="cittt" [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n  <ion-option value="Bogota" selected>Bogotá DC, Bogotá DC</ion-option>\n  <ion-option value="cun_soacha">Soacha, Cundinamarca</ion-option>\n  <ion-option value="cun_mosquera"> Mosquera, Cundinamarca</ion-option>\n  <ion-option value="cun_madrid">Madrid, Cundinamarca</ion-option>\n  <ion-option value="cun_cajica">Cajicá, Cundinamarca</ion-option>\n<!--  <ion-option value="cun_soacha">Soacha, Cundinamarca</ion-option>-->\n  <ion-option value="cun_sopo">Sopó, Cundinamarca</ion-option>\n  <ion-option value="Facatativá">Facatativá, Cundinamarca</ion-option>\n  <ion-option value="tenjo">Tenjo,Cundinamarca</ion-option>\n  <ion-option value="tocancipa">Tocancipa, Cundinamarca</ion-option>\n  <ion-option value="guasca">Guasca, Cundinamarca</ion-option>\n  <ion-option value="anapoima">Anapoima, Cundinamarca</ion-option>\n  <ion-option value="villeta">Villeta, Cundinamarca</ion-option>\n  <ion-option value="la_vega">La Vega, Cundinamarca</ion-option>\n  <ion-option value="La Mesa">La Mesa, Cundinamarca</ion-option>\n</ion-select>\n   </ion-toolbar>\n\n<div class="searchouter">\n<ion-searchbar \n   [(ngModel)]="autocomplete.query" \n   [showCancelButton]="true" \n   (ionInput)="updateSearch()" \n   (ionCancel)="dismiss()"\n   placeholder="Start typing and select ..." required>\n </ion-searchbar>\n    <button class="favbtn" (click)="fav(autocomplete.query)" ion-button icon-only>\n<ion-icon name="{{iconname}}" ></ion-icon>\n</button>\n    \n     <ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="omega == 0">\n      <ion-item *ngFor="let item of autocompleteItems;let i = index"\n      (click)="getItem(item)"  >\n     <span > {{ item.description }}</span>\n      </ion-item>\n      </ion-list> \n    <ion-list *ngIf="omega == 1;let i = index">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item.address }}\n      </ion-item>\n      </ion-list> \n     <ion-list *ngIf="omega == 2">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item }}\n      </ion-item>\n      </ion-list>\n</div>\n    \n<ion-toolbar class="toolbar_top" style="padding: 0 7px 7px 7px; background: #fff;">\n\n    \n<!--<ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;"  [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n    <ion-option *ngFor="let cit of arr" [value]="cit.city_code" name="hh">{{cit.city}},{{cit?.state}}</ion-option>\n</ion-select>-->\n   \n\n\n<ion-input type="text" placeholder=\'Additional Address Details\' [(ngModel)]="data.additional" name="additional" #additional="ngModel"  ></ion-input>\n\n    <button ion-button full color="theme-header" *ngIf="omega == 0" (click)="chooseItem()" [disabled]="!isenabled">Search</button>\n     <button ion-button full color="theme-header" *ngIf="omega == 1" (click)="chooseItem1()" [disabled]="!isenabled">Search</button>\n      <button ion-button full color="theme-header" *ngIf="omega == 2" (click)="chooseItem2()" [disabled]="!isenabled" >Search</button>\n</ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n\n<!--    <ion-icon name="star" (click)="fav(autocomplete.query)">Add favourite</ion-icon>\n    <ion-item>\n      </ion-item>-->\n   \n    \n        \n<div #map id="map"></div>\n   \n    <!--<button ion-button (click)="saveaddress">Save Location</button>-->\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\mapmodal\mapmodal.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__["a" /* Appsetting */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__["a" /* Appsetting */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["Http"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__["a" /* NativeGeocoder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__["a" /* NativeGeocoder */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _o || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__["a" /* Appsetting */],
+        __WEBPACK_IMPORTED_MODULE_4__angular_http__["Http"],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
+        __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]])
 ], MapmodalPage);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
 //# sourceMappingURL=mapmodal.js.map
 
 /***/ }),
 
-/***/ 441:
+/***/ 421:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": 194,
+	"./af.js": 194,
+	"./ar": 195,
+	"./ar-dz": 196,
+	"./ar-dz.js": 196,
+	"./ar-kw": 197,
+	"./ar-kw.js": 197,
+	"./ar-ly": 198,
+	"./ar-ly.js": 198,
+	"./ar-ma": 199,
+	"./ar-ma.js": 199,
+	"./ar-sa": 200,
+	"./ar-sa.js": 200,
+	"./ar-tn": 201,
+	"./ar-tn.js": 201,
+	"./ar.js": 195,
+	"./az": 202,
+	"./az.js": 202,
+	"./be": 203,
+	"./be.js": 203,
+	"./bg": 204,
+	"./bg.js": 204,
+	"./bm": 205,
+	"./bm.js": 205,
+	"./bn": 206,
+	"./bn.js": 206,
+	"./bo": 207,
+	"./bo.js": 207,
+	"./br": 208,
+	"./br.js": 208,
+	"./bs": 209,
+	"./bs.js": 209,
+	"./ca": 210,
+	"./ca.js": 210,
+	"./cs": 211,
+	"./cs.js": 211,
+	"./cv": 212,
+	"./cv.js": 212,
+	"./cy": 213,
+	"./cy.js": 213,
+	"./da": 214,
+	"./da.js": 214,
+	"./de": 215,
+	"./de-at": 216,
+	"./de-at.js": 216,
+	"./de-ch": 217,
+	"./de-ch.js": 217,
+	"./de.js": 215,
+	"./dv": 218,
+	"./dv.js": 218,
+	"./el": 219,
+	"./el.js": 219,
+	"./en-au": 220,
+	"./en-au.js": 220,
+	"./en-ca": 221,
+	"./en-ca.js": 221,
+	"./en-gb": 222,
+	"./en-gb.js": 222,
+	"./en-ie": 223,
+	"./en-ie.js": 223,
+	"./en-nz": 224,
+	"./en-nz.js": 224,
+	"./eo": 225,
+	"./eo.js": 225,
+	"./es": 226,
+	"./es-do": 227,
+	"./es-do.js": 227,
+	"./es-us": 228,
+	"./es-us.js": 228,
+	"./es.js": 226,
+	"./et": 229,
+	"./et.js": 229,
+	"./eu": 230,
+	"./eu.js": 230,
+	"./fa": 231,
+	"./fa.js": 231,
+	"./fi": 232,
+	"./fi.js": 232,
+	"./fo": 233,
+	"./fo.js": 233,
+	"./fr": 234,
+	"./fr-ca": 235,
+	"./fr-ca.js": 235,
+	"./fr-ch": 236,
+	"./fr-ch.js": 236,
+	"./fr.js": 234,
+	"./fy": 237,
+	"./fy.js": 237,
+	"./gd": 238,
+	"./gd.js": 238,
+	"./gl": 239,
+	"./gl.js": 239,
+	"./gom-latn": 240,
+	"./gom-latn.js": 240,
+	"./gu": 241,
+	"./gu.js": 241,
+	"./he": 242,
+	"./he.js": 242,
+	"./hi": 243,
+	"./hi.js": 243,
+	"./hr": 244,
+	"./hr.js": 244,
+	"./hu": 245,
+	"./hu.js": 245,
+	"./hy-am": 246,
+	"./hy-am.js": 246,
+	"./id": 247,
+	"./id.js": 247,
+	"./is": 248,
+	"./is.js": 248,
+	"./it": 249,
+	"./it.js": 249,
+	"./ja": 250,
+	"./ja.js": 250,
+	"./jv": 251,
+	"./jv.js": 251,
+	"./ka": 252,
+	"./ka.js": 252,
+	"./kk": 253,
+	"./kk.js": 253,
+	"./km": 254,
+	"./km.js": 254,
+	"./kn": 255,
+	"./kn.js": 255,
+	"./ko": 256,
+	"./ko.js": 256,
+	"./ky": 257,
+	"./ky.js": 257,
+	"./lb": 258,
+	"./lb.js": 258,
+	"./lo": 259,
+	"./lo.js": 259,
+	"./lt": 260,
+	"./lt.js": 260,
+	"./lv": 261,
+	"./lv.js": 261,
+	"./me": 262,
+	"./me.js": 262,
+	"./mi": 263,
+	"./mi.js": 263,
+	"./mk": 264,
+	"./mk.js": 264,
+	"./ml": 265,
+	"./ml.js": 265,
+	"./mr": 266,
+	"./mr.js": 266,
+	"./ms": 267,
+	"./ms-my": 268,
+	"./ms-my.js": 268,
+	"./ms.js": 267,
+	"./my": 269,
+	"./my.js": 269,
+	"./nb": 270,
+	"./nb.js": 270,
+	"./ne": 271,
+	"./ne.js": 271,
+	"./nl": 272,
+	"./nl-be": 273,
+	"./nl-be.js": 273,
+	"./nl.js": 272,
+	"./nn": 274,
+	"./nn.js": 274,
+	"./pa-in": 275,
+	"./pa-in.js": 275,
+	"./pl": 276,
+	"./pl.js": 276,
+	"./pt": 277,
+	"./pt-br": 278,
+	"./pt-br.js": 278,
+	"./pt.js": 277,
+	"./ro": 279,
+	"./ro.js": 279,
+	"./ru": 280,
+	"./ru.js": 280,
+	"./sd": 281,
+	"./sd.js": 281,
+	"./se": 282,
+	"./se.js": 282,
+	"./si": 283,
+	"./si.js": 283,
+	"./sk": 284,
+	"./sk.js": 284,
+	"./sl": 285,
+	"./sl.js": 285,
+	"./sq": 286,
+	"./sq.js": 286,
+	"./sr": 287,
+	"./sr-cyrl": 288,
+	"./sr-cyrl.js": 288,
+	"./sr.js": 287,
+	"./ss": 289,
+	"./ss.js": 289,
+	"./sv": 290,
+	"./sv.js": 290,
+	"./sw": 291,
+	"./sw.js": 291,
+	"./ta": 292,
+	"./ta.js": 292,
+	"./te": 293,
+	"./te.js": 293,
+	"./tet": 294,
+	"./tet.js": 294,
+	"./th": 295,
+	"./th.js": 295,
+	"./tl-ph": 296,
+	"./tl-ph.js": 296,
+	"./tlh": 297,
+	"./tlh.js": 297,
+	"./tr": 298,
+	"./tr.js": 298,
+	"./tzl": 299,
+	"./tzl.js": 299,
+	"./tzm": 300,
+	"./tzm-latn": 301,
+	"./tzm-latn.js": 301,
+	"./tzm.js": 300,
+	"./uk": 302,
+	"./uk.js": 302,
+	"./ur": 303,
+	"./ur.js": 303,
+	"./uz": 304,
+	"./uz-latn": 305,
+	"./uz-latn.js": 305,
+	"./uz.js": 304,
+	"./vi": 306,
+	"./vi.js": 306,
+	"./x-pseudo": 307,
+	"./x-pseudo.js": 307,
+	"./yo": 308,
+	"./yo.js": 308,
+	"./zh-cn": 309,
+	"./zh-cn.js": 309,
+	"./zh-hk": 310,
+	"./zh-hk.js": 310,
+	"./zh-tw": 311,
+	"./zh-tw.js": 311
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 421;
+
+/***/ }),
+
+/***/ 443:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_signin_signin__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_signin_signin__ = __webpack_require__(37);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6987,13 +7804,13 @@ MyApp = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__location_location__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabs_tabs__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__location_location__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabs_tabs__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser__ = __webpack_require__(316);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7271,6 +8088,7 @@ var CartPage = (function () {
         var proname = [];
         var proquant = [];
         var orderservice = [];
+        var proprice = [];
         console.log(this.data.bookdt.length);
         if (this.data.bookdt.length < 17) {
             console.log(this.datetosend);
@@ -7292,6 +8110,7 @@ var CartPage = (function () {
             proname.push(this.getcrt[j].product_name);
             proquant.push(this.getcrt[j].quantity);
             orderservice.push(this.getcrt[j].order_prefrence);
+            proprice.push(this.getcrt[j].price_per_plate);
         }
         console.log(proid, proname, proquant, orderservice);
         proid = proid.join(':');
@@ -7310,7 +8129,8 @@ var CartPage = (function () {
             products_name: proname,
             order_prefrence: orderservice,
             payment_status: 1,
-            txn_id: this.trans_id
+            txn_id: this.trans_id,
+            product_price: proprice
         };
         console.log(postdata);
         var Serialized = this.serializeObj(postdata);
@@ -7414,7 +8234,7 @@ var CartPage = (function () {
 }());
 CartPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-cart',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\cart\cart.html"*/'<!--\n  Generated template for the CartPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="theme-header">\n    <ion-title>Payment</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only class="btnprofile">\n      <div class="iconprf">\n          <img src="assets/img/cart.png">\n       </div>\n      </button>     \n    </ion-buttons>\n    \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n	<div class="top-sec">\n			<ion-grid>\n				<ion-row *ngIf = "nodata == 0">\n					<ion-col col-6 class="left">\n					  <div class="chef">\n						<h5>{{chef.firstname}} {{chef.lastname}}</h5>\n					  </div>\n					</ion-col>\n					<ion-col col-6 class="right">\n					  <div class="phn">\n						<h5>{{chef.phone}}</h5>\n						<span><img src="assets/img/msg.png"></span>\n					  </div>\n					</ion-col>\n				</ion-row>\n                            <p  *ngIf = "nodata == 1"> </p>\n			</ion-grid>\n		</div>\n	<div class="text-sec">\n		\n		<div class="mid-sec">\n			<h5>Customer Address: <button ion-button clear class="imgbtn" style="background-image:url(\'assets/img/creat.gif\'); background-size:cover"></button></h5>\n			<p>{{str1}}</p>\n			<p>{{str2}}</p>\n		</div>\n		<div class="bottom-sec cartouter" >\n			<ion-list>\n				<ion-item >\n					<h5 item-start class="strt">Booking Date & Time</h5>\n                                        <ion-datetime placeholder="MMM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}"  [(ngModel)]= "data.bookdt" name="bookdt" #bookdt="ngModel" ></ion-datetime>\n<!--					<p>{{bookdt}}</p>\n					<p item-end class="ennd"></p>-->\n				</ion-item>\n			</ion-list>\n\n		</div>\n	</div>\n	<div class="content-sec">\n	  <ion-list *ngFor="let item of getcrt">\n	    <ion-item>\n	      <ion-thumbnail item-start>\n	        <img src="{{item.product_image0}}">\n	      </ion-thumbnail>\n	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">{{item.product_name}}</h2>\n	      <!--<p>{{item.product_ingredients}}</p>-->\n	      <p item-end class="left-p" >${{item.price_per_plate*item.quantity}}</p>\n	      <h3>Per plate ${{item.price_per_plate}}</h3>\n	      <div class="itembottom" style="width: 100%; float: left; padding-top: 3px;">\n	      <div class="counter_sec">\n			   <button ion-button clear><ion-icon name="remove"  (click)="remove(item.quantity,item._id)"></ion-icon></button>\n                           <input type="text" value="{{item.quantity}}"  >\n			   <button ion-button clear><ion-icon name="add" (click)="add(item.quantity,item._id)"></ion-icon></button>\n			  \n		  </div>\n		  <span>${{item.price_per_plate}} x {{item.quantity}}</span>\n		  </div>\n	      <div class="rghtbtn">\n	      	<button ion-button (click)="delproduct(item._id)">Delete</button>\n	      </div>\n	    </ion-item>\n	 \n	</ion-list>\n</div>\n<div class="total">\n	<h2 class="left">Subtotal</h2>\n	<h2 class="right">${{total1}}</h2>\n</div>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button full color="theme-header" (click)="pyment()">Checkout</button>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\cart\cart.html"*/,
+        selector: 'page-cart',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\cart\cart.html"*/'<!--\n  Generated template for the CartPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="theme-header">\n    <ion-title>Payment</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only class="btnprofile">\n      <div class="iconprf">\n          <img src="assets/img/cart.png">\n       </div>\n      </button>     \n    </ion-buttons>\n    \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n	<div class="top-sec">\n			<ion-grid>\n				<ion-row *ngIf = "nodata == 0">\n					<ion-col col-6 class="left">\n					  <div class="chef">\n						<h5>{{chef.firstname}} {{chef.lastname}}</h5>\n					  </div>\n					</ion-col>\n					<ion-col col-6 class="right">\n					  <div class="phn">\n						<h5>{{chef.phone}}</h5>\n						<span><img src="assets/img/msg.png"></span>\n					  </div>\n					</ion-col>\n				</ion-row>\n                            <p  *ngIf = "nodata == 1"> </p>\n			</ion-grid>\n		</div>\n	<div class="text-sec">\n		\n		<div class="mid-sec">\n			<h5>Customer Address: \n                            <!--<button ion-button clear class="imgbtn" style="background-image:url(\'assets/img/creat.gif\'); background-size:cover"></button>-->\n                        </h5>\n			<p>{{str1}}</p>\n			<p>{{str2}}</p>\n		</div>\n		<div class="bottom-sec cartouter" >\n			<ion-list>\n				<ion-item >\n					<h5 item-start class="strt">Booking Date & Time</h5>\n                                        <ion-datetime placeholder="MMM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}"  [(ngModel)]= "data.bookdt" name="bookdt" #bookdt="ngModel" ></ion-datetime>\n<!--					<p>{{bookdt}}</p>\n					<p item-end class="ennd"></p>-->\n				</ion-item>\n			</ion-list>\n\n		</div>\n	</div>\n	<div class="content-sec">\n	  <ion-list *ngFor="let item of getcrt">\n	    <ion-item>\n	      <ion-thumbnail item-start>\n	        <img src="{{item.product_image0}}">\n	      </ion-thumbnail>\n	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">{{item.product_name}}</h2>\n	      <!--<p>{{item.product_ingredients}}</p>-->\n	      <p item-end class="left-p" >${{item.price_per_plate*item.quantity}}</p>\n	      <h3>Per plate ${{item.price_per_plate}}</h3>\n	      <div class="itembottom" style="width: 100%; float: left; padding-top: 3px;">\n	      <div class="counter_sec">\n			   <button ion-button clear><ion-icon name="remove"  (click)="remove(item.quantity,item._id)"></ion-icon></button>\n                           <input type="text" value="{{item.quantity}}"  >\n			   <button ion-button clear><ion-icon name="add" (click)="add(item.quantity,item._id)"></ion-icon></button>\n			  \n		  </div>\n		  <span>${{item.price_per_plate}} x {{item.quantity}}</span>\n		  </div>\n	      <div class="rghtbtn">\n	      	<button ion-button (click)="delproduct(item._id)">Delete</button>\n	      </div>\n	    </ion-item>\n	 \n	</ion-list>\n</div>\n<div class="total">\n	<h2 class="left">Subtotal</h2>\n	<h2 class="right">${{total1}}</h2>\n</div>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button full color="theme-header" (click)="pyment()">Checkout</button>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\cart\cart.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
@@ -7438,9 +8258,9 @@ CartPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cart_cart__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_service__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_service__ = __webpack_require__(190);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7858,6 +8678,13 @@ var ProductviewPage = (function () {
     ProductviewPage.prototype.remove = function (qntity) {
         if (this.quantity == this.splarr.minimum_order) {
             console.log(this.quantity);
+            var toast = this.toastCtrl.create({
+                message: 'Minimum order quantity must be :' + ' ' + this.splarr.minimum_order,
+                duration: 1000,
+                position: 'top'
+            });
+            ;
+            toast.present();
         }
         else {
             this.quantity = parseFloat(qntity) - 1;
@@ -7891,9 +8718,9 @@ ProductviewPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NominatimapPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -8015,10 +8842,12 @@ var NominatimapPage = (function () {
                                                 _this.infowindow.setContent(results[0].formatted_address);
                                                 //    
                                                 _this.infowindow.open(_this.map, marker1);
+                                                //           this.data.city = results[0].address_components[0].long_name;
                                                 _this.autocomplete.query = results[0].formatted_address;
                                             }
                                             else if (results[1]) {
                                                 _this.autocomplete.query = results[1].formatted_address;
+                                                //     this.data.city = results[1].address_components[0].long_name;
                                                 console.log(results[1].formatted_address);
                                                 _this.infowindow.setContent(results[1].formatted_address);
                                                 _this.infowindow.open(_this.map, marker1);
@@ -8045,6 +8874,9 @@ var NominatimapPage = (function () {
                                     if (addr == null) {
                                     }
                                     _this.autocomplete.query = addr;
+                                    if (resso.response.properties.city == 'bogota') {
+                                        resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1);
+                                    }
                                     _this.data.city = resso.response.properties.city;
                                     console.log(_this.data.city);
                                     console.log(_this.autocomplete.query);
@@ -8193,7 +9025,7 @@ var NominatimapPage = (function () {
                                 long: _this.long
                             };
                             var Serialized = _this.serializeObj(postdata);
-                            _this.http.post('  http://rafao.us-west-2.elasticbeanstalk.com/api/home/reverse_geocoding', Serialized, options).map(function (res) { return res.json(); }).subscribe(function (response) {
+                            _this.http.post('http://rafao.us-west-2.elasticbeanstalk.com/api/home/reverse_geocoding', Serialized, options).map(function (res) { return res.json(); }).subscribe(function (response) {
                                 console.log(response.data == '{"message":"Result not found"}');
                                 var resso = JSON.parse(response.data);
                                 console.log(resso.response);
@@ -8214,6 +9046,42 @@ var NominatimapPage = (function () {
                                                     console.log(results[0].place_id);
                                                     _this.autocomplete.query = results[1].formatted_address;
                                                     console.log(_this.autocomplete.query);
+                                                    var citiie = results[0].formatted_address.split(',');
+                                                    var City = '';
+                                                    _this.data.city = '';
+                                                    console.log(citiie[1]);
+                                                    switch (citiie[1]) {
+                                                        case ' Soacha': {
+                                                            _this.data.city = 'cun_soacha';
+                                                            break;
+                                                        }
+                                                        case ' Mosquera': {
+                                                            _this.data.city = 'cun_mosquera';
+                                                            break;
+                                                        }
+                                                        case ' Facatativá': {
+                                                            _this.data.city = 'Facatativá';
+                                                            break;
+                                                        }
+                                                        case ' Madrid': {
+                                                            _this.data.city = 'cun_madrid';
+                                                            break;
+                                                        }
+                                                        case ' Cajicá': {
+                                                            _this.data.city = 'cun_cajica';
+                                                            break;
+                                                        }
+                                                        case ' Sopó': {
+                                                            _this.data.city = 'cun_sopo';
+                                                            break;
+                                                        }
+                                                        default: {
+                                                            console.log('not found');
+                                                            console.log(citiie[1]);
+                                                        }
+                                                    }
+                                                    console.log(_this.data.city);
+                                                    //            this.data.city = citiie ;
                                                     //          this.infowindow=new google.maps.InfoWindow({
                                                     //              content: results[1].formatted_address,
                                                     //          }); 
@@ -8223,6 +9091,42 @@ var NominatimapPage = (function () {
                                                 else if (results[1]) {
                                                     console.log(results[1].place_id);
                                                     _this.autocomplete.query = results[1].formatted_address;
+                                                    var citiie1 = results[1].formatted_address.split(',');
+                                                    var City = '';
+                                                    _this.data.city = '';
+                                                    console.log(citiie[1]);
+                                                    switch (citiie[1]) {
+                                                        case ' Soacha': {
+                                                            _this.data.city = 'cun_soacha';
+                                                            break;
+                                                        }
+                                                        case ' Mosquera': {
+                                                            _this.data.city = 'cun_mosquera';
+                                                            break;
+                                                        }
+                                                        case ' Facatativá': {
+                                                            _this.data.city = 'Facatativá';
+                                                            break;
+                                                        }
+                                                        case ' Madrid': {
+                                                            _this.data.city = 'cun_madrid';
+                                                            break;
+                                                        }
+                                                        case ' Cajicá': {
+                                                            _this.data.city = 'cun_cajica';
+                                                            break;
+                                                        }
+                                                        case ' Sopó': {
+                                                            _this.data.city = 'cun_sopo';
+                                                            break;
+                                                        }
+                                                        default: {
+                                                            console.log('not found');
+                                                            console.log(citiie[1]);
+                                                        }
+                                                    }
+                                                    console.log(_this.data.city);
+                                                    //            this.data.city = citiie1 ;
                                                     console.log(_this.autocomplete.query);
                                                     //          this.infowindow=new google.maps.InfoWindow({
                                                     //              content: results[1].formatted_address,
@@ -8250,6 +9154,9 @@ var NominatimapPage = (function () {
                                         if (addr == null) {
                                         }
                                         _this.autocomplete.query = addr;
+                                        if (resso.response.properties.city == 'bogota') {
+                                            resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1);
+                                        }
                                         _this.data.city = resso.response.properties.city;
                                         console.log(_this.data.city);
                                         console.log(_this.autocomplete.query);
@@ -8302,7 +9209,7 @@ var NominatimapPage = (function () {
                         // alert("working1");
                     }).catch(function (error) {
                         console.log('Error getting location', error);
-                        _this.ToastMsg('Error getting location' + ',' + error);
+                        _this.ToastMsg('Please Turn On your Loaction!! <br>Error getting location' + ',' + error);
                         Loading.dismissAll();
                         var latLng = new google.maps.LatLng(_this.lat, _this.long);
                         _this.geocoder.geocode({ 'latLng': latLng }, (function (results, status) {
@@ -8401,8 +9308,44 @@ var NominatimapPage = (function () {
                                     if (status == google.maps.GeocoderStatus.OK) {
                                         if (results[0]) {
                                             console.log(results[0].place_id);
-                                            _this.autocomplete.query = results[1].formatted_address;
+                                            _this.autocomplete.query = results[0].formatted_address;
                                             console.log(_this.autocomplete.query);
+                                            var citiie2 = results[0].formatted_address.split(',');
+                                            var City = '';
+                                            _this.data.city = '';
+                                            console.log(citiie2[1]);
+                                            switch (citiie2[1]) {
+                                                case ' Soacha': {
+                                                    _this.data.city = 'cun_soacha';
+                                                    break;
+                                                }
+                                                case ' Mosquera': {
+                                                    _this.data.city = 'cun_mosquera';
+                                                    break;
+                                                }
+                                                case ' Facatativá': {
+                                                    _this.data.city = 'Facatativá';
+                                                    break;
+                                                }
+                                                case ' Madrid': {
+                                                    _this.data.city = 'cun_madrid';
+                                                    break;
+                                                }
+                                                case ' Cajicá': {
+                                                    _this.data.city = 'cun_cajica';
+                                                    break;
+                                                }
+                                                case ' Sopó': {
+                                                    _this.data.city = 'cun_sopo';
+                                                    break;
+                                                }
+                                                default: {
+                                                    console.log('not found');
+                                                    console.log(citiie2[1]);
+                                                }
+                                            }
+                                            console.log(_this.data.city);
+                                            //            this.data.city = citiie2 ;
                                             //          this.infowindow=new google.maps.InfoWindow({
                                             //              content: results[1].formatted_address,
                                             //          }); 
@@ -8412,6 +9355,42 @@ var NominatimapPage = (function () {
                                         else if (results[1]) {
                                             console.log(results[1].place_id);
                                             _this.autocomplete.query = results[1].formatted_address;
+                                            var citiie3 = results[1].formatted_address.split(',');
+                                            var City = '';
+                                            _this.data.city = '';
+                                            console.log(citiie3[1]);
+                                            switch (citiie3[1]) {
+                                                case ' Soacha': {
+                                                    _this.data.city = 'cun_soacha';
+                                                    break;
+                                                }
+                                                case ' Mosquera': {
+                                                    _this.data.city = 'cun_mosquera';
+                                                    break;
+                                                }
+                                                case ' Facatativá': {
+                                                    _this.data.city = 'Facatativá';
+                                                    break;
+                                                }
+                                                case ' Madrid': {
+                                                    _this.data.city = 'cun_madrid';
+                                                    break;
+                                                }
+                                                case ' Cajicá': {
+                                                    _this.data.city = 'cun_cajica';
+                                                    break;
+                                                }
+                                                case ' Sopó': {
+                                                    _this.data.city = 'cun_sopo';
+                                                    break;
+                                                }
+                                                default: {
+                                                    console.log('not found');
+                                                    console.log(citiie3[1]);
+                                                }
+                                            }
+                                            console.log(_this.data.city);
+                                            //            this.data.city = citiie3;
                                             console.log(_this.autocomplete.query);
                                             //          this.infowindow=new google.maps.InfoWindow({
                                             //              content: results[1].formatted_address,
@@ -8436,6 +9415,7 @@ var NominatimapPage = (function () {
             });
         };
         //  this.initMap();
+        //   alert('hello');
         this.userdetail = JSON.parse(localStorage.getItem('UserDetail'));
         console.log(this.userdetail);
         this.cities();
@@ -8590,7 +9570,7 @@ var NominatimapPage = (function () {
             alert1.present();
         }
         else {
-            var alert_1 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'RAFAHO',
                 message: 'Save this as favourite address?',
                 buttons: [
@@ -8607,10 +9587,47 @@ var NominatimapPage = (function () {
                             _this.iconname = 'star';
                             console.log(_this.appsetting.saved);
                             _this.appsetting.saved.push(auto);
+                            if (_this.data.city == undefined) {
+                                _this.data.city = 'Bogota';
+                            }
+                            var citytosend;
+                            switch (_this.data.city) {
+                                case 'Bogota': {
+                                    citytosend = 'Bogota';
+                                    break;
+                                }
+                                case 'cun_soacha': {
+                                    citytosend = 'Soacha';
+                                    break;
+                                }
+                                case 'cun_mosquera': {
+                                    citytosend = 'Mosquera';
+                                    break;
+                                }
+                                case 'Facatativá': {
+                                    citytosend = 'Facatativá';
+                                    break;
+                                }
+                                case 'cun_madrid': {
+                                    citytosend = 'Madrid';
+                                    break;
+                                }
+                                case 'cun_cajica': {
+                                    citytosend = 'Cajicá';
+                                    break;
+                                }
+                                case 'cun_sopo': {
+                                    citytosend = 'Sopó';
+                                    break;
+                                }
+                                default: {
+                                    console.log('not found');
+                                }
+                            }
                             console.log(_this.appsetting.saved);
                             var postdata = {
                                 user_id: _this.userdetail._id,
-                                favorite_address: auto
+                                favorite_address: auto + ' ' + citytosend
                             };
                             console.log(postdata);
                             var Serialized = _this.serializeObj(postdata);
@@ -8626,7 +9643,7 @@ var NominatimapPage = (function () {
                     }
                 ]
             });
-            alert_1.present();
+            alert.present();
         }
         console.log(this.appsetting.saved);
         console.log(localStorage.getItem('Favaddress'));
@@ -8684,29 +9701,40 @@ var NominatimapPage = (function () {
         }
         if (this.number == true) {
             //let self = this; 
-            var config = {
-                //types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
-                input: this.autocomplete.query,
-            };
-            this.acService.getPlacePredictions(config, (function (predictions, status) {
-                console.log('modal > getPlacePredictions > status > ', status);
-                if (status == 'ZERO_RESULTS') {
-                    _this.lupapsearch();
-                    _this.omega = 1;
-                    _this.autocompleteItems = [];
-                }
-                else {
-                    _this.omega = 0;
-                    _this.autocompleteItems = [];
-                    console.log(predictions);
-                    predictions.forEach((function (prediction) {
-                        console.log("abc");
-                        _this.autocompleteItems.push(prediction);
-                    }));
-                }
-                // return false;
-            }));
-            this.number = true;
+            setTimeout(function () {
+                var config = {
+                    //types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
+                    input: _this.autocomplete.query,
+                    //    componentRestrictions: {  } 
+                    componentRestrictions: { country: 'co' }
+                };
+                _this.acService.getPlacePredictions(config, (function (predictions, status) {
+                    console.log('modal > getPlacePredictions > status > ', status);
+                    if (status == 'ZERO_RESULTS') {
+                        _this.lupapsearch();
+                        _this.omega = 1;
+                        _this.autocompleteItems = [];
+                    }
+                    else {
+                        _this.omega = 0;
+                        _this.autocompleteItems = [];
+                        console.log(predictions);
+                        for (var e = 0; e <= 1; e++) {
+                            _this.autocompleteItems.push(predictions[e]);
+                        }
+                        console.log(_this.autocompleteItems);
+                        //    predictions.forEach(((prediction)=> {   
+                        //      console.log("abc")           
+                        //    this.autocompleteItems.push(prediction);
+                        //   
+                        //    })
+                        //   
+                        //   );
+                    }
+                    // return false;
+                }));
+                _this.number = true;
+            }, 8000);
         }
         else {
             this.lupapsearch();
@@ -8729,7 +9757,7 @@ var NominatimapPage = (function () {
             console.log(adr);
             if (!this.number) {
                 console.log('its hitting');
-                this.http.post('https://nominatim.openstreetmap.org/search/' + adr + '?format=json&addressdetails=1&limit=1&polygon_svg=1', options).map(function (res) { return res.json(); }).subscribe(function (response) {
+                this.http.post('https://nominatim.openstreetmap.org/search/' + adr + '?countrycodes=co&format=json&addressdetails=1&limit=1&polygon_svg=1', options).map(function (res) { return res.json(); }).subscribe(function (response) {
                     console.log(response[0]);
                     if ((response[0] == undefined)) {
                         var config = {
@@ -8906,6 +9934,43 @@ var NominatimapPage = (function () {
                             if (status == google.maps.GeocoderStatus.OK) {
                                 if (results[0]) {
                                     _this.autocomplete.query = results[0].formatted_address;
+                                    var citiie7 = results[0].formatted_address.split(',');
+                                    var City = '';
+                                    _this.data.city = '';
+                                    console.log(citiie7[1]);
+                                    _this.data.city = '';
+                                    switch (citiie7[1]) {
+                                        case ' Soacha': {
+                                            _this.data.city = 'cun_soacha';
+                                            break;
+                                        }
+                                        case ' Mosquera': {
+                                            _this.data.city = 'cun_mosquera';
+                                            break;
+                                        }
+                                        case ' Facatativá': {
+                                            _this.data.city = 'Facatativá';
+                                            break;
+                                        }
+                                        case ' Madrid': {
+                                            _this.data.city = 'cun_madrid';
+                                            break;
+                                        }
+                                        case ' Cajicá': {
+                                            _this.data.city = 'cun_cajica';
+                                            break;
+                                        }
+                                        case ' Sopó': {
+                                            _this.data.city = 'cun_sopo';
+                                            break;
+                                        }
+                                        default: {
+                                            console.log('not found');
+                                            console.log(citiie7[1]);
+                                        }
+                                    }
+                                    console.log(_this.data.city);
+                                    //            this.data.city = citiie7;
                                     console.log(_this.autocomplete.query);
                                     _this.infowindow.setContent(results[0].formatted_address);
                                     _this.infowindow.open(_this.map, marker);
@@ -8926,6 +9991,9 @@ var NominatimapPage = (function () {
                     else {
                         var addr = resso.response.properties.address;
                         _this.autocomplete.query = addr;
+                        if (resso.response.properties.city == 'bogota') {
+                            resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1);
+                        }
                         _this.data.city = resso.response.properties.city;
                         console.log(_this.data.city);
                         console.log(_this.autocomplete.query);
@@ -9009,6 +10077,70 @@ var NominatimapPage = (function () {
                                             if (results[0]) {
                                                 console.log(results[0].place_id);
                                                 _this.autocomplete.query = results[1].formatted_address;
+                                                var citiie4 = results[0].formatted_address.split(',');
+                                                var City = '';
+                                                _this.data.city = '';
+                                                console.log(citiie4[1]);
+                                                switch (citiie4[1]) {
+                                                    case ' Soacha': {
+                                                        _this.data.city = 'cun_soacha';
+                                                        break;
+                                                    }
+                                                    case ' Mosquera': {
+                                                        _this.data.city = 'cun_mosquera';
+                                                        break;
+                                                    }
+                                                    case ' Facatativá': {
+                                                        _this.data.city = 'Facatativá';
+                                                        break;
+                                                    }
+                                                    case ' Madrid': {
+                                                        _this.data.city = 'cun_madrid';
+                                                        break;
+                                                    }
+                                                    case ' Cajicá': {
+                                                        _this.data.city = 'cun_cajica';
+                                                        break;
+                                                    }
+                                                    case ' Sopó': {
+                                                        _this.data.city = 'cun_sopo';
+                                                        break;
+                                                    }
+                                                    default: {
+                                                        console.log('not found');
+                                                        console.log(citiie4[1]);
+                                                    }
+                                                }
+                                                //           if(citiie4[1] == 'Soacha'){
+                                                //               console.log('Soacha');
+                                                //              City = 'cun_soacha'
+                                                //               console.log(City);
+                                                //               this.data.city = City;
+                                                //            }
+                                                //            if(citiie4[1] == 'Mosquera'){
+                                                //            console.log('Mosquera');
+                                                //              City = 'cun_mosquera'
+                                                //               console.log(City);
+                                                //                 this.data.city = City;
+                                                //            }
+                                                //            if(citiie4[1] == 'Facatativá'){
+                                                //            City = 'Facatativá'
+                                                //            this.data.city = City;
+                                                //            }
+                                                //            if(citiie4[1] == 'Madrid'){
+                                                //            City= 'cun_madrid'
+                                                //            this.data.city = City;
+                                                //            }
+                                                //            if(citiie4[1] == 'Cajicá'){
+                                                //             City= 'cun_cajica'
+                                                //             this.data.city = City;
+                                                //            }
+                                                //            if(citiie4[1] == 'Sopó'){
+                                                //             City = 'cun_sopo'
+                                                //             this.data.city = City;
+                                                //            }
+                                                console.log(_this.data.city);
+                                                //            this.data.city = citiie4;
                                                 console.log(_this.autocomplete.query);
                                                 //          this.infowindow=new google.maps.InfoWindow({
                                                 //              content: results[1].formatted_address,
@@ -9019,6 +10151,42 @@ var NominatimapPage = (function () {
                                             else if (results[1]) {
                                                 console.log(results[1].place_id);
                                                 _this.autocomplete.query = results[1].formatted_address;
+                                                var citiie5 = results[1].formatted_address.split(',');
+                                                var City = '';
+                                                _this.data.city = '';
+                                                console.log(citiie5[1]);
+                                                switch (citiie5[1]) {
+                                                    case ' Soacha': {
+                                                        _this.data.city = 'cun_soacha';
+                                                        break;
+                                                    }
+                                                    case ' Mosquera': {
+                                                        _this.data.city = 'cun_mosquera';
+                                                        break;
+                                                    }
+                                                    case ' Facatativá': {
+                                                        _this.data.city = 'Facatativá';
+                                                        break;
+                                                    }
+                                                    case ' Madrid': {
+                                                        _this.data.city = 'cun_madrid';
+                                                        break;
+                                                    }
+                                                    case ' Cajicá': {
+                                                        _this.data.city = 'cun_cajica';
+                                                        break;
+                                                    }
+                                                    case ' Sopó': {
+                                                        _this.data.city = 'cun_sopo';
+                                                        break;
+                                                    }
+                                                    default: {
+                                                        console.log('not found');
+                                                        console.log(citiie5[1]);
+                                                    }
+                                                }
+                                                console.log(_this.data.city);
+                                                //            this.data.city = citiie5;
                                                 console.log(_this.autocomplete.query);
                                                 //          this.infowindow=new google.maps.InfoWindow({
                                                 //              content: results[1].formatted_address,
@@ -9044,6 +10212,9 @@ var NominatimapPage = (function () {
                                     var addr = resso.response.properties.address;
                                     console.log(resso.response);
                                     _this.autocomplete.query = addr;
+                                    if (resso.response.properties.city == 'bogota') {
+                                        resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1);
+                                    }
                                     _this.data.city = resso.response.properties.city;
                                     console.log(_this.data.city);
                                     console.log(_this.autocomplete.query);
@@ -9166,8 +10337,35 @@ var NominatimapPage = (function () {
                                         if (status == google.maps.GeocoderStatus.OK) {
                                             if (results[0]) {
                                                 console.log(results[0].place_id);
-                                                _this.autocomplete.query = results[1].formatted_address;
+                                                _this.autocomplete.query = results[0].formatted_address;
                                                 console.log(_this.autocomplete.query);
+                                                var citiie = results[0].formatted_address.split(',');
+                                                var City = '';
+                                                _this.data.city = '';
+                                                console.log(citiie[1]);
+                                                switch (citiie[1]) {
+                                                    case ' Soacha':
+                                                        _this.data.city = 'cun_soacha';
+                                                        break;
+                                                    case ' Mosquera':
+                                                        _this.data.city = 'cun_mosquera';
+                                                        break;
+                                                    case ' Facatativá':
+                                                        _this.data.city = 'Facatativá';
+                                                        break;
+                                                    case ' Madrid':
+                                                        _this.data.city = 'cun_madrid';
+                                                        break;
+                                                    case ' Cajicá':
+                                                        _this.data.city = 'cun_cajica';
+                                                        break;
+                                                    case ' Sopó':
+                                                        _this.data.city = 'cun_sopo';
+                                                        break;
+                                                    default:
+                                                        console.log('not found');
+                                                        console.log(citiie[1]);
+                                                }
                                                 //          this.infowindow=new google.maps.InfoWindow({
                                                 //              content: results[1].formatted_address,
                                                 //          }); 
@@ -9177,6 +10375,41 @@ var NominatimapPage = (function () {
                                             else if (results[1]) {
                                                 console.log(results[1].place_id);
                                                 _this.autocomplete.query = results[1].formatted_address;
+                                                var citiie = results[1].formatted_address.split(',');
+                                                var City = '';
+                                                _this.data.city = '';
+                                                switch (citiie[1]) {
+                                                    case ' Soacha': {
+                                                        _this.data.city = 'cun_soacha';
+                                                        break;
+                                                    }
+                                                    case ' Mosquera': {
+                                                        _this.data.city = 'cun_mosquera';
+                                                        break;
+                                                    }
+                                                    case ' Facatativá': {
+                                                        _this.data.city = 'Facatativá';
+                                                        break;
+                                                    }
+                                                    case ' Madrid': {
+                                                        _this.data.city = 'cun_madrid';
+                                                        break;
+                                                    }
+                                                    case ' Cajicá': {
+                                                        _this.data.city = 'cun_cajica';
+                                                        break;
+                                                    }
+                                                    case ' Sopó': {
+                                                        _this.data.city = 'cun_sopo';
+                                                        break;
+                                                    }
+                                                    default: {
+                                                        console.log('not found');
+                                                        console.log(citiie[1]);
+                                                    }
+                                                }
+                                                console.log(_this.data.city);
+                                                //            this.data.city = citiie ;
                                                 console.log(_this.autocomplete.query);
                                                 //          this.infowindow=new google.maps.InfoWindow({
                                                 //              content: results[1].formatted_address,
@@ -9204,6 +10437,9 @@ var NominatimapPage = (function () {
                                     var addr = resso.response.properties.address;
                                     console.log(resso.response);
                                     _this.autocomplete.query = addr;
+                                    if (resso.response.properties.city == 'bogota') {
+                                        resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1);
+                                    }
                                     _this.data.city = resso.response.properties.city;
                                     console.log(_this.data.city);
                                     console.log(_this.autocomplete.query);
@@ -9281,16 +10517,60 @@ var NominatimapPage = (function () {
         this.viewCtrl.dismiss();
     };
     NominatimapPage.prototype.closeModal = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+        var options = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["RequestOptions"]({ headers: headers });
         this.userdetail = JSON.parse(localStorage.getItem('UserDetail'));
         console.log(this.data.additional);
         if (this.data.additional == undefined) {
             this.data.additional = '';
         }
+        //   if(this.data.city == undefined){
+        //       this.data.city = '';
+        //   }
         console.log(this.autocomplete.query);
         if ((this.lat == '') && (this.long == '')) {
             this.ToastMsg('Nothing is saved');
         }
         else {
+            if (this.data.city == undefined) {
+                this.data.city = 'Bogota';
+            }
+            var citytosend;
+            switch (this.data.city) {
+                case 'Bogota': {
+                    citytosend = 'Bogota';
+                    break;
+                }
+                case 'cun_soacha': {
+                    citytosend = 'Soacha';
+                    break;
+                }
+                case 'cun_mosquera': {
+                    citytosend = 'Mosquera';
+                    break;
+                }
+                case 'Facatativá': {
+                    citytosend = 'Facatativá';
+                    break;
+                }
+                case 'cun_madrid': {
+                    citytosend = 'Madrid';
+                    break;
+                }
+                case 'cun_cajica': {
+                    citytosend = 'Cajicá';
+                    break;
+                }
+                case 'cun_sopo': {
+                    citytosend = 'Sopó';
+                    break;
+                }
+                default: {
+                    console.log('not found');
+                    //                   console.log(citiie[1])
+                }
+            }
             if ((this.goglat) && (this.goglong)) {
                 this.lat = this.goglat;
                 this.long = this.goglong;
@@ -9301,8 +10581,20 @@ var NominatimapPage = (function () {
                 this.long = this.long;
                 console.log('nomi');
             }
+            var postdata2 = {
+                user_id: this.userdetail._id,
+                saved_address: this.autocomplete.query + ' ' + citytosend
+            };
+            console.log(postdata2);
+            var Serialized = this.serializeObj(postdata2);
+            this.http.post(this.appsetting.myGlobalVar + 'user/add_saved_address', Serialized, options).map(function (res) { return res.json(); }).subscribe(function (response2) {
+                console.log(response2);
+                if (response2.status == true) {
+                    localStorage.setItem('UserDetail', JSON.stringify(response2.data[0]));
+                }
+            });
             this.viewCtrl.dismiss({
-                address: this.data.additional + ' ' + this.autocomplete.query,
+                address: this.data.additional + ' ' + this.autocomplete.query + '   ' + citytosend,
                 lati: this.lat,
                 longi: this.long
             });
@@ -9328,26 +10620,302 @@ var NominatimapPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('map'),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
 ], NominatimapPage.prototype, "mapElement", void 0);
 NominatimapPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-nominatimap',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\nominatimap\nominatimap.html"*/'<!--\n  Generated template for the NominatimapPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <!--<ion-buttons start (click)="dismiss()">\n      <button ion-button icon-only>\n        \n      </button>\n    </ion-buttons>-->\n\n    <ion-title></ion-title>\n    \n    <ion-buttons end (click)="closeModal()">\n        <button clear ion-button>Save</button>\n    </ion-buttons>\n      <ion-buttons start (click)="clsmodel()">\n        <button clear ion-button>Cancel</button>\n    </ion-buttons>\n  </ion-navbar>\n    \n\n<div class="searchouter">\n<ion-searchbar \n   [(ngModel)]="autocomplete.query" \n   [showCancelButton]="true" \n   (ionInput)="updateSearch()" \n   (ionCancel)="dismiss()"\n   placeholder="Start typing and select ..." required>\n </ion-searchbar>\n<!--    <button class="favbtn" (click)="fav(autocomplete.query)" ion-button icon-only>\n<ion-icon name="{{iconname}}" ></ion-icon>\n</button>-->\n    \n     <ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="omega == 0">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item.description }}\n      </ion-item>\n      </ion-list> \n    <ion-list *ngIf="omega == 1">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item.address }}\n      </ion-item>\n      </ion-list> \n     <ion-list *ngIf="omega == 2">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item }}\n      </ion-item>\n      </ion-list>\n</div>\n    \n<ion-toolbar class="toolbar_top" style="padding: 0 7px 7px 7px; background: #fff;">\n\n    \n<!--<ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;"  [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n    <ion-option *ngFor="let cit of arr" [value]="cit.city_code" name="hh">{{cit.city}},{{cit?.state}}</ion-option>\n</ion-select>-->\n    <ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;" id="cittt" [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n  <ion-option value="Bogota" selected>Bogotá DC, Bogotá DC</ion-option>\n  <ion-option value="cun_soacha ">Soacha, Cundinamarca</ion-option>\n  <ion-option value="cun_mosquera  "> Mosquera, Cundinamarca</ion-option>\n  <ion-option value="cun_madrid  ">Madrid, Cundinamarca</ion-option>\n  <ion-option value="cun_cajica  ">Cajicá, Cundinamarca</ion-option>\n  <ion-option value="cun_soacha ">Soacha, Cundinamarca</ion-option>\n  <ion-option value="cun_sopo">Sopó, Cundinamarca</ion-option>\n  <ion-option value="facatativa ">Facatativá, Cundinamarca</ion-option>\n  <ion-option value="tenjo ">Tenjo,Cundinamarca</ion-option>\n  <ion-option value="tocancipa ">Tocancipa, Cundinamarca</ion-option>\n  <ion-option value="guasca ">Guasca, Cundinamarca</ion-option>\n  <ion-option value="anapoima ">Anapoima, Cundinamarca</ion-option>\n  <ion-option value="villeta ">Villeta, Cundinamarca</ion-option>\n  <ion-option value="la_vega ">La Vega, Cundinamarca</ion-option>\n  <ion-option value="la_mesa ">La Mesa, Cundinamarca</ion-option>\n</ion-select>\n\n\n<ion-input type="text" placeholder=\'Additional Address Details\' [(ngModel)]="data.additional" name="additional" #additional="ngModel"  ></ion-input>\n\n    <button ion-button full color="theme-header" *ngIf="omega == 0" (click)="chooseItem()" [disabled]="!isenabled">Search</button>\n     <button ion-button full color="theme-header" *ngIf="omega == 1" (click)="chooseItem1()" [disabled]="!isenabled">Search</button>\n      <button ion-button full color="theme-header" *ngIf="omega == 2" (click)="chooseItem2()" [disabled]="!isenabled" >Search</button>\n</ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n\n<!--    <ion-icon name="star" (click)="fav(autocomplete.query)">Add favourite</ion-icon>\n    <ion-item>\n      </ion-item>-->\n   \n    \n        \n<div #map id="map"></div>\n   \n    <!--<button ion-button (click)="saveaddress">Save Location</button>-->\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\nominatimap\nominatimap.html"*/,
+        selector: 'page-nominatimap',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\nominatimap\nominatimap.html"*/'<!--\n  Generated template for the NominatimapPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <!--<ion-buttons start (click)="dismiss()">\n      <button ion-button icon-only>\n        \n      </button>\n    </ion-buttons>-->\n\n    <ion-title></ion-title>\n    \n    <ion-buttons end (click)="closeModal()">\n        <button clear ion-button>Save</button>\n    </ion-buttons>\n      <ion-buttons start (click)="clsmodel()">\n        <button clear ion-button>Cancel</button>\n    </ion-buttons>\n  </ion-navbar>\n   <ion-toolbar class="toolbar_top" style="padding: 0 7px 0px 7px; background: #fff; min-height: auto; padding-top: 10px;">\n     <ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;" id="cittt" [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n  <ion-option value="Bogota" selected>Bogotá DC, Bogotá DC</ion-option>\n  <ion-option value="cun_soacha">Soacha, Cundinamarca</ion-option>\n  <ion-option value="cun_mosquera"> Mosquera, Cundinamarca</ion-option>\n  <ion-option value="cun_madrid">Madrid, Cundinamarca</ion-option>\n  <ion-option value="cun_cajica">Cajicá, Cundinamarca</ion-option>\n<!--  <ion-option value="cun_soacha">Soacha, Cundinamarca</ion-option>-->\n  <ion-option value="cun_sopo">Sopó, Cundinamarca</ion-option>\n  <ion-option value="Facatativá">Facatativá, Cundinamarca</ion-option>\n  <ion-option value="tenjo">Tenjo,Cundinamarca</ion-option>\n  <ion-option value="tocancipa">Tocancipa, Cundinamarca</ion-option>\n  <ion-option value="guasca">Guasca, Cundinamarca</ion-option>\n  <ion-option value="anapoima">Anapoima, Cundinamarca</ion-option>\n  <ion-option value="villeta">Villeta, Cundinamarca</ion-option>\n  <ion-option value="la_vega">La Vega, Cundinamarca</ion-option>\n  <ion-option value="La Mesa">La Mesa, Cundinamarca</ion-option>\n</ion-select>\n   </ion-toolbar>\n\n<div class="searchouter">\n<ion-searchbar \n   [(ngModel)]="autocomplete.query" \n   [showCancelButton]="true" \n   (ionInput)="updateSearch()" \n   (ionCancel)="dismiss()"\n   placeholder="Start typing and select ..." required>\n </ion-searchbar>\n<!--    <button class="favbtn" (click)="fav(autocomplete.query)" ion-button icon-only>\n<ion-icon name="{{iconname}}" ></ion-icon>\n</button>-->\n    \n     <ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="omega == 0">\n      <ion-item *ngFor="let item of autocompleteItems;let i = index"\n      (click)="getItem(item)"  >\n     <span > {{ item.description }}</span>\n      </ion-item>\n      </ion-list> \n    <ion-list *ngIf="omega == 1;let i = index">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item.address }}\n      </ion-item>\n      </ion-list> \n     <ion-list *ngIf="omega == 2">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item }}\n      </ion-item>\n      </ion-list>\n</div>\n    \n<ion-toolbar class="toolbar_top" style="padding: 0 7px 7px 7px; background: #fff;">\n\n    \n<!--<ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;"  [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n    <ion-option *ngFor="let cit of arr" [value]="cit.city_code" name="hh">{{cit.city}},{{cit?.state}}</ion-option>\n</ion-select>-->\n   \n\n\n<ion-input type="text" placeholder=\'Additional Address Details\' [(ngModel)]="data.additional" name="additional" #additional="ngModel"  ></ion-input>\n\n    <button ion-button full color="theme-header" *ngIf="omega == 0" (click)="chooseItem()" [disabled]="!isenabled">Search</button>\n     <button ion-button full color="theme-header" *ngIf="omega == 1" (click)="chooseItem1()" [disabled]="!isenabled">Search</button>\n      <button ion-button full color="theme-header" *ngIf="omega == 2" (click)="chooseItem2()" [disabled]="!isenabled" >Search</button>\n</ion-toolbar>\n</ion-header>\n\n\n\n<ion-content>\n\n<!--    <ion-icon name="star" (click)="fav(autocomplete.query)">Add favourite</ion-icon>\n    <ion-item>\n      </ion-item>-->\n   \n    \n        \n<div #map id="map"></div>\n   \n    <!--<button ion-button (click)="saveaddress">Save Location</button>-->\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\nominatimap\nominatimap.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__["a" /* Appsetting */],
-        __WEBPACK_IMPORTED_MODULE_4__angular_http__["Http"],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
-        __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
-        __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__["a" /* Appsetting */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__["a" /* Appsetting */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["Http"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__["a" /* NativeGeocoder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__["a" /* NativeGeocoder */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _o || Object])
 ], NominatimapPage);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
 //# sourceMappingURL=nominatimap.js.map
+
+/***/ }),
+
+/***/ 65:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rating_rating__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__ = __webpack_require__(9);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the ReviewsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ReviewsPage = (function () {
+    function ReviewsPage(navCtrl, navParams, modalCtrl, appsetting, platform, http, loadingCtrl, alertCtrl, toastCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.modalCtrl = modalCtrl;
+        this.appsetting = appsetting;
+        this.platform = platform;
+        this.http = http;
+        this.loadingCtrl = loadingCtrl;
+        this.alertCtrl = alertCtrl;
+        this.toastCtrl = toastCtrl;
+        this.details = [];
+        this.chefid = [];
+        this.userid = [];
+        this.starone = 'star-outline';
+        this.startwo = 'star-outline';
+        this.starthree = 'star-outline';
+        this.starfour = 'star-outline';
+        this.starfive = 'star-outline';
+        this.getdata();
+    }
+    ReviewsPage.prototype.getdata = function () {
+        var _this = this;
+        var temp = this;
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["RequestOptions"]({ headers: headers });
+        this.userid = JSON.parse(localStorage.getItem('UserDetail'))._id;
+        if (localStorage.getItem('Chefdetail')) {
+            this.chefid = JSON.parse(localStorage.getItem('Chefdetail'));
+            console.log(this.chefid);
+        }
+        var postdata = {
+            chef_id: this.chefid._id,
+            page: 1
+        };
+        console.log(postdata);
+        var Serialized = this.serializeObj(postdata);
+        this.http.post(this.appsetting.myGlobalVar + 'user/get_comment_and_rating', Serialized, options).map(function (res) { return res.json(); }).subscribe(function (response) {
+            console.log(response);
+            if (response.status == true) {
+                _this.details = response.data;
+                _this.totalreviews = _this.details.length;
+                console.log(response.average_rating);
+                response.average_rating = Number((response.average_rating).toFixed(1));
+                console.log(response.average_rating);
+                var Loading = _this.loadingCtrl.create({
+                    spinner: 'hide',
+                    cssClass: 'loader',
+                    content: "<img src='assets/img/icons3.gif'>",
+                    dismissOnPageChange: true
+                });
+                Loading.present().then(function () {
+                    if (response.average_rating == 1) {
+                        _this.starone = 'star';
+                    }
+                    else if (response.average_rating == 2) {
+                        _this.starone = 'star';
+                        _this.startwo = 'star';
+                    }
+                    else if (response.average_rating == 3) {
+                        _this.starone = 'star';
+                        _this.startwo = 'star';
+                        _this.starthree = 'star';
+                    }
+                    else if (response.average_rating == 4) {
+                        _this.starone = 'star';
+                        _this.startwo = 'star';
+                        _this.starthree = 'star';
+                        _this.starfour = 'star';
+                    }
+                    else if (response.average_rating == 5) {
+                        _this.starone = 'star';
+                        _this.startwo = 'star';
+                        _this.starthree = 'star';
+                        _this.starfour = 'star';
+                        _this.starfive = 'star';
+                    }
+                    else if ((1.1 <= response.average_rating) && (response.average_rating <= 1.5)) {
+                        _this.starone = 'star-half';
+                    }
+                    else if ((1.6 <= response.average_rating) && (response.average_rating <= 1.9)) {
+                        _this.starone = 'star';
+                        _this.startwo = 'star';
+                    }
+                    else if ((2.1 <= response.average_rating) && (response.average_rating <= 2.5)) {
+                        _this.starone = 'star';
+                        _this.startwo = 'star';
+                        _this.starthree = 'star-half';
+                    }
+                    else if ((2.6 <= response.average_rating) && (response.average_rating <= 2.9)) {
+                        _this.starone = 'star';
+                        _this.startwo = 'star';
+                        _this.starthree = 'star';
+                    }
+                    else if ((3.1 <= response.average_rating) && (response.average_rating <= 3.5)) {
+                        _this.starone = 'star';
+                        _this.startwo = 'star';
+                        _this.starthree = 'star';
+                        _this.starfour = 'star-half';
+                    }
+                    else if ((3.6 <= response.average_rating) && (response.average_rating <= 3.9)) {
+                        _this.starone = 'star';
+                        _this.startwo = 'star';
+                        _this.starthree = 'star';
+                        _this.starfour = 'star';
+                    }
+                    else if ((4.1 <= response.average_rating) && (response.average_rating <= 4.5)) {
+                        _this.starone = 'star';
+                        _this.startwo = 'star';
+                        _this.starthree = 'star';
+                        _this.starfour = 'star-half';
+                    }
+                    else if ((4.6 <= response.average_rating) && (response.average_rating <= 4.9)) {
+                        _this.starone = 'star';
+                        _this.startwo = 'star';
+                        _this.starthree = 'star';
+                        _this.starfour = 'star';
+                        _this.starfive = 'star';
+                    }
+                    Loading.dismiss();
+                });
+                _this.details.forEach(function (value, key) {
+                    temp.chefid.products.forEach(function (value1, key1) {
+                        var _this = this;
+                        var usernameid = value.user_id;
+                        console.log(usernameid);
+                        var postdata1 = {
+                            id: usernameid
+                        };
+                        var serialized = temp.serializeObj(postdata1);
+                        temp.http.post(temp.appsetting.myGlobalVar + 'userinfo', serialized, options).map(function (res) { return res.json(); }).subscribe(function (res) {
+                            console.log(res);
+                            console.log(value);
+                            value.username = res.data.firstname,
+                                value.picture = value1.product_image0;
+                            if (value.rating == 1) {
+                                _this.starrone = 'star';
+                            }
+                            else if (value.rating == 2) {
+                                value.starrone = 'star';
+                                value.starrtwo = 'star';
+                                value.starrthree = 'star-outline';
+                                value.starrfour = 'star-outline';
+                                value.starrfive = 'star-outline';
+                            }
+                            else if (value.rating == 3) {
+                                value.starrone = 'star';
+                                value.starrtwo = 'star';
+                                value.starrthree = 'star';
+                                value.starrfour = 'star-outline';
+                                value.starrfive = 'star-outline';
+                            }
+                            else if (value.rating == 4) {
+                                value.starrone = 'star';
+                                value.starrtwo = 'star';
+                                value.starrthree = 'star';
+                                value.starrfour = 'star';
+                                value.starrfive = 'star-outline';
+                            }
+                            else if (value.rating == 5) {
+                                value.starrone = 'star';
+                                value.starrtwo = 'star';
+                                value.starrthree = 'star';
+                                value.starrfour = 'star';
+                                value.starrfive = 'star';
+                            }
+                            else if (value.rating == 1.5) {
+                                _this.starrone = 'star';
+                                value.starrone = 'star-half';
+                                value.starrtwo = 'star-outline';
+                                value.starrthree = 'star-outline';
+                                value.starrfour = 'star-outline';
+                                value.starrfive = 'star-outline';
+                            }
+                            else if (value.rating == 2.5) {
+                                value.starrone = 'star';
+                                value.starrtwo = 'star';
+                                value.starrthree = 'star-half';
+                                value.starrfour = 'star-outline';
+                                value.starrfive = 'star-outline';
+                            }
+                            else if (value.rating == 3.5) {
+                                value.starrone = 'star';
+                                value.starrtwo = 'star';
+                                value.starrthree = 'star';
+                                value.starrfour = 'star-half';
+                                value.starrfive = 'star-outline';
+                            }
+                            else if (value.rating == 4.5) {
+                                value.starrone = 'star';
+                                value.starrtwo = 'star';
+                                value.starrthree = 'star';
+                                value.starrfour = 'star';
+                                value.starrfive = 'star-half';
+                            }
+                        });
+                    });
+                });
+                console.log(_this.details);
+            }
+        });
+    };
+    ReviewsPage.prototype.delreview = function (Data) {
+        var _this = this;
+        console.log(Data);
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["RequestOptions"]({ headers: headers });
+        var postdata = {
+            comment_id: Data._id
+        };
+        console.log(postdata);
+        var Serialized = this.serializeObj(postdata);
+        this.http.post(this.appsetting.myGlobalVar + 'user/delete_comment_and_rating', Serialized, options).map(function (res) { return res.json(); }).subscribe(function (response) {
+            console.log(response);
+            if (response.status == true) {
+                _this.getdata();
+            }
+        });
+    };
+    ReviewsPage.prototype.serializeObj = function (obj) {
+        var result = [];
+        for (var property in obj)
+            result.push(encodeURIComponent(property) + "=" + encodeURIComponent(obj[property]));
+        return result.join("&");
+    };
+    ReviewsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ReviewsPage');
+    };
+    ReviewsPage.prototype.rating = function () {
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_2__rating_rating__["a" /* RatingPage */]);
+        modal.present();
+    };
+    return ReviewsPage;
+}());
+ReviewsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-reviews',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\reviews\reviews.html"*/'<!--\n  Generated template for the ReviewsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="theme-header">\n    <ion-title>View Reviews</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n	<div class="top">\n		<ion-list style="margin: 0;">\n		  <ion-item>\n		    <ion-avatar item-start>\n		      <img src="assets/img/us.png">\n		    </ion-avatar>\n		    <h2>{{chefid.firstname}} {{chefid.lastname}}</h2>\n			<h3><span><ion-icon name="pin"></ion-icon> {{chefid.address}}</span></h3>\n\n		      <div class="btn" item-end>\n		      		<ul>\n				     	<li><ion-icon name="{{starone}}" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="{{startwo}}" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="{{starthree}}" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="{{starfour}}" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="{{starfive}}" color="theme-header"></ion-icon></li>\n				     </ul>\n				    <h4>{{totalreviews}} Reviews</h4>\n		      </div>     \n		 \n		  </ion-item>\n		</ion-list>\n	</div>\n	<div class="bottom">\n		<ion-list *ngFor = "let dat of details">\n		  <ion-item>\n		    <ion-thumbnail item-start>\n		         <img *ngIf="dat?.picture" src="{{dat?.picture}}">\n                               <img *ngIf="!dat?.picture" src="assets/img/southfod.png">\n		    </ion-thumbnail>\n		    <h2>{{dat?.username}}</h2>\n				<p>{{dat?.comment}}</p>\n				<ul>\n						<li><ion-icon name="{{dat?.starrone}}" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="{{dat?.starrtwo}}" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="{{dat?.starrthree}}" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="{{dat?.starrfour}}" color="theme-header"></ion-icon></li>\n				     	<li><ion-icon name="{{dat?.starrfive}}" color="theme-header"></ion-icon></li>\n				 </ul>\n                           <ion-icon *ngIf="dat?.user_id == userid" item-end style="font-size: 20px;" name="trash" color="theme-header" (click)=delreview(dat)></ion-icon>\n		  </ion-item>\n\n		</ion-list>\n	</div>\n</ion-content>\n<ion-footer>\n	<ion-toolbar>\n		<button ion-button full (click)="rating()" color="theme-header" class="ftrbtn">Add Rating</button>\n	</ion-toolbar>\n</ion-footer>\n<!-- <ion-footer>\n  <ion-toolbar style="padding: 6px;">\n		<div class="text">\n			 <ion-textarea class="enter" placeholder="Enter your text"></ion-textarea>\n		</div>\n		<div>\n			<div class="star">\n				<ul>\n			     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>\n			     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>\n			     	<li><ion-icon name="star" color="theme-header"></ion-icon></li>\n			     	<li><ion-icon name="star" color="lightgray"></ion-icon></li>\n			     	<li><ion-icon name="star" color="lightgray"></ion-icon></li>\n			    </ul>\n			</div>\n			<ion-buttons end>\n		      <button ion-button icon-only class="btnprofile">Submit</button>     \n		    </ion-buttons>\n		</div>\n		\n  </ion-toolbar>\n</ion-footer> -->\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\reviews\reviews.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__["a" /* Appsetting */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]])
+], ReviewsPage);
+
+//# sourceMappingURL=reviews.js.map
 
 /***/ }),
 
@@ -9357,7 +10925,7 @@ NominatimapPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Appsetting; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9420,24 +10988,24 @@ Appsetting = __decorate([
 
 /***/ }),
 
-/***/ 92:
+/***/ 93:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__whyrafaho_whyrafaho__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__help_help__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__terms_terms__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__editprofile_editprofile__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__editprefrence_editprefrence__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__addwallet_addwallet__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__frequentquestion_frequentquestion__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__feedback_feedback__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__changepwd_changepwd__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__signin_signin__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__whyrafaho_whyrafaho__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__help_help__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__terms_terms__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__editprofile_editprofile__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__editprefrence_editprefrence__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__addwallet_addwallet__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__frequentquestion_frequentquestion__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__feedback_feedback__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__changepwd_changepwd__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__signin_signin__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_appsetting__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_native_geocoder__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -9466,6 +11034,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ProfilePage = (function () {
     function ProfilePage(navCtrl, navParams, toastCtrl, loadingCtrl, nativeGeocoder, http, events, alertCtrl, appsetting, app) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.toastCtrl = toastCtrl;
@@ -9477,10 +11046,18 @@ var ProfilePage = (function () {
         this.appsetting = appsetting;
         this.app = app;
         this.data = {};
-        //     events.subscribe('index', (res) => {
-        //     console.log(res);
-        //      this.Userprofile();
-        //    })
+        setTimeout(function () {
+            console.log('Async operation has ended');
+            _this.Userprofile();
+        }, 1000);
+        events.subscribe('index', function (res) {
+            console.log(res);
+            if (res == 4) {
+                setTimeout(function () {
+                    _this.Userprofile();
+                }, 500);
+            }
+        });
     }
     ProfilePage.prototype.Userprofile = function () {
         var _this = this;
@@ -9583,18 +11160,18 @@ var ProfilePage = (function () {
             // this.rootPage = TabsPage;
         }
     };
-    ProfilePage.prototype.doRefresh = function (refresher) {
-        console.log('Begin async operation', refresher);
-        this.Userprofile();
-        setTimeout(function () {
-            console.log('Async operation has ended');
-            refresher.complete();
-        }, 2000);
-    };
+    //  doRefresh(refresher) {
+    //    console.log('Begin async operation', refresher);
+    //     this.Userprofile();
+    //    setTimeout(() => {
+    //      console.log('Async operation has ended');
+    //      refresher.complete();
+    //
+    //    }, 2000);
+    //  }
     ProfilePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ProfilePage');
-        this.Userprofile();
-        console.log('Rahul Maurya');
+        console.log('Neelanshi');
         console.log(window.navigator.onLine);
         if (window.navigator.onLine == true) {
         }
@@ -9629,7 +11206,7 @@ ProfilePage = __decorate([
 
 /***/ }),
 
-/***/ 94:
+/***/ 95:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9638,16 +11215,16 @@ ProfilePage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signin_signin__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signin_signin__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_device__ = __webpack_require__(311);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_fcm__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_geolocation__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_device__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_fcm__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_geolocation__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__nominatimap_nominatimap__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular2_countrypicker__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular2_countrypicker__ = __webpack_require__(313);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular2_countrypicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_angular2_countrypicker__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -9672,6 +11249,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the SignupPage page.
  *
@@ -9679,7 +11257,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var SignupPage = (function () {
-    function SignupPage(navCtrl, navParams, toastCtrl, geolocation, appsetting, fcm, nativeGeocoder, http, device, alertCtrl, loadingCtrl, modalCtrl, countryPickerService) {
+    function SignupPage(navCtrl, navParams, toastCtrl, geolocation, appsetting, fcm, nativeGeocoder, http, device, alertCtrl, loadingCtrl, modalCtrl, countryPickerService, events) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -9694,6 +11272,7 @@ var SignupPage = (function () {
         this.loadingCtrl = loadingCtrl;
         this.modalCtrl = modalCtrl;
         this.countryPickerService = countryPickerService;
+        this.events = events;
         this.key = false;
         this.savd = [];
         this.Ctype = 'password';
@@ -9709,18 +11288,16 @@ var SignupPage = (function () {
             console.log(countries);
         });
         //  alert('updatehogai');
-        fcm.getToken().then(function (token) {
-            _this.devicetoken = token;
-        });
-        fcm.onNotification().subscribe(function (data) {
-            if (data.wasTapped) {
-                console.log("Received in background");
-            }
-            else {
-                console.log("Received in foreground");
-            }
-            ;
-        });
+        // fcm.getToken().then(token=>{
+        //      this.devicetoken = token;
+        //      })
+        //      fcm.onNotification().subscribe(data=>{
+        //   if(data.wasTapped){
+        //     console.log("Received in background");
+        //   } else {
+        //     console.log("Received in foreground");
+        //   };
+        // })
         // this.GetLocation();
         // this.cities()
     }
@@ -9908,6 +11485,7 @@ var SignupPage = (function () {
                                 });
                                 _this.appsetting.svd.push(response.data.address);
                                 localStorage.setItem('Svedaddress', JSON.stringify(_this.appsetting.svd));
+                                _this.events.publish('hk');
                                 _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__tabs_tabs__["a" /* TabsPage */]);
                             }
                             else {
@@ -10166,12 +11744,13 @@ SignupPage = __decorate([
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */],
-        __WEBPACK_IMPORTED_MODULE_12_angular2_countrypicker__["CountryPickerService"]])
+        __WEBPACK_IMPORTED_MODULE_12_angular2_countrypicker__["CountryPickerService"],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]])
 ], SignupPage);
 
 //# sourceMappingURL=signup.js.map
 
 /***/ })
 
-},[370]);
+},[372]);
 //# sourceMappingURL=main.js.map

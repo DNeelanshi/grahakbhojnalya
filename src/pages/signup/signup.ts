@@ -9,6 +9,7 @@ import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResul
 import { MapmodalPage } from "../mapmodal/mapmodal";
 import { Appsetting } from "../../providers/appsetting";
 //import { Geolocation } from '@ionic-native/geolocation';
+import { Events } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Device } from '@ionic-native/device';
 import { FCM } from '@ionic-native/fcm';
@@ -60,23 +61,24 @@ export class SignupPage {
     public alertCtrl: AlertController,
     public loadingCtrl: LoadingController,
     public modalCtrl: ModalController,
-    private countryPickerService: CountryPickerService
+    private countryPickerService: CountryPickerService,
+    public events : Events
   ) {
   this.countryPickerService.getCountries().subscribe(countries => {
   this.countries = countries
   console.log(countries);
   });
 //  alert('updatehogai');
- fcm.getToken().then(token=>{
-      this.devicetoken = token;
-      })
-      fcm.onNotification().subscribe(data=>{
-   if(data.wasTapped){
-     console.log("Received in background");
-   } else {
-     console.log("Received in foreground");
-   };
- })
+// fcm.getToken().then(token=>{
+//      this.devicetoken = token;
+//      })
+//      fcm.onNotification().subscribe(data=>{
+//   if(data.wasTapped){
+//     console.log("Received in background");
+//   } else {
+//     console.log("Received in foreground");
+//   };
+// })
 // this.GetLocation();
 // this.cities()
  
@@ -271,6 +273,7 @@ this.http.post('http://nominatim.openstreetmap.org/search/'+adr+'?format=json&ad
             })    
                  this.appsetting.svd.push(response.data.address);
                     localStorage.setItem('Svedaddress',JSON.stringify(this.appsetting.svd));
+                    this.events.publish('hk');
                   this.navCtrl.push(TabsPage);
             } else{
                  this.AlertMsg1(response.message);

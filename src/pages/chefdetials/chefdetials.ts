@@ -23,11 +23,11 @@ import { Appsetting } from '../../providers/appsetting';
 export class ChefdetialsPage {
 array:any=[];
 splarray:any=[];
-  // diseases = [
-  //   { title: "About Me", description: "Speaking enthusiastically about and demonstrating their passion for food, flavours and delectable culinary creations from every corner of the globe, our celebrity chefs have unrivalled knowledge and expertise when it comes to all things culinary!" },
-  //   { title: "Work History", description: "Multiple sclerosis (MS) is an autoimmune disease in which the body's immune system mistakenly attacks myelin, the fatty substance that surrounds and protects the nerve fibers in the central nervous system." },
-  //   { title: "list of award", description: "Crohn's disease and ulcerative colitis (UC), both also known as inflammatory bowel diseases (IBD), are autoimmune diseases in which the body's immune system attacks the intestines." }
-  // ];
+ starone:any='star-outline';
+    startwo:any='star-outline';
+     starthree:any='star-outline';
+      starfour:any='star-outline';
+       starfive:any='star-outline';
 
   constructor(public navCtrl: NavController, 
        public appsetting: Appsetting, 
@@ -59,8 +59,87 @@ splarray:any=[];
 
            console.log(this.array);
            console.log(this.array[0].products);
+           console.log(this.array[0].avgrating)
+            if(this.array[0].avgrating == 1){
+                  this.starone = 'star'
+              }
+              else if(this.array[0].avgrating == 2){
+                   this.starone = 'star'
+                  this.startwo = 'star'
+              }
+              else if(this.array[0].avgrating == 3){
+                   this.starone = 'star'
+                  this.startwo = 'star'
+                  this.starthree = 'star'
+              }
+              else if(this.array[0].avgrating == 4){
+                  this.starone = 'star'
+                  this.startwo = 'star'
+                  this.starthree = 'star'
+                   this.starfour = 'star'
+              }
+             else if(this.array[0].avgrating == 5){
+                 this.starone = 'star'
+                  this.startwo = 'star'
+                  this.starthree = 'star'
+                   this.starfour = 'star'
+                  this.starfive = 'star'
+             }  else if((1.1 <=this.array[0].avgrating)&&(this.array[0].avgrating <= 1.5)){
+           
+              this.starone = 'star-half'
+                  
+              }  else if((1.6 <= this.array[0].avgrating)&&(this.array[0].avgrating <= 1.9)){
+            
+              this.starone = 'star'
+                  this.startwo = 'star'
+                
+              }  else if((2.1 <= this.array[0].avgrating)&&(this.array[0].avgrating <= 2.5)){
+           
+              this.starone = 'star'
+                  this.startwo = 'star'
+                   this.starthree = 'star-half'
+                
+              }  else if((2.6 <= this.array[0].avgrating)&&(this.array[0].avgrating <= 2.9)){
+             
+              this.starone = 'star'
+                  this.startwo = 'star'
+                  this.starthree = 'star'
+                
+              }
+                else if((3.1<= this.array[0].avgrating)&&(this.array[0].avgrating <= 3.5)){
+                   
+              this.starone = 'star'
+                  this.startwo = 'star'
+                  this.starthree = 'star'
+                   this.starfour='star-half'
+                
+              }
+                else if((3.6 <= this.array[0].avgrating)&&(this.array[0].avgrating <= 3.9)){
+                   
+              this.starone = 'star'
+                  this.startwo = 'star'
+                  this.starthree = 'star'
+                  this.starfour='star'
+              }
+           else if((4.1 <= this.array[0].avgrating)&&(this.array[0].avgrating <= 4.5)){
+            
+              this.starone = 'star'
+                  this.startwo = 'star'
+                  this.starthree = 'star'
+                   this.starfour='star-half'
+                
+              }
+                else if((4.6 <= this.array[0].avgrating)&&(this.array[0].avgrating <= 4.9)){
+                   
+              this.starone = 'star'
+                  this.startwo = 'star'
+                  this.starthree = 'star'
+                  this.starfour='star'
+                  this.starfive='star'
+                
+              }
            this.splarray = JSON.parse(localStorage.getItem('Chefdetail'));
-           console.log(this.splarray.products );
+           console.log(this.splarray.productss);
        }
   }
   dishview(prod){

@@ -22,7 +22,7 @@ declare var google;
   templateUrl: 'nominatimap.html',
 })
 export class NominatimapPage {
-  glob_item: any;
+ glob_item: any;
  public selectedShape : any;
   public globalshape : any;   
   autocompleteItems: any;
@@ -83,7 +83,9 @@ export class NominatimapPage {
    private alertCtrl:AlertController,
    private nativeGeocoder: NativeGeocoder,
    public places: ElementRef) {
+   
     //  this.initMap();
+//   alert('hello');
      this.userdetail = JSON.parse(localStorage.getItem('UserDetail'));
      console.log(this.userdetail);
    this.cities();
@@ -269,10 +271,41 @@ let options = new RequestOptions({ headers: headers})
               this.iconname = 'star';
               console.log(this.appsetting.saved);
         this.appsetting.saved.push(auto);
+          if(this.data.city == undefined){
+           this.data.city = 'Bogota'
+       }
+        var citytosend
+        switch(this.data.city){
+             case 'Bogota' : {
+                  citytosend = 'Bogota'
+              break;}
+              case 'cun_soacha' : {
+                  citytosend = 'Soacha'
+              break;}
+              case 'cun_mosquera':{
+                  citytosend = 'Mosquera'
+              break;}
+              case 'Facatativá':{
+                  citytosend = 'Facatativá'
+              break;}
+              case 'cun_madrid':{
+                  citytosend = 'Madrid'
+              break;}
+              case 'cun_cajica':{
+                  citytosend = 'Cajicá'
+              break;}
+               case 'cun_sopo' :{
+                   citytosend = 'Sopó'
+               break;}
+               default:{
+                   console.log('not found');
+
+               }
+          }
         console.log(this.appsetting.saved);
         var postdata = {
             user_id: this.userdetail._id,
-              favorite_address:auto
+              favorite_address:auto+' '+citytosend
        }
        
           console.log(postdata)
@@ -358,12 +391,12 @@ console.log('not matched');
 
 if(this.number == true){
         //let self = this; 
-    
-    let config = { 
+    setTimeout(()=>{    //<<<---    using ()=> syntax
+     let config = { 
     //types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
     input: this.autocomplete.query, 
 //    componentRestrictions: {  } 
-//    componentRestrictions: {country: 'co'}
+    componentRestrictions: {country: 'co'}
     }
     this.acService.getPlacePredictions(config, ((predictions, status)=> {
     console.log('modal > getPlacePredictions > status > ', status);
@@ -375,19 +408,26 @@ if(this.number == true){
     }else{
       this.omega = 0;
     this.autocompleteItems = [];   
-    console.log(predictions)         
-    predictions.forEach(((prediction)=> {   
-      console.log("abc")           
-    this.autocompleteItems.push(prediction);
-   
-    })
-   
-   ); }
+    console.log(predictions) 
+    for(var e = 0; e<=1; e++){
+     this.autocompleteItems.push(predictions[e]);
+    }     
+    console.log( this.autocompleteItems);   
+//    predictions.forEach(((prediction)=> {   
+//      console.log("abc")           
+//    this.autocompleteItems.push(prediction);
+//   
+//    })
+//   
+//   );
+    }
    // return false;
     })
     
    );
     this.number = true
+ },8000);
+ 
     
    
   }
@@ -412,7 +452,7 @@ var adr = this.autocomplete.query
 console.log(adr);
 if(!this.number){
     console.log('its hitting');
-this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?format=json&addressdetails=1&limit=1&polygon_svg=1',options).map(res => res.json()).subscribe(response => {
+this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?countrycodes=co&format=json&addressdetails=1&limit=1&polygon_svg=1',options).map(res => res.json()).subscribe(response => {
     console.log(response[0] );
     if( (response[0]== undefined)){
             
@@ -595,10 +635,12 @@ this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?format=json&a
     this.infowindow.setContent(results[0].formatted_address);
 //    
           this.infowindow.open(this.map, marker1);
+//           this.data.city = results[0].address_components[0].long_name;
           this.autocomplete.query= results[0].formatted_address;
                     }
    else if (results[1]) {
     this.autocomplete.query= results[1].formatted_address;
+//     this.data.city = results[1].address_components[0].long_name;
     console.log(results[1].formatted_address);
     this.infowindow.setContent(results[1].formatted_address);
     
@@ -626,6 +668,8 @@ this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?format=json&a
                      
                  }
                    this.autocomplete.query= addr;
+                    if( resso.response.properties.city == 'bogota'){
+                  resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1)}
                    this.data.city = resso.response.properties.city ;
                  console.log(this.data.city);
                    console.log(this.autocomplete.query);
@@ -806,7 +850,7 @@ this.boundsSet = false;
            long:this.long
         }
            var Serialized = this.serializeObj(postdata);
-    this.http.post('  http://rafao.us-west-2.elasticbeanstalk.com/api/home/reverse_geocoding', Serialized, options).map(res => res.json()).subscribe(response => {
+    this.http.post('http://rafao.us-west-2.elasticbeanstalk.com/api/home/reverse_geocoding', Serialized, options).map(res => res.json()).subscribe(response => {
             console.log(response.data == '{"message":"Result not found"}');
                     var resso = JSON.parse(response.data)
             console.log(resso.response)
@@ -828,7 +872,31 @@ this.boundsSet = false;
               console.log(results[0].place_id);
           this.autocomplete.query = results[1].formatted_address;
           console.log(this.autocomplete.query)
-          
+            var citiie = results[0].formatted_address.split(',');
+             var City = '';
+             this.data.city = '';
+           console.log(citiie[1]);
+            switch(citiie[1]){
+              case ' Soacha' : {this.data.city = 'cun_soacha'
+              break;}
+              case ' Mosquera':{this.data.city = 'cun_mosquera'
+              break;}
+              case ' Facatativá':{this.data.city = 'Facatativá'
+              break;}
+              case ' Madrid':{this.data.city = 'cun_madrid'
+              break;}
+              case ' Cajicá':{this.data.city = 'cun_cajica'
+              break;}
+               case ' Sopó':{this.data.city = 'cun_sopo'
+               break;}
+               default:{
+                   console.log('not found');
+                   console.log(citiie[1])
+               }
+          }
+
+console.log(this.data.city);
+//            this.data.city = citiie ;
 //          this.infowindow=new google.maps.InfoWindow({
 //              content: results[1].formatted_address,
 //          }); 
@@ -838,6 +906,31 @@ this.boundsSet = false;
           else if (results[1]) {
               console.log(results[1].place_id);
           this.autocomplete.query= results[1].formatted_address;
+           var citiie1 = results[1].formatted_address.split(',');
+           var City = '';
+            this.data.city ='';
+           console.log(citiie[1]);
+           switch(citiie[1]){
+              case ' Soacha' : {this.data.city = 'cun_soacha'
+              break;}
+              case ' Mosquera':{this.data.city = 'cun_mosquera'
+              break;}
+              case ' Facatativá':{this.data.city = 'Facatativá'
+              break;}
+              case ' Madrid':{this.data.city = 'cun_madrid'
+              break;}
+              case ' Cajicá':{this.data.city = 'cun_cajica'
+              break;}
+               case ' Sopó':{this.data.city = 'cun_sopo'
+               break;}
+               default:{
+                   console.log('not found');
+                   console.log(citiie[1])
+               }
+          }
+
+console.log(this.data.city);
+//            this.data.city = citiie1 ;
           console.log(this.autocomplete.query)
 //          this.infowindow=new google.maps.InfoWindow({
 //              content: results[1].formatted_address,
@@ -871,6 +964,8 @@ this.boundsSet = false;
                      
                  }
                    this.autocomplete.query= addr;
+                    if( resso.response.properties.city == 'bogota'){
+                  resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1)}
                    this.data.city = resso.response.properties.city ;
                  console.log(this.data.city);
                    console.log(this.autocomplete.query);
@@ -923,7 +1018,7 @@ this.boundsSet = false;
       // alert("working1");
       }).catch((error) => {
     console.log('Error getting location', error);
-    this.ToastMsg('Error getting location'+','+error);
+    this.ToastMsg('Please Turn On your Loaction!! <br>Error getting location'+','+error);
     Loading.dismissAll();
       let latLng = new google.maps.LatLng(this.lat,this.long); 
    
@@ -1036,9 +1131,33 @@ this.boundsSet = false;
 		   if (status == google.maps.GeocoderStatus.OK) {
              if (results[0]) {
               console.log(results[0].place_id);
-          this.autocomplete.query = results[1].formatted_address;
+          this.autocomplete.query = results[0].formatted_address;
           console.log(this.autocomplete.query)
-          
+          var citiie2 = results[0].formatted_address.split(',');
+        var City = '';
+         this.data.city ='';
+           console.log(citiie2[1]);
+           switch(citiie2[1]){
+              case ' Soacha' : {this.data.city = 'cun_soacha'
+              break;}
+              case ' Mosquera':{this.data.city = 'cun_mosquera'
+              break;}
+              case ' Facatativá':{this.data.city = 'Facatativá'
+              break;}
+              case ' Madrid':{this.data.city = 'cun_madrid'
+              break;}
+              case ' Cajicá':{this.data.city = 'cun_cajica'
+              break;}
+               case ' Sopó':{this.data.city = 'cun_sopo'
+               break;}
+               default:{
+                   console.log('not found');
+                   console.log(citiie2[1])
+               }
+          }
+
+console.log(this.data.city);
+//            this.data.city = citiie2 ;
 //          this.infowindow=new google.maps.InfoWindow({
 //              content: results[1].formatted_address,
 //          }); 
@@ -1048,6 +1167,31 @@ this.boundsSet = false;
           else if (results[1]) {
               console.log(results[1].place_id);
           this.autocomplete.query= results[1].formatted_address;
+          var citiie3= results[1].formatted_address.split(',');
+           var City = '';
+            this.data.city ='';
+           console.log(citiie3[1]);
+           switch(citiie3[1]){
+              case ' Soacha' : {this.data.city = 'cun_soacha'
+              break;}
+              case ' Mosquera':{this.data.city = 'cun_mosquera'
+              break;}
+              case ' Facatativá':{this.data.city = 'Facatativá'
+              break;}
+              case ' Madrid':{this.data.city = 'cun_madrid'
+              break;}
+              case ' Cajicá':{this.data.city = 'cun_cajica'
+              break;} 
+               case ' Sopó':{this.data.city = 'cun_sopo'
+               break;}
+               default:{
+                   console.log('not found');
+                   console.log(citiie3[1])
+               }
+          }
+
+console.log(this.data.city);
+//            this.data.city = citiie3;
           console.log(this.autocomplete.query)
 //          this.infowindow=new google.maps.InfoWindow({
 //              content: results[1].formatted_address,
@@ -1170,6 +1314,32 @@ watch.subscribe((data) => {
 		   if (status == google.maps.GeocoderStatus.OK) {
           if (results[0]) {
           this.autocomplete.query= results[0].formatted_address;
+            var citiie7 = results[0].formatted_address.split(',');
+              var City = '';
+               this.data.city ='';
+           console.log(citiie7[1]);
+           this.data.city = '';
+           switch(citiie7[1]){
+              case ' Soacha' : {this.data.city = 'cun_soacha'
+              break;}
+              case ' Mosquera':{this.data.city = 'cun_mosquera'
+              break;}
+              case ' Facatativá':{this.data.city = 'Facatativá'
+              break;}
+              case ' Madrid':{this.data.city = 'cun_madrid'
+              break;}
+              case ' Cajicá':{this.data.city = 'cun_cajica'
+              break;}
+               case ' Sopó':{this.data.city = 'cun_sopo'
+               break;}
+               default:{
+                   console.log('not found');
+                   console.log(citiie7[1])
+               }
+          }
+console.log(this.data.city);
+//            this.data.city = citiie7;
+            
           console.log(this.autocomplete.query);
           this.infowindow.setContent(results[0].formatted_address);
           this.infowindow.open(this.map, marker);
@@ -1192,7 +1362,10 @@ watch.subscribe((data) => {
           else{
                  var addr= resso.response.properties.address
                    this.autocomplete.query= addr;
+                   if( resso.response.properties.city == 'bogota'){
+                  resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1)}
                    this.data.city = resso.response.properties.city ;
+                 
                  console.log(this.data.city);
                    console.log(this.autocomplete.query);
           this.infowindow.setContent(addr);
@@ -1288,6 +1461,60 @@ console.log(this.data.city);
              if (results[0]) {
               console.log(results[0].place_id);
           this.autocomplete.query = results[1].formatted_address;
+            var citiie4 = results[0].formatted_address.split(',');
+         var City = '';
+          this.data.city ='';
+            console.log(citiie4[1]);
+          switch(citiie4[1]){
+              case ' Soacha' : {this.data.city = 'cun_soacha'
+              break;}
+              case ' Mosquera':{this.data.city = 'cun_mosquera'
+              break;}
+              case ' Facatativá':{this.data.city = 'Facatativá'
+              break;}
+              case ' Madrid':{this.data.city = 'cun_madrid'
+              break;}
+              case ' Cajicá':{this.data.city = 'cun_cajica'
+              break;}
+               case ' Sopó':{this.data.city = 'cun_sopo'
+               break;}
+               default:{
+                   console.log('not found');
+                   console.log(citiie4[1])
+               }
+          }
+         
+//           if(citiie4[1] == 'Soacha'){
+//               console.log('Soacha');
+//              City = 'cun_soacha'
+//               console.log(City);
+//               this.data.city = City;
+//            }
+//            if(citiie4[1] == 'Mosquera'){
+//            console.log('Mosquera');
+//              City = 'cun_mosquera'
+//               console.log(City);
+//                 this.data.city = City;
+//            }
+//            if(citiie4[1] == 'Facatativá'){
+//            City = 'Facatativá'
+//            this.data.city = City;
+//            }
+//            if(citiie4[1] == 'Madrid'){
+//            City= 'cun_madrid'
+//            this.data.city = City;
+//            }
+//            if(citiie4[1] == 'Cajicá'){
+//             City= 'cun_cajica'
+//             this.data.city = City;
+//            }
+//            if(citiie4[1] == 'Sopó'){
+//             City = 'cun_sopo'
+//             this.data.city = City;
+//            }
+
+console.log(this.data.city);
+//            this.data.city = citiie4;
           console.log(this.autocomplete.query)
           
 //          this.infowindow=new google.maps.InfoWindow({
@@ -1299,6 +1526,31 @@ console.log(this.data.city);
           else if (results[1]) {
               console.log(results[1].place_id);
           this.autocomplete.query= results[1].formatted_address;
+          var citiie5 = results[1].formatted_address.split(',');
+          var City = '';
+           this.data.city ='';
+           console.log(citiie5[1]);
+           switch(citiie5[1]){
+              case ' Soacha' : {this.data.city = 'cun_soacha'
+              break;}
+              case ' Mosquera':{this.data.city = 'cun_mosquera'
+              break;}
+              case ' Facatativá':{this.data.city = 'Facatativá'
+              break;}
+              case ' Madrid':{this.data.city = 'cun_madrid'
+              break;}
+              case ' Cajicá':{this.data.city = 'cun_cajica'
+              break;}
+               case ' Sopó':{this.data.city = 'cun_sopo'
+               break;}
+               default:{
+                   console.log('not found');
+                   console.log(citiie5[1])
+               }
+          }
+
+console.log(this.data.city);
+//            this.data.city = citiie5;
           console.log(this.autocomplete.query)
 //          this.infowindow=new google.maps.InfoWindow({
 //              content: results[1].formatted_address,
@@ -1329,6 +1581,8 @@ console.log(this.data.city);
                  var addr= resso.response.properties.address
                  console.log(resso.response)
                    this.autocomplete.query= addr;
+                    if( resso.response.properties.city == 'bogota'){
+                  resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1)}
                    this.data.city = resso.response.properties.city ;
                  console.log(this.data.city);
                    console.log(this.autocomplete.query);
@@ -1457,9 +1711,32 @@ this.autocompleteItems = [];
 		   if (status == google.maps.GeocoderStatus.OK) {
              if (results[0]) {
               console.log(results[0].place_id);
-          this.autocomplete.query = results[1].formatted_address;
+          this.autocomplete.query = results[0].formatted_address;
           console.log(this.autocomplete.query)
-          
+           var citiie = results[0].formatted_address.split(',');
+           var City = '';
+            this.data.city ='';
+           console.log(citiie[1]);
+           switch(citiie[1]){
+              case ' Soacha' : this.data.city = 'cun_soacha';
+              break;
+              case ' Mosquera':this.data.city = 'cun_mosquera';
+              break;
+              case ' Facatativá':this.data.city = 'Facatativá';
+              break;
+              case ' Madrid':this.data.city = 'cun_madrid';
+              break;
+              case ' Cajicá':this.data.city = 'cun_cajica';
+              break;
+               case ' Sopó':this.data.city = 'cun_sopo';
+               break;
+               default:
+                   console.log('not found');
+                   console.log(citiie[1])
+               
+          }
+
+           
 //          this.infowindow=new google.maps.InfoWindow({
 //              content: results[1].formatted_address,
 //          }); 
@@ -1469,6 +1746,30 @@ this.autocompleteItems = [];
           else if (results[1]) {
               console.log(results[1].place_id);
           this.autocomplete.query= results[1].formatted_address;
+           var citiie = results[1].formatted_address.split(',');
+         var City = '';
+          this.data.city ='';
+        switch(citiie[1]){
+              case ' Soacha' : {this.data.city = 'cun_soacha'
+              break;}
+              case ' Mosquera':{this.data.city = 'cun_mosquera'
+              break;}
+              case ' Facatativá':{this.data.city = 'Facatativá'
+              break;}
+              case ' Madrid':{this.data.city = 'cun_madrid'
+              break;}
+              case ' Cajicá':{this.data.city = 'cun_cajica'
+              break;}
+               case ' Sopó':{this.data.city = 'cun_sopo'
+               break;}
+               default:{
+                   console.log('not found');
+                   console.log(citiie[1])
+               }
+          }
+
+console.log(this.data.city);
+//            this.data.city = citiie ;
           console.log(this.autocomplete.query)
 //          this.infowindow=new google.maps.InfoWindow({
 //              content: results[1].formatted_address,
@@ -1501,6 +1802,8 @@ this.autocompleteItems = [];
                  var addr= resso.response.properties.address
                  console.log(resso.response)
                    this.autocomplete.query= addr;
+                    if( resso.response.properties.city == 'bogota'){
+                  resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1)}
                    this.data.city = resso.response.properties.city ;
                  console.log(this.data.city);
                    console.log(this.autocomplete.query);
@@ -1583,15 +1886,52 @@ clsmodel(){
 }
 
   closeModal() {
+       let headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+let options = new RequestOptions({ headers: headers})
       this.userdetail = JSON.parse(localStorage.getItem('UserDetail'));
       console.log(this.data.additional)
    if(this.data.additional == undefined){
        this.data.additional = '';
    }
+//   if(this.data.city == undefined){
+//       this.data.city = '';
+//   }
       console.log(this.autocomplete.query)
        if((this.lat=='')&&(this.long=='')){
            this.ToastMsg('Nothing is saved');
        }else{
+       if(this.data.city == undefined){
+           this.data.city = 'Bogota'
+       }
+        var citytosend
+        switch(this.data.city){
+              case 'Bogota' : {
+                  citytosend = 'Bogota'
+              break;}
+              case 'cun_soacha' : {
+                  citytosend = 'Soacha'
+              break;}
+              case 'cun_mosquera':{
+                  citytosend = 'Mosquera'
+              break;}
+              case 'Facatativá':{
+                  citytosend = 'Facatativá'
+              break;}
+              case 'cun_madrid':{
+                  citytosend = 'Madrid'
+              break;}
+              case 'cun_cajica':{
+                  citytosend = 'Cajicá'
+              break;}
+               case 'cun_sopo' :{
+                   citytosend = 'Sopó'
+               break;}
+               default:{
+                   console.log('not found');
+//                   console.log(citiie[1])
+               }
+          }
            if ((this.goglat)&&(this.goglong)){
                this.lat=this.goglat
                this.long=this.goglong
@@ -1601,10 +1941,22 @@ clsmodel(){
                this.long=this.long
                console.log('nomi')
            }
-    
+       var postdata2 = {
+            user_id: this.userdetail._id,
+            saved_address: this.autocomplete.query +' '+ citytosend
+       }
+       
+          console.log(postdata2)
+           var Serialized = this.serializeObj(postdata2);
+            this.http.post(this.appsetting.myGlobalVar + 'user/add_saved_address', Serialized, options).map(res => res.json()).subscribe(response2 => {
+                console.log(response2);
+                if(response2.status == true){
+                 localStorage.setItem('UserDetail',JSON.stringify(response2.data[0]));
+                 }
+            })    
       this.viewCtrl.dismiss({
          
-        address:this.data.additional + ' '+ this.autocomplete.query,
+        address:this.data.additional + ' '+ this.autocomplete.query+'   '+citytosend,
         lati: this.lat,
         longi:this.long
       });
@@ -1631,3 +1983,4 @@ clsmodel(){
         this.markers = [];
       }
 }
+

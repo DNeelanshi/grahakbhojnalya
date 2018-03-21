@@ -1,559 +1,586 @@
 page-home {
-	.header ion-toolbar .toolbar-content-md{
-		position: static;
-	}
-    	.header .iconprf{
-		position: relative;
-	}
-	.header .iconprf p{
-		position: absolute;
-	    top: 0;
-	    margin: 0;
-	    right: 0;
-	    background-color: #fff;
-	    color: #656565;
-	    font-size: 10px;
-	    border-radius: 50%;
-	    height: 12px;
-	    width: 12px;
-	    overflow: hidden;
-	    text-align: center;
-	}
-	.header .iconprf p span{
-		width: 100%;
-	    height: 100%;
-	    line-height: 12px;
-	}
-	.header .iconprf img{
-		width: 60%;
-		vertical-align: middle;
-	}
-	.title .toolbar-title p{
-		margin: 0;
-	    font-size: 12px;
-	    font-weight: 500;
-	}
-	.serch .option{
-		position: absolute;
-	    // top: 6px;
-	    // right: 31px;
-		top: 11px;
-    	right: 19px;
-	    text-align: right;
-	}
-	.serch .option img{
-		width: 37%;
-	    margin-top: 9px;
-	    padding-top: 0px;
-	}
-	.segment-sec{
-		width: 100%;
-		float: left;
-	}
-	.segment-sec .toolbar-md{
-		min-height: 50px;
-		padding: 0;
-	}
-	.segment-sec .segment{
-		    background-color: #ffffff;
-           color: #000;
-	}
-	.segment-sec .segment .segment-button{
-		border: none;
-	    color: #000;
-	    max-width: 100%;
-	    width: 100%;
-	    margin-top: 8px;
-	    text-transform: uppercase;
-	    font-weight: 700;
+    .header ion-toolbar .toolbar-content-md{
+        position: static;
+    }
+    .go{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+    .ion-md-trash:before {
+        content: "\f4c5" !important;
+    }
+    .srch .text-input{
+        padding-right: 30px;
+    }
+    .savedaddress{
+        width: 100%;
+        float: left;
+        max-height: 130px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .fvtaddress{
+        width: 100%;
+        float: left;
+        max-height: 130px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .header .iconprf{
+        position: relative;
+    }
+    .header .iconprf p{
+        position: absolute;
+        top: 0;
+        margin: 0;
+        right: 0;
+        background-color: #fff;
+        color: #656565;
+        font-size: 10px;
+        border-radius: 50%;
+        height: 12px;
+        width: 12px;
+        overflow: hidden;
+        text-align: center;
+    }
+    .header .iconprf p span{
+        width: 100%;
+        height: 100%;
+        line-height: 12px;
+    }
+    .header .iconprf img{
+        width: 60%;
+        vertical-align: middle;
+    }
+    .title .toolbar-title p{
+        margin: 0;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .serch .option{
+        position: absolute;
+        // top: 6px;
+        // right: 31px;
+        top: 11px;
+        right: 19px;
+        text-align: right;
+    }
+    .serch .option img{
+        width: 37%;
+        margin-top: 9px;
+        padding-top: 0px;
+    }
+    .segment-sec{
+        width: 100%;
+        float: left;
+    }
+    .segment-sec .toolbar-md{
+        min-height: 50px;
+        padding: 0;
+    }
+    .segment-sec .segment{
+        background-color: #ffffff;
+        color: #000;
+    }
+    .segment-sec .segment .segment-button{
+        border: none;
+        color: #000;
+        max-width: 100%;
+        width: 100%;
+        margin-top: 8px;
+        text-transform: uppercase;
+        font-weight: 700;
         padding-bottom: 48px;
-	}
-	.segment-sec .segment .segment-activated{
-		 border-bottom: 2px solid #f27242;
-		 background-color: #fff;
-	}
-	.content-sec{
-		width: 100%;
-		float: left;
-	}
-	.serch{
-		width: 100%;
-		float: left;
-		position: relative;
-	}
-	.serch .searchbar{
-		background-color: #f2f2f2;
-	    padding: 9px 12px;
-	    font-size: 12px;
-	    padding-right: 70px;
-	}
-	.serch .searchbar .searchbar-input{
-		font-size: 13px;
-	}
-	.content-sec .list{
-		width: 100%;
-		float: left;
-	}
-	.content-sec .list .item{
-		width: 100%;
-		float: left;
-		padding: 3px 0px 3px 0px;
+    }
+    .segment-sec .segment .segment-activated{
+        border-bottom: 2px solid #f27242;
+        background-color: #fff;
+    }
+    .content-sec{
+        width: 100%;
+        float: left;
+    }
+    .serch{
+        width: 100%;
+        float: left;
+        position: relative;
+    }
+    .serch .searchbar{
+        background-color: #f2f2f2;
+        padding: 9px 12px;
+        font-size: 12px;
+        padding-right: 70px;
+    }
+    .serch .searchbar .searchbar-input{
+        font-size: 13px;
+    }
+    .content-sec .list{
+        width: 100%;
+        float: left;
+    }
+    .content-sec .list .item{
+        width: 100%;
+        float: left;
+        padding: 3px 0px 3px 0px;
         border-bottom: 0.55px solid #c8c7cc;
         border-top: none;
-	}
-	.content-sec .list .item .item-inner{
-		border:none;
-	}
-	.content-sec .list .item .lable{
-		margin: 0px;
-	}
-	.content-sec .list .item ion-avatar{
-		min-width: 45px;
-		min-height: 45px;
-		margin: 8px 10px 8px 10px;
+    }
+    .content-sec .list .item .item-inner{
+        border:none;
+    }
+    .content-sec .list .item .lable{
+        margin: 0px;
+    }
+    .content-sec .list .item ion-avatar{
+        min-width: 45px;
+        min-height: 45px;
+        margin: 8px 10px 8px 10px;
 
-	}
-	.content-sec .list .item ion-avatar img{
-		width: 45px;
-		height: 45px;
-		
-	}
-	.content-sec .list .item h3{
-		color: #f27242;
-	    font-weight: 700;
-	    font-size: 14px;
-	}
-	.content-sec .list .item p{
-	    color: #6a6a6a;
-	    font-weight: 400;
-		font-size: 12px;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		white-space: nowrap;
-	}
-	.content-sec .list .item p span{
-		color: #000;
-	    font-weight: 500;
-	    padding-right: 10px;
-	}
-	.content-sec .list .item .rightbtn{
-		    background-color: #2bb600;
-		    padding: 2px 5px;
-		    border-radius: 4px;
-		    margin-right: 0px;
-		    position: absolute;
-		    top: 6px;
-		    right: 10px;
-		    margin-left: 0px;
-	}
-	.content-sec .list .item .rightbtn h3{
-		color: #fff;
-		font-weight: 500;
-    font-size: 12px;
-	}
-	.content-sec .list .item .rightbtn h3 span{
-		    width: 12px;
-		    height: 12px;
-		    padding-right: 3px;
-	}
-	.content-sec .list .item .rightbtn h3 span img{
-		    width: 12px;
-		    float: left;
-		    height: 12px;
-		    margin-top: 1px;
-	}
-	.green{
-		background-color: #2bb600;
-	}
-	.yellow{
-		background-color: #dcca00;
-	}
-	.serch-contant{
-		width: 100%;
-	    float: left;
-	    text-align: center;
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    bottom: 0;
-	    right: auto;
-	    margin: auto;
-	   height: 142px;
-	}
-	.serch-contant .image{
-		width: 100%;
-	    float: left;
-	    text-align: center;
-	}
-	.serch-contant .image img{
-		width: 25%;
-	}
-	.serch-contant p{
-		width: 72%;
-	    text-align: center;
-	    font-weight: 500;
-	    font-size: 12px;
-	    color: #6a6a6a;
-	    margin: 0 auto;
-	}
-	.serch-contant h5{
-	    width: 100%;
-	    float: left;
-	    text-align: center;
-	    font-weight: 700;
-	    font-size: 14px;
-	    color: #f27242;
-	    margin-bottom: 0px;
-	}
-	.item .leftbtn{
-		width: 50%;
-	    float: left;
-	    display: block;
-	    text-align: left;
-	}
-	.item .leftbtn .right{
-		width: 50%;
-	    float: left;
-	    display: block;
-	    text-align: left;
-	}
-	.item .right .item-button {
-		font-size: 11px;
-		padding-left: 0;
-		margin-left: 0;
-		margin:0;
-		color: #6a6a6a;
-	    font-weight: 400;
-	    padding-top: 2px;
+    }
+    .content-sec .list .item ion-avatar img{
+        width: 45px;
+        height: 45px;
+
+    }
+    .content-sec .list .item h3{
+        color: #f27242;
+        font-weight: 700;
+        font-size: 14px;
+    }
+    .content-sec .list .item p{
+        color: #6a6a6a;
+        font-weight: 400;
+        font-size: 12px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .content-sec .list .item p span{
+        color: #000;
+        font-weight: 500;
+        padding-right: 10px;
+    }
+    .content-sec .list .item .rightbtn{
+        background-color: #2bb600;
+        padding: 2px 5px;
+        border-radius: 4px;
+        margin-right: 0px;
+        position: absolute;
+        top: 6px;
+        right: 10px;
+        margin-left: 0px;
+    }
+    .content-sec .list .item .rightbtn h3{
+        color: #fff;
+        font-weight: 500;
+        font-size: 12px;
+    }
+    .content-sec .list .item .rightbtn h3 span{
+        width: 12px;
+        height: 12px;
+        padding-right: 3px;
+    }
+    .content-sec .list .item .rightbtn h3 span img{
+        width: 12px;
+        float: left;
+        height: 12px;
+        margin-top: 1px;
+    }
+    .green{
+        background-color: #2bb600;
+    }
+    .yellow{
+        background-color: #dcca00;
+    }
+    .serch-contant{
+        width: 100%;
+        float: left;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: auto;
+        margin: auto;
+        height: 142px;
+    }
+    .serch-contant .image{
+        width: 100%;
+        float: left;
+        text-align: center;
+    }
+    .serch-contant .image img{
+        width: 25%;
+    }
+    .serch-contant p{
+        width: 72%;
+        text-align: center;
+        font-weight: 500;
+        font-size: 12px;
+        color: #6a6a6a;
+        margin: 0 auto;
+    }
+    .serch-contant h5{
+        width: 100%;
+        float: left;
+        text-align: center;
+        font-weight: 700;
+        font-size: 14px;
+        color: #f27242;
+        margin-bottom: 0px;
+    }
+    .item .leftbtn{
+        width: 50%;
+        float: left;
+        display: block;
+        text-align: left;
+    }
+    .item .leftbtn .right{
+        width: 50%;
+        float: left;
+        display: block;
+        text-align: left;
+    }
+    .item .right .item-button {
+        font-size: 11px;
+        padding-left: 0;
+        margin-left: 0;
+        margin:0;
+        color: #6a6a6a;
+        font-weight: 400;
+        padding-top: 2px;
 
 
-	}
-	.item .leftbtn .item-button {
-		font-size:11px;
-		padding-left: 0;
-		margin-left: 0;
-		margin: 0;
-		color: #6a6a6a;
-	    font-weight: 400;
-	    
-	}
-	.item .leftbtn .item-button span{
-		white-space: normal;
-	}
-	.item .right {
-		width: 50%;
-		float: left;
-	}
-	.item .right .item-button span{
-		white-space: normal;
-	}
-	.banner{
-		width: 100%;
-	    float: left;
-	    height: 50px;
-	}
-	.banner img{
-		width: 100%;
-		float: left;
-		height: 100%;
-	}
-	.serch-text .list{
-		width: 100%;
-		float: left;
-		margin:0px;
+    }
+    .item .leftbtn .item-button {
+        font-size:11px;
+        padding-left: 0;
+        margin-left: 0;
+        margin: 0;
+        color: #6a6a6a;
+        font-weight: 400;
 
-	}
-	.serch-text .item{
-		width: 100%;
-		float: left;
-	    align-items: inherit !important;
-		border-bottom: 1px solid #d2d2d2;
-	    padding: 0px 16px !important;
-	    background-color: #f9f9f9;
+    }
+    .item .leftbtn .item-button span{
+        white-space: normal;
+    }
+    .item .right {
+        width: 50%;
+        float: left;
+    }
+    .item .right .item-button span{
+        white-space: normal;
+    }
+    .banner{
+        width: 100%;
+        float: left;
+        height: 50px;
+    }
+    .banner img{
+        width: 100%;
+        float: left;
+        height: 100%;
+    }
+    .serch-text .list{
+        width: 100%;
+        float: left;
+        margin:0px;
+
+    }
+    .serch-text .item{
+        width: 100%;
+        float: left;
+        align-items: inherit !important;
+        border-bottom: 1px solid #d2d2d2;
+        padding: 0px 16px !important;
+        background-color: #f9f9f9;
         border-top: none !important;
-	}
-	.serch-text .item .label{
-		margin-top: 8px;
-		margin-right: 0;
-		
-	}
-	.serch-text .item-inner{
-		border:none !important;
-		padding-right: 0px !important;
-	}
-	.serch-text .item .label h2{
-		margin: 0;
-	    width: 100%;
-	    font-size: 12px;
-	    font-weight: 700;
-	    color: #000000;
-	    float: left;
-	
-	}
-	.serch-text .item .label p{
-		width: 100%;
-	    float: left;
-	    color: #6a6a6a;
-	    font-size: 11px;
-	    font-weight: 500;
-	}
-	.serch-text-p{
-	    color: #383838;
-	    font-size: 11px;
-	    font-weight: 500;
-	    padding-top: 5px;
-	    margin-right: 0px;
-	}
-	.serch-text .item ion-thumbnail {
-		width: 55px !important;
-		
-        
+    }
+    .serch-text .item .label{
+        margin-top: 8px;
+        margin-right: 0;
+
+    }
+    .serch-text .item-inner{
+        border:none !important;
+        padding-right: 0px !important;
+    }
+    .serch-text .item .label h2{
+        margin: 0;
+        width: 100%;
+        font-size: 12px;
+        font-weight: 700;
+        color: #000000;
+        float: left;
+
+    }
+    .serch-text .item .label p{
+        width: 100%;
+        float: left;
+        color: #6a6a6a;
+        font-size: 11px;
+        font-weight: 500;
+    }
+    .serch-text-p{
+        color: #383838;
+        font-size: 11px;
+        font-weight: 500;
+        padding-top: 5px;
+        margin-right: 0px;
+    }
+    .serch-text .item ion-thumbnail {
+        width: 55px !important;
+
+
         min-width: auto;
         min-height: auto;
 
-	}
-	.serch-text .item ion-thumbnail img{
-		width: 100% !important;
-		float:left !important;
-		height: auto !important;
-	}
-	.serch-text .imgicon{
-		margin-right: 5px;
-		margin-top: 1px;
-	}
-	.serch-text .item .btn-left{
-		width: 40%;
-		float: left;
-	}
-	.serch-text .item .btn-left .button{
-		height: 16px;
-	    color: #000;
-	    border-color: #000;
-	    margin: 0;
-	    font-size: 10px;
-	    font-weight: 500;
-	    width: 100%;
-	    border-radius: 2px;
-	    margin-top: 2px;
-	    float: left;
-	}
-	.serch-text .item .btn-rght{
-		width: 40%;
-		float: left;
-		margin-left: 7px;
-	}
-	.serch-text .item .btn-rght .button{
-		height: 16px;
-	    color: #f37140;
-	    border-color: #f37140;
-	    margin: 0;
-	    font-size: 10px;
-	    font-weight: 500;
-	    width: 100%;
-	    border-radius: 2px;
-	    margin-top: 2px;
-	    float: left;
-	}
-	.item .main{
-		width: 100%;
-		float: left;
-		padding: 0 80px 0px 30px;
-		position: relative;
-	}
-	.item .main h1{
-		font-size: 14px;
-	    color: #f27242;
-	    font-weight: 700;
-	    line-height: 20px;
-	}
-	.item .main .image{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 20px;
-	    height: 20px;
-	    border-radius: 50%;
-	    overflow: hidden;
-	}
-	.item .main .right-sec{
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 74px;
-		padding-top: 2.5px;
-		text-align: right;
-	}
-	.item .main .right-sec .rating{
-	    width: 25px;
-	    margin: 0;
-	    background-color: #2bb600;
-	    color: #fff;
-	    font-size: 10px;
-	    padding: 2px;
-	    float: right;
-	    display: table;
-	    border-radius: 2px;
-	    height: auto;
-	}
-	.hor .icon{
-		font-size: 15px;
-	    color: #5e5e5e;
-	    padding-left: 4px;
-	}
-	.hor span{
-		font-size: 12px;
-	    color: #5e5e5e;
-	    font-weight: 700;
-	    padding-left: 2px;
-	    line-height: 20px;
-	    float: right;
-	    width: 8px;
-	}
-	.serch .searchbar-md{
-		padding-right: 55px !important;
-	}
-	.searchbar-md .searchbar-search-icon{
-		left: 11px;
-	}
-	.searchbar-md .searchbar-input{
-		padding: 6px 40px;
-		padding-right: 10px;
-	}
-        
-        
-/*===============================================*/
-/*==================Search Sction================*/
-/*===============================================*/
-        
-input.searchbar-input {
-    box-shadow: none !important;
-    border: 1px solid #ddd;
-}
-.searchbar{
-    margin: 0 !important;
-    padding-bottom: 0;
-}
-.select {
-    box-shadow: none !important;
-    border: 1px solid #ddd;
-}
-.text-input {
-    box-shadow: none !important;
-    border: 1px solid #ddd;
-    margin: 0px;
-    padding: 8px 10px;
-    background: #fff;
-    width: 100%;
-}
+    }
+    .serch-text .item ion-thumbnail img{
+        width: 100% !important;
+        float:left !important;
+        height: auto !important;
+    }
+    .serch-text .imgicon{
+        margin-right: 5px;
+        margin-top: 1px;
+    }
+    .serch-text .item .btn-left{
+        width: 40%;
+        float: left;
+    }
+    .serch-text .item .btn-left .button{
+        height: 16px;
+        color: #000;
+        border-color: #000;
+        margin: 0;
+        font-size: 10px;
+        font-weight: 500;
+        width: 100%;
+        border-radius: 2px;
+        margin-top: 2px;
+        float: left;
+    }
+    .serch-text .item .btn-rght{
+        width: 40%;
+        float: left;
+        margin-left: 7px;
+    }
+    .serch-text .item .btn-rght .button{
+        height: 16px;
+        color: #f37140;
+        border-color: #f37140;
+        margin: 0;
+        font-size: 10px;
+        font-weight: 500;
+        width: 100%;
+        border-radius: 2px;
+        margin-top: 2px;
+        float: left;
+    }
+    .item .main{
+        width: 100%;
+        float: left;
+        padding: 0 80px 0px 30px;
+        position: relative;
+    }
+    .item .main h1{
+        font-size: 14px;
+        color: #f27242;
+        font-weight: 700;
+        line-height: 20px;
+    }
+    .item .main .image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .item .main .right-sec{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 74px;
+        padding-top: 2.5px;
+        text-align: right;
+    }
+    .item .main .right-sec .rating{
+        width: 25px;
+        margin: 0;
+        background-color: #2bb600;
+        color: #fff;
+        font-size: 10px;
+        padding: 2px;
+        float: right;
+        display: table;
+        border-radius: 2px;
+        height: auto;
+    }
+    .hor .icon{
+        font-size: 15px;
+        color: #5e5e5e;
+        padding-left: 4px;
+    }
+    .hor span{
+        font-size: 12px;
+        color: #5e5e5e;
+        font-weight: 700;
+        padding-left: 2px;
+        line-height: 20px;
+        float: right;
+        width: 8px;
+    }
+    .serch .searchbar-md{
+        padding-right: 55px !important;
+    }
+    .searchbar-md .searchbar-search-icon{
+        left: 11px;
+    }
+    .searchbar-md .searchbar-input{
+        padding: 6px 40px;
+        padding-right: 10px;
+    }
 
-.searchbar-input{
-    padding: 3px 55px !important;
-    margin-bottom: 3px;
-    font-size: 14px !important;
-}
 
-.toolbar_top .toolbar-background{
-    background: #fff;
-}
-.searchouter {
-    width: 100%;
-/*    padding-right: 50px;*/
-    position: relative;
-}
-.favbtn {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    background: no-repeat;
-    box-shadow: none;
-    border: 1px solid #ddd;
-    color: #f27242;
-}
-.searchouter .list {
-    margin: 0;
-}
-	
-.datetimesec {
-    float: left;
-    width: 100%;
-    padding: 0 8px 0;
-}
-.dateleft {
-    float: left;
-    width: 50%;
-}	
+    /*===============================================*/
+    /*==================Search Sction================*/
+    /*===============================================*/
 
-.dateleftr {
-    float: left;
-    width: 50%;
-}
-.datetimesec p {
-    margin: 0 0 5px 0;
-    padding: 0;
-}
+    input.searchbar-input {
+        box-shadow: none !important;
+        border: 1px solid #ddd;
+    }
+    .searchbar{
+        margin: 0 !important;
+        padding-bottom: 0;
+    }
+    .select {
+        box-shadow: none !important;
+        border: 1px solid #ddd;
+    }
+    .text-input {
+        box-shadow: none !important;
+        border: 1px solid #ddd;
+        margin: 0px;
+        padding: 8px 10px;
+        background: #fff;
+        width: 100%;
+    }
 
-.datetimesec .datetime {
-    border: 1px solid #ccc;
-    padding: 8px;
-    font-size: 13px;
-}
-.segment-sec .segment .segment-button{
-    margin-top: 0;
-    padding-bottom: 0;
-}
+    .searchbar-input{
+        padding: 3px 55px !important;
+        margin-bottom: 3px;
+        font-size: 14px !important;
+    }
 
-.listitm {
-    background: #fff;
-    position: absolute;
-    z-index: 999;
-    width: 100%;
-    border: 1px solid #ddd;
-    float: left;
-    box-shadow: 0 6px 6px #ddd;
-}
+    .toolbar_top .toolbar-background{
+        background: #fff;
+    }
+    .searchouter {
+        width: 100%;
+        /*    padding-right: 50px;*/
+        position: relative;
+        padding: 5px;
+        background-color: #f8f8f8;
+    }
+    .favbtn {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        background: no-repeat;
+        box-shadow: none;
+        border: 1px solid #ddd;
+        color: #f27242;
+    }
+    .searchouter .list {
+        margin: 0;
+    }
 
-.listitm .item {
-    font-size: 13px;
-    font-weight: 400;
-}
+    .datetimesec {
+        float: left;
+        width: 100%;
+        padding: 0 8px 0;
+    }
+    .dateleft {
+        float: left;
+        width: 50%;
+    }	
 
-.datetime {
-    border: 1px solid #ddd;
-    padding: 11px 15px;
-    font-size: 12px;
-    background: #fff;
-}
-.dateleftr p {
-    margin: 0;
-    font-size: 12px;
-    padding: 3px;
-}
-.dateleft p {
-    margin: 0;
-    font-size: 12px;
-    padding: 3px;
-}
-.toolbar-content {
-    padding: 0 6px 0 1px;
-}
+    .dateleftr {
+        float: left;
+        width: 50%;
+    }
+    .datetimesec p {
+        margin: 0 0 5px 0;
+        padding: 0;
+    }
 
-.blurbg .overlayn {
-    position: absolute;
-    z-index: 9;
-    background: rgba(0,0,0,0.2);
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-.blurbg{
-    -webkit-filter: blur(3px);
-  -moz-filter: blur(3px);
-  -o-filter: blur(3px);
-  -ms-filter: blur(3px);
-  filter: blur(3px);
-}
-.blurbg1 .overlayn{
-    display: none;
-}
-	
+    .datetimesec .datetime {
+        border: 1px solid #ccc;
+        padding: 8px;
+        font-size: 13px;
+    }
+    .segment-sec .segment .segment-button{
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+
+    .listitm {
+        background: #fff;
+        position: absolute;
+        z-index: 999;
+        width: 97%;
+        border: 1px solid #ddd;
+        float: left;
+        box-shadow: 0 6px 6px #ddd;
+    }
+
+    .listitm .item {
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    .datetime {
+        border: 1px solid #ddd;
+        padding: 11px 15px;
+        font-size: 12px;
+        background: #fff;
+    }
+    .dateleftr p {
+        margin: 0;
+        font-size: 12px;
+        padding: 3px;
+    }
+    .dateleft p {
+        margin: 0;
+        font-size: 12px;
+        padding: 3px;
+    }
+    .toolbar-content {
+        padding: 0 6px 0 1px;
+    }
+
+    .blurbg .overlayn {
+        position: absolute;
+        z-index: 9;
+        background: rgba(0,0,0,0.2);
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .blurbg{
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(3px);
+    }
+    .blurbg1 .overlayn{
+        display: none;
+    }
+
 }

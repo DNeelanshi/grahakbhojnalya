@@ -1,14 +1,14 @@
 webpackJsonp([21],{
 
-/***/ 451:
+/***/ 456:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChefdetialsPageModule", function() { return ChefdetialsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditprefrencePageModule", function() { return EditprefrencePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chefdetials__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__editprefrence__ = __webpack_require__(132);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ChefdetialsPageModule = (function () {
-    function ChefdetialsPageModule() {
+var EditprefrencePageModule = (function () {
+    function EditprefrencePageModule() {
     }
-    return ChefdetialsPageModule;
+    return EditprefrencePageModule;
 }());
-ChefdetialsPageModule = __decorate([
+EditprefrencePageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__chefdetials__["a" /* ChefdetialsPage */],
+            __WEBPACK_IMPORTED_MODULE_2__editprefrence__["a" /* EditprefrencePage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__chefdetials__["a" /* ChefdetialsPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__editprefrence__["a" /* EditprefrencePage */]),
         ],
     })
-], ChefdetialsPageModule);
+], EditprefrencePageModule);
 
-//# sourceMappingURL=chefdetials.module.js.map
+//# sourceMappingURL=editprefrence.module.js.map
 
 /***/ })
 

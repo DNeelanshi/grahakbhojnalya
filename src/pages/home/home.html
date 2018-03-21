@@ -1,5 +1,10 @@
 <ion-header>
   <ion-toolbar  color="theme-header">
+       <ion-buttons start left icon-only>
+      <button ion-button clear>
+        <ion-icon class="hdrlogo"><img src="assets/img/logo-white.png"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
       Chef List
       <!--<p>Online Chef list</p>-->
@@ -16,35 +21,37 @@
     
     
     
-<div class="searchouter">
-<ion-searchbar placeholder="Fill Address..." (click)="openlist()" [(ngModel)]="chefsearch.search" name="search" #search="ngModel" >
- </ion-searchbar>
+<div class="searchouter" style="position: relative;">
+<ion-input class="srch" placeholder="Fill Address..." (click)="openlist()" [readonly]="isReadonly()" [(ngModel)]="chefsearch.search" name="search" #search="ngModel">
+   </ion-input>
+    <ion-icon name="arrow-down" class="go" (click)="openlist()"></ion-icon>
 
     <div class="listout">  
 <ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="openllist == 1" >
-     
-     <ion-list-header style="background: #f2f2f2; margin: 0;"> Saved Addresses: </ion-list-header>
-     
-    <ion-item *ngFor ="let opt of searcharray;let i = index"
-        (click)="getItem(opt)">
-        {{opt}}
-        <ion-icon name="close" small item-end (click)="del(i)"></ion-icon>
-    </ion-item>
-     
-      <ion-list-header style="background: #f2f2f2; margin: 0;"> Favourite Addresses: </ion-list-header>
-      
+   
+      <ion-item>
+         <button (click)= "openmapmodal()" outline ion-button color="dark" icon-right round>Go To Other Address <ion-icon name="navigate"></ion-icon> </button>
+         <button ion-button color="danger" outline round icon-right  (click)="cancellist()"> Close</button>
+     </ion-item>
+  
+     <ion-list-header style="background: #f2f2f2; margin: 0;"> Favourite Addresses: </ion-list-header>
+       <div class="fvtaddress">
        <ion-item *ngFor ="let opt1 of searcharray1;let i = index" 
         (click)="getItem(opt1)">
         {{opt1}}
-        <ion-icon name="close" small item-end (click)="del1(i)"></ion-icon>
-    </ion-item>
-       
-     <ion-item>
-         <button (click)= "openmapmodal()" outline ion-button color="dark" icon-right round>Go To Other Address <ion-icon name="navigate"></ion-icon> </button>
-         <button ion-button color="danger" outline round icon-right  (click)="cancellist()"> Cancel <ion-icon name="close"></ion-icon></button>
-     </ion-item>
+        <ion-icon name="trash" small item-end (click)="del1(i)"></ion-icon>
+    </ion-item>        
+       </div>     
      
-       
+     <ion-list-header style="background: #f2f2f2; margin: 0;"><span>  <ion-icon name="search"></ion-icon>
+ </span> Recent Searches</ion-list-header>
+    <div class="savedaddress"> 
+    <ion-item *ngFor ="let opt of searcharray;let i = index"
+        (click)="getItem(opt)">
+        {{opt}}
+        <ion-icon name="trash" small item-end (click)="del(i)"></ion-icon>
+    </ion-item>
+    </div>   
 </ion-list> 
     </div>
        
@@ -101,7 +108,7 @@
   <div [ngSwitch]="pet">
     <ion-list *ngSwitchCase="'kittens'">
         <div class="serch">
-  <ion-searchbar placeholder="Search by chef..." [(ngModel)]="data.dat" name="dat" #dat="ngModel" (input)="searchaa(data.dat)" ></ion-searchbar>
+  <ion-searchbar placeholder="Search by chef..." [(ngModel)]="data.dat" name="dat" #dat="ngModel" (input)="searchaa(data.dat)" (ionClear)="dismiss1()" ></ion-searchbar>
   <div class="option">
       <img src="assets/img/option.png" (click)="fltr_opn()">
   </div>
@@ -118,8 +125,8 @@
           <div *ngIf="dat?.status == true">
               <p> <span>Specialities</span><span *ngFor="let spec of dat.specialties">{{spec?.specialties_product}},</span></p>
         <p><span>Experience </span>Private Chef, Personal,</p>
-        <div class="rightbtn green" item-end>
-          <h3><span> <img src="assets/img/star.png"></span>3/4</h3>
+        <div class="rightbtn green" item-end *ngIf="dat?.avgrating">
+          <h3 ><span> <img src="assets/img/star.png"></span>{{dat?.avgrating}}/5</h3>
         </div>
         <div class="leftbtn">
           <button ion-button icon-left clear>
@@ -172,7 +179,7 @@
 
   <div class="serch-text" *ngSwitchCase="'puppies'">
       <div class="serch">
-          <ion-searchbar placeholder="Search by dish..." [(ngModel)]="data.dats" name="dats" #dats="ngModel" (input)="searchdish(data.dats)" ></ion-searchbar>
+          <ion-searchbar placeholder="Search by dish..." [(ngModel)]="data.dats" name="dats" #dats="ngModel" (input)="searchdish(data.dats)"    (ionClear)="dismiss()"></ion-searchbar>
       <div class="option">
       <img src="assets/img/option.png" (click)="fltr_opn()">
       </div>
@@ -196,9 +203,12 @@
              <img *ngIf ="!dats?.user_image" src="assets/img/us.png">
           </div>
           <h1>{{dats?.firstname}} {{dats?.lastname}} </h1>
-          <div class="right-sec">
-            <button ion-button class="rating histry">3/5</button>
-          </div>
+<!--          <div class="right-sec">
+            <button ion-button class="rating histry">{{dats?.avgrating}}/5</button>
+          </div>-->
+            <div class="rightbtn green" item-end *ngIf="dats?.avgrating">
+          <h3 ><span> <img src="assets/img/star.png"></span>{{dats?.avgrating}}/5</h3>
+        </div>
         </div>
       
 <!--        <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">South indian food</h2>-->

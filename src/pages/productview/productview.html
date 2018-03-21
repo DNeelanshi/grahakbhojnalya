@@ -48,7 +48,7 @@
 <!--			<p>{{splarr.product_ingredients}}</p>-->
 		</div>
 	<div class="mid-sec" style="background-color: #fff; padding: 0 16px;">
-		<h3 style="width: auto; float: left; font-size: 14px; margin: 7px 25px 0px 0px; color: #f27242;">Reg <span>${{splarr.product_price}}</span></h3>
+		<h3 style="width: auto; float: left; font-size: 14px; margin: 7px 25px 0px 0px; color: #f27242;">Reg <span>${{splarr.product_price| number}}</span></h3>
 		<div class="counter_sec">
 			   <button ion-button clear (click)="remove(quantity)"><ion-icon name="remove"></ion-icon></button>
 			   <input type="text" value="{{quantity}}" >
@@ -61,7 +61,7 @@
 		</div>
 		<div class="cart-sec">
 			
-			<h3>{{quantity}} x ${{splarr.product_price}} = ${{quantity * splarr.product_price}}</h3>
+			<h3>{{quantity}} x ${{splarr.product_price| number}} = ${{quantity * splarr.product_price| number}}</h3>
 		</div>
 	</div>
             <div>

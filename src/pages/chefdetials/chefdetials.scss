@@ -66,39 +66,7 @@ page-chefdetials {
 	    font-weight: 500;
 	    color: #000;
 	}
-	.product{
-		width: 100%;
-		float: left;
-		padding-bottom: 0 !important;
-        padding-top: 0 !important;
-	}
-	.product .colm{
-		width: 100%;
-		float: left;
-		position: relative;
-		border-radius: 3px;
-        overflow: hidden;
-	}
-	.product .colm .text{
-		position: absolute;
-	    text-align: center;
-	    bottom: 0;
-	    padding: 2px;
-	}
-	.product .colm .text p{
-		color: #fff;
-		font-size: 11px;
-		font-weight: 400;
-		margin-bottom: 4px;
-	}
-	.product .text h3{
-	font-size: 14px;
-    color: #000;
-    font-weight: 700;
-    margin: 5px 0px 0px 0px;
-    width: 100%;
-    float: left;
-}
+	
     .special .list{
 		width: 100%;
 		float: left;
@@ -108,7 +76,7 @@ page-chefdetials {
 	.special{
 	    width: 100%;
 	    float: left;
-	    padding-top: 5px;
+	    padding-top: 15px !important;
 	}
 	.special h3{
 		width: 100%;
@@ -186,33 +154,7 @@ page-chefdetials {
 		margin-right: 5px;
 		margin-top: 1px;
 	}
-	/*.acrdin .item h3{
-		width: 100%;
-	    float: left;
-	    font-size: 14px;
-	    color: #000;
-	    font-weight: 700;
-	    text-transform: uppercase;
-	}
-	.acrdin{
-		width: 100%;
-		float: left;
-	}
-	.acrdin .item{
-		border-bottom: 0.55px solid #c8c7cc;
-	}
-	.acrdin .item:first-child{
-		
-	}
-	.acrdin .item-inner{
-		border: none !important;
-	}
-	.acrdin .item .dsprtion{
-		color: #6a6a6a;
-		font-weight: 400;
-		font-size: 14px;
 
-	}*/
 	.about{
 		width: 100%;
 		float: left;
@@ -230,6 +172,68 @@ page-chefdetials {
 	    margin: 0;
 	    font-weight: 400;
 	}
-
+	.product h3{
+		width: 100%;
+		float: left;
+		margin: 0px 0px 5px 0px;
+		padding-left: 16px;
+		font-size: 14px;
+		color: #000;
+		font-weight: 700;
+	}
+	.product .item{
+		width: 100%;
+		float: left;
+		border-bottom: 1px solid #d2d2d2;
+		padding: 0px 16px;
+		background-color: #f9f9f9;
+		border-top: none !important;
+		align-items: inherit !important;
+	}
+	.product .item h2{
+		margin: 0;
+		width: 100%;
+		font-size: 12px;
+		font-weight: 700;
+		color: #000000;
+	}
+	.product .item p{
+		width: 100%;
+		float: left;
+		color: #6a6a6a;
+		font-size: 11px;
+		font-weight: 500;
+		white-space: normal;
+	}
+	.product .item ion-thumbnail img {
+		width: 55px !important;
+		float: left !important;
+		height: 55px !important;
+	}
+    .product .item ion-thumbnail {
+		min-height: auto;
+		min-width: auto;
+	}
+	.product .item .label {
+		margin-top: 8px;
+	}
+	.product .list{
+		width: 100%;
+		float: left;
+		margin: 0;
+		max-height: 195px;
+		overflow: hidden;
+		overflow-y: scroll;
+	}
+        .special .list{
+		width: 100%;
+		float: left;
+		margin: 0;
+		max-height: 195px;
+		overflow: hidden;
+		overflow-y: scroll;
+	}
+        
+        
 
 }

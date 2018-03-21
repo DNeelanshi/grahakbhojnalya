@@ -41,15 +41,16 @@ export class RafahoPage {
            this.historycompleted();
            this.historycanceled();
            this.pet = "kittens";
-           
-//      events.subscribe('index', (res) => {
-//     console.log(res);
-//  this.activeorders();
-//           this.pendingorders();
-//           this.historycompleted();
-//           this.historycanceled();
-//           this.pet = "kittens";
-//    })
+    
+         events.subscribe('index', (res) => {
+             console.log(res);
+       if(res == 2){
+          this.activeorders();
+           this.pendingorders();
+           this.historycompleted();
+           this.historycanceled();
+       }
+            })
       }
           doRefresh(refresher) {
     console.log('Begin async operation', refresher);
