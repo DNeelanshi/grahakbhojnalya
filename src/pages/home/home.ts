@@ -12,6 +12,7 @@ import {Appsetting} from "../../providers/appsetting";
 import {NativeGeocoder, NativeGeocoderForwardResult} from '@ionic-native/native-geocoder';
 import * as moment from 'moment';
 import {Geolocation,GeolocationOptions ,Geoposition ,PositionError} from '@ionic-native/geolocation';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 declare var google;
 @Component({
     selector: 'page-home',
@@ -27,7 +28,12 @@ export class HomePage {
     arry: any = true;
     srcimage: any;
     arr: any;
+    maingreenavail:number=1;
+     mainredavail:number=1;
+    altgreenavail:number=1;
+  altredavail:number=1;
     lat: any;
+    lostatus:boolean = false;
     openllist: any;
     long: any;
     arr1: any = null;
@@ -48,6 +54,7 @@ export class HomePage {
         public http: Http,
         private nativeGeocoder: NativeGeocoder,
         public geolocation: Geolocation,
+         private androidPermissions: AndroidPermissions,
         public GeolocationOptions:Geolocation,
         public loadingCtrl: LoadingController,
         private alertCtrl: AlertController,
@@ -126,7 +133,7 @@ export class HomePage {
             console.log(resp.coords.latitude);
             console.log(resp.coords.longitude);
 
-
+            this.lostatus = true;
 
 
             let headers = new Headers();
@@ -204,7 +211,7 @@ export class HomePage {
                 this.get();
 
         }, err=>{
-//            alert(err);
+            this.ToastMsg('Please enable your Location.')
         })
         
 
@@ -356,9 +363,9 @@ export class HomePage {
         //        alert(item);
 
         var Loading = this.loadingCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(() => {
@@ -392,7 +399,7 @@ export class HomePage {
         this.blurclass = 'blurbg1'
     }
     openmapmodal() {
-        let modal = this.modalCtrl.create(MapmodalPage);
+          if( this.lostatus == true){let modal = this.modalCtrl.create(MapmodalPage);
         modal.onDidDismiss(data => {
             this.chefsearch.search = data.address;
 
@@ -411,6 +418,10 @@ export class HomePage {
             //    this.AlertMsg4('Your Location:'+this.data.address+' '+' is  saved')
         });
         modal.present();
+      }else{
+              this.ToastMsg('Please enable your Location')
+      }
+           
     }
     get() {
         var temp=this;
@@ -434,9 +445,9 @@ export class HomePage {
             console.log(postdata);
             //     alert(postdata);
             var Loading = this.loadingCtrl.create({
-                spinner: 'hide',
-                cssClass: 'loader',
-                content: "<img src='assets/img/icons3.gif'>",
+                spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
                 dismissOnPageChange: true
             });
             Loading.present().then(() => {
@@ -451,6 +462,27 @@ export class HomePage {
                         if (data.data.length > 0) {
                             this.array = data.data;
                             console.log(this.array);
+                          var m =  moment(this.data.datetime).format('YYYY-MM-DD')
+                            console.log(m);
+                            this.array.forEach(function(value,key){
+                          if(value.avalibilities.length>0) {
+                              value.avalibilities.forEach(function(value2,key2){
+                                  if(moment(m).isSame(value2.notavalibility_dates)){
+                                      temp.mainredavail = 0;
+                                      value.mainredavail = 0;
+                                  }
+                              })
+                          }else{ value.mainredavail = 1;}
+                            })
+//                            for(var d =0; d<this.array.length ; d++){
+//                                if(this.array[d].avalibilities.length>0){
+//                            for(var t=0;t< this.array[d].avalibilities.length; t++){
+//                                if(moment(m).isSame(this.array[d].avalibilities[t].notavalibility_dates))
+//                                {    this.mainredavail = 1;}
+//
+//                            }}}
+                      console.log( this.mainredavail);
+                       console.log(this.array);
                           this.array.forEach(function(value,key){
                                temp.rating =0;
                                     value.comments_and_ratings.forEach(function(value1,key1){

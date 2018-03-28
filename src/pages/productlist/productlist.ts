@@ -282,9 +282,9 @@ let options = new RequestOptions({ headers: headers})
           console.log(postdata)
            var Serialized = this.serializeObj(postdata);
      var Loading = this.loadingCtrl.create({
-          spinner: 'hide',
-    cssClass: 'loader',
-    content: "<img src='assets/img/icons3.gif'>",
+          spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
     dismissOnPageChange:true
         });
            Loading.present().then(() => {

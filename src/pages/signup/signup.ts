@@ -16,6 +16,8 @@ import { FCM } from '@ionic-native/fcm';
 import { Geolocation } from '@ionic-native/geolocation';
 import { NominatimapPage } from '../nominatimap/nominatimap';
 import { CountryPickerModule, CountryPickerService } from 'angular2-countrypicker';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
+
 /**
  * Generated class for the SignupPage page.
  *
@@ -35,6 +37,7 @@ export class SignupPage {
   arr;
   slat:any;
   slong:any;
+  locationstatus:boolean = false;
   devicetoken:any;
   savd:any=[];
   address:any;
@@ -49,12 +52,14 @@ export class SignupPage {
    public showpass:boolean = false;
   public long: number;
   public validateEqual: string
+// permissions = cordova.plugins.permissions;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public toastCtrl: ToastController,
     public geolocation: Geolocation,
     public appsetting: Appsetting,
     private fcm: FCM,
+    private androidPermissions: AndroidPermissions,
     public nativeGeocoder: NativeGeocoder,
     public http: Http,
     private device: Device,
@@ -82,6 +87,8 @@ export class SignupPage {
 // this.GetLocation();
 // this.cities()
  
+  
+
   }
 //  cities(){
 //     let headers = new Headers();
@@ -94,7 +101,7 @@ export class SignupPage {
 //          
 //       });
 //  }
- 
+
   lupap(){
       
       console.log(this.data.city);
@@ -243,9 +250,9 @@ this.http.post('http://nominatim.openstreetmap.org/search/'+adr+'?format=json&ad
         if(this.lat != null){
         var Serialized = this.serializeObj(postdata);
         var Loading = this.loadingCtrl.create({
-          spinner: 'hide',
-    cssClass: 'loader',
-    content: "<img src='assets/img/icons3.gif'>",
+         spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
     dismissOnPageChange:true
         });
         Loading.present().then(() => {
@@ -294,9 +301,9 @@ this.http.post('http://nominatim.openstreetmap.org/search/'+adr+'?format=json&ad
   GetLocation(){
     
         var Loading = this.loadingCtrl.create({
-           spinner: 'hide',
-    cssClass: 'loader',
-    content: "<img src='assets/img/icons3.gif'>",
+           spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
     dismissOnPageChange:true
         });
          Loading.present().then(() => {
@@ -306,6 +313,7 @@ this.http.post('http://nominatim.openstreetmap.org/search/'+adr+'?format=json&ad
       //
       // resp.coords.longitude
       console.log('latitude:'+resp.coords.latitude+'longitude:'+resp.coords.longitude);
+      this.locationstatus = true;
       // this.lat = resp.coords.latitude;
       // this.long = resp.coords.longitud
 //      let timerId = setInterval(() =>  Loading.dismiss(), 5000);
@@ -482,7 +490,7 @@ this.http.post('http://nominatim.openstreetmap.org/search/'+adr+'?format=json&ad
   }
   
   openmapmodal() {
-    let modal = this.modalCtrl.create(NominatimapPage);
+      if( this.locationstatus == true){ let modal = this.modalCtrl.create(NominatimapPage);
     modal.onDidDismiss(data => { 
     this.data.address=data.address;
     console.log(this.data.address)
@@ -492,7 +500,15 @@ this.http.post('http://nominatim.openstreetmap.org/search/'+adr+'?format=json&ad
     this.long = data.longi
     this.AlertMsg4('Your Location:'+this.data.address+' '+' is  saved')
   });
-    modal.present();
+    modal.present();}
+    else{
+          this.ToastMsg1('Please enable your Location');
+    }
+  
+     
+     
+  
+    
   }
   ngOnInit() {
     this.date = moment(new Date()).format('YYYY-MM-DD');

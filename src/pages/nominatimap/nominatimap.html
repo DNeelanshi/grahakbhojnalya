@@ -29,16 +29,15 @@
   <ion-option value="cun_mosquera"> Mosquera, Cundinamarca</ion-option>
   <ion-option value="cun_madrid">Madrid, Cundinamarca</ion-option>
   <ion-option value="cun_cajica">Cajicá, Cundinamarca</ion-option>
-<!--  <ion-option value="cun_soacha">Soacha, Cundinamarca</ion-option>-->
   <ion-option value="cun_sopo">Sopó, Cundinamarca</ion-option>
-  <ion-option value="Facatativá">Facatativá, Cundinamarca</ion-option>
-  <ion-option value="tenjo">Tenjo,Cundinamarca</ion-option>
-  <ion-option value="tocancipa">Tocancipa, Cundinamarca</ion-option>
-  <ion-option value="guasca">Guasca, Cundinamarca</ion-option>
-  <ion-option value="anapoima">Anapoima, Cundinamarca</ion-option>
-  <ion-option value="villeta">Villeta, Cundinamarca</ion-option>
-  <ion-option value="la_vega">La Vega, Cundinamarca</ion-option>
-  <ion-option value="La Mesa">La Mesa, Cundinamarca</ion-option>
+  <ion-option value="cun_facatativa">Facatativá, Cundinamarca</ion-option>
+  <ion-option value="cun_tenjo">Tenjo,Cundinamarca</ion-option>
+  <ion-option value="cun_tocancipa">Tocancipa, Cundinamarca</ion-option>
+  <ion-option value="cun_guasca">Guasca, Cundinamarca</ion-option>
+  <ion-option value="cun_anapoima">Anapoima, Cundinamarca</ion-option>
+  <ion-option value="cun_villeta">Villeta, Cundinamarca</ion-option>
+  <ion-option value="cun_la_vega">La Vega, Cundinamarca</ion-option>
+  <ion-option value="cun_la_mesa">La Mesa, Cundinamarca</ion-option>
 </ion-select>
    </ion-toolbar>
 
@@ -54,7 +53,7 @@
 <ion-icon name="{{iconname}}" ></ion-icon>
 </button>-->
     
-     <ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="omega == 0">
+<!--     <ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="omega == 0">
       <ion-item *ngFor="let item of autocompleteItems;let i = index"
       (click)="getItem(item)"  >
      <span > {{ item.description }}</span>
@@ -71,7 +70,7 @@
       (click)="getItem(item)">
       {{ item }}
       </ion-item>
-      </ion-list>
+      </ion-list>-->
 </div>
     
 <ion-toolbar class="toolbar_top" style="padding: 0 7px 7px 7px; background: #fff;">
@@ -85,9 +84,9 @@
 
 <ion-input type="text" placeholder='Additional Address Details' [(ngModel)]="data.additional" name="additional" #additional="ngModel"  ></ion-input>
 
-    <button ion-button full color="theme-header" *ngIf="omega == 0" (click)="chooseItem()" [disabled]="!isenabled">Search</button>
-     <button ion-button full color="theme-header" *ngIf="omega == 1" (click)="chooseItem1()" [disabled]="!isenabled">Search</button>
-      <button ion-button full color="theme-header" *ngIf="omega == 2" (click)="chooseItem2()" [disabled]="!isenabled" >Search</button>
+    <!--<button ion-button full color="theme-header" *ngIf="omega == 0" (click)="chooseItem()" [disabled]="!isenabled">Search</button>-->
+     <button ion-button full color="theme-header" (click)="Searchlocation()" [disabled]="!isenabled">Search</button>
+      <!--<button ion-button full color="theme-header" *ngIf="omega == 2" (click)="chooseItem2()" [disabled]="!isenabled" >Search</button>-->
 </ion-toolbar>
 </ion-header>
 

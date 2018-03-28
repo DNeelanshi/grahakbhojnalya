@@ -1,6 +1,6 @@
 webpackJsonp([26],{
 
-/***/ 119:
+/***/ 120:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45,7 +45,7 @@ AddwalletPage = __decorate([
 
 /***/ }),
 
-/***/ 120:
+/***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -502,7 +502,7 @@ LocationPage = __decorate([
 
 /***/ }),
 
-/***/ 121:
+/***/ 122:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -584,9 +584,9 @@ var FavoritesPage = (function () {
         };
         var Serialized = this.serializeObj(postdata);
         var Loading = this.loadingCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(function () {
@@ -616,9 +616,9 @@ var FavoritesPage = (function () {
         };
         var Serialized = this.serializeObj(postdata);
         var Loading = this.loadingCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(function () {
@@ -666,9 +666,9 @@ var FavoritesPage = (function () {
                             console.log(postdata);
                             var Serialized = _this.serializeObj(postdata);
                             var Loading = _this.loadingCtrl.create({
-                                spinner: 'hide',
+                                spinner: 'bubbles',
                                 cssClass: 'loader',
-                                content: "<img src='assets/img/icons3.gif'>",
+                                content: "Loading",
                                 dismissOnPageChange: true
                             });
                             Loading.present().then(function () {
@@ -729,15 +729,15 @@ FavoritesPage = __decorate([
 
 /***/ }),
 
-/***/ 122:
+/***/ 123:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RafahoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__orderdetial_orderdetial__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__selectdish_selectdish__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__orderdetial_orderdetial__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__selectdish_selectdish__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_appsetting__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -820,9 +820,9 @@ var RafahoPage = (function () {
         };
         var serialized = this.serializeObj(postdata);
         var Loading = this.loadCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(function () {
@@ -884,9 +884,9 @@ var RafahoPage = (function () {
         };
         var serialized = this.serializeObj(postdata);
         var Loading = this.loadCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(function () {
@@ -931,9 +931,9 @@ var RafahoPage = (function () {
         };
         var serialized = this.serializeObj(postdata);
         var Loading = this.loadCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(function () {
@@ -980,9 +980,9 @@ var RafahoPage = (function () {
         };
         var serialized = this.serializeObj(postdata);
         var Loading = this.loadCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(function () {
@@ -1048,7 +1048,7 @@ RafahoPage = __decorate([
 
 /***/ }),
 
-/***/ 123:
+/***/ 124:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1142,7 +1142,7 @@ OrderdetialPage = __decorate([
 
 /***/ }),
 
-/***/ 124:
+/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1191,13 +1191,13 @@ SelectdishPage = __decorate([
 
 /***/ }),
 
-/***/ 125:
+/***/ 126:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChefdetialsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reviews_reviews__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__reviews_reviews__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__productview_productview__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(7);
@@ -1356,14 +1356,14 @@ ChefdetialsPage = __decorate([
 
 /***/ }),
 
-/***/ 126:
+/***/ 127:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RatingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reviews_reviews__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reviews_reviews__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1431,7 +1431,7 @@ var RatingPage = (function () {
                 _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__reviews_reviews__["a" /* ReviewsPage */]);
             }
             else if (response.message == "Unable to add Comment and Rating!!") {
-                _this.AlertMsg1('Rate this chef');
+                _this.AlertMsg1('Please Rate this chef');
             }
         });
     };
@@ -1501,7 +1501,7 @@ RatingPage = __decorate([
 
 /***/ }),
 
-/***/ 127:
+/***/ 128:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1798,9 +1798,9 @@ var ProductlistPage = (function () {
         console.log(postdata);
         var Serialized = this.serializeObj(postdata);
         var Loading = this.loadingCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(function () {
@@ -1863,7 +1863,7 @@ ProductlistPage = __decorate([
 
 /***/ }),
 
-/***/ 128:
+/***/ 129:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1963,7 +1963,7 @@ WhyrafahoPage = __decorate([
 
 /***/ }),
 
-/***/ 129:
+/***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2063,7 +2063,7 @@ HelpPage = __decorate([
 
 /***/ }),
 
-/***/ 130:
+/***/ 131:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2163,7 +2163,7 @@ TermsPage = __decorate([
 
 /***/ }),
 
-/***/ 131:
+/***/ 132:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2172,7 +2172,7 @@ TermsPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profile_profile__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mapmodal_mapmodal__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_camera__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_native_geocoder__ = __webpack_require__(25);
@@ -2390,9 +2390,9 @@ var EditprofilePage = (function () {
             console.log(this.data);
             var serialized = this.serializeObj(this.data);
             var Loading = this.loadingCtrl.create({
-                spinner: 'hide',
+                spinner: 'bubbles',
                 cssClass: 'loader',
-                content: "<img src='assets/img/icons3.gif'>",
+                content: "Loading",
                 dismissOnPageChange: true
             });
             Loading.present().then(function () {
@@ -2475,9 +2475,9 @@ var EditprofilePage = (function () {
                             console.log(postdata);
                             var serialized = _this.serializeObj(postdata);
                             var Loading = _this.loadingCtrl.create({
-                                spinner: 'hide',
+                                spinner: 'bubbles',
                                 cssClass: 'loader',
-                                content: "<img src='assets/img/icons3.gif'>",
+                                content: "Loading",
                                 dismissOnPageChange: true
                             });
                             Loading.present().then(function () {
@@ -2525,9 +2525,9 @@ var EditprofilePage = (function () {
                             //            alert(postdata)
                             var serialized = _this.serializeObj(postdata);
                             var Loading = _this.loadingCtrl.create({
-                                spinner: 'hide',
+                                spinner: 'bubbles',
                                 cssClass: 'loader',
-                                content: "<img src='assets/img/icons3.gif'>",
+                                content: "Loading",
                                 dismissOnPageChange: true
                             });
                             Loading.present().then(function () {
@@ -2680,7 +2680,7 @@ EditprofilePage = __decorate([
 
 /***/ }),
 
-/***/ 132:
+/***/ 133:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2693,7 +2693,7 @@ EditprofilePage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_appsetting__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_geolocation__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_map__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_map__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_native_geocoder__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_moment__ = __webpack_require__(1);
@@ -2881,7 +2881,8 @@ var EditprefrencePage = (function () {
             var serialized = this.serializeObj(this.data);
             var Loading = this.loadingCtrl.create({
                 spinner: 'bubbles',
-                cssClass: 'loader'
+                cssClass: 'loader',
+                content: "Loading",
             });
             Loading.present().then(function () {
                 _this.http.post(_this.appsetting.myGlobalVar + 'addprefrence', serialized, options)
@@ -2926,7 +2927,8 @@ var EditprefrencePage = (function () {
         var _this = this;
         var Loading = this.loadingCtrl.create({
             spinner: 'bubbles',
-            cssClass: 'loader'
+            cssClass: 'loader',
+            content: "Loading",
         });
         Loading.present().then(function () {
             _this.geolocation.getCurrentPosition().then(function (resp) {
@@ -3161,7 +3163,7 @@ EditprefrencePage = __decorate([
 
 /***/ }),
 
-/***/ 133:
+/***/ 134:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3261,7 +3263,7 @@ FrequentquestionPage = __decorate([
 
 /***/ }),
 
-/***/ 134:
+/***/ 135:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3407,7 +3409,7 @@ FeedbackPage = __decorate([
 
 /***/ }),
 
-/***/ 135:
+/***/ 136:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3486,9 +3488,9 @@ var ChangepwdPage = (function () {
                 //alert(JSON.stringify(postdata));
                 var Serialized = this.serializeObj(postdata);
                 var Loading = this.loadingCtrl.create({
-                    spinner: 'hide',
+                    spinner: 'bubbles',
                     cssClass: 'loader',
-                    content: "<img src='assets/img/icons3.gif'>",
+                    content: "Loading",
                     dismissOnPageChange: true
                 });
                 Loading.present().then(function () {
@@ -3615,14 +3617,14 @@ ChangepwdPage = __decorate([
 
 /***/ }),
 
-/***/ 136:
+/***/ 137:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForgtpwdPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_signup__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_signup__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__signin_signin__ = __webpack_require__(37);
@@ -3673,7 +3675,8 @@ var ForgtpwdPage = (function () {
         var Serialized = this.serializeObj(postdata);
         var Loading = this.loadingCtrl.create({
             spinner: 'bubbles',
-            cssClass: 'loader'
+            cssClass: 'loader',
+            content: "Loading",
         });
         Loading.present().then(function () {
             _this.http.post(_this.appsetting.myGlobalVar + 'forgetpassword', Serialized, options).map(function (res) { return res.json(); }).subscribe(function (response) {
@@ -3757,7 +3760,7 @@ ForgtpwdPage = __decorate([
 
 /***/ }),
 
-/***/ 144:
+/***/ 145:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -3770,116 +3773,116 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 144;
+webpackEmptyAsyncContext.id = 145;
 
 /***/ }),
 
-/***/ 186:
+/***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/addwallet/addwallet.module": [
-		451,
+		452,
 		25
 	],
 	"../pages/cart/cart.module": [
-		452,
+		453,
 		24
 	],
 	"../pages/change/change.module": [
-		453,
+		454,
 		1
 	],
 	"../pages/changepwd/changepwd.module": [
-		454,
+		455,
 		23
 	],
 	"../pages/chefdetials/chefdetials.module": [
-		455,
+		456,
 		22
 	],
 	"../pages/editprefrence/editprefrence.module": [
-		456,
+		457,
 		21
 	],
 	"../pages/editprofile/editprofile.module": [
-		457,
+		458,
 		20
 	],
 	"../pages/favorites/favorites.module": [
-		458,
+		459,
 		19
 	],
 	"../pages/feedback/feedback.module": [
-		459,
+		460,
 		18
 	],
 	"../pages/forgtpwd/forgtpwd.module": [
-		460,
+		461,
 		17
 	],
 	"../pages/frequentquestion/frequentquestion.module": [
-		461,
+		462,
 		16
 	],
 	"../pages/help/help.module": [
-		462,
+		463,
 		15
 	],
 	"../pages/location/location.module": [
-		463,
+		464,
 		14
 	],
 	"../pages/mapmodal/mapmodal.module": [
-		464,
+		465,
 		13
 	],
 	"../pages/nominatimap/nominatimap.module": [
-		465,
+		466,
 		12
 	],
 	"../pages/orderdetial/orderdetial.module": [
-		466,
+		467,
 		11
 	],
 	"../pages/payment/payment.module": [
-		467,
+		468,
 		10
 	],
 	"../pages/productlist/productlist.module": [
-		468,
+		469,
 		9
 	],
 	"../pages/productview/productview.module": [
-		469,
+		470,
 		8
 	],
 	"../pages/rafaho/rafaho.module": [
-		470,
+		471,
 		7
 	],
 	"../pages/rating/rating.module": [
-		471,
+		472,
 		6
 	],
 	"../pages/reviews/reviews.module": [
-		472,
+		473,
 		5
 	],
 	"../pages/selectdish/selectdish.module": [
-		473,
+		474,
 		4
 	],
 	"../pages/southfood/southfood.module": [
-		474,
+		475,
 		0
 	],
 	"../pages/terms/terms.module": [
-		475,
+		476,
 		3
 	],
 	"../pages/whyrafaho/whyrafaho.module": [
-		476,
+		477,
 		2
 	]
 };
@@ -3894,12 +3897,12 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 186;
+webpackAsyncContext.id = 187;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 189:
+/***/ 190:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4026,7 +4029,7 @@ ChatPage = __decorate([
 
 /***/ }),
 
-/***/ 190:
+/***/ 191:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4059,24 +4062,25 @@ Service = __decorate([
 
 /***/ }),
 
-/***/ 191:
+/***/ 192:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filter_filter__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chefdetials_chefdetials__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__filter_filter__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chefdetials_chefdetials__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mapmodal_mapmodal__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cart_cart__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__productlist_productlist__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__productlist_productlist__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_appsetting__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_native_geocoder__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_moment__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_android_permissions__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4099,8 +4103,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomePage = (function () {
-    function HomePage(navCtrl, modalCtrl, appsetting, platform, http, nativeGeocoder, geolocation, GeolocationOptions, loadingCtrl, alertCtrl, toastCtrl, events) {
+    function HomePage(navCtrl, modalCtrl, appsetting, platform, http, nativeGeocoder, geolocation, androidPermissions, GeolocationOptions, loadingCtrl, alertCtrl, toastCtrl, events) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.modalCtrl = modalCtrl;
@@ -4109,6 +4114,7 @@ var HomePage = (function () {
         this.http = http;
         this.nativeGeocoder = nativeGeocoder;
         this.geolocation = geolocation;
+        this.androidPermissions = androidPermissions;
         this.GeolocationOptions = GeolocationOptions;
         this.loadingCtrl = loadingCtrl;
         this.alertCtrl = alertCtrl;
@@ -4118,6 +4124,11 @@ var HomePage = (function () {
         this.searcharray = [];
         this.searcharray1 = [];
         this.arry = true;
+        this.maingreenavail = 1;
+        this.mainredavail = 1;
+        this.altgreenavail = 1;
+        this.altredavail = 1;
+        this.lostatus = false;
         this.arr1 = null;
         this.ar = [];
         this.data = {};
@@ -4186,6 +4197,7 @@ var HomePage = (function () {
             _this.long = resp.coords.longitude;
             console.log(resp.coords.latitude);
             console.log(resp.coords.longitude);
+            _this.lostatus = true;
             var headers = new __WEBPACK_IMPORTED_MODULE_7__angular_http__["Headers"]();
             headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
             var options = new __WEBPACK_IMPORTED_MODULE_7__angular_http__["RequestOptions"]({ headers: headers });
@@ -4250,7 +4262,7 @@ var HomePage = (function () {
             });
             _this.get();
         }, function (err) {
-            //            alert(err);
+            _this.ToastMsg('Please enable your Location.');
         });
     };
     HomePage.prototype.doRefresh = function (refresher) {
@@ -4393,9 +4405,9 @@ var HomePage = (function () {
         //        alert(item);
         var _this = this;
         var Loading = this.loadingCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(function () {
@@ -4427,21 +4439,26 @@ var HomePage = (function () {
     };
     HomePage.prototype.openmapmodal = function () {
         var _this = this;
-        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__mapmodal_mapmodal__["a" /* MapmodalPage */]);
-        modal.onDidDismiss(function (data) {
-            _this.chefsearch.search = data.address;
-            console.log(_this.data.address);
-            console.log(data.lati);
-            console.log(data.longi);
-            _this.lat = data.lati;
-            _this.long = data.longi;
-            //    this.searcharray=[];
-            _this.openllist = 0;
-            _this.blurclass = 'blurbg1';
-            _this.get();
-            //    this.AlertMsg4('Your Location:'+this.data.address+' '+' is  saved')
-        });
-        modal.present();
+        if (this.lostatus == true) {
+            var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__mapmodal_mapmodal__["a" /* MapmodalPage */]);
+            modal.onDidDismiss(function (data) {
+                _this.chefsearch.search = data.address;
+                console.log(_this.data.address);
+                console.log(data.lati);
+                console.log(data.longi);
+                _this.lat = data.lati;
+                _this.long = data.longi;
+                //    this.searcharray=[];
+                _this.openllist = 0;
+                _this.blurclass = 'blurbg1';
+                _this.get();
+                //    this.AlertMsg4('Your Location:'+this.data.address+' '+' is  saved')
+            });
+            modal.present();
+        }
+        else {
+            this.ToastMsg('Please enable your Location');
+        }
     };
     HomePage.prototype.get = function () {
         var _this = this;
@@ -4466,9 +4483,9 @@ var HomePage = (function () {
             console.log(postdata);
             //     alert(postdata);
             var Loading = this.loadingCtrl.create({
-                spinner: 'hide',
+                spinner: 'bubbles',
                 cssClass: 'loader',
-                content: "<img src='assets/img/icons3.gif'>",
+                content: "Loading",
                 dismissOnPageChange: true
             });
             Loading.present().then(function () {
@@ -4480,6 +4497,30 @@ var HomePage = (function () {
                     if (data.status == true) {
                         if (data.data.length > 0) {
                             _this.array = data.data;
+                            console.log(_this.array);
+                            var m = __WEBPACK_IMPORTED_MODULE_10_moment__(_this.data.datetime).format('YYYY-MM-DD');
+                            console.log(m);
+                            _this.array.forEach(function (value, key) {
+                                if (value.avalibilities.length > 0) {
+                                    value.avalibilities.forEach(function (value2, key2) {
+                                        if (__WEBPACK_IMPORTED_MODULE_10_moment__(m).isSame(value2.notavalibility_dates)) {
+                                            temp.mainredavail = 0;
+                                            value.mainredavail = 0;
+                                        }
+                                    });
+                                }
+                                else {
+                                    value.mainredavail = 1;
+                                }
+                            });
+                            //                            for(var d =0; d<this.array.length ; d++){
+                            //                                if(this.array[d].avalibilities.length>0){
+                            //                            for(var t=0;t< this.array[d].avalibilities.length; t++){
+                            //                                if(moment(m).isSame(this.array[d].avalibilities[t].notavalibility_dates))
+                            //                                {    this.mainredavail = 1;}
+                            //
+                            //                            }}}
+                            console.log(_this.mainredavail);
                             console.log(_this.array);
                             _this.array.forEach(function (value, key) {
                                 temp.rating = 0;
@@ -4789,15 +4830,15 @@ HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'page-home',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\home\home.html"*/'<ion-header>\n  <ion-toolbar  color="theme-header">\n       <ion-buttons start left icon-only>\n      <button ion-button clear>\n        <ion-icon class="hdrlogo"><img src="assets/img/logo-white.png"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      Chef List\n      <!--<p>Online Chef list</p>-->\n    </ion-title>\n     <ion-buttons end right>\n      <button ion-button icon-only class="" (click)="cartpage()">\n      <div class="iconprf">\n          <img src="assets/img/whitestore.png">\n           <p><span>{{no_of_products}}</span></p>\n       </div>\n      </button>     \n    </ion-buttons>\n  </ion-toolbar>\n    \n    \n    \n<div class="searchouter" style="position: relative;">\n<ion-input class="srch" placeholder="Fill Address..." (click)="openlist()" [readonly]="isReadonly()" [(ngModel)]="chefsearch.search" name="search" #search="ngModel">\n   </ion-input>\n    <ion-icon name="arrow-down" class="go" (click)="openlist()"></ion-icon>\n\n    <div class="listout">  \n<ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="openllist == 1" >\n   \n      <ion-item>\n         <button (click)= "openmapmodal()" outline ion-button color="dark" icon-right round>Go To Other Address <ion-icon name="navigate"></ion-icon> </button>\n         <button ion-button color="danger" outline round icon-right  (click)="cancellist()"> Close</button>\n     </ion-item>\n  \n     <ion-list-header style="background: #f2f2f2; margin: 0;"> Favourite Addresses: </ion-list-header>\n       <div class="fvtaddress">\n       <ion-item *ngFor ="let opt1 of searcharray1;let i = index" \n        (click)="getItem(opt1)">\n        {{opt1}}\n        <ion-icon name="trash" small item-end (click)="del1(i)"></ion-icon>\n    </ion-item>        \n       </div>     \n     \n     <ion-list-header style="background: #f2f2f2; margin: 0;"><span>  <ion-icon name="search"></ion-icon>\n </span> Recent Searches</ion-list-header>\n    <div class="savedaddress"> \n    <ion-item *ngFor ="let opt of searcharray;let i = index"\n        (click)="getItem(opt)">\n        {{opt}}\n        <ion-icon name="trash" small item-end (click)="del(i)"></ion-icon>\n    </ion-item>\n    </div>   \n</ion-list> \n    </div>\n       \n</div>\n    \n\n    \n\n\n  <ion-toolbar class="dateleft">\n      <p>Main Date</p>\n            <ion-datetime  placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm"  min="{{date}}" [(ngModel)]= "data.datetime" name="datetime" #datetime="ngModel" ></ion-datetime>\n  </ion-toolbar>\n      \n    <ion-toolbar class="dateleftr">\n        <p>Alternative Date</p>\n            <ion-datetime  placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}" [(ngModel)]= "data.altdate" name="altdate" #altdate="ngModel" ></ion-datetime>\n            \n    </ion-toolbar> \n    \n\n  <div class="segment-sec">\n      \n  <ion-toolbar>\n  <ion-segment [(ngModel)]="pet">\n    <ion-segment-button value="kittens">\n      chef Search\n    </ion-segment-button>\n    <ion-segment-button value="puppies">\n      Dish Search\n    </ion-segment-button>\n  </ion-segment>\n  </ion-toolbar>\n</div>\n</ion-header>\n<ion-content  class="{{blurclass}}" style="padding: 0;">\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content\n        pullingIcon="arrow-dropdown"\n      pullingText="Pull to refresh"\n      refreshingSpinner="circles"\n      refreshingText="Refreshing..."></ion-refresher-content>\n  </ion-refresher>\n\n    <div class="overlayn" (click)="cancellist()" ></div>\n    \n  <div class="banner">\n  <img src="assets/img/off.png">\n</div>\n  \n  <div class="content-sec">\n    \n\n  <div [ngSwitch]="pet">\n    <ion-list *ngSwitchCase="\'kittens\'">\n        <div class="serch">\n  <ion-searchbar placeholder="Search by chef..." [(ngModel)]="data.dat" name="dat" #dat="ngModel" (input)="searchaa(data.dat)" (ionClear)="dismiss1()" ></ion-searchbar>\n  <div class="option">\n      <img src="assets/img/option.png" (click)="fltr_opn()">\n  </div>\n</div>\n  <ion-list>\n      <ion-item *ngFor="let dat of array" (click)="detail(dat)">\n          \n        <ion-avatar item-start>\n             <img *ngIf ="dat?.user_image"  src="{{dat?.user_image}}">\n             <img *ngIf ="!dat?.user_image" src="assets/img/us.png">\n         \n        </ion-avatar>\n        <h3>{{dat?.firstname}} {{dat?.lastname}}</h3>\n          <div *ngIf="dat?.status == true">\n              <p> <span>Specialities</span><span *ngFor="let spec of dat.specialties">{{spec?.specialties_product}},</span></p>\n        <p><span>Experience </span>Private Chef, Personal,</p>\n        <div class="rightbtn green" item-end *ngIf="dat?.avgrating">\n          <h3 ><span> <img src="assets/img/star.png"></span>{{dat?.avgrating}}/5</h3>\n        </div>\n        <div class="leftbtn">\n          <button ion-button icon-left clear>\n             <ion-icon name="radio-button-on" style="color: #2bb600; line-height: 1;float: left; width: 34px;"></ion-icon>\n            Available Today\n          </button>\n        </div>\n        <div class="right">\n          <button ion-button icon-left clear>\n             <ion-icon name="radio-button-on" style="color: #dcca00; line-height: 1; float: left; width: 34px;"></ion-icon>\n            Alternative date available\n          </button>\n        </div>\n          </div>\n      </ion-item> </ion-list>\n\n<!--      <ion-item>\n        <ion-avatar item-start>\n          <img src="assets/img/arenda.png">\n        </ion-avatar>\n        <h3>Andrea Beaman</h3>\n        <p><span>Specialities</span>Idli,sambhar, Kerla</p>\n        <p><span>Experience </span>Private Chef, Personal,</p>\n        <div class="rightbtn green" item-end>\n          <h3><span> <img src="assets/img/star.png"></span>3/4</h3>\n        </div>\n        <div class="leftbtn">\n          <button ion-button icon-left clear>\n             <ion-icon name="radio-button-on" style="color: #fe4600;"></ion-icon>\n            Not available today\n          </button>\n        </div>\n        <div class="right">\n          <button ion-button icon-left clear>\n             <ion-icon name="radio-button-on" style="color: #dcca00;"></ion-icon>\n            Alternative date available\n          </button>\n        </div>\n      </ion-item>-->\n<div *ngIf="bit == null"><div class="loadimg"><img width="220px" src="assets/img/RafahoLogo-03.png"></div></div>\n<div *ngIf="arr1 == null"><div class="loadimg"><img width="220px" src="assets/img/RafahoLogo-02.png"></div></div>\n    </ion-list>\n  </div>\n\n\n\n\n\n  <div [ngSwitch]="pet">\n\n  <div class="serch-text" *ngSwitchCase="\'puppies\'">\n      <div class="serch">\n          <ion-searchbar placeholder="Search by dish..." [(ngModel)]="data.dats" name="dats" #dats="ngModel" (input)="searchdish(data.dats)"    (ionClear)="dismiss()"></ion-searchbar>\n      <div class="option">\n      <img src="assets/img/option.png" (click)="fltr_opn()">\n      </div>\n     </div>\n  \n      <ion-list *ngIf= "arr != null">\n      <ion-item *ngFor="let dats of arr">\n<!--        <span >-->\n        \n        <ion-thumbnail item-start  >\n            <div *ngFor="let prodds of dats.products">\n              <img  *ngIf="prodds?.bit == 0" src="{{prodds?.product_image0}}">\n                <!--<img *ngIf="!prodds?.bit == 0" src="assets/img/frvttwo.png"">-->\n                </div>\n              </ion-thumbnail>\n      <!--</span>-->\n     \n        <div class="main">\n          <div  class="image">\n            <img *ngIf ="dats?.user_image"  src="{{dats?.user_image}}">\n             <img *ngIf ="!dats?.user_image" src="assets/img/us.png">\n          </div>\n          <h1>{{dats?.firstname}} {{dats?.lastname}} </h1>\n<!--          <div class="right-sec">\n            <button ion-button class="rating histry">{{dats?.avgrating}}/5</button>\n          </div>-->\n            <div class="rightbtn green" item-end *ngIf="dats?.avgrating">\n          <h3 ><span> <img src="assets/img/star.png"></span>{{dats?.avgrating}}/5</h3>\n        </div>\n        </div>\n      \n<!--        <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">South indian food</h2>-->\n       <div *ngFor="let prods of dats.products"> <p *ngIf="prods?.bit == 0">{{prods?.product_name}}</p></div>\n        <div class="btn-left">\n          <button ion-button outline (click)="prdlist(dats.products)">\n            BOOK NOW\n          </button>\n        </div>\n<!--         <div class="btn-rght"  *ngFor="let prods of dats.products">\n          <button ion-button outline *ngIf="prods?.bit == 0" >\n           {{prods.order_prefrence}}\n          </button>\n        </div>-->\n<!--       <div *ngFor="let proods of dats.products">\n          <div class="hor" style="width: 25px; float: left;" ><ion-icon name="time"></ion-icon><span *ngIf="proods?.bit == 0" >{{cookingtime}}h</span></div>\n     </div>-->\n      </ion-item>\n    \n  </ion-list>\n      <div *ngIf="arry == true"><div class="loadimg"><img width="120px" src="assets/img/srchimg.png"></div></div>\n      <div *ngIf="arry == null"><div class="loadimg"><img width="220px" src="assets/img/RafahoLogo-03.png"></div></div>\n  </div>\n    <!-- <div class="serch-contant" *ngSwitchCase="\'puppies\'">\n        <div class="image">\n            <img src="../assets/img/srchimg.png">\n        </div>\n        <h5>Search Dish</h5>\n        <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>\n    </div> -->\n  </div>\n\n</div>\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\home\home.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_8__providers_appsetting__["a" /* Appsetting */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__providers_appsetting__["a" /* Appsetting */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_7__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_http__["Http"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_9__ionic_native_native_geocoder__["a" /* NativeGeocoder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__ionic_native_native_geocoder__["a" /* NativeGeocoder */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _m || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_8__providers_appsetting__["a" /* Appsetting */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__providers_appsetting__["a" /* Appsetting */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_7__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_http__["Http"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_9__ionic_native_native_geocoder__["a" /* NativeGeocoder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__ionic_native_native_geocoder__["a" /* NativeGeocoder */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_12__ionic_native_android_permissions__["a" /* AndroidPermissions */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_12__ionic_native_android_permissions__["a" /* AndroidPermissions */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]) === "function" && _o || Object])
 ], HomePage);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
 //# sourceMappingURL=home.js.map
 
 /***/ }),
 
-/***/ 192:
+/***/ 193:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4842,12 +4883,12 @@ FilterPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_chat__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__favorites_favorites__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rafaho_rafaho__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_chat__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__favorites_favorites__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rafaho_rafaho__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_profile__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular__ = __webpack_require__(4);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4963,13 +5004,13 @@ TabsPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SigninPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_signup__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__forgtpwd_forgtpwd__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup_signup__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__forgtpwd_forgtpwd__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_fcm__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_fcm__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__tabs_tabs__ = __webpack_require__(36);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5059,9 +5100,9 @@ var SigninPage = (function () {
             //alert(JSON.stringify(postdata));
             var Serialized = this.serializeObj(postdata);
             var Loading = this.loadingCtrl.create({
-                spinner: 'hide',
+                spinner: 'bubbles',
                 cssClass: 'loader',
-                content: "<img src='assets/img/icons3.gif'>",
+                content: "Loading",
                 dismissOnPageChange: true
             });
             Loading.present().then(function () {
@@ -5154,7 +5195,7 @@ var SigninPage = (function () {
 }());
 SigninPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-signin',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\signin\signin.html"*/'<!--\n  Generated template for the SigninPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header hidden>\n <ion-toolbar>\n  <ion-title>Menu</ion-title>\n </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n	<div class="main">\n		<div class="top-img">\n			<img src="assets/img/signbg.png">\n		</div>\n		<div class="bottom-img">\n			<img src="assets/img/tpbg.png">\n		</div>\n		<div class="text-sec">\n		<h2>Sign In</h2>\n		<h3>Welcome to <span>Rafaho</span> app</h3>\n	</div>\n	<div class="logo">\n		<img src="assets/img/logo.png">\n	</div>\n	</div>\n	<div class="content-sec">\n		<div class="sign">\n			<form class="form-sec" #SigninForm="ngForm" novalidate (submit)="Signin(SigninForm)">\n				<ion-list>\n\n				  <ion-item>\n				    <ion-label stacked>EMAIL</ion-label>\n				    <ion-input type="email" [(ngModel)]="data.email" name="email" #email="ngModel" pattern="^[a-z0-9]+(\.[_a-z0-9]+)+([@{1}])+(\.[a-z0-9-]+)+([.{1}])(\.[a-z]{1,15})$"  required></ion-input>\n                                  </ion-item> \n                                    <div class="alert alert-danger red" color="danger">\n                                           <div *ngIf="email.errors && (email.dirty || email.touched)">\n                                             <div [hidden]="!email.errors.required">\n                                               Email is required\n                                             </div>\n                                             <div [hidden]="!email.errors.pattern">\n                                               Invalid email\n                                             </div>\n                                           </div>\n                                        </div>\n                                    <!--<div style="position:initial !important">-->\n                                      \n				  <ion-item >\n				    <ion-label stacked>PASSWORD</ion-label>\n				    <ion-input type="{{ptype}}" [(ngModel)]="data.password" name="password" #password="ngModel" minlength="6" required></ion-input>\n                                     <button class="eyemain" ion-button clear type="button" color="dark" item-right>\n                    <ion-icon name="{{iconname}}" (click)="showPassword()" ></ion-icon>\n                  </button>\n                                  </ion-item>\n                                        <div class="alert alert-danger red" color="danger"> \n                                    <div *ngIf="password.errors && (password.dirty || password.touched)">\n                                     <div [hidden]="!password.errors.required">\n                                       Password is required\n                                      </div>\n                                       <div [hidden]="!password.errors.minlength">\n                                      Password must be at least 6 digits\n                                       </div>\n                                   </div>\n                                    <!--<ion-icon name="{{iconname}}" (click)="showPassword()" ></ion-icon>-->\n					 \n                                 </div>  <!--</div>-->\n                            \n                            </ion-list>\n					<div class="frgtpwd">\n					<div class="btn-sec">\n			<button ion-button full type="submit" [disabled]="!SigninForm.valid">Sign In</button>\n		    </div>\n				</div>\n			</form>\n		</div>\n		<div class="frgtpwd">\n			<h3 (click)="frgt()">Forgot password?</h3>\n		\n			<h3 class="register">Don\'t have an account? <span (click)="signupPage()">Register</span></h3>\n		</div>\n\n	</div>\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\signin\signin.html"*/,
+        selector: 'page-signin',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\signin\signin.html"*/'<!--\n  Generated template for the SigninPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header hidden>\n <ion-toolbar>\n  <ion-title>Menu</ion-title>\n </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n	<div class="main">\n		<div class="top-img">\n			<img src="assets/img/signbg.png">\n		</div>\n		<div class="bottom-img">\n			<img src="assets/img/tpbg.png">\n		</div>\n		<div class="text-sec">\n		<h2>Sign In</h2>\n		<h3>Welcome to <span>Rafaho</span> app</h3>\n	</div>\n	<div class="logo">\n		<img src="assets/img/logo.png">\n	</div>\n	</div>\n	<div class="content-sec">\n		<div class="sign">\n			<form class="form-sec" #SigninForm="ngForm" novalidate (submit)="Signin(SigninForm)">\n				<ion-list>\n\n				  <ion-item>\n				    <ion-label stacked>EMAIL</ion-label>\n				    <ion-input type="email" [(ngModel)]="data.email" name="email" #email="ngModel" pattern="^[a-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{1,63})$"  required></ion-input>\n                                  </ion-item> \n                                    <div class="alert alert-danger red" color="danger">\n                                           <div *ngIf="email.errors && (email.dirty || email.touched)">\n                                             <div [hidden]="!email.errors.required">\n                                               Email is required\n                                             </div>\n                                             <div [hidden]="!email.errors.pattern">\n                                               Invalid email\n                                             </div>\n                                           </div>\n                                        </div>\n                                    <!--<div style="position:initial !important">-->\n                                      \n				  <ion-item >\n				    <ion-label stacked>PASSWORD</ion-label>\n				    <ion-input type="{{ptype}}" [(ngModel)]="data.password" name="password" #password="ngModel" minlength="6" required></ion-input>\n                                     <button class="eyemain" ion-button clear type="button" color="dark" item-right>\n                    <ion-icon name="{{iconname}}" (click)="showPassword()" ></ion-icon>\n                  </button>\n                                  </ion-item>\n                                        <div class="alert alert-danger red" color="danger"> \n                                    <div *ngIf="password.errors && (password.dirty || password.touched)">\n                                     <div [hidden]="!password.errors.required">\n                                       Password is required\n                                      </div>\n                                       <div [hidden]="!password.errors.minlength">\n                                      Password must be at least 6 digits\n                                       </div>\n                                   </div>\n                                    <!--<ion-icon name="{{iconname}}" (click)="showPassword()" ></ion-icon>-->\n					 \n                                 </div>  <!--</div>-->\n                            \n                            </ion-list>\n					<div class="frgtpwd">\n					<div class="btn-sec">\n			<button ion-button full type="submit" [disabled]="!SigninForm.valid">Sign In</button>\n		    </div>\n				</div>\n			</form>\n		</div>\n		<div class="frgtpwd">\n			<h3 (click)="frgt()">Forgot password?</h3>\n		\n			<h3 class="register">Don\'t have an account? <span (click)="signupPage()">Register</span></h3>\n		</div>\n\n	</div>\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\signin\signin.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
@@ -5170,7 +5211,7 @@ SigninPage = __decorate([
 
 /***/ }),
 
-/***/ 371:
+/***/ 372:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5225,13 +5266,13 @@ PaymentPage = __decorate([
 
 /***/ }),
 
-/***/ 372:
+/***/ 373:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(373);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(391);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(374);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(392);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -5239,7 +5280,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 391:
+/***/ 392:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5247,57 +5288,58 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(443);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_keyboard__ = __webpack_require__(444);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_fcm__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(444);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_keyboard__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_fcm__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_mapmodal_mapmodal__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_nominatimap_nominatimap__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_chat_chat__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_favorites_favorites__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_chat_chat__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_favorites_favorites__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_tabs_tabs__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_signin_signin__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_signup_signup__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_rafaho_rafaho__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_editprefrence_editprefrence__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_profile_profile__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_whyrafaho_whyrafaho__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_help_help__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_terms_terms__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_editprofile_editprofile__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_addwallet_addwallet__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_frequentquestion_frequentquestion__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_feedback_feedback__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_orderdetial_orderdetial__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_forgtpwd_forgtpwd__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_changepwd_changepwd__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_filter_filter__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_signup_signup__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_rafaho_rafaho__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_editprefrence_editprefrence__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_profile_profile__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_whyrafaho_whyrafaho__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_help_help__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_terms_terms__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_editprofile_editprofile__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_addwallet_addwallet__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_frequentquestion_frequentquestion__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_feedback_feedback__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_orderdetial_orderdetial__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_forgtpwd_forgtpwd__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_changepwd_changepwd__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_filter_filter__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_productview_productview__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_cart_cart__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_payment_payment__ = __webpack_require__(371);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_chefdetials_chefdetials__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_reviews_reviews__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_rating_rating__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_selectdish_selectdish__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_productlist_productlist__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_location_location__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_payment_payment__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_chefdetials_chefdetials__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_reviews_reviews__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_rating_rating__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_selectdish_selectdish__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_productlist_productlist__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_location_location__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__providers_appsetting__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__angular_http__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__ionic_native_status_bar__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__ionic_native_splash_screen__ = __webpack_require__(357);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41_angular2_moment__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__ionic_native_status_bar__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__ionic_native_splash_screen__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41_angular2_moment__ = __webpack_require__(446);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41_angular2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_41_angular2_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__ionic_native_device__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__ionic_native_device__ = __webpack_require__(313);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__ionic_native_geolocation__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__ionic_native_native_geocoder__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__ionic_native_camera__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__providers_service__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47_angular2_countrypicker__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__providers_service__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47_angular2_countrypicker__ = __webpack_require__(314);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_47_angular2_countrypicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_47_angular2_countrypicker__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48_md_select__ = __webpack_require__(448);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48_md_select__ = __webpack_require__(449);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_48_md_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_48_md_select__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__ionic_native_in_app_browser__ = __webpack_require__(316);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50_ionic2_rating__ = __webpack_require__(449);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__ionic_native_in_app_browser__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50_ionic2_rating__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__ionic_native_android_permissions__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5308,6 +5350,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 //import { NavController} from 'ionic-angular';
+
 
 
 
@@ -5477,6 +5520,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_keyboard__["a" /* Keyboard */],
             __WEBPACK_IMPORTED_MODULE_46__providers_service__["a" /* Service */],
             __WEBPACK_IMPORTED_MODULE_37__providers_appsetting__["a" /* Appsetting */],
+            __WEBPACK_IMPORTED_MODULE_51__ionic_native_android_permissions__["a" /* AndroidPermissions */],
             __WEBPACK_IMPORTED_MODULE_42__ionic_native_device__["a" /* Device */],
             __WEBPACK_IMPORTED_MODULE_5__ionic_native_fcm__["a" /* FCM */],
             __WEBPACK_IMPORTED_MODULE_49__ionic_native_in_app_browser__["a" /* InAppBrowser */],
@@ -5563,9 +5607,9 @@ var MapmodalPage = (function () {
                 // alert("working");
                 // alert(lat+','+long);
                 var Loading = _this.loadCtrl.create({
-                    spinner: 'hide',
+                    spinner: 'bubbles',
                     cssClass: 'loader',
-                    content: "<img src='assets/img/icons3.gif'>",
+                    content: "Loading",
                     dismissOnPageChange: true
                 });
                 Loading.present().then(function () {
@@ -5596,6 +5640,9 @@ var MapmodalPage = (function () {
                             var resso = JSON.parse(response.data);
                             console.log(resso.response);
                             //            console.log(resso.response.properties.address);
+                            if (response.data == 'Not available credits') {
+                                _this.ToastMsg('Sorry! No Credits available');
+                            }
                             if ((resso.response == undefined) || (response.data == '{"message":"Result not found"}') || (resso.response.properties.address == null)) {
                                 _this.geocoder.geocode({ 'location': latLng }, (function (results, status) {
                                     if (status == google.maps.GeocoderStatus.OK) {
@@ -5910,6 +5957,9 @@ var MapmodalPage = (function () {
                                 var resso = JSON.parse(response.data);
                                 console.log(resso.response);
                                 //            console.log(resso.response.properties.address);
+                                if (response.data == 'Not available credits') {
+                                    _this.ToastMsg('Sorry! No Credits available');
+                                }
                                 if ((resso.response == undefined) || (response.data == '{"message":"Result not found"}') || (resso.response.properties.address == null)) {
                                     _this.geocoder.geocode({ 'location': latLong }, (function (results, status) {
                                         console.log(results);
@@ -6119,7 +6169,7 @@ var MapmodalPage = (function () {
                         // alert("working1");
                     }).catch(function (error) {
                         console.log('Error getting location', error);
-                        _this.ToastMsg('Please Turn On your Loaction!! <br>Error getting location' + ',' + error);
+                        _this.ToastMsg1('Please Turn On your Loaction!!.Error getting location');
                         Loading.dismissAll();
                         var latLng = new google.maps.LatLng(_this.lat, _this.long);
                         _this.geocoder.geocode({ 'latLng': latLng }, (function (results, status) {
@@ -6471,6 +6521,9 @@ var MapmodalPage = (function () {
                     console.log(response);
                     var ress = JSON.parse(response.data);
                     console.log(ress);
+                    if (ress.message == 'Not available credits') {
+                        _this.ToastMsg('Sorry! No Credits available');
+                    }
                     if (ress.message == 'Result not found') {
                         _this.chooseItem();
                         //                    this.nomiapi();
@@ -6554,7 +6607,7 @@ var MapmodalPage = (function () {
             alert1.present();
         }
         else {
-            var alert = this.alertCtrl.create({
+            var alert_1 = this.alertCtrl.create({
                 title: 'RAFAHO',
                 message: 'Save this as favourite address?',
                 buttons: [
@@ -6658,7 +6711,7 @@ var MapmodalPage = (function () {
                     }
                 ]
             });
-            alert.present();
+            alert_1.present();
         }
         console.log(this.appsetting.saved);
         console.log(localStorage.getItem('Favaddress'));
@@ -6901,6 +6954,14 @@ var MapmodalPage = (function () {
         });
         toast.present();
     };
+    MapmodalPage.prototype.ToastMsg1 = function (msg) {
+        var toast = this.toastCtrl.create({
+            message: msg,
+            duration: 4000,
+            position: 'middle'
+        });
+        toast.present();
+    };
     MapmodalPage.prototype.chooseItem1 = function () {
         var _this = this;
         this.number = true;
@@ -6953,6 +7014,9 @@ var MapmodalPage = (function () {
                 console.log(response);
                 var resso = JSON.parse(response.data);
                 console.log(resso.response);
+                if (response.data == 'Not available credits') {
+                    _this.ToastMsg('Sorry! No Credits available');
+                }
                 //            console.log(resso.response.properties.address);
                 if ((resso.response == undefined) || (response.data == '{"message":"Result not found"}') || (resso.response.properties.address == null)) {
                     //                console.log(resso.response.properties);
@@ -7137,6 +7201,9 @@ var MapmodalPage = (function () {
                             console.log(response.data == '{"message":"Result not found"}');
                             var resso = JSON.parse(response.data);
                             console.log(resso.response);
+                            if (response.data == 'Not available credits') {
+                                _this.ToastMsg('Sorry! No Credits available');
+                            }
                             //            console.log(resso.response.properties.address);
                             if ((resso.response == undefined) || (response.data == '{"message":"Result not found"}' || (resso.response.properties.address == null))) {
                                 _this.geocoder.geocode({ 'location': latLong }, (function (results, status) {
@@ -7514,6 +7581,9 @@ var MapmodalPage = (function () {
                                 console.log(response.data == '{"message":"Result not found"}');
                                 var resso = JSON.parse(response.data);
                                 console.log(resso.response);
+                                if (response.data == 'Not available credits') {
+                                    _this.ToastMsg('Sorry! No Credits available');
+                                }
                                 //            console.log(resso.response.properties.address);
                                 if ((resso.response == undefined) || (resso.response.properties.address == null) || (response.data == '{"message":"Result not found"}')) {
                                     _this.geocoder.geocode({ 'location': latLong }, (function (results, status) {
@@ -7878,260 +7948,269 @@ var MapmodalPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('map'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
 ], MapmodalPage.prototype, "mapElement", void 0);
 MapmodalPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'page-mapmodal',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\mapmodal\mapmodal.html"*/'<!--\n  Generated template for the MapmodalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <!--<ion-buttons start (click)="dismiss()">\n      <button ion-button icon-only>\n        \n      </button>\n    </ion-buttons>-->\n\n    <ion-title></ion-title>\n    \n    <ion-buttons end (click)="closeModal()">\n        <button clear ion-button>Save</button>\n    </ion-buttons>\n      <ion-buttons start (click)="clsmodel()">\n        <button clear ion-button>Cancel</button>\n    </ion-buttons>\n  </ion-navbar>\n   <ion-toolbar class="toolbar_top" style="padding: 0 7px 0px 7px; background: #fff; min-height: auto; padding-top: 10px;">\n     <ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;" id="cittt" [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n  <ion-option value="Bogota" selected>Bogotá DC, Bogotá DC</ion-option>\n  <ion-option value="cun_soacha">Soacha, Cundinamarca</ion-option>\n  <ion-option value="cun_mosquera"> Mosquera, Cundinamarca</ion-option>\n  <ion-option value="cun_madrid">Madrid, Cundinamarca</ion-option>\n  <ion-option value="cun_cajica">Cajicá, Cundinamarca</ion-option>\n  <ion-option value="cun_sopo">Sopó, Cundinamarca</ion-option>\n  <ion-option value="cun_facatativa">Facatativá, Cundinamarca</ion-option>\n  <ion-option value="cun_tenjo">Tenjo,Cundinamarca</ion-option>\n  <ion-option value="cun_tocancipa">Tocancipa, Cundinamarca</ion-option>\n  <ion-option value="cun_guasca">Guasca, Cundinamarca</ion-option>\n  <ion-option value="cun_anapoima">Anapoima, Cundinamarca</ion-option>\n  <ion-option value="cun_villeta">Villeta, Cundinamarca</ion-option>\n  <ion-option value="cun_la_vega">La Vega, Cundinamarca</ion-option>\n  <ion-option value="cun_la_mesa">La Mesa, Cundinamarca</ion-option>\n</ion-select>\n   </ion-toolbar>\n\n<div class="searchouter">\n<ion-searchbar \n   [(ngModel)]="autocomplete.query" \n   [showCancelButton]="true" \n   (ionInput)="updateSearch()" \n   (ionCancel)="dismiss()"\n   placeholder="Start typing and select ..." required>\n </ion-searchbar>\n    <button class="favbtn" (click)="fav(autocomplete.query)" ion-button icon-only>\n<ion-icon name="{{iconname}}" ></ion-icon>\n</button>\n    \n<!--     <ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="omega == 0">\n      <ion-item *ngFor="let item of autocompleteItems;let i = index"\n      (click)="getItem(item)"  >\n     <span > {{ item.description }}</span>\n      </ion-item>\n      </ion-list> -->\n<!--    <ion-list *ngIf="omega == 1;let i = index">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item.address }}\n      </ion-item>\n      </ion-list> \n     <ion-list *ngIf="omega == 2">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item }}\n      </ion-item>\n      </ion-list>-->\n</div>\n    \n<ion-toolbar class="toolbar_top" style="padding: 0 7px 7px 7px; background: #fff;">\n\n    \n<!--<ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;"  [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n    <ion-option *ngFor="let cit of arr" [value]="cit.city_code" name="hh">{{cit.city}},{{cit?.state}}</ion-option>\n</ion-select>-->\n   \n\n\n<ion-input type="text" placeholder=\'Additional Address Details\' [(ngModel)]="data.additional" name="additional" #additional="ngModel"  ></ion-input>\n\n    <!--<button ion-button full color="theme-header" *ngIf="omega == 0" (click)="chooseItem()" [disabled]="!isenabled">Search</button>-->\n     <button ion-button full color="theme-header"  (click)="Searchlocation()" [disabled]="!isenabled">Search</button>\n      <!--<button ion-button full color="theme-header" *ngIf="omega == 2" (click)="chooseItem2()" [disabled]="!isenabled" >Search</button>-->\n</ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n\n<!--    <ion-icon name="star" (click)="fav(autocomplete.query)">Add favourite</ion-icon>\n    <ion-item>\n      </ion-item>-->\n   \n    \n        \n<div #map id="map"></div>\n   \n    <!--<button ion-button (click)="saveaddress">Save Location</button>-->\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\mapmodal\mapmodal.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__["a" /* Appsetting */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__["a" /* Appsetting */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["Http"]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__["a" /* NativeGeocoder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__["a" /* NativeGeocoder */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _o || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__["a" /* Appsetting */],
+        __WEBPACK_IMPORTED_MODULE_4__angular_http__["Http"],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
+        __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]])
 ], MapmodalPage);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
 //# sourceMappingURL=mapmodal.js.map
 
 /***/ }),
 
-/***/ 421:
+/***/ 422:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 194,
-	"./af.js": 194,
-	"./ar": 195,
-	"./ar-dz": 196,
-	"./ar-dz.js": 196,
-	"./ar-kw": 197,
-	"./ar-kw.js": 197,
-	"./ar-ly": 198,
-	"./ar-ly.js": 198,
-	"./ar-ma": 199,
-	"./ar-ma.js": 199,
-	"./ar-sa": 200,
-	"./ar-sa.js": 200,
-	"./ar-tn": 201,
-	"./ar-tn.js": 201,
-	"./ar.js": 195,
-	"./az": 202,
-	"./az.js": 202,
-	"./be": 203,
-	"./be.js": 203,
-	"./bg": 204,
-	"./bg.js": 204,
-	"./bm": 205,
-	"./bm.js": 205,
-	"./bn": 206,
-	"./bn.js": 206,
-	"./bo": 207,
-	"./bo.js": 207,
-	"./br": 208,
-	"./br.js": 208,
-	"./bs": 209,
-	"./bs.js": 209,
-	"./ca": 210,
-	"./ca.js": 210,
-	"./cs": 211,
-	"./cs.js": 211,
-	"./cv": 212,
-	"./cv.js": 212,
-	"./cy": 213,
-	"./cy.js": 213,
-	"./da": 214,
-	"./da.js": 214,
-	"./de": 215,
-	"./de-at": 216,
-	"./de-at.js": 216,
-	"./de-ch": 217,
-	"./de-ch.js": 217,
-	"./de.js": 215,
-	"./dv": 218,
-	"./dv.js": 218,
-	"./el": 219,
-	"./el.js": 219,
-	"./en-au": 220,
-	"./en-au.js": 220,
-	"./en-ca": 221,
-	"./en-ca.js": 221,
-	"./en-gb": 222,
-	"./en-gb.js": 222,
-	"./en-ie": 223,
-	"./en-ie.js": 223,
-	"./en-nz": 224,
-	"./en-nz.js": 224,
-	"./eo": 225,
-	"./eo.js": 225,
-	"./es": 226,
-	"./es-do": 227,
-	"./es-do.js": 227,
-	"./es-us": 228,
-	"./es-us.js": 228,
-	"./es.js": 226,
-	"./et": 229,
-	"./et.js": 229,
-	"./eu": 230,
-	"./eu.js": 230,
-	"./fa": 231,
-	"./fa.js": 231,
-	"./fi": 232,
-	"./fi.js": 232,
-	"./fo": 233,
-	"./fo.js": 233,
-	"./fr": 234,
-	"./fr-ca": 235,
-	"./fr-ca.js": 235,
-	"./fr-ch": 236,
-	"./fr-ch.js": 236,
-	"./fr.js": 234,
-	"./fy": 237,
-	"./fy.js": 237,
-	"./gd": 238,
-	"./gd.js": 238,
-	"./gl": 239,
-	"./gl.js": 239,
-	"./gom-latn": 240,
-	"./gom-latn.js": 240,
-	"./gu": 241,
-	"./gu.js": 241,
-	"./he": 242,
-	"./he.js": 242,
-	"./hi": 243,
-	"./hi.js": 243,
-	"./hr": 244,
-	"./hr.js": 244,
-	"./hu": 245,
-	"./hu.js": 245,
-	"./hy-am": 246,
-	"./hy-am.js": 246,
-	"./id": 247,
-	"./id.js": 247,
-	"./is": 248,
-	"./is.js": 248,
-	"./it": 249,
-	"./it.js": 249,
-	"./ja": 250,
-	"./ja.js": 250,
-	"./jv": 251,
-	"./jv.js": 251,
-	"./ka": 252,
-	"./ka.js": 252,
-	"./kk": 253,
-	"./kk.js": 253,
-	"./km": 254,
-	"./km.js": 254,
-	"./kn": 255,
-	"./kn.js": 255,
-	"./ko": 256,
-	"./ko.js": 256,
-	"./ky": 257,
-	"./ky.js": 257,
-	"./lb": 258,
-	"./lb.js": 258,
-	"./lo": 259,
-	"./lo.js": 259,
-	"./lt": 260,
-	"./lt.js": 260,
-	"./lv": 261,
-	"./lv.js": 261,
-	"./me": 262,
-	"./me.js": 262,
-	"./mi": 263,
-	"./mi.js": 263,
-	"./mk": 264,
-	"./mk.js": 264,
-	"./ml": 265,
-	"./ml.js": 265,
-	"./mr": 266,
-	"./mr.js": 266,
-	"./ms": 267,
-	"./ms-my": 268,
-	"./ms-my.js": 268,
-	"./ms.js": 267,
-	"./my": 269,
-	"./my.js": 269,
-	"./nb": 270,
-	"./nb.js": 270,
-	"./ne": 271,
-	"./ne.js": 271,
-	"./nl": 272,
-	"./nl-be": 273,
-	"./nl-be.js": 273,
-	"./nl.js": 272,
-	"./nn": 274,
-	"./nn.js": 274,
-	"./pa-in": 275,
-	"./pa-in.js": 275,
-	"./pl": 276,
-	"./pl.js": 276,
-	"./pt": 277,
-	"./pt-br": 278,
-	"./pt-br.js": 278,
-	"./pt.js": 277,
-	"./ro": 279,
-	"./ro.js": 279,
-	"./ru": 280,
-	"./ru.js": 280,
-	"./sd": 281,
-	"./sd.js": 281,
-	"./se": 282,
-	"./se.js": 282,
-	"./si": 283,
-	"./si.js": 283,
-	"./sk": 284,
-	"./sk.js": 284,
-	"./sl": 285,
-	"./sl.js": 285,
-	"./sq": 286,
-	"./sq.js": 286,
-	"./sr": 287,
-	"./sr-cyrl": 288,
-	"./sr-cyrl.js": 288,
-	"./sr.js": 287,
-	"./ss": 289,
-	"./ss.js": 289,
-	"./sv": 290,
-	"./sv.js": 290,
-	"./sw": 291,
-	"./sw.js": 291,
-	"./ta": 292,
-	"./ta.js": 292,
-	"./te": 293,
-	"./te.js": 293,
-	"./tet": 294,
-	"./tet.js": 294,
-	"./th": 295,
-	"./th.js": 295,
-	"./tl-ph": 296,
-	"./tl-ph.js": 296,
-	"./tlh": 297,
-	"./tlh.js": 297,
-	"./tr": 298,
-	"./tr.js": 298,
-	"./tzl": 299,
-	"./tzl.js": 299,
-	"./tzm": 300,
-	"./tzm-latn": 301,
-	"./tzm-latn.js": 301,
-	"./tzm.js": 300,
-	"./uk": 302,
-	"./uk.js": 302,
-	"./ur": 303,
-	"./ur.js": 303,
-	"./uz": 304,
-	"./uz-latn": 305,
-	"./uz-latn.js": 305,
-	"./uz.js": 304,
-	"./vi": 306,
-	"./vi.js": 306,
-	"./x-pseudo": 307,
-	"./x-pseudo.js": 307,
-	"./yo": 308,
-	"./yo.js": 308,
-	"./zh-cn": 309,
-	"./zh-cn.js": 309,
-	"./zh-hk": 310,
-	"./zh-hk.js": 310,
-	"./zh-tw": 311,
-	"./zh-tw.js": 311
+	"./af": 195,
+	"./af.js": 195,
+	"./ar": 196,
+	"./ar-dz": 197,
+	"./ar-dz.js": 197,
+	"./ar-kw": 198,
+	"./ar-kw.js": 198,
+	"./ar-ly": 199,
+	"./ar-ly.js": 199,
+	"./ar-ma": 200,
+	"./ar-ma.js": 200,
+	"./ar-sa": 201,
+	"./ar-sa.js": 201,
+	"./ar-tn": 202,
+	"./ar-tn.js": 202,
+	"./ar.js": 196,
+	"./az": 203,
+	"./az.js": 203,
+	"./be": 204,
+	"./be.js": 204,
+	"./bg": 205,
+	"./bg.js": 205,
+	"./bm": 206,
+	"./bm.js": 206,
+	"./bn": 207,
+	"./bn.js": 207,
+	"./bo": 208,
+	"./bo.js": 208,
+	"./br": 209,
+	"./br.js": 209,
+	"./bs": 210,
+	"./bs.js": 210,
+	"./ca": 211,
+	"./ca.js": 211,
+	"./cs": 212,
+	"./cs.js": 212,
+	"./cv": 213,
+	"./cv.js": 213,
+	"./cy": 214,
+	"./cy.js": 214,
+	"./da": 215,
+	"./da.js": 215,
+	"./de": 216,
+	"./de-at": 217,
+	"./de-at.js": 217,
+	"./de-ch": 218,
+	"./de-ch.js": 218,
+	"./de.js": 216,
+	"./dv": 219,
+	"./dv.js": 219,
+	"./el": 220,
+	"./el.js": 220,
+	"./en-au": 221,
+	"./en-au.js": 221,
+	"./en-ca": 222,
+	"./en-ca.js": 222,
+	"./en-gb": 223,
+	"./en-gb.js": 223,
+	"./en-ie": 224,
+	"./en-ie.js": 224,
+	"./en-nz": 225,
+	"./en-nz.js": 225,
+	"./eo": 226,
+	"./eo.js": 226,
+	"./es": 227,
+	"./es-do": 228,
+	"./es-do.js": 228,
+	"./es-us": 229,
+	"./es-us.js": 229,
+	"./es.js": 227,
+	"./et": 230,
+	"./et.js": 230,
+	"./eu": 231,
+	"./eu.js": 231,
+	"./fa": 232,
+	"./fa.js": 232,
+	"./fi": 233,
+	"./fi.js": 233,
+	"./fo": 234,
+	"./fo.js": 234,
+	"./fr": 235,
+	"./fr-ca": 236,
+	"./fr-ca.js": 236,
+	"./fr-ch": 237,
+	"./fr-ch.js": 237,
+	"./fr.js": 235,
+	"./fy": 238,
+	"./fy.js": 238,
+	"./gd": 239,
+	"./gd.js": 239,
+	"./gl": 240,
+	"./gl.js": 240,
+	"./gom-latn": 241,
+	"./gom-latn.js": 241,
+	"./gu": 242,
+	"./gu.js": 242,
+	"./he": 243,
+	"./he.js": 243,
+	"./hi": 244,
+	"./hi.js": 244,
+	"./hr": 245,
+	"./hr.js": 245,
+	"./hu": 246,
+	"./hu.js": 246,
+	"./hy-am": 247,
+	"./hy-am.js": 247,
+	"./id": 248,
+	"./id.js": 248,
+	"./is": 249,
+	"./is.js": 249,
+	"./it": 250,
+	"./it.js": 250,
+	"./ja": 251,
+	"./ja.js": 251,
+	"./jv": 252,
+	"./jv.js": 252,
+	"./ka": 253,
+	"./ka.js": 253,
+	"./kk": 254,
+	"./kk.js": 254,
+	"./km": 255,
+	"./km.js": 255,
+	"./kn": 256,
+	"./kn.js": 256,
+	"./ko": 257,
+	"./ko.js": 257,
+	"./ky": 258,
+	"./ky.js": 258,
+	"./lb": 259,
+	"./lb.js": 259,
+	"./lo": 260,
+	"./lo.js": 260,
+	"./lt": 261,
+	"./lt.js": 261,
+	"./lv": 262,
+	"./lv.js": 262,
+	"./me": 263,
+	"./me.js": 263,
+	"./mi": 264,
+	"./mi.js": 264,
+	"./mk": 265,
+	"./mk.js": 265,
+	"./ml": 266,
+	"./ml.js": 266,
+	"./mr": 267,
+	"./mr.js": 267,
+	"./ms": 268,
+	"./ms-my": 269,
+	"./ms-my.js": 269,
+	"./ms.js": 268,
+	"./my": 270,
+	"./my.js": 270,
+	"./nb": 271,
+	"./nb.js": 271,
+	"./ne": 272,
+	"./ne.js": 272,
+	"./nl": 273,
+	"./nl-be": 274,
+	"./nl-be.js": 274,
+	"./nl.js": 273,
+	"./nn": 275,
+	"./nn.js": 275,
+	"./pa-in": 276,
+	"./pa-in.js": 276,
+	"./pl": 277,
+	"./pl.js": 277,
+	"./pt": 278,
+	"./pt-br": 279,
+	"./pt-br.js": 279,
+	"./pt.js": 278,
+	"./ro": 280,
+	"./ro.js": 280,
+	"./ru": 281,
+	"./ru.js": 281,
+	"./sd": 282,
+	"./sd.js": 282,
+	"./se": 283,
+	"./se.js": 283,
+	"./si": 284,
+	"./si.js": 284,
+	"./sk": 285,
+	"./sk.js": 285,
+	"./sl": 286,
+	"./sl.js": 286,
+	"./sq": 287,
+	"./sq.js": 287,
+	"./sr": 288,
+	"./sr-cyrl": 289,
+	"./sr-cyrl.js": 289,
+	"./sr.js": 288,
+	"./ss": 290,
+	"./ss.js": 290,
+	"./sv": 291,
+	"./sv.js": 291,
+	"./sw": 292,
+	"./sw.js": 292,
+	"./ta": 293,
+	"./ta.js": 293,
+	"./te": 294,
+	"./te.js": 294,
+	"./tet": 295,
+	"./tet.js": 295,
+	"./th": 296,
+	"./th.js": 296,
+	"./tl-ph": 297,
+	"./tl-ph.js": 297,
+	"./tlh": 298,
+	"./tlh.js": 298,
+	"./tr": 299,
+	"./tr.js": 299,
+	"./tzl": 300,
+	"./tzl.js": 300,
+	"./tzm": 301,
+	"./tzm-latn": 302,
+	"./tzm-latn.js": 302,
+	"./tzm.js": 301,
+	"./uk": 303,
+	"./uk.js": 303,
+	"./ur": 304,
+	"./ur.js": 304,
+	"./uz": 305,
+	"./uz-latn": 306,
+	"./uz-latn.js": 306,
+	"./uz.js": 305,
+	"./vi": 307,
+	"./vi.js": 307,
+	"./x-pseudo": 308,
+	"./x-pseudo.js": 308,
+	"./yo": 309,
+	"./yo.js": 309,
+	"./zh-cn": 310,
+	"./zh-cn.js": 310,
+	"./zh-hk": 311,
+	"./zh-hk.js": 311,
+	"./zh-tw": 312,
+	"./zh-tw.js": 312
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -8147,23 +8226,24 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 421;
+webpackContext.id = 422;
 
 /***/ }),
 
-/***/ 443:
+/***/ 444:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_signin_signin__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_android_permissions__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8181,16 +8261,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 //import { Keyboard } from '@ionic-native/keyboard';
 var MyApp = (function () {
-    function MyApp(statusBar, splashScreen, http, platform, toastCtrl, alertCtrl, appsetting) {
+    function MyApp(statusBar, splashScreen, http, platform, toastCtrl, androidPermissions, alertCtrl, appsetting) {
         this.http = http;
         this.platform = platform;
         this.toastCtrl = toastCtrl;
+        this.androidPermissions = androidPermissions;
         this.alertCtrl = alertCtrl;
         this.appsetting = appsetting;
         this.rootPage = '';
-        alert('Welcome to Rafaho.');
+        alert('Welcome to Rafaho app');
         platform.ready().then(function () {
             //           
             // platform.registerBackButtonAction(()=>{
@@ -8203,6 +8285,23 @@ var MyApp = (function () {
             statusBar.hide();
             splashScreen.hide();
         });
+        //
+        //      this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.GEOLOCATION).then(
+        //  result =>{ console.log('Has permission?',result.hasPermission)
+        //      if(result.hasPermission == true){}else{
+        //          this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.GEOLOCATION, this.androidPermissions.PERMISSION.GET_ACCOUNTS]);
+        //         
+        //        let toast = this.toastCtrl.create({
+        //            message: 'Turn on your location',
+        //            duration: 3000,
+        //            position: 'middle'
+        //        });
+        //        toast.present();
+        //    
+        //      }
+        //  },
+        //  err => {this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.GEOLOCATION)}
+        //);
         if (localStorage.getItem('UserDetail')) {
             this.rootPage = __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__["a" /* TabsPage */];
         }
@@ -8248,7 +8347,8 @@ MyApp = __decorate([
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
         __WEBPACK_IMPORTED_MODULE_5__angular_http__["Http"],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
+        __WEBPACK_IMPORTED_MODULE_8__ionic_native_android_permissions__["a" /* AndroidPermissions */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__["a" /* Appsetting */]])
 ], MyApp);
 
@@ -8265,11 +8365,11 @@ MyApp = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__location_location__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__location_location__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabs_tabs__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser__ = __webpack_require__(317);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8309,6 +8409,8 @@ var CartPage = (function () {
         this.getcrt = [];
         this.total1 = 0;
         this.nodata = 0;
+        this.Total1 = 0;
+        this.discount = 0;
         this.data = {};
         this.subtotal = [];
         this.productsamount = [];
@@ -8381,9 +8483,9 @@ var CartPage = (function () {
         };
         var Serialized = this.serializeObj(postdata);
         var Loading = this.loadingCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(function () {
@@ -8393,9 +8495,9 @@ var CartPage = (function () {
                 console.log(response.data.length);
                 if (response.data.length == 0) {
                     var Loading1 = _this.loadingCtrl.create({
-                        spinner: 'hide',
+                        spinner: 'bubbles',
                         cssClass: 'loader',
-                        content: "<img src='assets/img/icons3.gif'>",
+                        content: "Loading",
                         dismissOnPageChange: true
                     });
                     Loading1.present().then(function () {
@@ -8525,8 +8627,14 @@ var CartPage = (function () {
         this.subtotal = JSON.parse(localStorage.getItem('Cartlist'));
         console.log(this.subtotal);
         this.total1 = 0;
+        this.Total1 = 0;
+        this.discount = 0;
         for (var x = 0; x < this.subtotal.length; x++) {
+            this.discount = this.discount + (this.subtotal[x].discount / 100) * this.subtotal[x].price_per_plate;
             this.total1 = this.total1 + (this.subtotal[x].quantity * this.subtotal[x].price_per_plate);
+            console.log(this.total1, this.discount);
+            this.Total1 = this.Total1 + (this.total1 - this.discount);
+            //             this.Total1 = this.Total1 + (this.subtotal[x].quantity * ((this.subtotal[x].quantity/100)*this.subtotal[x].price_per_plate))
         }
     };
     //total(id,index){
@@ -8576,28 +8684,29 @@ var CartPage = (function () {
         proname = proname.join(':');
         proquant = proquant.join(':');
         orderservice = orderservice.join(':');
+        proprice = proprice.join(':');
         console.log(proid, proname, proquant, orderservice);
         var postdata = {
             chef_id: this.chef._id,
             user_id: this.user._id,
             customer_address: this.str1 + this.str2,
             booking_datetime: this.datetosend,
-            total_order_amount: this.total1,
+            total_order_amount: this.Total1,
             products_id: proid,
             products_quantity: proquant,
             products_name: proname,
             order_prefrence: orderservice,
             payment_status: 1,
             txn_id: this.trans_id,
-            product_price: proprice
+            products_price: proprice
         };
         console.log(postdata);
         var Serialized = this.serializeObj(postdata);
         var Serialized = this.serializeObj(postdata);
         var Loading = this.loadingCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(function () {
@@ -8617,8 +8726,8 @@ var CartPage = (function () {
     };
     CartPage.prototype.pyment = function () {
         var _this = this;
-        if (this.total1 > 0) {
-            var url = 'http://rafao.us-west-2.elasticbeanstalk.com/payment/amt=' + this.total1 + '=email=' + this.user.email;
+        if (this.Total1 > 0) {
+            var url = 'http://rafao.us-west-2.elasticbeanstalk.com/payment/amt=' + this.Total1 + '=email=' + this.user.email;
             var target = '_self';
             var options = 'location=no';
             var browser = this.iab.create(url, target, options);
@@ -8693,7 +8802,7 @@ var CartPage = (function () {
 }());
 CartPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-cart',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\cart\cart.html"*/'<!--\n  Generated template for the CartPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="theme-header">\n    <ion-title>Payment</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only class="btnprofile">\n      <div class="iconprf">\n          <img src="assets/img/cart.png">\n       </div>\n      </button>     \n    </ion-buttons>\n    \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n	<div class="top-sec">\n			<ion-grid>\n				<ion-row *ngIf = "nodata == 0">\n					<ion-col col-6 class="left">\n					  <div class="chef">\n						<h5>{{chef.firstname}} {{chef.lastname}}</h5>\n					  </div>\n					</ion-col>\n					<ion-col col-6 class="right">\n					  <div class="phn">\n						<h5>{{chef.phone}}</h5>\n						<span><img src="assets/img/msg.png"></span>\n					  </div>\n					</ion-col>\n				</ion-row>\n                            <p  *ngIf = "nodata == 1"> </p>\n			</ion-grid>\n		</div>\n	<div class="text-sec">\n		\n		<div class="mid-sec">\n			<h5>Customer Address: \n                            <!--<button ion-button clear class="imgbtn" style="background-image:url(\'assets/img/creat.gif\'); background-size:cover"></button>-->\n                        </h5>\n			<p>{{str1}}</p>\n			<p>{{str2}}</p>\n		</div>\n		<div class="bottom-sec cartouter" >\n			<ion-list>\n				<ion-item >\n					<h5 item-start class="strt">Booking Date & Time</h5>\n                                        <ion-datetime placeholder="MMM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}"  [(ngModel)]= "data.bookdt" name="bookdt" #bookdt="ngModel" ></ion-datetime>\n<!--					<p>{{bookdt}}</p>\n					<p item-end class="ennd"></p>-->\n				</ion-item>\n			</ion-list>\n\n		</div>\n	</div>\n	<div class="content-sec">\n	  <ion-list *ngFor="let item of getcrt">\n	    <ion-item>\n	      <ion-thumbnail item-start>\n	        <img src="{{item.product_image0}}">\n	      </ion-thumbnail>\n	      <h2> <img class="imgicon" width="11px" src="assets/img/acicon.png">{{item.product_name}}</h2>\n	      <!--<p>{{item.product_ingredients}}</p>-->\n	      <p item-end class="left-p" >${{item.quantity*item.price_per_plate| number}}</p>\n	      <h3>Per plate ${{item.price_per_plate| number}}</h3>\n	      <div class="itembottom" style="width: 100%; float: left; padding-top: 3px;">\n	      <div class="counter_sec">\n			   <button ion-button clear><ion-icon name="remove"  (click)="remove(item.quantity,item._id)"></ion-icon></button>\n                           <input type="text" value="{{item.quantity}}"  >\n			   <button ion-button clear><ion-icon name="add" (click)="add(item.quantity,item._id)"></ion-icon></button>\n			  \n		  </div>\n		  <span>${{item.price_per_plate| number}} x {{item.quantity}}</span>\n		  </div>\n	      <div class="rghtbtn">\n	      	<button ion-button (click)="delproduct(item._id)">Delete</button>\n	      </div>\n	    </ion-item>\n	 \n	</ion-list>\n</div>\n<div class="total">\n	<h2 class="left">Subtotal</h2>\n	<h2 class="right">${{total1 | number}}</h2>\n</div>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button full color="theme-header" (click)="pyment()">Checkout</button>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\cart\cart.html"*/,
+        selector: 'page-cart',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\cart\cart.html"*/'<!--\n  Generated template for the CartPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n \n  <ion-navbar color="theme-header">\n    <ion-title>Payment</ion-title>\n<!--    <ion-buttons end>\n      <div class="iconprf">\n          <img src="assets/img/cart.png">\n       </div>\n      </button>    <button ion-button icon-only class="btnprofile">\n       \n    </ion-buttons>-->\n    \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n	<div class="top-sec">\n			<ion-grid>\n				<ion-row *ngIf = "nodata == 0">\n					<ion-col col-6 class="left">\n					  <div class="chef">\n						<h5>{{chef.firstname}} {{chef.lastname}}</h5>\n					  </div>\n					</ion-col>\n					<ion-col col-6 class="right">\n					  <div class="phn">\n						<h5>{{chef.phone}}</h5>\n						<span><img src="assets/img/msg.png"></span>\n					  </div>\n					</ion-col>\n				</ion-row>\n         <p  *ngIf = "nodata == 1"> </p>\n			</ion-grid>\n		</div>\n	<div class="text-sec">\n		\n		<div class="mid-sec">\n			<ion-grid style="padding: 0;">\n				<ion-row>\n					<ion-col col-6 style="padding: 0 5px 0 0 !important; border-right: 1px solid #cccccc;">\n						<div class="inner-sec">\n							<h5>Customer Address:</h5>\n							<p>{{str1}}</p>\n							<p>{{str2}}</p>	\n						</div>\n					</ion-col>\n					<ion-col col-6 style="padding: 0 0 0 5px !important;">\n					  <div class="inner-sec">\n						<h5>Booking Date & Time</h5>\n						 <ion-datetime placeholder="MMM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}"  [(ngModel)]= "data.bookdt" name="bookdt" #bookdt="ngModel"></ion-datetime>\n					  </div>	\n					</ion-col>\n				</ion-row>\n			</ion-grid>\n		</div>\n		\n	</div>\n	<div class="content-sec">\n	  <ion-list *ngFor="let item of getcrt">\n	    <ion-item style="position: relative;">\n                <ion-icon class="dlt" name="close-circle" (click)="delproduct(item._id)"></ion-icon>\n	      <ion-thumbnail item-start>\n	        <img src="{{item.product_image0}}">\n	      </ion-thumbnail>\n	      <h2>{{item.product_name}}</h2>\n	      <!--<p>{{item.product_ingredients}}</p>-->\n	      <p item-end class="left-p" >${{item.quantity*item.price_per_plate| number}}</p>\n	      <div class="itembottom" style="width: 100%; float: left; padding-top: 3px;">\n	      <div class="counter_sec">\n			   <button ion-button clear><ion-icon name="remove"  (click)="remove(item.quantity,item._id)"></ion-icon></button>\n                           <input type="text" value="{{item.quantity}}"  >\n			   <button ion-button clear><ion-icon name="add" (click)="add(item.quantity,item._id)"></ion-icon></button>\n			  \n		  </div>\n		  <span style="color: #f27242;"> X ${{item.price_per_plate}}</span>\n		</div>\n              \n	    </ion-item>\n	 \n	</ion-list>\n</div>\n<div class="total" style="padding-top: 14px !important;">\n	<h2 class="left">Subtotal</h2>\n	<h2 class="right">${{total1 | number}}</h2>\n</div>\n    <div class="total">\n	<h2 class="left">Total Discount</h2>\n	<h2 class="right">-${{discount | number}}</h2>\n</div>\n<div class="total">\n	<h2 class="left">Transportation charges</h2>\n	<h2 class="right">$0</h2>\n</div>\n<div class="total">\n	<h2 class="left" style="color: #4d4d4d; font-weight: 700 !important;">Total</h2>\n	<h2 class="right" style="font-weight: 700 !important;">${{Total1 | number}}</h2>\n</div>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button full color="theme-header" (click)="pyment1()">Checkout</button>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\cart\cart.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
@@ -8719,7 +8828,7 @@ CartPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cart_cart__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_service__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_service__ = __webpack_require__(191);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8790,9 +8899,9 @@ var ProductviewPage = (function () {
                             console.log(postdata);
                             var Serialized = _this.serializeObj(postdata);
                             var Loading = _this.loadingCtrl.create({
-                                spinner: 'hide',
+                                spinner: 'bubbles',
                                 cssClass: 'loader',
-                                content: "<img src='assets/img/icons3.gif'>",
+                                content: "Loading",
                                 dismissOnPageChange: true
                             });
                             Loading.present().then(function () {
@@ -8834,9 +8943,9 @@ var ProductviewPage = (function () {
                             console.log(postdata);
                             var Serialized = _this.serializeObj(postdata);
                             var Loading = _this.loadingCtrl.create({
-                                spinner: 'hide',
+                                spinner: 'bubbles',
                                 cssClass: 'loader',
-                                content: "<img src='assets/img/icons3.gif'>",
+                                content: "Loading",
                                 dismissOnPageChange: true
                             });
                             Loading.present().then(function () {
@@ -8998,9 +9107,9 @@ var ProductviewPage = (function () {
             console.log(postdata);
             var Serialized = this.serializeObj(postdata);
             var Loading = this.loadingCtrl.create({
-                spinner: 'hide',
+                spinner: 'bubbles',
                 cssClass: 'loader',
-                content: "<img src='assets/img/icons3.gif'>",
+                content: "Loading",
                 dismissOnPageChange: true
             });
             Loading.present().then(function () {
@@ -9229,16 +9338,6 @@ var NominatimapPage = (function () {
         this.bb = [];
         this.geocoder = new google.maps.Geocoder();
         this.data = {};
-        this.countries = {
-            'Bogota': {
-                center: { lat: 4.624335, lng: -74.063644 },
-                zoom: 4
-            },
-            'cun_soacha': {
-                center: { lat: 8.305925, lng: 73.6117 },
-                zoom: 3
-            }
-        };
         /**map initialization */
         this.initMap = function () {
             var nill = _this;
@@ -9251,9 +9350,9 @@ var NominatimapPage = (function () {
                 // alert("working");
                 // alert(lat+','+long);
                 var Loading = _this.loadCtrl.create({
-                    spinner: 'hide',
+                    spinner: 'bubbles',
                     cssClass: 'loader',
-                    content: "<img src='assets/img/icons3.gif'>",
+                    content: "Loading",
                     dismissOnPageChange: true
                 });
                 Loading.present().then(function () {
@@ -9284,7 +9383,10 @@ var NominatimapPage = (function () {
                             var resso = JSON.parse(response.data);
                             console.log(resso.response);
                             //            console.log(resso.response.properties.address);
-                            if ((response.data == '{"message":"Result not found"}') || (resso.response.properties.address == null)) {
+                            if (response.data == 'Not available credits') {
+                                _this.ToastMsg('Sorry! No Credits available');
+                            }
+                            if ((resso.response == undefined) || (response.data == '{"message":"Result not found"}') || (resso.response.properties.address == null)) {
                                 _this.geocoder.geocode({ 'location': latLng }, (function (results, status) {
                                     if (status == google.maps.GeocoderStatus.OK) {
                                         if (results == '') {
@@ -9303,6 +9405,74 @@ var NominatimapPage = (function () {
                                                 _this.infowindow.open(_this.map, marker1);
                                                 //           this.data.city = results[0].address_components[0].long_name;
                                                 _this.autocomplete.query = results[0].formatted_address;
+                                                var citiie6 = results[0].formatted_address.split(',');
+                                                console.log(citiie6[1]);
+                                                switch (citiie6[1]) {
+                                                    case ' Bogotá':
+                                                        _this.data.city = 'Bogota';
+                                                        break;
+                                                    case ' Bogota':
+                                                        _this.data.city = 'Bogota';
+                                                        break;
+                                                    case ' Soacha': {
+                                                        _this.data.city = 'cun_soacha';
+                                                        break;
+                                                    }
+                                                    case ' Mosquera': {
+                                                        _this.data.city = 'cun_mosquera';
+                                                        break;
+                                                    }
+                                                    case ' Facatativá': {
+                                                        _this.data.city = 'cun_facatativa';
+                                                        break;
+                                                    }
+                                                    case ' Madrid': {
+                                                        _this.data.city = 'cun_madrid';
+                                                        break;
+                                                    }
+                                                    case ' Cajicá': {
+                                                        _this.data.city = 'cun_cajica';
+                                                        break;
+                                                    }
+                                                    case ' Sopó': {
+                                                        _this.data.city = 'cun_sopo';
+                                                        break;
+                                                    }
+                                                    case ' Tenjo': {
+                                                        _this.data.city = 'cun_tenjo';
+                                                        break;
+                                                    }
+                                                    case ' Tocancipa': {
+                                                        _this.data.city = 'cun_tocancipa';
+                                                        break;
+                                                    }
+                                                    case ' Guasca': {
+                                                        _this.data.city = 'cun_guasca';
+                                                        break;
+                                                    }
+                                                    case ' Anapoima': {
+                                                        _this.data.city = 'cun_anapoima';
+                                                        break;
+                                                    }
+                                                    case ' Villeta': {
+                                                        _this.data.city = 'cun_villeta';
+                                                        break;
+                                                    }
+                                                    case ' La Vega': {
+                                                        _this.data.city = 'cun_la_vega';
+                                                        break;
+                                                    }
+                                                    case ' La Mesa': {
+                                                        _this.data.city = 'cun_la_mesa';
+                                                        break;
+                                                    }
+                                                    default: {
+                                                        console.log('not found');
+                                                        console.log(citiie6[1]);
+                                                        _this.data.city = 'Bogota';
+                                                    }
+                                                }
+                                                console.log(_this.data.city);
                                             }
                                             else if (results[1]) {
                                                 _this.autocomplete.query = results[1].formatted_address;
@@ -9311,6 +9481,75 @@ var NominatimapPage = (function () {
                                                 _this.infowindow.setContent(results[1].formatted_address);
                                                 _this.infowindow.open(_this.map, marker1);
                                                 _this.autocomplete.query = results[1].formatted_address;
+                                                var citiie8 = results[1].formatted_address.split(',');
+                                                _this.data.city = '';
+                                                console.log(citiie8[1]);
+                                                switch (citiie8[1]) {
+                                                    case ' Bogotá':
+                                                        _this.data.city = 'Bogota';
+                                                        break;
+                                                    case ' Bogota':
+                                                        _this.data.city = 'Bogota';
+                                                        break;
+                                                    case ' Soacha': {
+                                                        _this.data.city = 'cun_soacha';
+                                                        break;
+                                                    }
+                                                    case ' Mosquera': {
+                                                        _this.data.city = 'cun_mosquera';
+                                                        break;
+                                                    }
+                                                    case ' Facatativá': {
+                                                        _this.data.city = 'cun_facatativa';
+                                                        break;
+                                                    }
+                                                    case ' Madrid': {
+                                                        _this.data.city = 'cun_madrid';
+                                                        break;
+                                                    }
+                                                    case ' Cajicá': {
+                                                        _this.data.city = 'cun_cajica';
+                                                        break;
+                                                    }
+                                                    case ' Sopó': {
+                                                        _this.data.city = 'cun_sopo';
+                                                        break;
+                                                    }
+                                                    case ' Tenjo': {
+                                                        _this.data.city = 'cun_tenjo';
+                                                        break;
+                                                    }
+                                                    case ' Tocancipa': {
+                                                        _this.data.city = 'cun_tocancipa';
+                                                        break;
+                                                    }
+                                                    case ' Guasca': {
+                                                        _this.data.city = 'cun_guasca';
+                                                        break;
+                                                    }
+                                                    case ' Anapoima': {
+                                                        _this.data.city = 'cun_anapoima';
+                                                        break;
+                                                    }
+                                                    case ' Villeta': {
+                                                        _this.data.city = 'cun_villeta';
+                                                        break;
+                                                    }
+                                                    case ' La Vega': {
+                                                        _this.data.city = 'cun_la_vega';
+                                                        break;
+                                                    }
+                                                    case ' La Mesa': {
+                                                        _this.data.city = 'cun_la_mesa';
+                                                        break;
+                                                    }
+                                                    default: {
+                                                        console.log('not found');
+                                                        console.log(citiie8[1]);
+                                                        _this.data.city = 'Bogota';
+                                                    }
+                                                }
+                                                console.log(_this.data.city);
                                             }
                                         }
                                     }
@@ -9339,41 +9578,12 @@ var NominatimapPage = (function () {
                                     _this.data.city = resso.response.properties.city;
                                     console.log(_this.data.city);
                                     console.log(_this.autocomplete.query);
+                                    //                   alert(addr);
                                     _this.infowindow.setContent(addr);
                                     _this.infowindow.open(_this.map, marker);
                                 }
                             }
                         });
-                        //      
-                        //       this.geocoder.geocode({'location': latLng}, ((results, status)=>{
-                        //		if (status == google.maps.GeocoderStatus.OK) {
-                        //                    if(results == ''){
-                        //                        this.ToastMsg('Invalid Location')
-                        //                        this.lat =  '';
-                        //                       this.long= '';
-                        //                       this.infowindow.setContent('Error');
-                        //          this.infowindow.open(this.map, marker);
-                        //                    }else{
-                        //                    if(results[0]){
-                        //              console.log(results[0].place_id);          
-                        //                         console.log(results[0].formatted_address);
-                        //    this.infowindow.setContent(results[0].formatted_address);
-                        ////    
-                        //          this.infowindow.open(this.map, marker1);
-                        //          this.autocomplete.query= results[0].formatted_address;
-                        //                    }
-                        //   else if (results[1]) {
-                        //    this.autocomplete.query= results[1].formatted_address;
-                        //    console.log(results[1].formatted_address);
-                        //    this.infowindow.setContent(results[1].formatted_address);
-                        //    
-                        //          this.infowindow.open(this.map, marker1);
-                        //           this.autocomplete.query= results[1].formatted_address;
-                        //                    }
-                        //                }   }
-                        ////		
-                        //	   })
-                        //	   )
                         _this.MapBounds = new google.maps.LatLngBounds(new google.maps.LatLng(4.820443, -74.250464), new google.maps.LatLng(4.716435, -74.310888), new google.maps.LatLng(4.59393, -74.279989), new google.maps.LatLng(4.476882, -74.124808), new google.maps.LatLng(4.505632, -73.953146), new google.maps.LatLng(4.681533, -73.92568), new google.maps.LatLng(4.858758, -73.911947), new google.maps.LatLng(4.908702, -74.126181), new google.maps.LatLng(4.823864, -74.245657));
                         //       new google.maps.LatLng(4.820443,  -74.25046399999997),
                         //           new google.maps.LatLng(4.716435,  -74.31088799999998));
@@ -9458,6 +9668,7 @@ var NominatimapPage = (function () {
                         });
                         _this.markers = [];
                         _this.markers.push(marker);
+                        map.setCenter(marker.getPosition());
                         google.maps.event.addListener(marker, 'dragend', (function (marker12) {
                             _this.iconname = 'star-outline';
                             var latLng1 = marker12.latLng;
@@ -9489,7 +9700,10 @@ var NominatimapPage = (function () {
                                 var resso = JSON.parse(response.data);
                                 console.log(resso.response);
                                 //            console.log(resso.response.properties.address);
-                                if ((response.data == '{"message":"Result not found"}') || (resso.response.properties.address == null)) {
+                                if (response.data == 'Not available credits') {
+                                    _this.ToastMsg('Sorry! No Credits available');
+                                }
+                                if ((resso.response == undefined) || (response.data == '{"message":"Result not found"}') || (resso.response.properties.address == null)) {
                                     _this.geocoder.geocode({ 'location': latLong }, (function (results, status) {
                                         console.log(results);
                                         if (results == '') {
@@ -9510,6 +9724,12 @@ var NominatimapPage = (function () {
                                                     _this.data.city = '';
                                                     console.log(citiie[1]);
                                                     switch (citiie[1]) {
+                                                        case ' Bogotá':
+                                                            _this.data.city = 'Bogota';
+                                                            break;
+                                                        case ' Bogota':
+                                                            _this.data.city = 'Bogota';
+                                                            break;
                                                         case ' Soacha': {
                                                             _this.data.city = 'cun_soacha';
                                                             break;
@@ -9519,7 +9739,7 @@ var NominatimapPage = (function () {
                                                             break;
                                                         }
                                                         case ' Facatativá': {
-                                                            _this.data.city = 'Facatativá';
+                                                            _this.data.city = 'cun_facatativa';
                                                             break;
                                                         }
                                                         case ' Madrid': {
@@ -9534,9 +9754,38 @@ var NominatimapPage = (function () {
                                                             _this.data.city = 'cun_sopo';
                                                             break;
                                                         }
+                                                        case ' Tenjo': {
+                                                            _this.data.city = 'cun_tenjo';
+                                                            break;
+                                                        }
+                                                        case ' Tocancipa': {
+                                                            _this.data.city = 'cun_tocancipa';
+                                                            break;
+                                                        }
+                                                        case ' Guasca': {
+                                                            _this.data.city = 'cun_guasca';
+                                                            break;
+                                                        }
+                                                        case ' Anapoima': {
+                                                            _this.data.city = 'cun_anapoima';
+                                                            break;
+                                                        }
+                                                        case ' Villeta': {
+                                                            _this.data.city = 'cun_villeta';
+                                                            break;
+                                                        }
+                                                        case ' La Vega': {
+                                                            _this.data.city = 'cun_la_vega';
+                                                            break;
+                                                        }
+                                                        case ' La Mesa': {
+                                                            _this.data.city = 'cun_la_mesa';
+                                                            break;
+                                                        }
                                                         default: {
                                                             console.log('not found');
                                                             console.log(citiie[1]);
+                                                            _this.ToastMsg('Sorry!! No service in this area');
                                                         }
                                                     }
                                                     console.log(_this.data.city);
@@ -9555,6 +9804,12 @@ var NominatimapPage = (function () {
                                                     _this.data.city = '';
                                                     console.log(citiie[1]);
                                                     switch (citiie[1]) {
+                                                        case ' Bogotá':
+                                                            _this.data.city = 'Bogota';
+                                                            break;
+                                                        case ' Bogota':
+                                                            _this.data.city = 'Bogota';
+                                                            break;
                                                         case ' Soacha': {
                                                             _this.data.city = 'cun_soacha';
                                                             break;
@@ -9564,7 +9819,7 @@ var NominatimapPage = (function () {
                                                             break;
                                                         }
                                                         case ' Facatativá': {
-                                                            _this.data.city = 'Facatativá';
+                                                            _this.data.city = 'cun_facatativa';
                                                             break;
                                                         }
                                                         case ' Madrid': {
@@ -9579,9 +9834,38 @@ var NominatimapPage = (function () {
                                                             _this.data.city = 'cun_sopo';
                                                             break;
                                                         }
+                                                        case ' Tenjo': {
+                                                            _this.data.city = 'cun_tenjo';
+                                                            break;
+                                                        }
+                                                        case ' Tocancipa': {
+                                                            _this.data.city = 'cun_tocancipa';
+                                                            break;
+                                                        }
+                                                        case ' Guasca': {
+                                                            _this.data.city = 'cun_guasca';
+                                                            break;
+                                                        }
+                                                        case ' Anapoima': {
+                                                            _this.data.city = 'cun_anapoima';
+                                                            break;
+                                                        }
+                                                        case ' Villeta': {
+                                                            _this.data.city = 'cun_villeta';
+                                                            break;
+                                                        }
+                                                        case ' La Vega': {
+                                                            _this.data.city = 'cun_la_vega';
+                                                            break;
+                                                        }
+                                                        case ' La Mesa': {
+                                                            _this.data.city = 'cun_la_mesa';
+                                                            break;
+                                                        }
                                                         default: {
                                                             console.log('not found');
                                                             console.log(citiie[1]);
+                                                            _this.ToastMsg('Sorry!! No service in this area');
                                                         }
                                                     }
                                                     console.log(_this.data.city);
@@ -9624,51 +9908,11 @@ var NominatimapPage = (function () {
                                     }
                                 }
                             });
-                            //    this.geocoder.geocode({'location': latLong}, ((results, status)=>{
-                            //		  console.log(results);
-                            //                  if(results == ''){
-                            //                      this.ToastMsg('Invalid Location');
-                            //                       this.lat =  '';
-                            //                       this.long= '';
-                            //                       this.infowindow.setContent('Error');
-                            //          this.infowindow.open(this.map, marker);
-                            //                  }else{
-                            //		   if (status == google.maps.GeocoderStatus.OK) {
-                            //             if (results[0]) {
-                            //              console.log(results[0].place_id);
-                            //          this.autocomplete.query = results[1].formatted_address;
-                            //          console.log(this.autocomplete.query)
-                            //          
-                            ////          this.infowindow=new google.maps.InfoWindow({
-                            ////              content: results[1].formatted_address,
-                            ////          }); 
-                            //          this.infowindow.setContent(results[0].formatted_address);
-                            //          this.infowindow.open(this.map, marker);
-                            //                    }          
-                            //          else if (results[1]) {
-                            //              console.log(results[1].place_id);
-                            //          this.autocomplete.query= results[1].formatted_address;
-                            //          console.log(this.autocomplete.query)
-                            ////          this.infowindow=new google.maps.InfoWindow({
-                            ////              content: results[1].formatted_address,
-                            ////          }); 
-                            //          this.infowindow.setContent(results[1].formatted_address);
-                            //          this.infowindow.open(this.map, marker);
-                            //         
-                            //                    }
-                            //                }}
-                            //		   
-                            //	   })
-                            //           
-                            //           
-                            //   
-                            //           
-                            //	   )
                         }));
                         // alert("working1");
                     }).catch(function (error) {
                         console.log('Error getting location', error);
-                        _this.ToastMsg('Please Turn On your Loaction!! <br>Error getting location' + ',' + error);
+                        _this.ToastMsg('Please Turn On your Loaction!! Error getting location');
                         Loading.dismissAll();
                         var latLng = new google.maps.LatLng(_this.lat, _this.long);
                         _this.geocoder.geocode({ 'latLng': latLng }, (function (results, status) {
@@ -9742,6 +9986,7 @@ var NominatimapPage = (function () {
                         });
                         _this.markers = [];
                         _this.markers.push(marker);
+                        map.setCenter(marker.getPosition());
                         //  alert("marker");
                         google.maps.event.addListener(marker, 'dragend', (function (marker12) {
                             _this.iconname = 'star-outline';
@@ -9774,6 +10019,12 @@ var NominatimapPage = (function () {
                                             _this.data.city = '';
                                             console.log(citiie2[1]);
                                             switch (citiie2[1]) {
+                                                case ' Bogotá':
+                                                    _this.data.city = 'Bogota';
+                                                    break;
+                                                case ' Bogota':
+                                                    _this.data.city = 'Bogota';
+                                                    break;
                                                 case ' Soacha': {
                                                     _this.data.city = 'cun_soacha';
                                                     break;
@@ -9783,7 +10034,7 @@ var NominatimapPage = (function () {
                                                     break;
                                                 }
                                                 case ' Facatativá': {
-                                                    _this.data.city = 'Facatativá';
+                                                    _this.data.city = 'cun_facatativa';
                                                     break;
                                                 }
                                                 case ' Madrid': {
@@ -9798,9 +10049,38 @@ var NominatimapPage = (function () {
                                                     _this.data.city = 'cun_sopo';
                                                     break;
                                                 }
+                                                case ' Tenjo': {
+                                                    _this.data.city = 'cun_tenjo';
+                                                    break;
+                                                }
+                                                case ' Tocancipa': {
+                                                    _this.data.city = 'cun_tocancipa';
+                                                    break;
+                                                }
+                                                case ' Guasca': {
+                                                    _this.data.city = 'cun_guasca';
+                                                    break;
+                                                }
+                                                case ' Anapoima': {
+                                                    _this.data.city = 'cun_anapoima';
+                                                    break;
+                                                }
+                                                case ' Villeta': {
+                                                    _this.data.city = 'cun_villeta';
+                                                    break;
+                                                }
+                                                case ' La Vega': {
+                                                    _this.data.city = 'cun_la_vega';
+                                                    break;
+                                                }
+                                                case ' La Mesa': {
+                                                    _this.data.city = 'cun_la_mesa';
+                                                    break;
+                                                }
                                                 default: {
                                                     console.log('not found');
                                                     console.log(citiie2[1]);
+                                                    _this.ToastMsg('Sorry!! No service in this area');
                                                 }
                                             }
                                             console.log(_this.data.city);
@@ -9819,6 +10099,12 @@ var NominatimapPage = (function () {
                                             _this.data.city = '';
                                             console.log(citiie3[1]);
                                             switch (citiie3[1]) {
+                                                case ' Bogotá':
+                                                    _this.data.city = 'Bogota';
+                                                    break;
+                                                case ' Bogota':
+                                                    _this.data.city = 'Bogota';
+                                                    break;
                                                 case ' Soacha': {
                                                     _this.data.city = 'cun_soacha';
                                                     break;
@@ -9828,7 +10114,7 @@ var NominatimapPage = (function () {
                                                     break;
                                                 }
                                                 case ' Facatativá': {
-                                                    _this.data.city = 'Facatativá';
+                                                    _this.data.city = 'cun_facatativa';
                                                     break;
                                                 }
                                                 case ' Madrid': {
@@ -9843,9 +10129,38 @@ var NominatimapPage = (function () {
                                                     _this.data.city = 'cun_sopo';
                                                     break;
                                                 }
+                                                case ' Tenjo': {
+                                                    _this.data.city = 'cun_tenjo';
+                                                    break;
+                                                }
+                                                case ' Tocancipa': {
+                                                    _this.data.city = 'cun_tocancipa';
+                                                    break;
+                                                }
+                                                case ' Guasca': {
+                                                    _this.data.city = 'cun_guasca';
+                                                    break;
+                                                }
+                                                case ' Anapoima': {
+                                                    _this.data.city = 'cun_anapoima';
+                                                    break;
+                                                }
+                                                case ' Villeta': {
+                                                    _this.data.city = 'cun_villeta';
+                                                    break;
+                                                }
+                                                case ' La Vega': {
+                                                    _this.data.city = 'cun_la_vega';
+                                                    break;
+                                                }
+                                                case ' La Mesa': {
+                                                    _this.data.city = 'cun_la_mesa';
+                                                    break;
+                                                }
                                                 default: {
                                                     console.log('not found');
                                                     console.log(citiie3[1]);
+                                                    _this.ToastMsg('Sorry!! No service in this area');
                                                 }
                                             }
                                             console.log(_this.data.city);
@@ -9930,11 +10245,11 @@ var NominatimapPage = (function () {
         var newstr2 = newstr1.toString().replace(/–/g, "%2D");
         var newstr3 = newstr2.toString().replace(/./g, "%2E");
         console.log(newstr2);
+        console.log(this.data.city);
         if (this.data.city == undefined) {
-            this.data.city = 'Bogota';
+            this.ToastMsg('Select some city');
         }
         else {
-            console.log(this.data.city);
             var postdata = {
                 country_code: 'co',
                 country_name: this.data.city,
@@ -9949,13 +10264,18 @@ var NominatimapPage = (function () {
                     console.log(response);
                     var ress = JSON.parse(response.data);
                     console.log(ress);
+                    if (ress.message == 'Not available credits') {
+                        _this.ToastMsg('Sorry! No Credits available');
+                    }
                     if (ress.message == 'Result not found') {
-                        _this.nomiapi();
+                        _this.chooseItem();
+                        //                    this.nomiapi();
                     }
                     else {
                         console.log(ress.response);
                         console.log(ress.response.type);
                         console.log(ress.response.properties.address);
+                        _this.infocontent = ress.response.properties.address;
                         console.log(ress.response.geometry.coordinates);
                         _this.lats = ress.response.geometry.coordinates[1];
                         _this.longs = ress.response.geometry.coordinates[0];
@@ -9963,6 +10283,7 @@ var NominatimapPage = (function () {
                         _this.description = ress.response.properties;
                         _this.autocompleteItems.push(_this.description);
                         console.log(_this.autocompleteItems);
+                        _this.chooseItem1();
                     }
                 }
             }, function (err) {
@@ -10043,16 +10364,10 @@ var NominatimapPage = (function () {
                         text: 'OK',
                         role: 'submit',
                         handler: function () {
-                            _this.iconname = 'star';
-                            console.log(_this.appsetting.saved);
-                            _this.appsetting.saved.push(auto);
-                            if (_this.data.city == undefined) {
-                                _this.data.city = 'Bogota';
-                            }
                             var citytosend;
                             switch (_this.data.city) {
                                 case 'Bogota': {
-                                    citytosend = 'Bogota';
+                                    citytosend = 'Bogotá DC';
                                     break;
                                 }
                                 case 'cun_soacha': {
@@ -10060,10 +10375,10 @@ var NominatimapPage = (function () {
                                     break;
                                 }
                                 case 'cun_mosquera': {
-                                    citytosend = 'Mosquera';
+                                    citytosend = ' Mosquera';
                                     break;
                                 }
-                                case 'Facatativá': {
+                                case 'cun_facatativa': {
                                     citytosend = 'Facatativá';
                                     break;
                                 }
@@ -10079,25 +10394,62 @@ var NominatimapPage = (function () {
                                     citytosend = 'Sopó';
                                     break;
                                 }
+                                case 'cun_tenjo': {
+                                    citytosend = 'Tenjo';
+                                    break;
+                                }
+                                case 'cun_tocancipa': {
+                                    citytosend = 'Tocancipa';
+                                    break;
+                                }
+                                case 'cun_guasca': {
+                                    citytosend = 'Guasca';
+                                    break;
+                                }
+                                case 'cun_anapoima': {
+                                    citytosend = 'Anapoima';
+                                    break;
+                                }
+                                case 'cun_villeta': {
+                                    citytosend = 'Villeta';
+                                    break;
+                                }
+                                case 'cun_la_vega': {
+                                    citytosend = 'La Vega';
+                                    break;
+                                }
+                                case 'cun_la_mesa': {
+                                    citytosend = 'La Mesa';
+                                    break;
+                                }
                                 default: {
                                     console.log('not found');
+                                    //                   console.log(citiie[1])
                                 }
                             }
                             console.log(_this.appsetting.saved);
-                            var postdata = {
-                                user_id: _this.userdetail._id,
-                                favorite_address: auto + ' ' + citytosend
-                            };
-                            console.log(postdata);
-                            var Serialized = _this.serializeObj(postdata);
-                            _this.http.post(_this.appsetting.myGlobalVar + 'user/add_favarite_address', Serialized, options).map(function (res) { return res.json(); }).subscribe(function (response) {
-                                console.log(response);
-                                if (response.status == true) {
-                                    localStorage.setItem('UserDetail', JSON.stringify(response.data[0]));
-                                }
-                            });
-                            localStorage.setItem('Favaddress', JSON.stringify(postdata));
-                            //        localStorage.setItem('Favaddress',JSON.stringify(this.appsetting.saved));
+                            if (citytosend == undefined) {
+                                _this.ToastMsg('Select some city');
+                            }
+                            else {
+                                _this.iconname = 'star';
+                                console.log(_this.appsetting.saved);
+                                _this.appsetting.saved.push(auto);
+                                var postdata = {
+                                    user_id: _this.userdetail._id,
+                                    favorite_address: auto + ' ' + citytosend
+                                };
+                                console.log(postdata);
+                                var Serialized = _this.serializeObj(postdata);
+                                _this.http.post(_this.appsetting.myGlobalVar + 'user/add_favarite_address', Serialized, options).map(function (res) { return res.json(); }).subscribe(function (response) {
+                                    console.log(response);
+                                    if (response.status == true) {
+                                        localStorage.setItem('UserDetail', JSON.stringify(response.data[0]));
+                                    }
+                                });
+                                localStorage.setItem('Favaddress', JSON.stringify(postdata));
+                                //        localStorage.setItem('Favaddress',JSON.stringify(this.appsetting.saved));
+                            }
                         }
                     }
                 ]
@@ -10130,7 +10482,6 @@ var NominatimapPage = (function () {
         return result.join("&");
     };
     NominatimapPage.prototype.updateSearch = function () {
-        var _this = this;
         delete this.crlat;
         delete this.crlng;
         console.log(this.autocomplete.query);
@@ -10158,49 +10509,63 @@ var NominatimapPage = (function () {
             console.log('not matched');
             this.number = false;
         }
-        if (this.number == true) {
-            //let self = this; 
-            setTimeout(function () {
-                var config = {
-                    //types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
-                    input: _this.autocomplete.query,
-                    //    componentRestrictions: {  } 
-                    componentRestrictions: { country: 'co' }
-                };
-                _this.acService.getPlacePredictions(config, (function (predictions, status) {
-                    console.log('modal > getPlacePredictions > status > ', status);
-                    if (status == 'ZERO_RESULTS') {
-                        _this.lupapsearch();
-                        _this.omega = 1;
-                        _this.autocompleteItems = [];
-                    }
-                    else {
-                        _this.omega = 0;
-                        _this.autocompleteItems = [];
-                        console.log(predictions);
-                        for (var e = 0; e <= 1; e++) {
-                            _this.autocompleteItems.push(predictions[e]);
-                        }
-                        console.log(_this.autocompleteItems);
-                        //    predictions.forEach(((prediction)=> {   
-                        //      console.log("abc")           
-                        //    this.autocompleteItems.push(prediction);
-                        //   
-                        //    })
-                        //   
-                        //   );
-                    }
-                    // return false;
-                }));
-                _this.number = true;
-            }, 8000);
-        }
-        else {
-            this.lupapsearch();
-        }
+        //if(this.number == true){
+        //    this.lupapsearch();
+        //     this.omega = 1;
+        //let self = this; 
+        //    setTimeout(()=>{    //<<<---    using ()=> syntax
+        //     let config = { 
+        //    //types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
+        //    input: this.autocomplete.query, 
+        ////    componentRestrictions: {  } 
+        //    componentRestrictions: {country: 'co'}
+        //    }
+        //    this.acService.getPlacePredictions(config, ((predictions, status)=> {
+        //    console.log('modal > getPlacePredictions > status > ', status);
+        //    if(status == 'ZERO_RESULTS'){
+        //        
+        //        this.lupapsearch();
+        //        this.omega = 1;
+        //         this.autocompleteItems = [];   
+        //    }else{
+        //      this.omega = 0;
+        //    this.autocompleteItems = [];   
+        //    console.log(predictions) 
+        //    for(var e = 0; e<=1; e++){
+        //     this.autocompleteItems.push(predictions[e]);
+        //    }     
+        //    console.log( this.autocompleteItems);   
+        ////    predictions.forEach(((prediction)=> {   
+        ////      console.log("abc")           
+        ////    this.autocompleteItems.push(prediction);
+        ////   
+        ////    })
+        ////   
+        ////   );
+        //    }
+        //   // return false;
+        //    })
+        //    
+        //   );
+        //    this.number = true
+        // },2000);
+        //  }
+        //  else{
+        ////    this.lupapsearch();
+        ////     this.omega = 1;
+        //  }
         //else {
         //    this.nomiapi()
         //}
+    };
+    NominatimapPage.prototype.Searchlocation = function () {
+        console.log(this.number);
+        if (this.number == true) {
+            this.lupapsearch();
+        }
+        else {
+            this.nomiapi();
+        }
     };
     NominatimapPage.prototype.nomiapi = function () {
         var _this = this;
@@ -10219,28 +10584,36 @@ var NominatimapPage = (function () {
                 this.http.post('https://nominatim.openstreetmap.org/search/' + adr + '?countrycodes=co&format=json&addressdetails=1&limit=1&polygon_svg=1', options).map(function (res) { return res.json(); }).subscribe(function (response) {
                     console.log(response[0]);
                     if ((response[0] == undefined)) {
-                        var config = {
-                            //types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
-                            input: _this.autocomplete.query,
-                        };
-                        _this.acService.getPlacePredictions(config, (function (predictions, status) {
-                            console.log('modal > getPlacePredictions > status > ', status);
-                            if (status == 'ZERO_RESULTS') {
-                                _this.ToastMsg('Location not found');
-                                _this.omega = 1;
-                                _this.autocompleteItems = [];
-                            }
-                            else {
-                                _this.omega = 0;
-                                _this.autocompleteItems = [];
-                                console.log(predictions);
-                                predictions.forEach((function (prediction) {
-                                    console.log("abc");
-                                    _this.autocompleteItems.push(prediction);
-                                }));
-                            }
-                            // return false;
-                        }));
+                        _this.lupapsearch();
+                        //            
+                        //    let config = { 
+                        //    //types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
+                        //    input: this.autocomplete.query, 
+                        ////    componentRestrictions: {  } 
+                        ////    componentRestrictions: {country: 'co'}
+                        //    }
+                        //    this.acService.getPlacePredictions(config, ((predictions, status)=> {
+                        //    console.log('modal > getPlacePredictions > status > ', status);
+                        //    if(status == 'ZERO_RESULTS'){
+                        //        
+                        //       this.ToastMsg('Location not found')
+                        //        this.omega = 1;
+                        //         this.autocompleteItems = [];   
+                        //    }else{
+                        //      this.omega = 0;
+                        //    this.autocompleteItems = [];   
+                        //    console.log(predictions)         
+                        //    predictions.forEach(((prediction)=> {   
+                        //      console.log("abc")           
+                        //    this.autocompleteItems.push(prediction);
+                        //   
+                        //    })
+                        //   
+                        //   ); }
+                        //   // return false;
+                        //    })
+                        //    
+                        //   );
                     }
                     else {
                         if (response[0] != undefined) {
@@ -10283,6 +10656,7 @@ var NominatimapPage = (function () {
                                 _this.lat = response[0].lat;
                                 _this.long = response[0].lon;
                                 console.log(_this.lat, _this.long);
+                                _this.chooseItem2();
                             }
                         }
                         else {
@@ -10318,7 +10692,7 @@ var NominatimapPage = (function () {
     NominatimapPage.prototype.ToastMsg = function (msg) {
         var toast = this.toastCtrl.create({
             message: msg,
-            duration: 5000,
+            duration: 3000,
             position: 'middle'
         });
         toast.present();
@@ -10329,6 +10703,7 @@ var NominatimapPage = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
         var options = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["RequestOptions"]({ headers: headers });
+        this.glob_item = this.autocomplete.query;
         console.log(this.glob_item);
         //      this.data.city = '';
         //this.autocomplete.query = item.address;
@@ -10353,6 +10728,7 @@ var NominatimapPage = (function () {
         });
         console.log(marker);
         this.markers.push(marker);
+        this.map.setCenter(marker.getPosition());
         google.maps.event.addListener(marker, 'dragend', (function (marker31) {
             _this.iconname = 'star-outline';
             var latLng = marker31.latLng;
@@ -10373,9 +10749,12 @@ var NominatimapPage = (function () {
                 console.log(response);
                 var resso = JSON.parse(response.data);
                 console.log(resso.response);
+                if (response.data == 'Not available credits') {
+                    _this.ToastMsg('Sorry! No Credits available');
+                }
                 //            console.log(resso.response.properties.address);
-                if ((resso.response.properties.address == null) || (response.data == '{"message":"Result not found"}')) {
-                    console.log(resso.response.properties);
+                if ((resso.response == undefined) || (response.data == '{"message":"Result not found"}') || (resso.response.properties.address == null)) {
+                    //                console.log(resso.response.properties);
                     //                this.AlertMsg1('Sorry we cannot provide our services for this location')
                     //                 this.autocomplete.query= '';
                     var latLong = new google.maps.LatLng(_this.crlat, _this.crlng);
@@ -10399,6 +10778,12 @@ var NominatimapPage = (function () {
                                     console.log(citiie7[1]);
                                     _this.data.city = '';
                                     switch (citiie7[1]) {
+                                        case ' Bogotá':
+                                            _this.data.city = 'Bogota';
+                                            break;
+                                        case ' Bogota':
+                                            _this.data.city = 'Bogota';
+                                            break;
                                         case ' Soacha': {
                                             _this.data.city = 'cun_soacha';
                                             break;
@@ -10408,7 +10793,7 @@ var NominatimapPage = (function () {
                                             break;
                                         }
                                         case ' Facatativá': {
-                                            _this.data.city = 'Facatativá';
+                                            _this.data.city = 'cun_facatativa';
                                             break;
                                         }
                                         case ' Madrid': {
@@ -10423,9 +10808,38 @@ var NominatimapPage = (function () {
                                             _this.data.city = 'cun_sopo';
                                             break;
                                         }
+                                        case ' Tenjo': {
+                                            _this.data.city = 'cun_tenjo';
+                                            break;
+                                        }
+                                        case ' Tocancipa': {
+                                            _this.data.city = 'cun_tocancipa';
+                                            break;
+                                        }
+                                        case ' Guasca': {
+                                            _this.data.city = 'cun_guasca';
+                                            break;
+                                        }
+                                        case ' Anapoima': {
+                                            _this.data.city = 'cun_anapoima';
+                                            break;
+                                        }
+                                        case ' Villeta': {
+                                            _this.data.city = 'cun_villeta';
+                                            break;
+                                        }
+                                        case ' La Vega': {
+                                            _this.data.city = 'cun_la_vega';
+                                            break;
+                                        }
+                                        case ' La Mesa': {
+                                            _this.data.city = 'cun_la_mesa';
+                                            break;
+                                        }
                                         default: {
                                             console.log('not found');
                                             console.log(citiie7[1]);
+                                            _this.ToastMsg('Sorry!! No service in this area');
                                         }
                                     }
                                     console.log(_this.data.city);
@@ -10456,13 +10870,14 @@ var NominatimapPage = (function () {
                         _this.data.city = resso.response.properties.city;
                         console.log(_this.data.city);
                         console.log(_this.autocomplete.query);
+                        //                   alert(addr);
                         _this.infowindow.setContent(addr);
                         _this.infowindow.open(_this.map, marker);
                     }
                 }
             });
         }));
-        this.infowindow.setContent(this.glob_item.address);
+        this.infowindow.setContent(this.infocontent);
         this.infowindow.open(this.map, marker);
         console.log('hello');
         this.autocompleteItems = [];
@@ -10499,6 +10914,7 @@ var NominatimapPage = (function () {
                         position: results[0].geometry.location
                     });
                     _this.markers.push(marker);
+                    _this.map.setCenter(marker.getPosition());
                     google.maps.event.addListener(marker, 'dragend', (function (marker21) {
                         _this.iconname = 'star-outline';
                         var latLng = marker21.latLng;
@@ -10520,8 +10936,11 @@ var NominatimapPage = (function () {
                             console.log(response.data == '{"message":"Result not found"}');
                             var resso = JSON.parse(response.data);
                             console.log(resso.response);
+                            if (response.data == 'Not available credits') {
+                                _this.ToastMsg('Sorry! No Credits available');
+                            }
                             //            console.log(resso.response.properties.address);
-                            if ((resso.response.properties.address == null) || (response.data == '{"message":"Result not found"}')) {
+                            if ((resso.response == undefined) || (response.data == '{"message":"Result not found"}' || (resso.response.properties.address == null))) {
                                 _this.geocoder.geocode({ 'location': latLong }, (function (results, status) {
                                     console.log(results);
                                     if (results == '') {
@@ -10541,6 +10960,12 @@ var NominatimapPage = (function () {
                                                 _this.data.city = '';
                                                 console.log(citiie4[1]);
                                                 switch (citiie4[1]) {
+                                                    case ' Bogotá':
+                                                        _this.data.city = 'Bogota';
+                                                        break;
+                                                    case ' Bogota':
+                                                        _this.data.city = 'Bogota';
+                                                        break;
                                                     case ' Soacha': {
                                                         _this.data.city = 'cun_soacha';
                                                         break;
@@ -10550,7 +10975,7 @@ var NominatimapPage = (function () {
                                                         break;
                                                     }
                                                     case ' Facatativá': {
-                                                        _this.data.city = 'Facatativá';
+                                                        _this.data.city = 'cun_facatativa';
                                                         break;
                                                     }
                                                     case ' Madrid': {
@@ -10565,39 +10990,40 @@ var NominatimapPage = (function () {
                                                         _this.data.city = 'cun_sopo';
                                                         break;
                                                     }
+                                                    case ' Tenjo': {
+                                                        _this.data.city = 'cun_tenjo';
+                                                        break;
+                                                    }
+                                                    case ' Tocancipa': {
+                                                        _this.data.city = 'cun_tocancipa';
+                                                        break;
+                                                    }
+                                                    case ' Guasca': {
+                                                        _this.data.city = 'cun_guasca';
+                                                        break;
+                                                    }
+                                                    case ' Anapoima': {
+                                                        _this.data.city = 'cun_anapoima';
+                                                        break;
+                                                    }
+                                                    case ' Villeta': {
+                                                        _this.data.city = 'cun_villeta';
+                                                        break;
+                                                    }
+                                                    case ' La Vega': {
+                                                        _this.data.city = 'cun_la_vega';
+                                                        break;
+                                                    }
+                                                    case ' La Mesa': {
+                                                        _this.data.city = 'cun_la_mesa';
+                                                        break;
+                                                    }
                                                     default: {
                                                         console.log('not found');
                                                         console.log(citiie4[1]);
+                                                        _this.ToastMsg('Sorry!! No service in this area');
                                                     }
                                                 }
-                                                //           if(citiie4[1] == 'Soacha'){
-                                                //               console.log('Soacha');
-                                                //              City = 'cun_soacha'
-                                                //               console.log(City);
-                                                //               this.data.city = City;
-                                                //            }
-                                                //            if(citiie4[1] == 'Mosquera'){
-                                                //            console.log('Mosquera');
-                                                //              City = 'cun_mosquera'
-                                                //               console.log(City);
-                                                //                 this.data.city = City;
-                                                //            }
-                                                //            if(citiie4[1] == 'Facatativá'){
-                                                //            City = 'Facatativá'
-                                                //            this.data.city = City;
-                                                //            }
-                                                //            if(citiie4[1] == 'Madrid'){
-                                                //            City= 'cun_madrid'
-                                                //            this.data.city = City;
-                                                //            }
-                                                //            if(citiie4[1] == 'Cajicá'){
-                                                //             City= 'cun_cajica'
-                                                //             this.data.city = City;
-                                                //            }
-                                                //            if(citiie4[1] == 'Sopó'){
-                                                //             City = 'cun_sopo'
-                                                //             this.data.city = City;
-                                                //            }
                                                 console.log(_this.data.city);
                                                 //            this.data.city = citiie4;
                                                 console.log(_this.autocomplete.query);
@@ -10615,6 +11041,12 @@ var NominatimapPage = (function () {
                                                 _this.data.city = '';
                                                 console.log(citiie5[1]);
                                                 switch (citiie5[1]) {
+                                                    case ' Bogotá':
+                                                        _this.data.city = 'Bogota';
+                                                        break;
+                                                    case ' Bogota':
+                                                        _this.data.city = 'Bogota';
+                                                        break;
                                                     case ' Soacha': {
                                                         _this.data.city = 'cun_soacha';
                                                         break;
@@ -10624,7 +11056,7 @@ var NominatimapPage = (function () {
                                                         break;
                                                     }
                                                     case ' Facatativá': {
-                                                        _this.data.city = 'Facatativá';
+                                                        _this.data.city = 'cun_facatativa';
                                                         break;
                                                     }
                                                     case ' Madrid': {
@@ -10639,9 +11071,38 @@ var NominatimapPage = (function () {
                                                         _this.data.city = 'cun_sopo';
                                                         break;
                                                     }
+                                                    case ' Tenjo': {
+                                                        _this.data.city = 'cun_tenjo';
+                                                        break;
+                                                    }
+                                                    case ' Tocancipa': {
+                                                        _this.data.city = 'cun_tocancipa';
+                                                        break;
+                                                    }
+                                                    case ' Guasca': {
+                                                        _this.data.city = 'cun_guasca';
+                                                        break;
+                                                    }
+                                                    case ' Anapoima': {
+                                                        _this.data.city = 'cun_anapoima';
+                                                        break;
+                                                    }
+                                                    case ' Villeta': {
+                                                        _this.data.city = 'cun_villeta';
+                                                        break;
+                                                    }
+                                                    case ' La Vega': {
+                                                        _this.data.city = 'cun_la_vega';
+                                                        break;
+                                                    }
+                                                    case ' La Mesa': {
+                                                        _this.data.city = 'cun_la_mesa';
+                                                        break;
+                                                    }
                                                     default: {
                                                         console.log('not found');
                                                         console.log(citiie5[1]);
+                                                        _this.ToastMsg('Sorry!! No service in this area');
                                                     }
                                                 }
                                                 console.log(_this.data.city);
@@ -10677,6 +11138,7 @@ var NominatimapPage = (function () {
                                     _this.data.city = resso.response.properties.city;
                                     console.log(_this.data.city);
                                     console.log(_this.autocomplete.query);
+                                    //                   alert(addr);
                                     _this.infowindow.setContent(addr);
                                     _this.infowindow.open(_this.map, marker);
                                 }
@@ -10701,15 +11163,16 @@ var NominatimapPage = (function () {
     };
     NominatimapPage.prototype.getItem = function (item) {
         console.log(item);
-        if (item.description) {
-            console.log('google');
-            this.autocomplete.query = item.description;
-            this.glob_item = item;
-            this.autocompleteItems = [];
-            console.log(this.autocompleteItems);
-            //          this.chooseItem(item);
-        }
-        else if (item.address) {
+        //     if(this.autocomplete.query){
+        //         console.log('google');
+        ////          this.autocomplete.query=item.description;
+        ////          this.glob_item = item;
+        //          this.autocompleteItems = [];
+        //          console.log(this.autocompleteItems)
+        ////          this.chooseItem(item);
+        //     }
+        //     else 
+        if (item.address) {
             console.log('lupap');
             this.glob_item = item;
             this.autocomplete.query = item.address;
@@ -10728,248 +11191,359 @@ var NominatimapPage = (function () {
     };
     NominatimapPage.prototype.chooseItem = function () {
         var _this = this;
+        var ccitytosend;
         var headers = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
         var options = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["RequestOptions"]({ headers: headers });
+        this.glob_item = this.autocomplete.query;
         this.number = true;
         this.lat = '';
         this.long = '';
         console.log(this.glob_item);
-        // this.autocomplete.query=item.description;
-        if (this.glob_item.terms[2].value == 'Bogota') {
-            this.data.city = 'Bogota';
+        console.log(this.data.city);
+        switch (this.data.city) {
+            case 'Bogota': {
+                ccitytosend = 'Bogotá DC';
+                break;
+            }
+            case 'cun_soacha': {
+                ccitytosend = 'Soacha';
+                break;
+            }
+            case 'cun_mosquera': {
+                ccitytosend = ' Mosquera';
+                break;
+            }
+            case 'cun_facatativa': {
+                ccitytosend = 'Facatativá';
+                break;
+            }
+            case 'cun_madrid': {
+                ccitytosend = 'Madrid';
+                break;
+            }
+            case 'cun_cajica': {
+                ccitytosend = 'Cajicá';
+                break;
+            }
+            case 'cun_sopo': {
+                ccitytosend = 'Sopó';
+                break;
+            }
+            case 'cun_tenjo': {
+                ccitytosend = 'Tenjo';
+                break;
+            }
+            case 'cun_tocancipa': {
+                ccitytosend = 'Tocancipa';
+                break;
+            }
+            case 'cun_guasca': {
+                ccitytosend = 'Guasca';
+                break;
+            }
+            case 'cun_anapoima': {
+                ccitytosend = 'Anapoima';
+                break;
+            }
+            case 'cun_villeta': {
+                ccitytosend = 'Villeta';
+                break;
+            }
+            case 'cun_la_vega': {
+                ccitytosend = 'La Vega';
+                break;
+            }
+            case 'cun_la_mesa': {
+                ccitytosend = 'La Mesa';
+                break;
+            }
+            default: {
+                console.log('not found');
+                //                   console.log(citiie[1])
+            }
         }
-        console.log(this.glob_item.lat);
-        console.log(this.glob_item.lng);
-        this.geocoder.geocode({ 'placeId': this.glob_item.place_id }, (function (results, status) {
-            if (status === 'OK') {
-                if (results[0]) {
-                    console.log(results[0]);
-                    _this.map.setZoom(17);
-                    _this.map.setCenter(results[0].geometry.location);
-                    _this.lat = results[0].geometry.location.lat();
-                    _this.long = results[0].geometry.location.lng();
-                    console.log(_this.lat, _this.long);
-                    _this.deleteMarkers();
-                    _this.markers = [];
-                    console.log(_this.markers);
-                    var marker = new google.maps.Marker({
-                        map: _this.map,
-                        draggable: true,
-                        icon: 'assets/img/location.png',
-                        position: results[0].geometry.location
-                    });
-                    _this.markers.push(marker);
-                    google.maps.event.addListener(marker, 'dragend', (function (marker21) {
-                        _this.iconname = 'star-outline';
-                        var latLng = marker21.latLng;
-                        _this.crlat = latLng.lat();
-                        _this.crlng = latLng.lng();
-                        console.log(_this.crlat);
-                        console.log(_this.crlng);
-                        //  alert(this.crlat);
-                        // alert(this.crlng);
+        if (ccitytosend == undefined) {
+            this.ToastMsg('Select some city');
+        }
+        else {
+            this.http.get('https://maps.googleapis.com/maps/api/geocode/json?components=locality:' + this.glob_item + '|administrative_area:' + ccitytosend + '|country:Colombia&key=AIzaSyA1DlP6ydTPDHSNBT_99W80TjfSGEcthhE', options).map(function (res) { return res.json(); }).subscribe(function (response) {
+                console.log(response);
+                // this.autocomplete.query=item.description;
+                //    if (this.glob_item.terms[2].value == 'Bogota'){
+                //        this.data.city = 'Bogota';
+                //    }
+                //    console.log(this.glob_item.lat)
+                //     console.log(this.glob_item.lng)
+                //    this.geocoder.geocode({'placeId': this.glob_item}, ((results, status)=>{
+                if (response.status === 'OK') {
+                    if (response.results[0]) {
+                        console.log(response.results[0]);
+                        _this.map.setZoom(17);
+                        _this.map.setCenter(response.results[0].geometry.location);
+                        _this.lat = response.results[0].geometry.location.lat;
+                        _this.long = response.results[0].geometry.location.lng;
+                        console.log(_this.lat, _this.long);
+                        _this.deleteMarkers();
                         _this.markers = [];
+                        console.log(_this.markers);
+                        var marker = new google.maps.Marker({
+                            map: _this.map,
+                            draggable: true,
+                            icon: 'assets/img/location.png',
+                            position: response.results[0].geometry.location
+                        });
                         _this.markers.push(marker);
-                        var latLong = new google.maps.LatLng(_this.crlat, _this.crlng);
-                        var postdata = {
-                            lat: _this.crlat,
-                            long: _this.crlng
-                        };
-                        var Serialized = _this.serializeObj(postdata);
-                        _this.http.post('  http://rafao.us-west-2.elasticbeanstalk.com/api/home/reverse_geocoding', Serialized, options).map(function (res) { return res.json(); }).subscribe(function (response) {
-                            console.log(response.data == '{"message":"Result not found"}');
-                            var resso = JSON.parse(response.data);
-                            console.log(resso.response);
-                            //            console.log(resso.response.properties.address);
-                            if ((resso.response.properties.address == null) || (response.data == '{"message":"Result not found"}')) {
-                                _this.geocoder.geocode({ 'location': latLong }, (function (results, status) {
-                                    console.log(results);
-                                    if (results == '') {
-                                        _this.ToastMsg('Invalid Location');
+                        _this.map.setCenter(marker.getPosition());
+                        google.maps.event.addListener(marker, 'dragend', (function (marker21) {
+                            _this.iconname = 'star-outline';
+                            var latLng = marker21.latLng;
+                            _this.crlat = latLng.lat();
+                            _this.crlng = latLng.lng();
+                            console.log(_this.crlat);
+                            console.log(_this.crlng);
+                            //  alert(this.crlat);
+                            // alert(this.crlng);
+                            _this.markers = [];
+                            _this.markers.push(marker);
+                            var latLong = new google.maps.LatLng(_this.crlat, _this.crlng);
+                            var postdata = {
+                                lat: _this.crlat,
+                                long: _this.crlng
+                            };
+                            var Serialized = _this.serializeObj(postdata);
+                            _this.http.post('  http://rafao.us-west-2.elasticbeanstalk.com/api/home/reverse_geocoding', Serialized, options).map(function (res) { return res.json(); }).subscribe(function (response) {
+                                console.log(response.data == '{"message":"Result not found"}');
+                                var resso = JSON.parse(response.data);
+                                console.log(resso.response);
+                                if (response.data == 'Not available credits') {
+                                    _this.ToastMsg('Sorry! No Credits available');
+                                }
+                                //            console.log(resso.response.properties.address);
+                                if ((resso.response == undefined) || (resso.response.properties.address == null) || (response.data == '{"message":"Result not found"}')) {
+                                    _this.geocoder.geocode({ 'location': latLong }, (function (results, status) {
+                                        console.log(results);
+                                        if (results == '') {
+                                            _this.ToastMsg('Invalid Location');
+                                            _this.lat = '';
+                                            _this.long = '';
+                                            _this.infowindow.setContent('Error');
+                                            _this.infowindow.open(_this.map, marker);
+                                        }
+                                        else {
+                                            if (status == google.maps.GeocoderStatus.OK) {
+                                                if (results[0]) {
+                                                    console.log(results[0].place_id);
+                                                    _this.autocomplete.query = results[0].formatted_address;
+                                                    console.log(_this.autocomplete.query);
+                                                    var citiie = results[0].formatted_address.split(',');
+                                                    var City = '';
+                                                    _this.data.city = '';
+                                                    console.log(citiie[1]);
+                                                    switch (citiie[1]) {
+                                                        case ' Bogotá':
+                                                            _this.data.city = 'Bogota';
+                                                            break;
+                                                        case ' Bogota':
+                                                            _this.data.city = 'Bogota';
+                                                            break;
+                                                        case ' Soacha': {
+                                                            _this.data.city = 'cun_soacha';
+                                                            break;
+                                                        }
+                                                        case ' Mosquera': {
+                                                            _this.data.city = 'cun_mosquera';
+                                                            break;
+                                                        }
+                                                        case ' Facatativá': {
+                                                            _this.data.city = 'cun_facatativa';
+                                                            break;
+                                                        }
+                                                        case ' Madrid': {
+                                                            _this.data.city = 'cun_madrid';
+                                                            break;
+                                                        }
+                                                        case ' Cajicá': {
+                                                            _this.data.city = 'cun_cajica';
+                                                            break;
+                                                        }
+                                                        case ' Sopó': {
+                                                            _this.data.city = 'cun_sopo';
+                                                            break;
+                                                        }
+                                                        case ' Tenjo': {
+                                                            _this.data.city = 'cun_tenjo';
+                                                            break;
+                                                        }
+                                                        case ' Tocancipa': {
+                                                            _this.data.city = 'cun_tocancipa';
+                                                            break;
+                                                        }
+                                                        case ' Guasca': {
+                                                            _this.data.city = 'cun_guasca';
+                                                            break;
+                                                        }
+                                                        case ' Anapoima': {
+                                                            _this.data.city = 'cun_anapoima';
+                                                            break;
+                                                        }
+                                                        case ' Villeta': {
+                                                            _this.data.city = 'cun_villeta';
+                                                            break;
+                                                        }
+                                                        case ' La Vega': {
+                                                            _this.data.city = 'cun_la_vega';
+                                                            break;
+                                                        }
+                                                        case ' La Mesa': {
+                                                            _this.data.city = 'cun_la_mesa';
+                                                            break;
+                                                        }
+                                                        default: {
+                                                            console.log('not found');
+                                                            console.log(citiie[1]);
+                                                            _this.ToastMsg('Sorry!! No service in this area');
+                                                        }
+                                                    }
+                                                    //          this.infowindow=new google.maps.InfoWindow({
+                                                    //              content: results[1].formatted_address,
+                                                    //          }); 
+                                                    _this.infowindow.setContent(results[0].formatted_address);
+                                                    _this.infowindow.open(_this.map, marker);
+                                                }
+                                                else if (results[1]) {
+                                                    console.log(results[1].place_id);
+                                                    _this.autocomplete.query = results[1].formatted_address;
+                                                    var citiie = results[1].formatted_address.split(',');
+                                                    var City = '';
+                                                    _this.data.city = '';
+                                                    switch (citiie[1]) {
+                                                        case ' Bogotá':
+                                                            _this.data.city = 'Bogota';
+                                                            break;
+                                                        case ' Bogota':
+                                                            _this.data.city = 'Bogota';
+                                                            break;
+                                                        case ' Soacha': {
+                                                            _this.data.city = 'cun_soacha';
+                                                            break;
+                                                        }
+                                                        case ' Mosquera': {
+                                                            _this.data.city = 'cun_mosquera';
+                                                            break;
+                                                        }
+                                                        case ' Facatativá': {
+                                                            _this.data.city = 'cun_facatativa';
+                                                            break;
+                                                        }
+                                                        case ' Madrid': {
+                                                            _this.data.city = 'cun_madrid';
+                                                            break;
+                                                        }
+                                                        case ' Cajicá': {
+                                                            _this.data.city = 'cun_cajica';
+                                                            break;
+                                                        }
+                                                        case ' Sopó': {
+                                                            _this.data.city = 'cun_sopo';
+                                                            break;
+                                                        }
+                                                        case ' Tenjo': {
+                                                            _this.data.city = 'cun_tenjo';
+                                                            break;
+                                                        }
+                                                        case ' Tocancipa': {
+                                                            _this.data.city = 'cun_tocancipa';
+                                                            break;
+                                                        }
+                                                        case ' Guasca': {
+                                                            _this.data.city = 'cun_guasca';
+                                                            break;
+                                                        }
+                                                        case ' Anapoima': {
+                                                            _this.data.city = 'cun_anapoima';
+                                                            break;
+                                                        }
+                                                        case ' Villeta': {
+                                                            _this.data.city = 'cun_villeta';
+                                                            break;
+                                                        }
+                                                        case ' La Vega': {
+                                                            _this.data.city = 'cun_la_vega';
+                                                            break;
+                                                        }
+                                                        case ' La Mesa': {
+                                                            _this.data.city = 'cun_la_mesa';
+                                                            break;
+                                                        }
+                                                        default: {
+                                                            console.log('not found');
+                                                            console.log(citiie[1]);
+                                                            _this.ToastMsg('Sorry!! No service in this area');
+                                                        }
+                                                    }
+                                                    console.log(_this.data.city);
+                                                    //            this.data.city = citiie ;
+                                                    console.log(_this.autocomplete.query);
+                                                    //          this.infowindow=new google.maps.InfoWindow({
+                                                    //              content: results[1].formatted_address,
+                                                    //          }); 
+                                                    _this.infowindow.setContent(results[1].formatted_address);
+                                                    _this.infowindow.open(_this.map, marker);
+                                                    _this.goglat = _this.crlat;
+                                                    _this.goglong = _this.crlng;
+                                                }
+                                            }
+                                        }
+                                    }));
+                                }
+                                else {
+                                    var resso = JSON.parse(response.data);
+                                    console.log(resso.response.message);
+                                    if (resso.response.message == "Result not found") {
+                                        _this.ToastMsg('Not found');
                                         _this.lat = '';
                                         _this.long = '';
                                         _this.infowindow.setContent('Error');
                                         _this.infowindow.open(_this.map, marker);
                                     }
                                     else {
-                                        if (status == google.maps.GeocoderStatus.OK) {
-                                            if (results[0]) {
-                                                console.log(results[0].place_id);
-                                                _this.autocomplete.query = results[0].formatted_address;
-                                                console.log(_this.autocomplete.query);
-                                                var citiie = results[0].formatted_address.split(',');
-                                                var City = '';
-                                                _this.data.city = '';
-                                                console.log(citiie[1]);
-                                                switch (citiie[1]) {
-                                                    case ' Soacha':
-                                                        _this.data.city = 'cun_soacha';
-                                                        break;
-                                                    case ' Mosquera':
-                                                        _this.data.city = 'cun_mosquera';
-                                                        break;
-                                                    case ' Facatativá':
-                                                        _this.data.city = 'Facatativá';
-                                                        break;
-                                                    case ' Madrid':
-                                                        _this.data.city = 'cun_madrid';
-                                                        break;
-                                                    case ' Cajicá':
-                                                        _this.data.city = 'cun_cajica';
-                                                        break;
-                                                    case ' Sopó':
-                                                        _this.data.city = 'cun_sopo';
-                                                        break;
-                                                    default:
-                                                        console.log('not found');
-                                                        console.log(citiie[1]);
-                                                }
-                                                //          this.infowindow=new google.maps.InfoWindow({
-                                                //              content: results[1].formatted_address,
-                                                //          }); 
-                                                _this.infowindow.setContent(results[0].formatted_address);
-                                                _this.infowindow.open(_this.map, marker);
-                                            }
-                                            else if (results[1]) {
-                                                console.log(results[1].place_id);
-                                                _this.autocomplete.query = results[1].formatted_address;
-                                                var citiie = results[1].formatted_address.split(',');
-                                                var City = '';
-                                                _this.data.city = '';
-                                                switch (citiie[1]) {
-                                                    case ' Soacha': {
-                                                        _this.data.city = 'cun_soacha';
-                                                        break;
-                                                    }
-                                                    case ' Mosquera': {
-                                                        _this.data.city = 'cun_mosquera';
-                                                        break;
-                                                    }
-                                                    case ' Facatativá': {
-                                                        _this.data.city = 'Facatativá';
-                                                        break;
-                                                    }
-                                                    case ' Madrid': {
-                                                        _this.data.city = 'cun_madrid';
-                                                        break;
-                                                    }
-                                                    case ' Cajicá': {
-                                                        _this.data.city = 'cun_cajica';
-                                                        break;
-                                                    }
-                                                    case ' Sopó': {
-                                                        _this.data.city = 'cun_sopo';
-                                                        break;
-                                                    }
-                                                    default: {
-                                                        console.log('not found');
-                                                        console.log(citiie[1]);
-                                                    }
-                                                }
-                                                console.log(_this.data.city);
-                                                //            this.data.city = citiie ;
-                                                console.log(_this.autocomplete.query);
-                                                //          this.infowindow=new google.maps.InfoWindow({
-                                                //              content: results[1].formatted_address,
-                                                //          }); 
-                                                _this.infowindow.setContent(results[1].formatted_address);
-                                                _this.infowindow.open(_this.map, marker);
-                                                _this.goglat = _this.crlat;
-                                                _this.goglong = _this.crlng;
-                                            }
+                                        var addr = resso.response.properties.address;
+                                        console.log(resso.response);
+                                        _this.autocomplete.query = addr;
+                                        if (resso.response.properties.city == 'bogota') {
+                                            resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1);
                                         }
+                                        _this.data.city = resso.response.properties.city;
+                                        console.log(_this.data.city);
+                                        console.log(_this.autocomplete.query);
+                                        //                   alert(addr)
+                                        _this.infowindow.setContent(addr);
+                                        _this.infowindow.open(_this.map, marker);
+                                        _this.goglat = _this.crlat;
+                                        _this.goglong = _this.crlng;
                                     }
-                                }));
-                            }
-                            else {
-                                var resso = JSON.parse(response.data);
-                                console.log(resso.response.message);
-                                if (resso.response.message == "Result not found") {
-                                    _this.ToastMsg('Not found');
-                                    _this.lat = '';
-                                    _this.long = '';
-                                    _this.infowindow.setContent('Error');
-                                    _this.infowindow.open(_this.map, marker);
                                 }
-                                else {
-                                    var addr = resso.response.properties.address;
-                                    console.log(resso.response);
-                                    _this.autocomplete.query = addr;
-                                    if (resso.response.properties.city == 'bogota') {
-                                        resso.response.properties.city = resso.response.properties.city.charAt(0).toUpperCase() + resso.response.properties.city.slice(1);
-                                    }
-                                    _this.data.city = resso.response.properties.city;
-                                    console.log(_this.data.city);
-                                    console.log(_this.autocomplete.query);
-                                    _this.infowindow.setContent(addr);
-                                    _this.infowindow.open(_this.map, marker);
-                                    _this.goglat = _this.crlat;
-                                    _this.goglong = _this.crlng;
-                                }
-                            }
-                        });
-                        //            var pposition = new google.maps.LatLng(this.crlat, this.crlng)
-                        //      console.log(this.MapBounds)
-                        //      console.log(pposition.lat(),pposition.lng())
-                        ////       MapBounds.contains(position) ? lastPosition = position : marker.setPosition(lastPosition);
-                        //       if( this.MapBounds.contains(pposition)){
-                        //           this.lastPosition = pposition
-                        //       }else{
-                        //        this.lastPosition = pposition
-                        //           console.log('no sertvice available');
-                        //       }
-                        //       console.log(this.lastPosition.lat(),this.lastPosition.lng())
-                        //    ;
-                        //     let latLong = new google.maps.LatLng(this.crlat, this.crlng); 
-                        //     
-                        //	  this.geocoder.geocode({'latLng': latLng}, ((results, status)=>{
-                        //		  console.log(results);
-                        //                  if(results == ''){
-                        //                      this.ToastMsg('Invalid Location');
-                        //                       this.autocomplete.query= 'error';
-                        //                 this.lat = '';
-                        //                       this.long= '';
-                        //                         this.infowindow.setContent('Error');
-                        //          this.infowindow.open(this.map, marker);
-                        //                  }else{
-                        //		   if (status == google.maps.GeocoderStatus.OK) {
-                        //          if (results[0]) {
-                        //          this.autocomplete.query= results[0].formatted_address;
-                        //          
-                        //       if(this.data.city == undefined){
-                        //    this.data.city='Bogota'
-                        //}else if(this.data.city != results[4].formatted_address ){
-                        //     this.data.city=results[4].formatted_address
-                        //}
-                        //          
-                        //          console.log(this.data.city);
-                        //          console.log(this.autocomplete.query);
-                        //          this.infowindow.setContent(results[0].formatted_address);
-                        //          this.infowindow.open(this.map, marker);
-                        //          this.goglat = this.crlat;
-                        //          this.goglong = this.crlng;
-                        //          
-                        //                    }
-                        //                }}
-                        //		   
-                        //	   })
-                        //	   ) 
-                    }));
-                    console.log('hello');
-                    _this.infowindow.setContent(results[0].formatted_address);
-                    _this.infowindow.open(_this.map, marker);
-                    _this.nativeGeocoder.forwardGeocode(results[0].formatted_address)
-                        .then(function (coordinates) {
-                        console.log('The coordinates are latitude=' + coordinates.latitude + ' and longitude=' + coordinates.longitude);
-                        _this.goglat = coordinates.latitude;
-                        _this.goglong = coordinates.longitude;
-                        console.log(_this.goglat + ' ' + _this.goglong);
-                    })
-                        .catch(function (error) { return console.log(error); });
+                            });
+                        }));
+                        console.log('hello');
+                        _this.infowindow.setContent(response.results[0].formatted_address);
+                        _this.infowindow.open(_this.map, marker);
+                        _this.nativeGeocoder.forwardGeocode(response.results[0].formatted_address)
+                            .then(function (coordinates) {
+                            console.log('The coordinates are latitude=' + coordinates.latitude + ' and longitude=' + coordinates.longitude);
+                            _this.goglat = coordinates.latitude;
+                            _this.goglong = coordinates.longitude;
+                            console.log(_this.goglat + ' ' + _this.goglong);
+                        })
+                            .catch(function (error) { return console.log(error); });
+                    }
                 }
-            }
-        }));
+                else {
+                    _this.nomiapi();
+                }
+            });
+        }
         this.autocompleteItems = [];
     };
     NominatimapPage.prototype.clsmodel = function () {
@@ -10992,13 +11566,10 @@ var NominatimapPage = (function () {
             this.ToastMsg('Nothing is saved');
         }
         else {
-            if (this.data.city == undefined) {
-                this.data.city = 'Bogota';
-            }
             var citytosend;
             switch (this.data.city) {
                 case 'Bogota': {
-                    citytosend = 'Bogota';
+                    citytosend = 'Bogotá DC';
                     break;
                 }
                 case 'cun_soacha': {
@@ -11006,10 +11577,10 @@ var NominatimapPage = (function () {
                     break;
                 }
                 case 'cun_mosquera': {
-                    citytosend = 'Mosquera';
+                    citytosend = ' Mosquera';
                     break;
                 }
-                case 'Facatativá': {
+                case 'cun_facatativa': {
                     citytosend = 'Facatativá';
                     break;
                 }
@@ -11025,38 +11596,72 @@ var NominatimapPage = (function () {
                     citytosend = 'Sopó';
                     break;
                 }
+                case 'cun_tenjo': {
+                    citytosend = 'Tenjo';
+                    break;
+                }
+                case 'cun_tocancipa': {
+                    citytosend = 'Tocancipa';
+                    break;
+                }
+                case 'cun_guasca': {
+                    citytosend = 'Guasca';
+                    break;
+                }
+                case 'cun_anapoima': {
+                    citytosend = 'Anapoima';
+                    break;
+                }
+                case 'cun_villeta': {
+                    citytosend = 'Villeta';
+                    break;
+                }
+                case 'cun_la_vega': {
+                    citytosend = 'La Vega';
+                    break;
+                }
+                case 'cun_la_mesa': {
+                    citytosend = 'La Mesa';
+                    break;
+                }
                 default: {
                     console.log('not found');
                     //                   console.log(citiie[1])
                 }
             }
-            if ((this.goglat) && (this.goglong)) {
-                this.lat = this.goglat;
-                this.long = this.goglong;
-                console.log('google');
+            if (citytosend == undefined) {
+                this.ToastMsg('Select some city');
             }
             else {
-                this.lat = this.lat;
-                this.long = this.long;
-                console.log('nomi');
-            }
-            var postdata2 = {
-                user_id: this.userdetail._id,
-                saved_address: this.autocomplete.query + ' ' + citytosend
-            };
-            console.log(postdata2);
-            var Serialized = this.serializeObj(postdata2);
-            this.http.post(this.appsetting.myGlobalVar + 'user/add_saved_address', Serialized, options).map(function (res) { return res.json(); }).subscribe(function (response2) {
-                console.log(response2);
-                if (response2.status == true) {
-                    localStorage.setItem('UserDetail', JSON.stringify(response2.data[0]));
+                if ((this.goglat) && (this.goglong)) {
+                    this.lat = this.goglat;
+                    this.long = this.goglong;
+                    console.log('google');
                 }
-            });
-            this.viewCtrl.dismiss({
-                address: this.data.additional + ' ' + this.autocomplete.query + '   ' + citytosend,
-                lati: this.lat,
-                longi: this.long
-            });
+                else {
+                    this.lat = this.lat;
+                    this.long = this.long;
+                    console.log('nomi');
+                }
+                //       var postdata2 = {
+                //            user_id: this.userdetail._id,
+                //            saved_address: this.autocomplete.query +' '+ citytosend
+                //       }
+                //       
+                //          console.log(postdata2)
+                //           var Serialized = this.serializeObj(postdata2);
+                //            this.http.post(this.appsetting.myGlobalVar + 'user/add_saved_address', Serialized, options).map(res => res.json()).subscribe(response2 => {
+                //                console.log(response2);
+                //                if(response2.status == true){
+                //                 localStorage.setItem('UserDetail',JSON.stringify(response2.data[0]));
+                //                 }
+                //            })    
+                this.viewCtrl.dismiss({
+                    address: this.data.additional + ' ' + this.autocomplete.query + '   ' + citytosend,
+                    lati: this.lat,
+                    longi: this.long
+                });
+            }
         }
     };
     NominatimapPage.prototype.clearMarkers = function () {
@@ -11083,7 +11688,7 @@ __decorate([
 ], NominatimapPage.prototype, "mapElement", void 0);
 NominatimapPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-nominatimap',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\nominatimap\nominatimap.html"*/'<!--\n  Generated template for the NominatimapPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <!--<ion-buttons start (click)="dismiss()">\n      <button ion-button icon-only>\n        \n      </button>\n    </ion-buttons>-->\n\n    <ion-title></ion-title>\n    \n    <ion-buttons end (click)="closeModal()">\n        <button clear ion-button>Save</button>\n    </ion-buttons>\n      <ion-buttons start (click)="clsmodel()">\n        <button clear ion-button>Cancel</button>\n    </ion-buttons>\n  </ion-navbar>\n   <ion-toolbar class="toolbar_top" style="padding: 0 7px 0px 7px; background: #fff; min-height: auto; padding-top: 10px;">\n     <ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;" id="cittt" [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n  <ion-option value="Bogota" selected>Bogotá DC, Bogotá DC</ion-option>\n  <ion-option value="cun_soacha">Soacha, Cundinamarca</ion-option>\n  <ion-option value="cun_mosquera"> Mosquera, Cundinamarca</ion-option>\n  <ion-option value="cun_madrid">Madrid, Cundinamarca</ion-option>\n  <ion-option value="cun_cajica">Cajicá, Cundinamarca</ion-option>\n<!--  <ion-option value="cun_soacha">Soacha, Cundinamarca</ion-option>-->\n  <ion-option value="cun_sopo">Sopó, Cundinamarca</ion-option>\n  <ion-option value="Facatativá">Facatativá, Cundinamarca</ion-option>\n  <ion-option value="tenjo">Tenjo,Cundinamarca</ion-option>\n  <ion-option value="tocancipa">Tocancipa, Cundinamarca</ion-option>\n  <ion-option value="guasca">Guasca, Cundinamarca</ion-option>\n  <ion-option value="anapoima">Anapoima, Cundinamarca</ion-option>\n  <ion-option value="villeta">Villeta, Cundinamarca</ion-option>\n  <ion-option value="la_vega">La Vega, Cundinamarca</ion-option>\n  <ion-option value="La Mesa">La Mesa, Cundinamarca</ion-option>\n</ion-select>\n   </ion-toolbar>\n\n<div class="searchouter">\n<ion-searchbar \n   [(ngModel)]="autocomplete.query" \n   [showCancelButton]="true" \n   (ionInput)="updateSearch()" \n   (ionCancel)="dismiss()"\n   placeholder="Start typing and select ..." required>\n </ion-searchbar>\n<!--    <button class="favbtn" (click)="fav(autocomplete.query)" ion-button icon-only>\n<ion-icon name="{{iconname}}" ></ion-icon>\n</button>-->\n    \n     <ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="omega == 0">\n      <ion-item *ngFor="let item of autocompleteItems;let i = index"\n      (click)="getItem(item)"  >\n     <span > {{ item.description }}</span>\n      </ion-item>\n      </ion-list> \n    <ion-list *ngIf="omega == 1;let i = index">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item.address }}\n      </ion-item>\n      </ion-list> \n     <ion-list *ngIf="omega == 2">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item }}\n      </ion-item>\n      </ion-list>\n</div>\n    \n<ion-toolbar class="toolbar_top" style="padding: 0 7px 7px 7px; background: #fff;">\n\n    \n<!--<ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;"  [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n    <ion-option *ngFor="let cit of arr" [value]="cit.city_code" name="hh">{{cit.city}},{{cit?.state}}</ion-option>\n</ion-select>-->\n   \n\n\n<ion-input type="text" placeholder=\'Additional Address Details\' [(ngModel)]="data.additional" name="additional" #additional="ngModel"  ></ion-input>\n\n    <button ion-button full color="theme-header" *ngIf="omega == 0" (click)="chooseItem()" [disabled]="!isenabled">Search</button>\n     <button ion-button full color="theme-header" *ngIf="omega == 1" (click)="chooseItem1()" [disabled]="!isenabled">Search</button>\n      <button ion-button full color="theme-header" *ngIf="omega == 2" (click)="chooseItem2()" [disabled]="!isenabled" >Search</button>\n</ion-toolbar>\n</ion-header>\n\n\n\n<ion-content>\n\n<!--    <ion-icon name="star" (click)="fav(autocomplete.query)">Add favourite</ion-icon>\n    <ion-item>\n      </ion-item>-->\n   \n    \n        \n<div #map id="map"></div>\n   \n    <!--<button ion-button (click)="saveaddress">Save Location</button>-->\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\nominatimap\nominatimap.html"*/,
+        selector: 'page-nominatimap',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\nominatimap\nominatimap.html"*/'<!--\n  Generated template for the NominatimapPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <!--<ion-buttons start (click)="dismiss()">\n      <button ion-button icon-only>\n        \n      </button>\n    </ion-buttons>-->\n\n    <ion-title></ion-title>\n    \n    <ion-buttons end (click)="closeModal()">\n        <button clear ion-button>Save</button>\n    </ion-buttons>\n      <ion-buttons start (click)="clsmodel()">\n        <button clear ion-button>Cancel</button>\n    </ion-buttons>\n  </ion-navbar>\n   <ion-toolbar class="toolbar_top" style="padding: 0 7px 0px 7px; background: #fff; min-height: auto; padding-top: 10px;">\n     <ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;" id="cittt" [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n  <ion-option value="Bogota" selected>Bogotá DC, Bogotá DC</ion-option>\n  <ion-option value="cun_soacha">Soacha, Cundinamarca</ion-option>\n  <ion-option value="cun_mosquera"> Mosquera, Cundinamarca</ion-option>\n  <ion-option value="cun_madrid">Madrid, Cundinamarca</ion-option>\n  <ion-option value="cun_cajica">Cajicá, Cundinamarca</ion-option>\n  <ion-option value="cun_sopo">Sopó, Cundinamarca</ion-option>\n  <ion-option value="cun_facatativa">Facatativá, Cundinamarca</ion-option>\n  <ion-option value="cun_tenjo">Tenjo,Cundinamarca</ion-option>\n  <ion-option value="cun_tocancipa">Tocancipa, Cundinamarca</ion-option>\n  <ion-option value="cun_guasca">Guasca, Cundinamarca</ion-option>\n  <ion-option value="cun_anapoima">Anapoima, Cundinamarca</ion-option>\n  <ion-option value="cun_villeta">Villeta, Cundinamarca</ion-option>\n  <ion-option value="cun_la_vega">La Vega, Cundinamarca</ion-option>\n  <ion-option value="cun_la_mesa">La Mesa, Cundinamarca</ion-option>\n</ion-select>\n   </ion-toolbar>\n\n<div class="searchouter">\n<ion-searchbar \n   [(ngModel)]="autocomplete.query" \n   [showCancelButton]="true" \n   (ionInput)="updateSearch()" \n   (ionCancel)="dismiss()"\n   placeholder="Start typing and select ..." required>\n </ion-searchbar>\n<!--    <button class="favbtn" (click)="fav(autocomplete.query)" ion-button icon-only>\n<ion-icon name="{{iconname}}" ></ion-icon>\n</button>-->\n    \n<!--     <ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="omega == 0">\n      <ion-item *ngFor="let item of autocompleteItems;let i = index"\n      (click)="getItem(item)"  >\n     <span > {{ item.description }}</span>\n      </ion-item>\n      </ion-list> \n    <ion-list *ngIf="omega == 1;let i = index">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item.address }}\n      </ion-item>\n      </ion-list> \n     <ion-list *ngIf="omega == 2">\n      <ion-item *ngFor="let item of autocompleteItems" \n      (click)="getItem(item)">\n      {{ item }}\n      </ion-item>\n      </ion-list>-->\n</div>\n    \n<ion-toolbar class="toolbar_top" style="padding: 0 7px 7px 7px; background: #fff;">\n\n    \n<!--<ion-select  placeholder="Select city" style=" max-width: 100%; background: #fff; padding: 8px 10px; margin-bottom: 3px;"  [(ngModel)]="data.city" name="city" #city="ngModel" (ionChange)="city1(data.city)"  required>\n    <ion-option *ngFor="let cit of arr" [value]="cit.city_code" name="hh">{{cit.city}},{{cit?.state}}</ion-option>\n</ion-select>-->\n   \n\n\n<ion-input type="text" placeholder=\'Additional Address Details\' [(ngModel)]="data.additional" name="additional" #additional="ngModel"  ></ion-input>\n\n    <!--<button ion-button full color="theme-header" *ngIf="omega == 0" (click)="chooseItem()" [disabled]="!isenabled">Search</button>-->\n     <button ion-button full color="theme-header" (click)="Searchlocation()" [disabled]="!isenabled">Search</button>\n      <!--<button ion-button full color="theme-header" *ngIf="omega == 2" (click)="chooseItem2()" [disabled]="!isenabled" >Search</button>-->\n</ion-toolbar>\n</ion-header>\n\n\n\n<ion-content>\n\n<!--    <ion-icon name="star" (click)="fav(autocomplete.query)">Add favourite</ion-icon>\n    <ion-item>\n      </ion-item>-->\n   \n    \n        \n<div #map id="map"></div>\n   \n    <!--<button ion-button (click)="saveaddress">Save Location</button>-->\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\nominatimap\nominatimap.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */],
@@ -11102,14 +11707,14 @@ NominatimapPage = __decorate([
 
 /***/ }),
 
-/***/ 65:
+/***/ 66:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rating_rating__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rating_rating__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_appsetting__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11180,9 +11785,9 @@ var ReviewsPage = (function () {
                 response.average_rating = Number((response.average_rating).toFixed(1));
                 console.log(response.average_rating);
                 var Loading = _this.loadingCtrl.create({
-                    spinner: 'hide',
+                    spinner: 'bubbles',
                     cssClass: 'loader',
-                    content: "<img src='assets/img/icons3.gif'>",
+                    content: "Loading",
                     dismissOnPageChange: true
                 });
                 Loading.present().then(function () {
@@ -11456,22 +12061,22 @@ Appsetting = __decorate([
 
 /***/ }),
 
-/***/ 93:
+/***/ 94:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__whyrafaho_whyrafaho__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__help_help__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__terms_terms__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__editprofile_editprofile__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__editprefrence_editprefrence__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__addwallet_addwallet__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__frequentquestion_frequentquestion__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__feedback_feedback__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__changepwd_changepwd__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__whyrafaho_whyrafaho__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__help_help__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__terms_terms__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__editprofile_editprofile__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__editprefrence_editprefrence__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__addwallet_addwallet__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__frequentquestion_frequentquestion__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__feedback_feedback__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__changepwd_changepwd__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__signin_signin__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_appsetting__ = __webpack_require__(9);
@@ -11540,9 +12145,9 @@ var ProfilePage = (function () {
         var serialized = this.serializeObj(postdata);
         console.log(postdata);
         var Loading = this.loadingCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(function () {
@@ -11674,7 +12279,7 @@ ProfilePage = __decorate([
 
 /***/ }),
 
-/***/ 95:
+/***/ 96:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11688,12 +12293,13 @@ ProfilePage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_appsetting__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_device__ = __webpack_require__(312);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_fcm__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_device__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_fcm__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_geolocation__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__nominatimap_nominatimap__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular2_countrypicker__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular2_countrypicker__ = __webpack_require__(314);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angular2_countrypicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_angular2_countrypicker__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_android_permissions__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11718,6 +12324,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the SignupPage page.
  *
@@ -11725,7 +12332,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var SignupPage = (function () {
-    function SignupPage(navCtrl, navParams, toastCtrl, geolocation, appsetting, fcm, nativeGeocoder, http, device, alertCtrl, loadingCtrl, modalCtrl, countryPickerService, events) {
+    // permissions = cordova.plugins.permissions;
+    function SignupPage(navCtrl, navParams, toastCtrl, geolocation, appsetting, fcm, androidPermissions, nativeGeocoder, http, device, alertCtrl, loadingCtrl, modalCtrl, countryPickerService, events) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -11733,6 +12341,7 @@ var SignupPage = (function () {
         this.geolocation = geolocation;
         this.appsetting = appsetting;
         this.fcm = fcm;
+        this.androidPermissions = androidPermissions;
         this.nativeGeocoder = nativeGeocoder;
         this.http = http;
         this.device = device;
@@ -11742,6 +12351,7 @@ var SignupPage = (function () {
         this.countryPickerService = countryPickerService;
         this.events = events;
         this.key = false;
+        this.locationstatus = false;
         this.savd = [];
         this.Ctype = 'password';
         this.iconname1 = 'eye';
@@ -11925,9 +12535,9 @@ var SignupPage = (function () {
                 if (this.lat != null) {
                     var Serialized = this.serializeObj(postdata);
                     var Loading = this.loadingCtrl.create({
-                        spinner: 'hide',
+                        spinner: 'bubbles',
                         cssClass: 'loader',
-                        content: "<img src='assets/img/icons3.gif'>",
+                        content: "Loading",
                         dismissOnPageChange: true
                     });
                     Loading.present().then(function () {
@@ -11975,9 +12585,9 @@ var SignupPage = (function () {
     SignupPage.prototype.GetLocation = function () {
         var _this = this;
         var Loading = this.loadingCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(function () {
@@ -11986,6 +12596,7 @@ var SignupPage = (function () {
                 //
                 // resp.coords.longitude
                 console.log('latitude:' + resp.coords.latitude + 'longitude:' + resp.coords.longitude);
+                _this.locationstatus = true;
                 // this.lat = resp.coords.latitude;
                 // this.long = resp.coords.longitud
                 //      let timerId = setInterval(() =>  Loading.dismiss(), 5000);
@@ -12159,17 +12770,22 @@ var SignupPage = (function () {
     };
     SignupPage.prototype.openmapmodal = function () {
         var _this = this;
-        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_11__nominatimap_nominatimap__["a" /* NominatimapPage */]);
-        modal.onDidDismiss(function (data) {
-            _this.data.address = data.address;
-            console.log(_this.data.address);
-            console.log(data.lati);
-            console.log(data.longi);
-            _this.lat = data.lati;
-            _this.long = data.longi;
-            _this.AlertMsg4('Your Location:' + _this.data.address + ' ' + ' is  saved');
-        });
-        modal.present();
+        if (this.locationstatus == true) {
+            var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_11__nominatimap_nominatimap__["a" /* NominatimapPage */]);
+            modal.onDidDismiss(function (data) {
+                _this.data.address = data.address;
+                console.log(_this.data.address);
+                console.log(data.lati);
+                console.log(data.longi);
+                _this.lat = data.lati;
+                _this.long = data.longi;
+                _this.AlertMsg4('Your Location:' + _this.data.address + ' ' + ' is  saved');
+            });
+            modal.present();
+        }
+        else {
+            this.ToastMsg1('Please enable your Location');
+        }
     };
     SignupPage.prototype.ngOnInit = function () {
         this.date = __WEBPACK_IMPORTED_MODULE_2_moment__(new Date()).format('YYYY-MM-DD');
@@ -12198,7 +12814,7 @@ var SignupPage = (function () {
 }());
 SignupPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-signup',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\signup\signup.html"*/'<!--\n  Generated template for the SignupPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header hidden>\n    <ion-toolbar>\n        <ion-title>Menu</ion-title>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n    <div class="main">\n        <div class="top-img">\n            <img src="assets/img/signup-bg.png">\n        </div>\n        <div class="bottom-img">\n            <img src="assets/img/tpbg.png">\n        </div>\n        <div class="text-sec">\n            <h2>Sign In</h2>\n            <h3>Welcome to <span>Rafaho</span> app</h3>\n        </div>\n        <div class="logo">\n            <img src="assets/img/logo.png">\n        </div>\n    </div>\n    <div class="content-sec">\n        <div class="sign">\n            <form class="form-sec" #registrationForm="ngForm" novalidate (submit)="Registration(registrationForm)">\n                  <ion-list >\n                    <ion-grid>\n                        <ion-row>\n                            <ion-col col-6 class="left">\n                                <ion-item>\n                                    <ion-label stacked>First name</ion-label>\n                                    <ion-input type="text" [(ngModel)]="data.firstname" name="firstname" #firstname="ngModel" required></ion-input>\n                                </ion-item>\n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="firstname.errors && (firstname.dirty || firstname.touched)">\n                                        <div [hidden]="!firstname.errors.required">\n                                            First name is required\n                                        </div>\n                                    </div>\n                                </div>\n                            </ion-col>\n                            <ion-col col-6 class="right">\n                                <ion-item>\n                                    <ion-label stacked>Last name</ion-label>\n                                    <ion-input type="text" [(ngModel)]="data.lastname" name="lastname" #lastname="ngModel" required></ion-input>\n                                </ion-item>\n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="lastname.errors && (lastname.dirty || lastname.touched)">\n                                        <div [hidden]="!lastname.errors.required">\n                                            Last name is required\n                                        </div>\n                                    </div>\n                                </div>\n                            </ion-col>\n                            <ion-col col-6 class="left">\n                                <ion-item>\n                                    <ion-label stacked>Birthday</ion-label>\n                                    <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY"  [(ngModel)]="data.dob" name="dob" #dob="ngModel" max="{{date}}" required></ion-datetime>\n                                </ion-item>\n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="dob.errors && (dob.dirty || dob.touched)">\n                                        <div [hidden]="!dob.errors.required">\n                                            What\'s your date of birth?\n                                        </div>\n                                    </div>\n                                </div>\n                            </ion-col>\n                            <ion-col col-6 class="right gender">\n                                <ion-label>Gender</ion-label>\n                                <ion-item>\n                                    <ion-select [(ngModel)]="data.gender" name="gender" #gender="ngModel" required>\n                                        <ion-option value="female">Female</ion-option>\n                                        <ion-option value="male">Male</ion-option>\n                                    </ion-select>\n                                </ion-item>\n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="gender.errors && (gender.dirty || gender.touched)">\n                                        <div [hidden]="!gender.errors.required">\n                                            You are?\n                                        </div>\n                                    </div>\n                                </div>\n                            </ion-col>\n\n                            <!--                <ion-col col-12 class="right gender">\n                                                                                    <ion-label>ENTER CITY</ion-label>\n                                                                              <ion-item>\n                                                                                      <ion-select [(ngModel)]="data.city" name="city" #city="ngModel" required>\n                                                                                        <ion-option *ngFor="let cit of arr" value="{{cit.city_code}}" name="hh">{{cit.city}},{{cit?.state}}</ion-option>\n                                                                                        \n                                                                                      </ion-select>\n                                                                              </ion-item>\n                                                                                    <div class="alert alert-danger" color="danger">\n                                              <div *ngIf="city.errors && (city.dirty || city.touched)">\n                                                <div [hidden]="!city.errors.required">\n                                                  City is required\n                                                </div>\n                                              </div>\n                                            </div>\n                                                                            </ion-col>   \n                            -->\n\n                            <button color=\'dark\' ion-button full type="button" (click)="openmapmodal()" ><ion-icon style="margin-right: 5px;" name="pin"></ion-icon>ADD ADDRESS</button>\n\n                            <!--                             <ion-col col-12 class="left right">\n                                                                              <div style="position: relative; overflow: hidden;">\n                            \n                                              <ion-icon ios="ios-search-outline" md="md-search" (click)="openmapmodal()" style="position: absolute;\n                                              top: 4px;\n                                              right: -24px;\n                                              width: 50px;\n                                              height: 50px;\n                                              /* display: block; */\n                                              color: #a6a6a6;\n                                              z-index: 999; \n                                              font-size:26px;\n                                              "></ion-icon>\n                                              <button>click here</button>\n                            \n                                            <ion-item>\n                                              <ion-label stacked>ADDRESS </ion-label>\n                                              \n                                              <ion-input type="text" placeholder="Type and click search"  [(ngModel)]= "data.address" name="address" #address="ngModel" required></ion-input>\n                                              \n                                            </ion-item>\n                                          </div>		\n                                                                            </ion-col>       -->\n\n\n                            <!--						<ion-col col-12 class="left right">\n                                                                              <div style="position: relative; overflow: hidden;">\n                            \n                                              <ion-icon ios="ios-locate-outline" md="md-locate" (click)="openmapmodal()" style="position: absolute;\n                                              top: 4px;\n                                              right: -24px;\n                                              width: 50px;\n                                              height: 50px;\n                                              /* display: block; */\n                                              color: #000;\n                                              z-index: 999; \n                                              font-size:26px;\n                                              "></ion-icon>\n                            \n                                            <ion-item>\n                                              <ion-label stacked>ADDRESS </ion-label>\n                                              \n                                              <ion-input  (focus)="lupap()" type="text" [(ngModel)]= "data.address" name="address" #address="ngModel" required></ion-input>\n                                              \n                                            </ion-item>\n                                          </div>		\n                                                                            </ion-col>-->\n                            <ion-col col-12 class="left right">\n                                <ion-item>\n                                    <ion-label stacked>Phone Number (xxx-xxx-xxxx)</ion-label>\n                                    <ion-input (input)="phonevalidation(data.phone)" type="tel" [(ngModel)]="data.phone" name="phone" #phone="ngModel" pattern="^[0-9]+(-[0-9]+)+$" maxlength="12" required></ion-input>\n                                </ion-item>\n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="phone.errors && (phone.dirty || phone.touched)">\n                                        <div [hidden]="!phone.errors.required">\n                                            Phone number required\n                                        </div>\n                                        <div [hidden]="!phone.errors.pattern">\n                                            Only number allowed\n                                        </div>\n                                    </div>\n                                </div>\n                            </ion-col>\n                            <ion-col col-12 class="left right">\n                                <ion-item>\n                                    <ion-label stacked>Email</ion-label>\n                                    <ion-input type="email" [(ngModel)]="data.email" name="email" #email="ngModel" pattern="^[a-z0-9]+(\.[_a-z0-9]+)+([@{1}])+(\.[a-z0-9-]+)+([.{1}])(\.[a-z]{1,15})$" required></ion-input>\n                                </ion-item>\n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="email.errors && (email.dirty || email.touched)">\n                                        <div [hidden]="!email.errors.required">\n                                            Email is required\n                                        </div>\n                                        <div [hidden]="!email.errors.pattern">\n                                            Invalid email\n                                        </div>\n                                    </div>\n                                </div>\n                            </ion-col>\n\n\n                            <ion-item  > \n                                <ion-label stacked>Password</ion-label>\n                                <ion-input type="{{ptype}}" [(ngModel)]="data.password" name="password" #password="ngModel" pattern="(?!^[0-9]*$)(?!^[0-9@/*/-/#/&/^/$/\/|/;/_/,/~/?/!/./\'\'/`/<>/%/:/{}/()/+/=]*$)(?!^[a-zA-Z@/*/#/&/^/$/;/_/,/~/?/\/|/\'\'/-/`/./\/!/<>/%/:/()/{}/+/=]*$)(?!^[a-zA-Z0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9@/*/#/&/$/;/_/{}/%/:/^/?/~/`/\'\'/|/,/-/<>/!/\/./()/+/=]{6,30})" required></ion-input>\n                                <button class="eyemain" ion-button clear type="button" color="dark" item-right>\n                                    <ion-icon name="{{iconname}}" (click)="showPassword()" ></ion-icon>\n                                </button>\n\n                            </ion-item>\n                            <!--<ion-icon name="{{iconname}}" (click)="showPassword()" ></ion-icon>-->      \n                            <div class="alert alert-danger red" color="danger">\n                                <div *ngIf="password.errors && (password.dirty || password.touched)">\n                                    <div [hidden]="!password.errors.required">\n                                        Password is required\n                                    </div>\n                                    <div [hidden]="!password.errors.minlength">\n                                        Password must be at least 6 digits\n                                    </div>\n                                    <div [hidden]="!password.errors.pattern">\n                                        Password is weak(It should be combination of a-z/A-Z,0-9/@*#)\n                                    </div>\n\n                                </div>  </div>\n\n\n\n                            \n                                <ion-item>\n                                    <ion-label stacked>Confirm Password</ion-label>\n                                    <ion-input type="{{Ctype}}" [(ngModel)]="data.cpassword" (input)="handleKeyboardEvent($event,data.password,data.cpassword)" name="cpassword" #cpassword="ngModel" required></ion-input>\n                                    <button class="eyemain" ion-button clear type="button" color="dark" item-right>\n                                        <ion-icon name="{{iconname1}}" (click)="showCPassword()" ></ion-icon>\n                                    </button>\n                                </ion-item>\n                                <!--<ion-icon name="{{iconname1}}" (click)="showCPassword()"></ion-icon>-->\n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="key == false && cpassword.errors && (cpassword.dirty || cpassword.touched)">\n                                        <div [hidden]="!cpassword.errors.required">\n                                            Confirm password is required\n                                        </div>\n\n                                    </div>\n                                    <div *ngIf="data.cpassword">\n                                        <div *ngIf="key != true && (cpassword.dirty || cpassword.touched)">\n\n                                            <span>Password mismatch </span> \n                                        </div>\n                                    </div>\n                                </div>\n\n                        </ion-row>\n                    </ion-grid>\n                </ion-list>\n                <div class="frgtpwd">\n                    <button ion-button type="submit" [disabled]="!registrationForm.valid">Register</button>\n                </div>\n            </form>\n        </div>\n        <div class="frgtpwd" >\n            <h3 class="register">I have an account? <span (click)="login()">Login</span></h3>\n        </div>\n\n    </div>\n    <!--   <md-input-container>\n      <md-select name="countrypicker">\n        <md-option *ngFor="let c of countries">{{c.capital}}</md-option>\n      </md-select>\n    </md-input-container>-->\n</ion-content>\n'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\signup\signup.html"*/,
+        selector: 'page-signup',template:/*ion-inline-start:"D:\grahakbhojnalya\src\pages\signup\signup.html"*/'<!--\n  Generated template for the SignupPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header hidden>\n    <ion-toolbar>\n        <ion-title>Menu</ion-title>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n    <div class="main">\n        <div class="top-img">\n            <img src="assets/img/signup-bg.png">\n        </div>\n        <div class="bottom-img">\n            <img src="assets/img/tpbg.png">\n        </div>\n        <div class="text-sec">\n            <h2>Sign In</h2>\n            <h3>Welcome to <span>Rafaho</span> app</h3>\n        </div>\n        <div class="logo">\n            <img src="assets/img/logo.png">\n        </div>\n    </div>\n    <div class="content-sec">\n        <div class="sign">\n            <form class="form-sec" #registrationForm="ngForm" novalidate (submit)="Registration(registrationForm)">\n                  <ion-list >\n                    <ion-grid>\n                        <ion-row>\n                            <ion-col col-6 class="left">\n                                <ion-item>\n                                    <ion-label stacked>First name</ion-label>\n                                    <ion-input type="text" [(ngModel)]="data.firstname" name="firstname" #firstname="ngModel" required></ion-input>\n                                </ion-item>\n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="firstname.errors && (firstname.dirty || firstname.touched)">\n                                        <div [hidden]="!firstname.errors.required">\n                                            First name is required\n                                        </div>\n                                    </div>\n                                </div>\n                            </ion-col>\n                            <ion-col col-6 class="right">\n                                <ion-item>\n                                    <ion-label stacked>Last name</ion-label>\n                                    <ion-input type="text" [(ngModel)]="data.lastname" name="lastname" #lastname="ngModel" required></ion-input>\n                                </ion-item>\n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="lastname.errors && (lastname.dirty || lastname.touched)">\n                                        <div [hidden]="!lastname.errors.required">\n                                            Last name is required\n                                        </div>\n                                    </div>\n                                </div>\n                            </ion-col>\n                            <ion-col col-6 class="left">\n                                <ion-item>\n                                    <ion-label stacked>Birthday</ion-label>\n                                    <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY"  [(ngModel)]="data.dob" name="dob" #dob="ngModel" max="{{date}}" required></ion-datetime>\n                                </ion-item>\n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="dob.errors && (dob.dirty || dob.touched)">\n                                        <div [hidden]="!dob.errors.required">\n                                            What\'s your date of birth?\n                                        </div>\n                                    </div>\n                                </div>\n                            </ion-col>\n                            <ion-col col-6 class="right gender">\n                                <ion-label>Gender</ion-label>\n                                <ion-item>\n                                    <ion-select [(ngModel)]="data.gender" name="gender" #gender="ngModel" required>\n                                        <ion-option value="female">Female</ion-option>\n                                        <ion-option value="male">Male</ion-option>\n                                    </ion-select>\n                                </ion-item>\n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="gender.errors && (gender.dirty || gender.touched)">\n                                        <div [hidden]="!gender.errors.required">\n                                            You are?\n                                        </div>\n                                    </div>\n                                </div>\n                            </ion-col>\n\n                            <!--                <ion-col col-12 class="right gender">\n                                                                                    <ion-label>ENTER CITY</ion-label>\n                                                                              <ion-item>\n                                                                                      <ion-select [(ngModel)]="data.city" name="city" #city="ngModel" required>\n                                                                                        <ion-option *ngFor="let cit of arr" value="{{cit.city_code}}" name="hh">{{cit.city}},{{cit?.state}}</ion-option>\n                                                                                        \n                                                                                      </ion-select>\n                                                                              </ion-item>\n                                                                                    <div class="alert alert-danger" color="danger">\n                                              <div *ngIf="city.errors && (city.dirty || city.touched)">\n                                                <div [hidden]="!city.errors.required">\n                                                  City is required\n                                                </div>\n                                              </div>\n                                            </div>\n                                                                            </ion-col>   \n                            -->\n\n                            <button color=\'dark\' ion-button full type="button" (click)="openmapmodal()" ><ion-icon style="margin-right: 5px;" name="pin"></ion-icon>ADD ADDRESS</button>\n\n                            <!--                             <ion-col col-12 class="left right">\n                                                                              <div style="position: relative; overflow: hidden;">\n                            \n                                              <ion-icon ios="ios-search-outline" md="md-search" (click)="openmapmodal()" style="position: absolute;\n                                              top: 4px;\n                                              right: -24px;\n                                              width: 50px;\n                                              height: 50px;\n                                              /* display: block; */\n                                              color: #a6a6a6;\n                                              z-index: 999; \n                                              font-size:26px;\n                                              "></ion-icon>\n                                              <button>click here</button>\n                            \n                                            <ion-item>\n                                              <ion-label stacked>ADDRESS </ion-label>\n                                              \n                                              <ion-input type="text" placeholder="Type and click search"  [(ngModel)]= "data.address" name="address" #address="ngModel" required></ion-input>\n                                              \n                                            </ion-item>\n                                          </div>		\n                                                                            </ion-col>       -->\n\n\n                            <!--						<ion-col col-12 class="left right">\n                                                                              <div style="position: relative; overflow: hidden;">\n                            \n                                              <ion-icon ios="ios-locate-outline" md="md-locate" (click)="openmapmodal()" style="position: absolute;\n                                              top: 4px;\n                                              right: -24px;\n                                              width: 50px;\n                                              height: 50px;\n                                              /* display: block; */\n                                              color: #000;\n                                              z-index: 999; \n                                              font-size:26px;\n                                              "></ion-icon>\n                            \n                                            <ion-item>\n                                              <ion-label stacked>ADDRESS </ion-label>\n                                              \n                                              <ion-input  (focus)="lupap()" type="text" [(ngModel)]= "data.address" name="address" #address="ngModel" required></ion-input>\n                                              \n                                            </ion-item>\n                                          </div>		\n                                                                            </ion-col>-->\n                            <ion-col col-12 class="left right">\n                                <ion-item>\n                                    <ion-label stacked>Phone Number (xxx-xxx-xxxx)</ion-label>\n                                    <ion-input (input)="phonevalidation(data.phone)" type="tel" [(ngModel)]="data.phone" name="phone" #phone="ngModel" pattern="^[0-9]+(-[0-9]+)+$" maxlength="12" required></ion-input>\n                                </ion-item>\n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="phone.errors && (phone.dirty || phone.touched)">\n                                        <div [hidden]="!phone.errors.required">\n                                            Phone number required\n                                        </div>\n                                        <div [hidden]="!phone.errors.pattern">\n                                            Only number allowed\n                                        </div>\n                                    </div>\n                                </div>\n                            </ion-col>\n                            <ion-col col-12 class="left right">\n                                <ion-item>\n                                    <ion-label stacked>Email</ion-label>\n                                    <ion-input type="text" [(ngModel)]="data.email" name="email" #email="ngModel" pattern="^[a-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{1,63})$" required></ion-input>\n                                </ion-item>                                                                                \n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="email.errors && (email.dirty || email.touched)">  \n                                        <div [hidden]="!email.errors.required">\n                                            Email is required\n                                        </div>\n                                        <div [hidden]="!email.errors.pattern">\n                                            Invalid email\n                                        </div>\n                                    </div>\n                                </div>\n                            </ion-col>\n\n\n                            <ion-item  > \n                                <ion-label stacked>Password</ion-label>\n                                <ion-input type="{{ptype}}" [(ngModel)]="data.password" name="password" #password="ngModel" pattern="(?!^[0-9]*$)(?!^[0-9@/*/-/#/&/^/$/\/|/;/_/,/~/?/!/./\'\'/`/<>/%/:/{}/()/+/=]*$)(?!^[a-zA-Z@/*/#/&/^/$/;/_/,/~/?/\/|/\'\'/-/`/./\/!/<>/%/:/()/{}/+/=]*$)(?!^[a-zA-Z0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9@/*/#/&/$/;/_/{}/%/:/^/?/~/`/\'\'/|/,/-/<>/!/\/./()/+/=]{6,30})" required></ion-input>\n                                <button class="eyemain" ion-button clear type="button" color="dark" item-right>\n                                    <ion-icon name="{{iconname}}" (click)="showPassword()" ></ion-icon>\n                                </button>\n\n                            </ion-item>\n                            <!--<ion-icon name="{{iconname}}" (click)="showPassword()" ></ion-icon>-->      \n                            <div class="alert alert-danger red" color="danger">\n                                <div *ngIf="password.errors && (password.dirty || password.touched)">\n                                    <div [hidden]="!password.errors.required">\n                                        Password is required\n                                    </div>\n                                    <div [hidden]="!password.errors.minlength">\n                                        Password must be at least 6 digits\n                                    </div>\n                                    <div [hidden]="!password.errors.pattern">\n                                        Password is weak(It should be combination of a-z/A-Z,0-9/@*#)\n                                    </div>\n\n                                </div>  </div>\n\n\n\n                            \n                                <ion-item>\n                                    <ion-label stacked>Confirm Password</ion-label>\n                                    <ion-input type="{{Ctype}}" [(ngModel)]="data.cpassword" (input)="handleKeyboardEvent($event,data.password,data.cpassword)" name="cpassword" #cpassword="ngModel" required></ion-input>\n                                    <button class="eyemain" ion-button clear type="button" color="dark" item-right>\n                                        <ion-icon name="{{iconname1}}" (click)="showCPassword()" ></ion-icon>\n                                    </button>\n                                </ion-item>\n                                <!--<ion-icon name="{{iconname1}}" (click)="showCPassword()"></ion-icon>-->\n                                <div class="alert alert-danger red" color="danger">\n                                    <div *ngIf="key == false && cpassword.errors && (cpassword.dirty || cpassword.touched)">\n                                        <div [hidden]="!cpassword.errors.required">\n                                            Confirm password is required\n                                        </div>\n\n                                    </div>\n                                    <div *ngIf="data.cpassword">\n                                        <div *ngIf="key != true && (cpassword.dirty || cpassword.touched)">\n\n                                            <span>Password mismatch </span> \n                                        </div>\n                                    </div>\n                                </div>\n\n                        </ion-row>\n                    </ion-grid>\n                </ion-list>\n                <div class="frgtpwd">\n                    <button ion-button type="submit" [disabled]="!registrationForm.valid">Register</button>\n                </div>\n            </form>\n        </div>\n        <div class="frgtpwd" >\n            <h3 class="register">I have an account? <span (click)="login()">Login</span></h3>\n        </div>\n\n    </div>\n    <!--   <md-input-container>\n      <md-select name="countrypicker">\n        <md-option *ngFor="let c of countries">{{c.capital}}</md-option>\n      </md-select>\n    </md-input-container>-->\n</ion-content>\n<!--;[a-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$-->'/*ion-inline-end:"D:\grahakbhojnalya\src\pages\signup\signup.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
@@ -12206,6 +12822,7 @@ SignupPage = __decorate([
         __WEBPACK_IMPORTED_MODULE_10__ionic_native_geolocation__["a" /* Geolocation */],
         __WEBPACK_IMPORTED_MODULE_6__providers_appsetting__["a" /* Appsetting */],
         __WEBPACK_IMPORTED_MODULE_9__ionic_native_fcm__["a" /* FCM */],
+        __WEBPACK_IMPORTED_MODULE_13__ionic_native_android_permissions__["a" /* AndroidPermissions */],
         __WEBPACK_IMPORTED_MODULE_5__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
         __WEBPACK_IMPORTED_MODULE_7__angular_http__["Http"],
         __WEBPACK_IMPORTED_MODULE_8__ionic_native_device__["a" /* Device */],
@@ -12220,5 +12837,5 @@ SignupPage = __decorate([
 
 /***/ })
 
-},[372]);
+},[373]);
 //# sourceMappingURL=main.js.map

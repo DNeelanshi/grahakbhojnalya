@@ -72,9 +72,9 @@ response.average_rating = Number((response.average_rating).toFixed(1));
 
 console.log(response.average_rating);
   var Loading = this.loadingCtrl.create({
-                spinner: 'hide',
-                cssClass: 'loader',
-                content: "<img src='assets/img/icons3.gif'>",
+                spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
                 dismissOnPageChange: true
             });
             Loading.present().then(() => {

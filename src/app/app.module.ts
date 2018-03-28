@@ -50,6 +50,7 @@ import { CountryPickerModule } from 'angular2-countrypicker';
 import { MdSelectDispatcher } from 'md-select';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Ionic2RatingModule } from 'ionic2-rating';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 @NgModule({
   declarations: [
@@ -138,6 +139,7 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     Keyboard,
     Service,
     Appsetting,
+    AndroidPermissions,
      Device,
      FCM,
 InAppBrowser,

@@ -216,7 +216,8 @@ var Loading = this.loadingCtrl.create({
       var serialized = this.serializeObj(this.data);
        var Loading = this.loadingCtrl.create({
           spinner: 'bubbles',
-          cssClass: 'loader'
+            cssClass: 'loader',
+            content: "Loading",
         });
         Loading.present().then(() => {
       this.http.post(this.appsetting.myGlobalVar + 'addprefrence', serialized, options)
@@ -259,8 +260,9 @@ var Loading = this.loadingCtrl.create({
   }
   GetLocation(){
       var Loading = this.loadingCtrl.create({
-          spinner: 'bubbles',
-          cssClass: 'loader'
+           spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
         });
         Loading.present().then(() => {
     this.geolocation.getCurrentPosition().then((resp) => {

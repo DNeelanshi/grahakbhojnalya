@@ -221,9 +221,9 @@ export class EditprofilePage {
       console.log(this.data);
       var serialized = this.serializeObj(this.data);
        var Loading = this.loadingCtrl.create({
-          spinner: 'hide',
-    cssClass: 'loader',
-    content: "<img src='assets/img/icons3.gif'>",
+         spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
     dismissOnPageChange:true
         });
         Loading.present().then(() => {
@@ -311,9 +311,9 @@ CameraAction() {
             
             var serialized = this.serializeObj(postdata);
                  var Loading = this.loadingCtrl.create({
-       spinner: 'hide',
-    cssClass: 'loader',
-    content: "<img src='assets/img/icons3.gif'>",
+        spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
     dismissOnPageChange:true
      });
      Loading.present().then(() => {
@@ -366,9 +366,9 @@ this.http.post(this.appsetting.myGlobalVar +'user_profile_pic', postdata).map(re
 //            alert(postdata)
             var serialized = this.serializeObj(postdata);
      var Loading = this.loadingCtrl.create({
-       spinner: 'hide',
-    cssClass: 'loader',
-    content: "<img src='assets/img/icons3.gif'>",
+        spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
     dismissOnPageChange:true
      });
      Loading.present().then(() => {

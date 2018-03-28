@@ -45,7 +45,8 @@ public data:any = {}
   var Serialized = this.serializeObj(postdata);
   var Loading = this.loadingCtrl.create({
     spinner: 'bubbles',
-    cssClass: 'loader'
+            cssClass: 'loader',
+            content: "Loading",
   });
   Loading.present().then(() => {
   this.http.post(this.appsetting.myGlobalVar+'forgetpassword',Serialized,options).map(res=>res.json()).subscribe(response=>{

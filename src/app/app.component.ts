@@ -15,6 +15,7 @@ import { SelectdishPage } from '../pages/selectdish/selectdish';
 import { MapmodalPage } from '../pages/mapmodal/mapmodal';
 import { NominatimapPage } from '../pages/nominatimap/nominatimap';
 import { LocationPage } from '../pages/location/location';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 //import { Keyboard } from '@ionic-native/keyboard';
  
 @Component({
@@ -29,11 +30,12 @@ export class MyApp {
    
    public http:Http,
 
-  private platform: Platform, private toastCtrl:ToastController, private alertCtrl: AlertController,
+  private platform: Platform, private toastCtrl:ToastController, 
+  private androidPermissions: AndroidPermissions,private alertCtrl: AlertController,
   public appsetting: Appsetting)
         {
            
-             alert('Welcome to Rafaho.');
+             alert('Welcome to Rafaho app');
    platform.ready().then(() => {
 
 //           
@@ -49,8 +51,23 @@ export class MyApp {
       statusBar.hide();
       splashScreen.hide();
     });
-
-      
+//
+//      this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.GEOLOCATION).then(
+//  result =>{ console.log('Has permission?',result.hasPermission)
+//      if(result.hasPermission == true){}else{
+//          this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.GEOLOCATION, this.androidPermissions.PERMISSION.GET_ACCOUNTS]);
+//         
+//        let toast = this.toastCtrl.create({
+//            message: 'Turn on your location',
+//            duration: 3000,
+//            position: 'middle'
+//        });
+//        toast.present();
+//    
+//      }
+//  },
+//  err => {this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.GEOLOCATION)}
+//);
     
      if(localStorage.getItem('UserDetail')){
           this.rootPage = TabsPage;

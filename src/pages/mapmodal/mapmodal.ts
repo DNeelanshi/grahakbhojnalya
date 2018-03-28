@@ -162,6 +162,9 @@ console.log(newstr2);
                 console.log(response);
                 var ress = JSON.parse(response.data)
                 console.log(ress);
+                 if(ress.message == 'Not available credits'){
+                     this.ToastMsg('Sorry! No Credits available')
+                }
                 if(ress.message == 'Result not found'){
                     this.chooseItem();
 //                    this.nomiapi();
@@ -608,9 +611,9 @@ this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?countrycodes=
       // alert("working");
       // alert(lat+','+long);
         var Loading = this.loadCtrl.create({
-          spinner: 'hide',
-    cssClass: 'loader',
-    content: "<img src='assets/img/icons3.gif'>",
+           spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
     dismissOnPageChange:true
         });
         Loading.present().then(() => {
@@ -646,7 +649,9 @@ this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?countrycodes=
                     var resso = JSON.parse(response.data)
             console.log(resso.response)
 //            console.log(resso.response.properties.address);
-           
+           if(response.data == 'Not available credits'){
+                     this.ToastMsg('Sorry! No Credits available')
+                }
             if((resso.response == undefined)||(response.data == '{"message":"Result not found"}')||(resso.response.properties.address == null)){
         
         
@@ -938,7 +943,9 @@ this.boundsSet = false;
                     var resso = JSON.parse(response.data)
             console.log(resso.response)
 //            console.log(resso.response.properties.address);
-           
+            if(response.data == 'Not available credits'){
+                     this.ToastMsg('Sorry! No Credits available')
+                }
             if((resso.response == undefined)||(response.data == '{"message":"Result not found"}')||(resso.response.properties.address == null)){
         
                  this.geocoder.geocode({'location': latLong}, ((results, status)=>{
@@ -1100,7 +1107,7 @@ console.log(this.data.city);
       // alert("working1");
       }).catch((error) => {
     console.log('Error getting location', error);
-    this.ToastMsg('Please Turn On your Loaction!! <br>Error getting location'+','+error);
+    this.ToastMsg1('Please Turn On your Loaction!!.Error getting location');
     Loading.dismissAll();
       let latLng = new google.maps.LatLng(this.lat,this.long); 
    
@@ -1364,6 +1371,17 @@ watch.subscribe((data) => {
  
    
   }
+     ToastMsg1(msg){
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 4000,
+      position: 'middle'
+      
+    });
+     toast.present();
+ 
+   
+  }
   chooseItem1(){
       this.number = true
         let headers = new Headers();
@@ -1418,6 +1436,9 @@ watch.subscribe((data) => {
             console.log(response);
             var resso = JSON.parse(response.data)
             console.log(resso.response)
+             if(response.data == 'Not available credits'){
+                     this.ToastMsg('Sorry! No Credits available')
+                }
 //            console.log(resso.response.properties.address);
             if((resso.response == undefined)||(response.data == '{"message":"Result not found"}')||(resso.response.properties.address == null)){
 //                console.log(resso.response.properties);
@@ -1590,6 +1611,9 @@ console.log(this.data.city);
             console.log(response.data == '{"message":"Result not found"}');
            var resso = JSON.parse(response.data)
             console.log(resso.response)
+             if(response.data == 'Not available credits'){
+                     this.ToastMsg('Sorry! No Credits available')
+                }
 //            console.log(resso.response.properties.address);
             if((resso.response == undefined)||(response.data == '{"message":"Result not found"}'||(resso.response.properties.address == null))){
                  this.geocoder.geocode({'location': latLong}, ((results, status)=>{
@@ -1908,6 +1932,9 @@ this.autocompleteItems = [];
             console.log(response.data == '{"message":"Result not found"}');
            var resso = JSON.parse(response.data)
             console.log(resso.response)
+             if(response.data == 'Not available credits'){
+                     this.ToastMsg('Sorry! No Credits available')
+                }
 //            console.log(resso.response.properties.address);
             if((resso.response == undefined)||(resso.response.properties.address == null)||(response.data == '{"message":"Result not found"}')){
                  this.geocoder.geocode({'location': latLong}, ((results, status)=>{

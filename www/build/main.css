@@ -51633,7 +51633,7 @@ page-cart .text-sec .mid-sec {
 }
 
 page-cart .text-sec .mid-sec h5 {
-  width: 60%;
+  width: 100%;
   float: left;
   font-size: 12px;
   color: #000;
@@ -51642,26 +51642,27 @@ page-cart .text-sec .mid-sec h5 {
   position: relative;
 }
 
-page-cart .text-sec .mid-sec h5 a {
-  position: absolute;
-  top: 0;
-  left: 112px;
-  width: 15px;
-  height: 15px;
-}
-
-page-cart .text-sec .mid-sec h5 a img {
-  width: 100%;
-  float: left;
-}
-
 page-cart .text-sec .mid-sec p {
-  width: 60%;
+  width: 100%;
   float: left;
   font-size: 11px;
   color: #6a6a6a;
   font-weight: 500;
   margin: 0;
+}
+
+page-cart .text-sec .mid-sec ion-datetime {
+  width: 100%;
+  float: left;
+  font-size: 11px;
+  color: #6a6a6a;
+  font-weight: 500;
+  margin: 0;
+  padding: 0 !important;
+}
+
+page-cart .text-sec .mid-sec ion-datetime .item-cover {
+  display: none;
 }
 
 page-cart .left {
@@ -51723,47 +51724,17 @@ page-cart .content-sec .list {
   margin: 0px;
 }
 
-page-cart .content-sec .item .rghtbtn {
-  position: absolute;
-  top: -4px;
-  right: -2px;
-}
-
-page-cart .content-sec .item .rghtbtn .button {
-  background-color: #ff563f;
-  font-size: 12px;
-  border-radius: 0px;
-  padding: 2px 13px;
-  padding-left: 25px;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-}
-
-page-cart .content-sec .item .rghtbtn .button:before {
-  background: #f9f9f9 none repeat scroll 0 0;
-  content: "";
-  height: 108px;
-  position: absolute;
-  left: -7px;
-  -webkit-transform: skew(38deg);
-  transform: skew(38deg);
-  width: 50px;
-  margin: 0;
-  top: 0;
-}
-
 page-cart .content-sec .item {
   width: 100%;
   float: left;
-  border-top: none !important;
   border-bottom: 1px solid #c8c7cc;
   padding: 8px 14px 8px 14px;
   background-color: #f9f9f9;
-  -webkit-box-align: baseline;
-  -webkit-align-items: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
   position: relative;
+}
+
+page-cart .content-sec .item:first-child {
+  border-top: 1px solid #c8c7cc;
 }
 
 page-cart .content-sec .item .label {
@@ -51778,10 +51749,9 @@ page-cart .item-inner {
 page-cart .content-sec .item .label h2 {
   margin: 0;
   width: 100%;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
-  color: #000000;
-  padding-right: 70px;
+  color: #363636;
   white-space: normal;
 }
 
@@ -51793,30 +51763,21 @@ page-cart .content-sec .item .label p {
   font-weight: 500;
 }
 
-page-cart .content-sec .item .label h3 {
-  color: #383838;
-  font-size: 11px;
-  font-weight: 500;
-  width: 100%;
-  float: left;
-  margin-bottom: 0;
-}
-
 page-cart .item .left-p {
-  color: #383838;
-  font-size: 11px;
+  color: #363636;
+  font-size: 12px;
   font-weight: 500;
   padding-top: 5px;
   margin-right: 0px;
   position: absolute;
   right: 14px;
-  bottom: 8px;
+  bottom: 8px !important;
 }
 
 page-cart .content-sec .item ion-thumbnail {
-  width: 55px !important;
-  height: 55px !important;
-  margin: 0 8px 0 0 !important;
+  width: 47px !important;
+  height: 47px !important;
+  margin: 0 10px 0 0 !important;
   min-width: auto;
   min-height: auto;
 }
@@ -51836,6 +51797,8 @@ page-cart .total {
   width: 100%;
   float: left;
   padding: 14px;
+  padding-bottom: 0 !important;
+  padding-top: 7px;
 }
 
 page-cart .total h2 {
@@ -51843,26 +51806,27 @@ page-cart .total h2 {
   float: left;
   text-align: right;
   font-size: 13px;
-  color: #000;
-  font-weight: 700;
   margin: 0px;
+  color: #363636;
+  font-weight: 400;
 }
 
 page-cart .total .left {
-  width: 50%;
+  width: 60%;
   float: left;
-  text-align: right;
+  text-align: left;
 }
 
 page-cart .total .right {
-  width: 50%;
+  width: 40%;
   float: left;
   text-align: right;
+  color: #f27242;
 }
 
 page-cart .counter_sec {
   float: left;
-  width: 51px;
+  width: 63px;
   display: table;
   vertical-align: middle;
   border: 1px solid #afafaf;
@@ -51871,7 +51835,7 @@ page-cart .counter_sec {
 }
 
 page-cart .counter_sec input {
-  width: 17px;
+  width: 21px;
   text-align: center;
   border-top: none;
   border-bottom: none;
@@ -51879,17 +51843,17 @@ page-cart .counter_sec input {
   border-right: 1px solid #afafaf;
   float: left;
   vertical-align: middle;
-  height: 13px !important;
+  height: 18px !important;
   color: #626262;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 page-cart .counter_sec button {
   padding: 0px 3px !important;
   text-align: center;
-  height: 13px !important;
+  height: 18px !important;
   float: left;
-  width: 16px;
+  width: 20px;
   margin: 0;
   color: #626262;
   font-size: 11px;
@@ -51900,7 +51864,7 @@ page-cart .itembottom span {
   padding-left: 5px;
   width: 50%;
   float: left;
-  line-height: 15px;
+  line-height: 21px;
   color: #626262;
 }
 
@@ -51933,6 +51897,27 @@ page-cart .imgbtn {
 
 page-cart .cartouter .datetime-text {
   font-size: 13px;
+}
+
+page-cart .inner-sec {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+}
+
+page-cart .dlt {
+  position: absolute;
+  right: 13px;
+  top: 3px;
+}
+
+page-cart .ion-md-trash:before {
+  content: "\f4c5" !important;
+}
+
+page-cart .ion-md-close-circle:before {
+  content: "\f2bf";
+  color: #f27242;
 }
 
 page-changepwd .content-sec {
@@ -56068,7 +56053,7 @@ page-signin .content .main .logo img {
   width: 69%;
   position: absolute;
   left: 18px;
-  top: 13px;
+  top: 26px;
 }
 
 page-signin .content-sec {
@@ -56256,7 +56241,7 @@ page-signup .content .main .logo img {
   width: 69%;
   position: absolute;
   left: 18px;
-  top: 13px;
+  top: 26px;
 }
 
 page-signup .content-sec {

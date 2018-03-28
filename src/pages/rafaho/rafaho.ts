@@ -77,9 +77,9 @@ export class RafahoPage {
     }
       var serialized = this.serializeObj(postdata);
            var Loading = this.loadCtrl.create({
-       spinner: 'hide',
-    cssClass: 'loader',
-    content: "<img src='assets/img/icons3.gif'>",
+       spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
     dismissOnPageChange:true
      });
      Loading.present().then(() => {
@@ -145,9 +145,9 @@ export class RafahoPage {
     }
       var serialized = this.serializeObj(postdata);
            var Loading = this.loadCtrl.create({
-       spinner: 'hide',
-    cssClass: 'loader',
-    content: "<img src='assets/img/icons3.gif'>",
+       spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
     dismissOnPageChange:true
      });
      Loading.present().then(() => {
@@ -191,9 +191,9 @@ export class RafahoPage {
     }
       var serialized = this.serializeObj(postdata);
            var Loading = this.loadCtrl.create({
-      spinner: 'hide',
-    cssClass: 'loader',
-    content: "<img src='assets/img/icons3.gif'>",
+      spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
     dismissOnPageChange:true
      });
      Loading.present().then(() => {
@@ -239,9 +239,9 @@ export class RafahoPage {
     }
       var serialized = this.serializeObj(postdata);
            var Loading = this.loadCtrl.create({
-      spinner: 'hide',
-    cssClass: 'loader',
-    content: "<img src='assets/img/icons3.gif'>",
+      spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
     dismissOnPageChange:true
      });
      Loading.present().then(() => {

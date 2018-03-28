@@ -36,7 +36,8 @@ export class CartPage {
     date: any;
     bookalt: any;
     trans_id:any;
-   
+   Total1:any=0;
+   discount:any=0;
     test: any;
     data: any = {};
     subtotal: any = [];
@@ -123,9 +124,9 @@ export class CartPage {
         }
         var Serialized = this.serializeObj(postdata);
         var Loading = this.loadingCtrl.create({
-            spinner: 'hide',
+            spinner: 'bubbles',
             cssClass: 'loader',
-            content: "<img src='assets/img/icons3.gif'>",
+            content: "Loading",
             dismissOnPageChange: true
         });
         Loading.present().then(() => {
@@ -135,9 +136,9 @@ export class CartPage {
                 console.log(response.data.length);
                 if (response.data.length == 0) {
                     var Loading1 = this.loadingCtrl.create({
-                        spinner: 'hide',
-                        cssClass: 'loader',
-                        content: "<img src='assets/img/icons3.gif'>",
+                         spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
                         dismissOnPageChange: true
                     });
                     Loading1.present().then(() => {
@@ -283,9 +284,15 @@ export class CartPage {
         this.subtotal = JSON.parse(localStorage.getItem('Cartlist'));
         console.log(this.subtotal);
         this.total1 = 0;
+         this.Total1 =0;
+         this.discount =0;
+    
         for (var x = 0; x < this.subtotal.length; x++) {
-
+           this.discount = this.discount + (this.subtotal[x].discount/100)*this.subtotal[x].price_per_plate
             this.total1 = this.total1 + (this.subtotal[x].quantity * this.subtotal[x].price_per_plate)
+            console.log(this.total1 , this.discount);
+            this.Total1 = this.Total1 + (this.total1 - this.discount);
+//             this.Total1 = this.Total1 + (this.subtotal[x].quantity * ((this.subtotal[x].quantity/100)*this.subtotal[x].price_per_plate))
         }
     }
     //total(id,index){
@@ -335,28 +342,29 @@ export class CartPage {
             proname = proname.join(':');
             proquant = proquant.join(':');
             orderservice = orderservice.join(':');
+            proprice = proprice.join(':')
             console.log(proid,proname,proquant,orderservice);
      var postdata = {
       chef_id:this.chef._id,
       user_id:this.user._id,
     customer_address:this.str1+this.str2,
          booking_datetime: this.datetosend,
-    total_order_amount:this.total1,
+    total_order_amount:this.Total1,
     products_id:proid,
     products_quantity: proquant,
     products_name:proname,
     order_prefrence:orderservice,
     payment_status:1,
-    txn_id:  this.trans_id,
-    product_price:proprice
+    txn_id: this.trans_id,
+    products_price:proprice
            }
            console.log(postdata);
      var Serialized = this.serializeObj(postdata);
       var Serialized = this.serializeObj(postdata);
             var Loading = this.loadingCtrl.create({
-              spinner: 'hide',
-        cssClass: 'loader',
-        content: "<img src='assets/img/icons3.gif'>",
+             spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
         dismissOnPageChange:true
             });
             Loading.present().then(() => {
@@ -378,9 +386,9 @@ export class CartPage {
         this.navCtrl.push(LocationPage);
     }
     pyment() {
-        if( this.total1> 0 ){
+        if( this.Total1> 0 ){
 
-   var url = 'http://rafao.us-west-2.elasticbeanstalk.com/payment/amt='+this.total1+'=email='+this.user.email;
+   var url = 'http://rafao.us-west-2.elasticbeanstalk.com/payment/amt='+this.Total1+'=email='+this.user.email;
    
      var target = '_self'
     var options = 'location=no'

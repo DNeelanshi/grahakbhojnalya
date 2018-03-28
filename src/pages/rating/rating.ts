@@ -65,7 +65,7 @@ comment:this.data.comment
              }else if(response.status == true){
                  this.navCtrl.push(ReviewsPage);
              }else if(response.message == "Unable to add Comment and Rating!!"){
-                 this.AlertMsg1('Rate this chef')
+                 this.AlertMsg1('Please Rate this chef')
              }
         })
 }

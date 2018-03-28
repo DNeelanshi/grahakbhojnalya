@@ -56,22 +56,13 @@ export class NominatimapPage {
     markers:any=[];
   public longi:any;
   userdetail:any=[];
- 
+ infocontent:any;
   bb:any = [];
    geocoder = new google.maps.Geocoder();
  nomi:any;
    arr;
    public data: any = {};
-  countries = {
-        'Bogota': {
-          center: {lat: 4.624335 , lng: -74.063644},
-          zoom: 4
-        },
-        'cun_soacha': {
-          center: {lat: 8.305925, lng: 73.6117},
-          zoom: 3
-        }
-      };
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public viewCtrl: ViewController,
   public toastCtrl: ToastController,
@@ -88,6 +79,7 @@ export class NominatimapPage {
 //   alert('hello');
      this.userdetail = JSON.parse(localStorage.getItem('UserDetail'));
      console.log(this.userdetail);
+  
    this.cities();
    console.log(this.appsetting.saved);
   }
@@ -150,11 +142,11 @@ var newstr1=newstr.toString().replace(/ /g,"%20");
 var newstr2=newstr1.toString().replace(/–/g,"%2D");
 var newstr3=newstr2.toString().replace(/./g,"%2E");
 console.log(newstr2);
-if(this.data.city == undefined){
-    this.data.city='Bogota'
-}
-else{
+
     console.log(this.data.city)
+    if (this.data.city == undefined){
+    this.ToastMsg('Select some city')}
+        else{
           var postdata = {
            country_code:'co',
            country_name:this.data.city,
@@ -169,12 +161,17 @@ else{
                 console.log(response);
                 var ress = JSON.parse(response.data)
                 console.log(ress);
+                 if(ress.message == 'Not available credits'){
+                     this.ToastMsg('Sorry! No Credits available')
+                }
                 if(ress.message == 'Result not found'){
-                    this.nomiapi();
+                    this.chooseItem();
+//                    this.nomiapi();
                 }else{
                  console.log(ress.response);
                  console.log(ress.response.type);
                     console.log(ress.response.properties.address);
+                    this.infocontent = ress.response.properties.address;
                     console.log(ress.response.geometry.coordinates);
 
                 this.lats=ress.response.geometry.coordinates[1];
@@ -183,14 +180,16 @@ else{
 
                 this.description = ress.response.properties
                 this.autocompleteItems.push(this.description);
-                console.log(this.autocompleteItems);}
+                console.log(this.autocompleteItems);
+                this.chooseItem1();
+                }
             }
             },(err)=>{
                 this.ToastMsg('Something went Wrong');
-            });
+            });}
             
+    
             
-            }
   }
   fav(auto){
       var productid;
@@ -268,24 +267,19 @@ let options = new RequestOptions({ headers: headers})
           text: 'OK',
           role: 'submit',
           handler: () => {
-              this.iconname = 'star';
-              console.log(this.appsetting.saved);
-        this.appsetting.saved.push(auto);
-          if(this.data.city == undefined){
-           this.data.city = 'Bogota'
-       }
+             
         var citytosend
         switch(this.data.city){
-             case 'Bogota' : {
-                  citytosend = 'Bogota'
+              case 'Bogota' : {
+                  citytosend = 'Bogotá DC'
               break;}
               case 'cun_soacha' : {
                   citytosend = 'Soacha'
               break;}
               case 'cun_mosquera':{
-                  citytosend = 'Mosquera'
+                  citytosend = ' Mosquera'
               break;}
-              case 'Facatativá':{
+              case 'cun_facatativa':{
                   citytosend = 'Facatativá'
               break;}
               case 'cun_madrid':{
@@ -297,12 +291,37 @@ let options = new RequestOptions({ headers: headers})
                case 'cun_sopo' :{
                    citytosend = 'Sopó'
                break;}
+                 case 'cun_tenjo' :{
+                   citytosend = 'Tenjo'
+               break;}
+                 case 'cun_tocancipa' :{
+                   citytosend = 'Tocancipa'
+               break;}
+                 case 'cun_guasca' :{
+                   citytosend = 'Guasca'
+               break;}
+                 case 'cun_anapoima' :{
+                   citytosend = 'Anapoima'
+               break;}
+                 case 'cun_villeta' :{
+                   citytosend = 'Villeta'
+               break;}
+                 case 'cun_la_vega' :{
+                   citytosend = 'La Vega'
+               break;}
+                 case 'cun_la_mesa' :{
+                   citytosend = 'La Mesa'
+               break;}
                default:{
                    console.log('not found');
-
+//                   console.log(citiie[1])
                }
           }
         console.log(this.appsetting.saved);
+        if (citytosend == undefined) {this.ToastMsg('Select some city')}else{
+             this.iconname = 'star';
+              console.log(this.appsetting.saved);
+        this.appsetting.saved.push(auto);
         var postdata = {
             user_id: this.userdetail._id,
               favorite_address:auto+' '+citytosend
@@ -318,7 +337,7 @@ let options = new RequestOptions({ headers: headers})
             })
              localStorage.setItem('Favaddress',JSON.stringify(postdata));
 //        localStorage.setItem('Favaddress',JSON.stringify(this.appsetting.saved));
-
+          }
           }
         }
 
@@ -389,55 +408,66 @@ console.log('not matched');
 }
 
 
-if(this.number == true){
+//if(this.number == true){
+//    this.lupapsearch();
+//     this.omega = 1;
         //let self = this; 
-    setTimeout(()=>{    //<<<---    using ()=> syntax
-     let config = { 
-    //types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
-    input: this.autocomplete.query, 
-//    componentRestrictions: {  } 
-    componentRestrictions: {country: 'co'}
-    }
-    this.acService.getPlacePredictions(config, ((predictions, status)=> {
-    console.log('modal > getPlacePredictions > status > ', status);
-    if(status == 'ZERO_RESULTS'){
-        
-        this.lupapsearch();
-        this.omega = 1;
-         this.autocompleteItems = [];   
-    }else{
-      this.omega = 0;
-    this.autocompleteItems = [];   
-    console.log(predictions) 
-    for(var e = 0; e<=1; e++){
-     this.autocompleteItems.push(predictions[e]);
-    }     
-    console.log( this.autocompleteItems);   
-//    predictions.forEach(((prediction)=> {   
-//      console.log("abc")           
-//    this.autocompleteItems.push(prediction);
-//   
+//    setTimeout(()=>{    //<<<---    using ()=> syntax
+//     let config = { 
+//    //types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
+//    input: this.autocomplete.query, 
+////    componentRestrictions: {  } 
+//    componentRestrictions: {country: 'co'}
+//    }
+//    this.acService.getPlacePredictions(config, ((predictions, status)=> {
+//    console.log('modal > getPlacePredictions > status > ', status);
+//    if(status == 'ZERO_RESULTS'){
+//        
+//        this.lupapsearch();
+//        this.omega = 1;
+//         this.autocompleteItems = [];   
+//    }else{
+//      this.omega = 0;
+//    this.autocompleteItems = [];   
+//    console.log(predictions) 
+//    for(var e = 0; e<=1; e++){
+//     this.autocompleteItems.push(predictions[e]);
+//    }     
+//    console.log( this.autocompleteItems);   
+////    predictions.forEach(((prediction)=> {   
+////      console.log("abc")           
+////    this.autocompleteItems.push(prediction);
+////   
+////    })
+////   
+////   );
+//    }
+//   // return false;
 //    })
-//   
+//    
 //   );
-    }
-   // return false;
-    })
-    
-   );
-    this.number = true
- },8000);
+//    this.number = true
+// },2000);
  
     
    
-  }
-  else{
-    this.lupapsearch();
-  }
+//  }
+//  else{
+////    this.lupapsearch();
+////     this.omega = 1;
+//  }
   
 //else {
 //    this.nomiapi()
 //}
+    }
+    Searchlocation(){
+        console.log(this.number);
+        if(this.number == true){
+            this.lupapsearch();
+        }else{
+            this.nomiapi();
+        }
     }
 nomiapi(){
         console.log('it  is not  having number');
@@ -455,35 +485,36 @@ if(!this.number){
 this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?countrycodes=co&format=json&addressdetails=1&limit=1&polygon_svg=1',options).map(res => res.json()).subscribe(response => {
     console.log(response[0] );
     if( (response[0]== undefined)){
-            
-    let config = { 
-    //types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
-    input: this.autocomplete.query, 
-//    componentRestrictions: {  } 
-//    componentRestrictions: {country: 'co'}
-    }
-    this.acService.getPlacePredictions(config, ((predictions, status)=> {
-    console.log('modal > getPlacePredictions > status > ', status);
-    if(status == 'ZERO_RESULTS'){
-        
-       this.ToastMsg('Location not found')
-        this.omega = 1;
-         this.autocompleteItems = [];   
-    }else{
-      this.omega = 0;
-    this.autocompleteItems = [];   
-    console.log(predictions)         
-    predictions.forEach(((prediction)=> {   
-      console.log("abc")           
-    this.autocompleteItems.push(prediction);
-   
-    })
-   
-   ); }
-   // return false;
-    })
-    
-   );
+        this.lupapsearch();
+//            
+//    let config = { 
+//    //types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
+//    input: this.autocomplete.query, 
+////    componentRestrictions: {  } 
+////    componentRestrictions: {country: 'co'}
+//    }
+//    this.acService.getPlacePredictions(config, ((predictions, status)=> {
+//    console.log('modal > getPlacePredictions > status > ', status);
+//    if(status == 'ZERO_RESULTS'){
+//        
+//       this.ToastMsg('Location not found')
+//        this.omega = 1;
+//         this.autocompleteItems = [];   
+//    }else{
+//      this.omega = 0;
+//    this.autocompleteItems = [];   
+//    console.log(predictions)         
+//    predictions.forEach(((prediction)=> {   
+//      console.log("abc")           
+//    this.autocompleteItems.push(prediction);
+//   
+//    })
+//   
+//   ); }
+//   // return false;
+//    })
+//    
+//   );
 
     }else{
     if(response[0] != undefined){
@@ -531,6 +562,7 @@ this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?countrycodes=
      this.lat = response[0].lat
     this.long = response[0].lon
       console.log(this.lat,this.long)  
+      this.chooseItem2();
     }}
     else{
         console.log('neelanshi');
@@ -578,9 +610,9 @@ this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?countrycodes=
       // alert("working");
       // alert(lat+','+long);
         var Loading = this.loadCtrl.create({
-          spinner: 'hide',
-    cssClass: 'loader',
-    content: "<img src='assets/img/icons3.gif'>",
+           spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
     dismissOnPageChange:true
         });
         Loading.present().then(() => {
@@ -616,8 +648,10 @@ this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?countrycodes=
                     var resso = JSON.parse(response.data)
             console.log(resso.response)
 //            console.log(resso.response.properties.address);
-           
-            if((response.data == '{"message":"Result not found"}')||(resso.response.properties.address == null)){
+           if(response.data == 'Not available credits'){
+                     this.ToastMsg('Sorry! No Credits available')
+                }
+            if((resso.response == undefined)||(response.data == '{"message":"Result not found"}')||(resso.response.properties.address == null)){
         
         
        this.geocoder.geocode({'location': latLng}, ((results, status)=>{
@@ -637,6 +671,47 @@ this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?countrycodes=
           this.infowindow.open(this.map, marker1);
 //           this.data.city = results[0].address_components[0].long_name;
           this.autocomplete.query= results[0].formatted_address;
+           var citiie6 = results[0].formatted_address.split(',');
+           console.log(citiie6[1]);
+            switch(citiie6[1]){
+                 case ' Bogotá' : this.data.city = 'Bogota';
+               break;
+               case ' Bogota' :  this.data.city = 'Bogota';
+               break;
+              case ' Soacha' : {this.data.city = 'cun_soacha'
+              break;}
+              case ' Mosquera':{this.data.city = 'cun_mosquera'
+              break;}
+              case ' Facatativá':{this.data.city = 'cun_facatativa'
+              break;}
+              case ' Madrid':{this.data.city = 'cun_madrid'
+              break;}
+              case ' Cajicá':{this.data.city = 'cun_cajica'
+              break;}
+               case ' Sopó':{this.data.city = 'cun_sopo'
+               break;}
+                 case ' Tenjo':{this.data.city = 'cun_tenjo'
+               break;}
+                 case ' Tocancipa':{this.data.city = 'cun_tocancipa'
+               break;}
+                 case ' Guasca':{this.data.city = 'cun_guasca'
+               break;}
+                 case ' Anapoima':{this.data.city = 'cun_anapoima'
+               break;}
+                 case ' Villeta':{this.data.city = 'cun_villeta'
+               break;}
+                 case ' La Vega':{this.data.city = 'cun_la_vega'
+               break;}
+                 case ' La Mesa':{this.data.city = 'cun_la_mesa'
+               break;}
+               default:{
+                   console.log('not found');
+                   console.log(citiie6[1])
+                    this.data.city = 'Bogota';
+               }
+          }
+
+console.log(this.data.city);
                     }
    else if (results[1]) {
     this.autocomplete.query= results[1].formatted_address;
@@ -646,6 +721,48 @@ this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?countrycodes=
     
           this.infowindow.open(this.map, marker1);
            this.autocomplete.query= results[1].formatted_address;
+            var citiie8 = results[1].formatted_address.split(',');
+             this.data.city = '';
+           console.log(citiie8[1]);
+            switch(citiie8[1]){
+                                  case ' Bogotá' : this.data.city = 'Bogota';
+               break;
+               case ' Bogota' :  this.data.city = 'Bogota';
+               break;
+              case ' Soacha' : {this.data.city = 'cun_soacha'
+              break;}
+              case ' Mosquera':{this.data.city = 'cun_mosquera'
+              break;}
+              case ' Facatativá':{this.data.city = 'cun_facatativa'
+              break;}
+              case ' Madrid':{this.data.city = 'cun_madrid'
+              break;}
+              case ' Cajicá':{this.data.city = 'cun_cajica'
+              break;}
+               case ' Sopó':{this.data.city = 'cun_sopo'
+               break;}
+                 case ' Tenjo':{this.data.city = 'cun_tenjo'
+               break;}
+                 case ' Tocancipa':{this.data.city = 'cun_tocancipa'
+               break;}
+                 case ' Guasca':{this.data.city = 'cun_guasca'
+               break;}
+                 case ' Anapoima':{this.data.city = 'cun_anapoima'
+               break;}
+                 case ' Villeta':{this.data.city = 'cun_villeta'
+               break;}
+                 case ' La Vega':{this.data.city = 'cun_la_vega'
+               break;}
+                 case ' La Mesa':{this.data.city = 'cun_la_mesa'
+               break;}
+               default:{
+                   console.log('not found');
+                   console.log(citiie8[1])
+                    this.data.city = 'Bogota';
+               }
+          }
+
+console.log(this.data.city);
                     }
                 }   }
 //		
@@ -673,42 +790,12 @@ this.http.post('https://nominatim.openstreetmap.org/search/'+adr+'?countrycodes=
                    this.data.city = resso.response.properties.city ;
                  console.log(this.data.city);
                    console.log(this.autocomplete.query);
+//                   alert(addr);
           this.infowindow.setContent(addr);
           this.infowindow.open(this.map, marker);
           }
     }
                });
-//      
-//       this.geocoder.geocode({'location': latLng}, ((results, status)=>{
-//		if (status == google.maps.GeocoderStatus.OK) {
-//                    if(results == ''){
-//                        this.ToastMsg('Invalid Location')
-//                        this.lat =  '';
-//                       this.long= '';
-//                       this.infowindow.setContent('Error');
-//          this.infowindow.open(this.map, marker);
-//                    }else{
-//                    if(results[0]){
-//              console.log(results[0].place_id);          
-//                         console.log(results[0].formatted_address);
-//    this.infowindow.setContent(results[0].formatted_address);
-////    
-//          this.infowindow.open(this.map, marker1);
-//          this.autocomplete.query= results[0].formatted_address;
-//                    }
-//   else if (results[1]) {
-//    this.autocomplete.query= results[1].formatted_address;
-//    console.log(results[1].formatted_address);
-//    this.infowindow.setContent(results[1].formatted_address);
-//    
-//          this.infowindow.open(this.map, marker1);
-//           this.autocomplete.query= results[1].formatted_address;
-//                    }
-//                }   }
-////		
-//	   })
-//	   )
-   
 
        this.MapBounds = new google.maps.LatLngBounds(
     new google.maps.LatLng(4.820443, -74.250464),
@@ -821,7 +908,7 @@ this.boundsSet = false;
        
           this.markers=[];
         this.markers.push(marker);
-
+           map.setCenter(marker.getPosition());
        google.maps.event.addListener(marker, 'dragend', ((marker12)=>{
         
         this.iconname = 'star-outline';
@@ -855,8 +942,10 @@ this.boundsSet = false;
                     var resso = JSON.parse(response.data)
             console.log(resso.response)
 //            console.log(resso.response.properties.address);
-           
-            if((response.data == '{"message":"Result not found"}')||(resso.response.properties.address == null)){
+            if(response.data == 'Not available credits'){
+                     this.ToastMsg('Sorry! No Credits available')
+                }
+            if((resso.response == undefined)||(response.data == '{"message":"Result not found"}')||(resso.response.properties.address == null)){
         
                  this.geocoder.geocode({'location': latLong}, ((results, status)=>{
 		  console.log(results);
@@ -877,11 +966,15 @@ this.boundsSet = false;
              this.data.city = '';
            console.log(citiie[1]);
             switch(citiie[1]){
+                                  case ' Bogotá' : this.data.city = 'Bogota';
+               break;
+               case ' Bogota' :  this.data.city = 'Bogota';
+               break;
               case ' Soacha' : {this.data.city = 'cun_soacha'
               break;}
               case ' Mosquera':{this.data.city = 'cun_mosquera'
               break;}
-              case ' Facatativá':{this.data.city = 'Facatativá'
+              case ' Facatativá':{this.data.city = 'cun_facatativa'
               break;}
               case ' Madrid':{this.data.city = 'cun_madrid'
               break;}
@@ -889,9 +982,24 @@ this.boundsSet = false;
               break;}
                case ' Sopó':{this.data.city = 'cun_sopo'
                break;}
+                 case ' Tenjo':{this.data.city = 'cun_tenjo'
+               break;}
+                 case ' Tocancipa':{this.data.city = 'cun_tocancipa'
+               break;}
+                 case ' Guasca':{this.data.city = 'cun_guasca'
+               break;}
+                 case ' Anapoima':{this.data.city = 'cun_anapoima'
+               break;}
+                 case ' Villeta':{this.data.city = 'cun_villeta'
+               break;}
+                 case ' La Vega':{this.data.city = 'cun_la_vega'
+               break;}
+                 case ' La Mesa':{this.data.city = 'cun_la_mesa'
+               break;}
                default:{
                    console.log('not found');
                    console.log(citiie[1])
+                   this.ToastMsg('Sorry!! No service in this area');
                }
           }
 
@@ -911,11 +1019,15 @@ console.log(this.data.city);
             this.data.city ='';
            console.log(citiie[1]);
            switch(citiie[1]){
+                               case ' Bogotá' : this.data.city = 'Bogota';
+               break;
+               case ' Bogota' :  this.data.city = 'Bogota';
+               break;
               case ' Soacha' : {this.data.city = 'cun_soacha'
               break;}
               case ' Mosquera':{this.data.city = 'cun_mosquera'
               break;}
-              case ' Facatativá':{this.data.city = 'Facatativá'
+              case ' Facatativá':{this.data.city = 'cun_facatativa'
               break;}
               case ' Madrid':{this.data.city = 'cun_madrid'
               break;}
@@ -923,9 +1035,24 @@ console.log(this.data.city);
               break;}
                case ' Sopó':{this.data.city = 'cun_sopo'
                break;}
+                 case ' Tenjo':{this.data.city = 'cun_tenjo'
+               break;}
+                 case ' Tocancipa':{this.data.city = 'cun_tocancipa'
+               break;}
+                 case ' Guasca':{this.data.city = 'cun_guasca'
+               break;}
+                 case ' Anapoima':{this.data.city = 'cun_anapoima'
+               break;}
+                 case ' Villeta':{this.data.city = 'cun_villeta'
+               break;}
+                 case ' La Vega':{this.data.city = 'cun_la_vega'
+               break;}
+                 case ' La Mesa':{this.data.city = 'cun_la_mesa'
+               break;}
                default:{
                    console.log('not found');
                    console.log(citiie[1])
+                  this.ToastMsg('Sorry!! No service in this area')
                }
           }
 
@@ -974,51 +1101,12 @@ console.log(this.data.city);
           }
     }
                });
-//    this.geocoder.geocode({'location': latLong}, ((results, status)=>{
-//		  console.log(results);
-//                  if(results == ''){
-//                      this.ToastMsg('Invalid Location');
-//                       this.lat =  '';
-//                       this.long= '';
-//                       this.infowindow.setContent('Error');
-//          this.infowindow.open(this.map, marker);
-//                  }else{
-//		   if (status == google.maps.GeocoderStatus.OK) {
-//             if (results[0]) {
-//              console.log(results[0].place_id);
-//          this.autocomplete.query = results[1].formatted_address;
-//          console.log(this.autocomplete.query)
-//          
-////          this.infowindow=new google.maps.InfoWindow({
-////              content: results[1].formatted_address,
-////          }); 
-//          this.infowindow.setContent(results[0].formatted_address);
-//          this.infowindow.open(this.map, marker);
-//                    }          
-//          else if (results[1]) {
-//              console.log(results[1].place_id);
-//          this.autocomplete.query= results[1].formatted_address;
-//          console.log(this.autocomplete.query)
-////          this.infowindow=new google.maps.InfoWindow({
-////              content: results[1].formatted_address,
-////          }); 
-//          this.infowindow.setContent(results[1].formatted_address);
-//          this.infowindow.open(this.map, marker);
-//         
-//                    }
-//                }}
-//		   
-//	   })
-//           
-//           
-//   
-//           
-//	   )
+
    })); 
       // alert("working1");
       }).catch((error) => {
     console.log('Error getting location', error);
-    this.ToastMsg('Please Turn On your Loaction!! <br>Error getting location'+','+error);
+    this.ToastMsg('Please Turn On your Loaction!! Error getting location');
     Loading.dismissAll();
       let latLng = new google.maps.LatLng(this.lat,this.long); 
    
@@ -1106,6 +1194,7 @@ console.log(this.data.city);
        );
        this.markers=[];
         this.markers.push(marker);
+         map.setCenter(marker.getPosition());
       //  alert("marker");
        google.maps.event.addListener(marker, 'dragend', ((marker12)=>{
              this.iconname = 'star-outline';
@@ -1138,11 +1227,15 @@ console.log(this.data.city);
          this.data.city ='';
            console.log(citiie2[1]);
            switch(citiie2[1]){
+                                case ' Bogotá' : this.data.city = 'Bogota';
+               break;
+               case ' Bogota' :  this.data.city = 'Bogota';
+               break;
               case ' Soacha' : {this.data.city = 'cun_soacha'
               break;}
               case ' Mosquera':{this.data.city = 'cun_mosquera'
               break;}
-              case ' Facatativá':{this.data.city = 'Facatativá'
+              case ' Facatativá':{this.data.city = 'cun_facatativa'
               break;}
               case ' Madrid':{this.data.city = 'cun_madrid'
               break;}
@@ -1150,9 +1243,24 @@ console.log(this.data.city);
               break;}
                case ' Sopó':{this.data.city = 'cun_sopo'
                break;}
+                 case ' Tenjo':{this.data.city = 'cun_tenjo'
+               break;}
+                 case ' Tocancipa':{this.data.city = 'cun_tocancipa'
+               break;}
+                 case ' Guasca':{this.data.city = 'cun_guasca'
+               break;}
+                 case ' Anapoima':{this.data.city = 'cun_anapoima'
+               break;}
+                 case ' Villeta':{this.data.city = 'cun_villeta'
+               break;}
+                 case ' La Vega':{this.data.city = 'cun_la_vega'
+               break;}
+                 case ' La Mesa':{this.data.city = 'cun_la_mesa'
+               break;}
                default:{
                    console.log('not found');
                    console.log(citiie2[1])
+                    this.ToastMsg('Sorry!! No service in this area')
                }
           }
 
@@ -1172,21 +1280,40 @@ console.log(this.data.city);
             this.data.city ='';
            console.log(citiie3[1]);
            switch(citiie3[1]){
+                                case ' Bogotá' : this.data.city = 'Bogota';
+               break;
+               case ' Bogota' :  this.data.city = 'Bogota';
+               break;
               case ' Soacha' : {this.data.city = 'cun_soacha'
               break;}
               case ' Mosquera':{this.data.city = 'cun_mosquera'
               break;}
-              case ' Facatativá':{this.data.city = 'Facatativá'
+              case ' Facatativá':{this.data.city = 'cun_facatativa'
               break;}
               case ' Madrid':{this.data.city = 'cun_madrid'
               break;}
               case ' Cajicá':{this.data.city = 'cun_cajica'
-              break;} 
+              break;}
                case ' Sopó':{this.data.city = 'cun_sopo'
+               break;}
+                 case ' Tenjo':{this.data.city = 'cun_tenjo'
+               break;}
+                 case ' Tocancipa':{this.data.city = 'cun_tocancipa'
+               break;}
+                 case ' Guasca':{this.data.city = 'cun_guasca'
+               break;}
+                 case ' Anapoima':{this.data.city = 'cun_anapoima'
+               break;}
+                 case ' Villeta':{this.data.city = 'cun_villeta'
+               break;}
+                 case ' La Vega':{this.data.city = 'cun_la_vega'
+               break;}
+                 case ' La Mesa':{this.data.city = 'cun_la_mesa'
                break;}
                default:{
                    console.log('not found');
                    console.log(citiie3[1])
+                     this.ToastMsg('Sorry!! No service in this area')
                }
           }
 
@@ -1235,7 +1362,7 @@ watch.subscribe((data) => {
     ToastMsg(msg){
     let toast = this.toastCtrl.create({
       message: msg,
-      duration: 5000,
+      duration: 3000,
       position: 'middle'
       
     });
@@ -1248,6 +1375,7 @@ watch.subscribe((data) => {
         let headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
     let options = new RequestOptions({ headers: headers });
+    this.glob_item = this.autocomplete.query
       console.log(this.glob_item);
       
 //      this.data.city = '';
@@ -1275,6 +1403,7 @@ watch.subscribe((data) => {
           console.log(marker);
          
             this.markers.push(marker);
+             this.map.setCenter(marker.getPosition());
   google.maps.event.addListener(marker, 'dragend', ((marker31)=>{
         this.iconname = 'star-outline';
       var latLng = marker31.latLng; 
@@ -1295,9 +1424,12 @@ watch.subscribe((data) => {
             console.log(response);
             var resso = JSON.parse(response.data)
             console.log(resso.response)
+             if(response.data == 'Not available credits'){
+                     this.ToastMsg('Sorry! No Credits available')
+                }
 //            console.log(resso.response.properties.address);
-            if((resso.response.properties.address == null)||(response.data == '{"message":"Result not found"}')){
-                console.log(resso.response.properties);
+            if((resso.response == undefined)||(response.data == '{"message":"Result not found"}')||(resso.response.properties.address == null)){
+//                console.log(resso.response.properties);
 //                this.AlertMsg1('Sorry we cannot provide our services for this location')
 //                 this.autocomplete.query= '';
                  let latLong = new google.maps.LatLng(this.crlat, this.crlng); 
@@ -1320,11 +1452,15 @@ watch.subscribe((data) => {
            console.log(citiie7[1]);
            this.data.city = '';
            switch(citiie7[1]){
+                               case ' Bogotá' : this.data.city = 'Bogota';
+               break;
+               case ' Bogota' :  this.data.city = 'Bogota';
+               break;
               case ' Soacha' : {this.data.city = 'cun_soacha'
               break;}
               case ' Mosquera':{this.data.city = 'cun_mosquera'
               break;}
-              case ' Facatativá':{this.data.city = 'Facatativá'
+              case ' Facatativá':{this.data.city = 'cun_facatativa'
               break;}
               case ' Madrid':{this.data.city = 'cun_madrid'
               break;}
@@ -1332,9 +1468,24 @@ watch.subscribe((data) => {
               break;}
                case ' Sopó':{this.data.city = 'cun_sopo'
                break;}
+                 case ' Tenjo':{this.data.city = 'cun_tenjo'
+               break;}
+                 case ' Tocancipa':{this.data.city = 'cun_tocancipa'
+               break;}
+                 case ' Guasca':{this.data.city = 'cun_guasca'
+               break;}
+                 case ' Anapoima':{this.data.city = 'cun_anapoima'
+               break;}
+                 case ' Villeta':{this.data.city = 'cun_villeta'
+               break;}
+                 case ' La Vega':{this.data.city = 'cun_la_vega'
+               break;}
+                 case ' La Mesa':{this.data.city = 'cun_la_mesa'
+               break;}
                default:{
                    console.log('not found');
                    console.log(citiie7[1])
+                     this.ToastMsg('Sorry!! No service in this area')
                }
           }
 console.log(this.data.city);
@@ -1368,6 +1519,7 @@ console.log(this.data.city);
                  
                  console.log(this.data.city);
                    console.log(this.autocomplete.query);
+//                   alert(addr);
           this.infowindow.setContent(addr);
           this.infowindow.open(this.map, marker);
           }
@@ -1376,7 +1528,7 @@ console.log(this.data.city);
 
    }));
    
-     this.infowindow.setContent(this.glob_item.address);
+     this.infowindow.setContent(this.infocontent);
     this.infowindow.open(this.map, marker)
           console.log('hello');
         
@@ -1422,6 +1574,7 @@ console.log(this.data.city);
             position: results[0].geometry.location
           });
           this.markers.push(marker);
+           this.map.setCenter(marker.getPosition());
   google.maps.event.addListener(marker, 'dragend', ((marker21)=>{
         this.iconname = 'star-outline';
       var latLng = marker21.latLng; 
@@ -1446,8 +1599,11 @@ console.log(this.data.city);
             console.log(response.data == '{"message":"Result not found"}');
            var resso = JSON.parse(response.data)
             console.log(resso.response)
+             if(response.data == 'Not available credits'){
+                     this.ToastMsg('Sorry! No Credits available')
+                }
 //            console.log(resso.response.properties.address);
-            if((resso.response.properties.address == null)||(response.data == '{"message":"Result not found"}')){
+            if((resso.response == undefined)||(response.data == '{"message":"Result not found"}'||(resso.response.properties.address == null))){
                  this.geocoder.geocode({'location': latLong}, ((results, status)=>{
 		  console.log(results);
                   if(results == ''){
@@ -1466,11 +1622,15 @@ console.log(this.data.city);
           this.data.city ='';
             console.log(citiie4[1]);
           switch(citiie4[1]){
+                               case ' Bogotá' : this.data.city = 'Bogota';
+               break;
+               case ' Bogota' :  this.data.city = 'Bogota';
+               break;
               case ' Soacha' : {this.data.city = 'cun_soacha'
               break;}
               case ' Mosquera':{this.data.city = 'cun_mosquera'
               break;}
-              case ' Facatativá':{this.data.city = 'Facatativá'
+              case ' Facatativá':{this.data.city = 'cun_facatativa'
               break;}
               case ' Madrid':{this.data.city = 'cun_madrid'
               break;}
@@ -1478,40 +1638,27 @@ console.log(this.data.city);
               break;}
                case ' Sopó':{this.data.city = 'cun_sopo'
                break;}
+                 case ' Tenjo':{this.data.city = 'cun_tenjo'
+               break;}
+                 case ' Tocancipa':{this.data.city = 'cun_tocancipa'
+               break;}
+                 case ' Guasca':{this.data.city = 'cun_guasca'
+               break;}
+                 case ' Anapoima':{this.data.city = 'cun_anapoima'
+               break;}
+                 case ' Villeta':{this.data.city = 'cun_villeta'
+               break;}
+                 case ' La Vega':{this.data.city = 'cun_la_vega'
+               break;}
+                 case ' La Mesa':{this.data.city = 'cun_la_mesa'
+               break;}
                default:{
                    console.log('not found');
                    console.log(citiie4[1])
+                     this.ToastMsg('Sorry!! No service in this area')
                }
           }
-         
-//           if(citiie4[1] == 'Soacha'){
-//               console.log('Soacha');
-//              City = 'cun_soacha'
-//               console.log(City);
-//               this.data.city = City;
-//            }
-//            if(citiie4[1] == 'Mosquera'){
-//            console.log('Mosquera');
-//              City = 'cun_mosquera'
-//               console.log(City);
-//                 this.data.city = City;
-//            }
-//            if(citiie4[1] == 'Facatativá'){
-//            City = 'Facatativá'
-//            this.data.city = City;
-//            }
-//            if(citiie4[1] == 'Madrid'){
-//            City= 'cun_madrid'
-//            this.data.city = City;
-//            }
-//            if(citiie4[1] == 'Cajicá'){
-//             City= 'cun_cajica'
-//             this.data.city = City;
-//            }
-//            if(citiie4[1] == 'Sopó'){
-//             City = 'cun_sopo'
-//             this.data.city = City;
-//            }
+
 
 console.log(this.data.city);
 //            this.data.city = citiie4;
@@ -1531,11 +1678,15 @@ console.log(this.data.city);
            this.data.city ='';
            console.log(citiie5[1]);
            switch(citiie5[1]){
+                                case ' Bogotá' : this.data.city = 'Bogota';
+               break;
+               case ' Bogota' :  this.data.city = 'Bogota';
+               break;
               case ' Soacha' : {this.data.city = 'cun_soacha'
               break;}
               case ' Mosquera':{this.data.city = 'cun_mosquera'
               break;}
-              case ' Facatativá':{this.data.city = 'Facatativá'
+              case ' Facatativá':{this.data.city = 'cun_facatativa'
               break;}
               case ' Madrid':{this.data.city = 'cun_madrid'
               break;}
@@ -1543,9 +1694,24 @@ console.log(this.data.city);
               break;}
                case ' Sopó':{this.data.city = 'cun_sopo'
                break;}
+                 case ' Tenjo':{this.data.city = 'cun_tenjo'
+               break;}
+                 case ' Tocancipa':{this.data.city = 'cun_tocancipa'
+               break;}
+                 case ' Guasca':{this.data.city = 'cun_guasca'
+               break;}
+                 case ' Anapoima':{this.data.city = 'cun_anapoima'
+               break;}
+                 case ' Villeta':{this.data.city = 'cun_villeta'
+               break;}
+                 case ' La Vega':{this.data.city = 'cun_la_vega'
+               break;}
+                 case ' La Mesa':{this.data.city = 'cun_la_mesa'
+               break;}
                default:{
                    console.log('not found');
                    console.log(citiie5[1])
+                    this.ToastMsg('Sorry!! No service in this area')
                }
           }
 
@@ -1586,6 +1752,7 @@ console.log(this.data.city);
                    this.data.city = resso.response.properties.city ;
                  console.log(this.data.city);
                    console.log(this.autocomplete.query);
+//                   alert(addr);
           this.infowindow.setContent(addr);
           this.infowindow.open(this.map, marker);
           }
@@ -1611,15 +1778,16 @@ console.log(this.data.city);
  }
  getItem(item){
      console.log(item);
-     if(item.description){
-         console.log('google');
-          this.autocomplete.query=item.description;
-          this.glob_item = item;
-          this.autocompleteItems = [];
-          console.log(this.autocompleteItems)
-//          this.chooseItem(item);
-     }
-     else if(item.address){
+//     if(this.autocomplete.query){
+//         console.log('google');
+////          this.autocomplete.query=item.description;
+////          this.glob_item = item;
+//          this.autocompleteItems = [];
+//          console.log(this.autocompleteItems)
+////          this.chooseItem(item);
+//     }
+//     else 
+         if(item.address){
          console.log('lupap');
          this.glob_item = item;
          this.autocomplete.query=item.address;
@@ -1639,31 +1807,85 @@ this.autocompleteItems = [];
      
  }
     chooseItem(){
+        var ccitytosend;
         let headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
     let options = new RequestOptions({ headers: headers });
+    this.glob_item = this.autocomplete.query
         this.number = true
         this.lat='';
         this.long='';
     console.log(this.glob_item)
+    console.log(this.data.city)
+            switch(this.data.city){
+              case 'Bogota' : {
+                  ccitytosend = 'Bogotá DC'
+              break;}
+              case 'cun_soacha' : {
+                  ccitytosend = 'Soacha'
+              break;}
+              case 'cun_mosquera':{
+                  ccitytosend = ' Mosquera'
+              break;}
+              case 'cun_facatativa':{
+                  ccitytosend = 'Facatativá'
+              break;}
+              case 'cun_madrid':{
+                  ccitytosend = 'Madrid'
+              break;}
+              case 'cun_cajica':{
+                  ccitytosend = 'Cajicá'
+              break;}
+               case 'cun_sopo' :{
+                   ccitytosend = 'Sopó'
+               break;}
+                 case 'cun_tenjo' :{
+                   ccitytosend = 'Tenjo'
+               break;}
+                 case 'cun_tocancipa' :{
+                   ccitytosend = 'Tocancipa'
+               break;}
+                 case 'cun_guasca' :{
+                   ccitytosend = 'Guasca'
+               break;}
+                 case 'cun_anapoima' :{
+                   ccitytosend = 'Anapoima'
+               break;}
+                 case 'cun_villeta' :{
+                   ccitytosend = 'Villeta'
+               break;}
+                 case 'cun_la_vega' :{
+                   ccitytosend = 'La Vega'
+               break;}
+                 case 'cun_la_mesa' :{
+                   ccitytosend = 'La Mesa'
+               break;}
+               default:{
+                   console.log('not found');
+//                   console.log(citiie[1])
+               }
+          }
+        if (ccitytosend == undefined) {this.ToastMsg('Select some city')}else{
+    this.http.get('https://maps.googleapis.com/maps/api/geocode/json?components=locality:'+this.glob_item+'|administrative_area:'+ccitytosend+'|country:Colombia&key=AIzaSyA1DlP6ydTPDHSNBT_99W80TjfSGEcthhE', options).map(res => res.json()).subscribe(response => {
+            console.log(response);
    // this.autocomplete.query=item.description;
    
-    if (this.glob_item.terms[2].value == 'Bogota'){
-        this.data.city = 'Bogota';
-    }
-    console.log(this.glob_item.lat)
-     console.log(this.glob_item.lng)
+//    if (this.glob_item.terms[2].value == 'Bogota'){
+//        this.data.city = 'Bogota';
+//    }
+//    console.log(this.glob_item.lat)
+//     console.log(this.glob_item.lng)
     
-    this.geocoder.geocode({'placeId': this.glob_item.place_id}, ((results, status)=>{
-      if (status === 'OK') {
-        if (results[0]) {
-          console.log(results[0])
+//    this.geocoder.geocode({'placeId': this.glob_item}, ((results, status)=>{
+      if (response.status === 'OK') {
+        if (response.results[0]) {
+          console.log(response.results[0])
             
         
           this.map.setZoom(17);
-          this.map.setCenter(results[0].geometry.location);
-          this.lat = results[0].geometry.location.lat();
-          this.long = results[0].geometry.location.lng();
+          this.map.setCenter(response.results[0].geometry.location);
+          this.lat = response.results[0].geometry.location.lat;
+          this.long = response.results[0].geometry.location.lng;
           console.log( this.lat,this.long );
           this.deleteMarkers();
            this.markers = [];
@@ -1673,9 +1895,10 @@ this.autocompleteItems = [];
             map: this.map,
             draggable:true,
             icon: 'assets/img/location.png',
-            position: results[0].geometry.location
+            position: response.results[0].geometry.location
           });
            this.markers.push(marker);
+            this.map.setCenter(marker.getPosition());
   google.maps.event.addListener(marker, 'dragend', ((marker21)=>{
         this.iconname = 'star-outline';
       var latLng = marker21.latLng; 
@@ -1697,8 +1920,11 @@ this.autocompleteItems = [];
             console.log(response.data == '{"message":"Result not found"}');
            var resso = JSON.parse(response.data)
             console.log(resso.response)
+             if(response.data == 'Not available credits'){
+                     this.ToastMsg('Sorry! No Credits available')
+                }
 //            console.log(resso.response.properties.address);
-            if((resso.response.properties.address == null)||(response.data == '{"message":"Result not found"}')){
+            if((resso.response == undefined)||(resso.response.properties.address == null)||(response.data == '{"message":"Result not found"}')){
                  this.geocoder.geocode({'location': latLong}, ((results, status)=>{
 		  console.log(results);
                   if(results == ''){
@@ -1718,24 +1944,42 @@ this.autocompleteItems = [];
             this.data.city ='';
            console.log(citiie[1]);
            switch(citiie[1]){
-              case ' Soacha' : this.data.city = 'cun_soacha';
-              break;
-              case ' Mosquera':this.data.city = 'cun_mosquera';
-              break;
-              case ' Facatativá':this.data.city = 'Facatativá';
-              break;
-              case ' Madrid':this.data.city = 'cun_madrid';
-              break;
-              case ' Cajicá':this.data.city = 'cun_cajica';
-              break;
-               case ' Sopó':this.data.city = 'cun_sopo';
+                               case ' Bogotá' : this.data.city = 'Bogota';
                break;
-               default:
+               case ' Bogota' :  this.data.city = 'Bogota';
+               break;
+              case ' Soacha' : {this.data.city = 'cun_soacha'
+              break;}
+              case ' Mosquera':{this.data.city = 'cun_mosquera'
+              break;}
+              case ' Facatativá':{this.data.city = 'cun_facatativa'
+              break;}
+              case ' Madrid':{this.data.city = 'cun_madrid'
+              break;}
+              case ' Cajicá':{this.data.city = 'cun_cajica'
+              break;}
+               case ' Sopó':{this.data.city = 'cun_sopo'
+               break;}
+                 case ' Tenjo':{this.data.city = 'cun_tenjo'
+               break;}
+                 case ' Tocancipa':{this.data.city = 'cun_tocancipa'
+               break;}
+                 case ' Guasca':{this.data.city = 'cun_guasca'
+               break;}
+                 case ' Anapoima':{this.data.city = 'cun_anapoima'
+               break;}
+                 case ' Villeta':{this.data.city = 'cun_villeta'
+               break;}
+                 case ' La Vega':{this.data.city = 'cun_la_vega'
+               break;}
+                 case ' La Mesa':{this.data.city = 'cun_la_mesa'
+               break;}
+               default:{
                    console.log('not found');
                    console.log(citiie[1])
-               
-          }
-
+                   this.ToastMsg('Sorry!! No service in this area');
+               }
+           }
            
 //          this.infowindow=new google.maps.InfoWindow({
 //              content: results[1].formatted_address,
@@ -1750,11 +1994,15 @@ this.autocompleteItems = [];
          var City = '';
           this.data.city ='';
         switch(citiie[1]){
+                              case ' Bogotá' : this.data.city = 'Bogota';
+               break;
+               case ' Bogota' :  this.data.city = 'Bogota';
+               break;
               case ' Soacha' : {this.data.city = 'cun_soacha'
               break;}
               case ' Mosquera':{this.data.city = 'cun_mosquera'
               break;}
-              case ' Facatativá':{this.data.city = 'Facatativá'
+              case ' Facatativá':{this.data.city = 'cun_facatativa'
               break;}
               case ' Madrid':{this.data.city = 'cun_madrid'
               break;}
@@ -1762,9 +2010,24 @@ this.autocompleteItems = [];
               break;}
                case ' Sopó':{this.data.city = 'cun_sopo'
                break;}
+                 case ' Tenjo':{this.data.city = 'cun_tenjo'
+               break;}
+                 case ' Tocancipa':{this.data.city = 'cun_tocancipa'
+               break;}
+                 case ' Guasca':{this.data.city = 'cun_guasca'
+               break;}
+                 case ' Anapoima':{this.data.city = 'cun_anapoima'
+               break;}
+                 case ' Villeta':{this.data.city = 'cun_villeta'
+               break;}
+                 case ' La Vega':{this.data.city = 'cun_la_vega'
+               break;}
+                 case ' La Mesa':{this.data.city = 'cun_la_mesa'
+               break;}
                default:{
                    console.log('not found');
                    console.log(citiie[1])
+                    this.ToastMsg('Sorry!! No service in this area');
                }
           }
 
@@ -1807,6 +2070,7 @@ console.log(this.data.city);
                    this.data.city = resso.response.properties.city ;
                  console.log(this.data.city);
                    console.log(this.autocomplete.query);
+//                   alert(addr)
           this.infowindow.setContent(addr);
           this.infowindow.open(this.map, marker);
           this.goglat = this.crlat;
@@ -1815,58 +2079,11 @@ console.log(this.data.city);
     }
                });
        
-       
-//            var pposition = new google.maps.LatLng(this.crlat, this.crlng)
-//      console.log(this.MapBounds)
-//      console.log(pposition.lat(),pposition.lng())
-////       MapBounds.contains(position) ? lastPosition = position : marker.setPosition(lastPosition);
-//       if( this.MapBounds.contains(pposition)){
-//           this.lastPosition = pposition
-//       }else{
-//        this.lastPosition = pposition
-//           console.log('no sertvice available');
-//       }
-//       console.log(this.lastPosition.lat(),this.lastPosition.lng())
-//    ;
-//     let latLong = new google.maps.LatLng(this.crlat, this.crlng); 
-//     
-//	  this.geocoder.geocode({'latLng': latLng}, ((results, status)=>{
-//		  console.log(results);
-//                  if(results == ''){
-//                      this.ToastMsg('Invalid Location');
-//                       this.autocomplete.query= 'error';
-//                 this.lat = '';
-//                       this.long= '';
-//                         this.infowindow.setContent('Error');
-//          this.infowindow.open(this.map, marker);
-//                  }else{
-//		   if (status == google.maps.GeocoderStatus.OK) {
-//          if (results[0]) {
-//          this.autocomplete.query= results[0].formatted_address;
-//          
-//       if(this.data.city == undefined){
-//    this.data.city='Bogota'
-//}else if(this.data.city != results[4].formatted_address ){
-//     this.data.city=results[4].formatted_address
-//}
-//          
-//          console.log(this.data.city);
-//          console.log(this.autocomplete.query);
-//          this.infowindow.setContent(results[0].formatted_address);
-//          this.infowindow.open(this.map, marker);
-//          this.goglat = this.crlat;
-//          this.goglong = this.crlng;
-//          
-//                    }
-//                }}
-//		   
-//	   })
-//	   ) 
    }));
           console.log('hello');
-          this.infowindow.setContent(results[0].formatted_address);
+          this.infowindow.setContent(response.results[0].formatted_address);
           this.infowindow.open(this.map, marker);
-          this.nativeGeocoder.forwardGeocode(results[0].formatted_address)
+          this.nativeGeocoder.forwardGeocode(response.results[0].formatted_address)
   .then((coordinates: NativeGeocoderForwardResult) =>{ console.log('The coordinates are latitude=' + coordinates.latitude + ' and longitude=' + coordinates.longitude)
     this.goglat=coordinates.latitude
     this.goglong=coordinates.longitude 
@@ -1875,8 +2092,11 @@ console.log(this.data.city);
   .catch((error: any) => console.log(error));
           
         }
+      }else{
+          this.nomiapi();
       }
-    }))
+    })
+    }
         this.autocompleteItems = [];
  }
  
@@ -1901,21 +2121,19 @@ let options = new RequestOptions({ headers: headers})
        if((this.lat=='')&&(this.long=='')){
            this.ToastMsg('Nothing is saved');
        }else{
-       if(this.data.city == undefined){
-           this.data.city = 'Bogota'
-       }
+
         var citytosend
         switch(this.data.city){
               case 'Bogota' : {
-                  citytosend = 'Bogota'
+                  citytosend = 'Bogotá DC'
               break;}
               case 'cun_soacha' : {
                   citytosend = 'Soacha'
               break;}
               case 'cun_mosquera':{
-                  citytosend = 'Mosquera'
+                  citytosend = ' Mosquera'
               break;}
-              case 'Facatativá':{
+              case 'cun_facatativa':{
                   citytosend = 'Facatativá'
               break;}
               case 'cun_madrid':{
@@ -1927,11 +2145,33 @@ let options = new RequestOptions({ headers: headers})
                case 'cun_sopo' :{
                    citytosend = 'Sopó'
                break;}
+                 case 'cun_tenjo' :{
+                   citytosend = 'Tenjo'
+               break;}
+                 case 'cun_tocancipa' :{
+                   citytosend = 'Tocancipa'
+               break;}
+                 case 'cun_guasca' :{
+                   citytosend = 'Guasca'
+               break;}
+                 case 'cun_anapoima' :{
+                   citytosend = 'Anapoima'
+               break;}
+                 case 'cun_villeta' :{
+                   citytosend = 'Villeta'
+               break;}
+                 case 'cun_la_vega' :{
+                   citytosend = 'La Vega'
+               break;}
+                 case 'cun_la_mesa' :{
+                   citytosend = 'La Mesa'
+               break;}
                default:{
                    console.log('not found');
 //                   console.log(citiie[1])
                }
           }
+        if (citytosend == undefined) {this.ToastMsg('Select some city')}else{
            if ((this.goglat)&&(this.goglong)){
                this.lat=this.goglat
                this.long=this.goglong
@@ -1941,26 +2181,26 @@ let options = new RequestOptions({ headers: headers})
                this.long=this.long
                console.log('nomi')
            }
-       var postdata2 = {
-            user_id: this.userdetail._id,
-            saved_address: this.autocomplete.query +' '+ citytosend
-       }
-       
-          console.log(postdata2)
-           var Serialized = this.serializeObj(postdata2);
-            this.http.post(this.appsetting.myGlobalVar + 'user/add_saved_address', Serialized, options).map(res => res.json()).subscribe(response2 => {
-                console.log(response2);
-                if(response2.status == true){
-                 localStorage.setItem('UserDetail',JSON.stringify(response2.data[0]));
-                 }
-            })    
+//       var postdata2 = {
+//            user_id: this.userdetail._id,
+//            saved_address: this.autocomplete.query +' '+ citytosend
+//       }
+//       
+//          console.log(postdata2)
+//           var Serialized = this.serializeObj(postdata2);
+//            this.http.post(this.appsetting.myGlobalVar + 'user/add_saved_address', Serialized, options).map(res => res.json()).subscribe(response2 => {
+//                console.log(response2);
+//                if(response2.status == true){
+//                 localStorage.setItem('UserDetail',JSON.stringify(response2.data[0]));
+//                 }
+//            })    
       this.viewCtrl.dismiss({
          
         address:this.data.additional + ' '+ this.autocomplete.query+'   '+citytosend,
         lati: this.lat,
         longi:this.long
       });
-       
+       }
      
     }}
 
@@ -1983,4 +2223,3 @@ let options = new RequestOptions({ headers: headers})
         this.markers = [];
       }
 }
-
