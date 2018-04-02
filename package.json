@@ -36,7 +36,7 @@
     "angular2-countrypicker": "^1.0.0",
     "angular2-jwt": "^0.2.3",
     "angular2-moment": "^1.7.0",
-    "cordova-android": "^6.3.0",
+    "cordova-android": "^6.4.0",
     "cordova-ios": "^4.5.4",
     "cordova-plugin-add-swift-support": "^1.7.0",
     "cordova-plugin-android-permissions": "^1.0.0",

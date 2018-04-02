@@ -2203,7 +2203,9 @@ let options = new RequestOptions({ headers: headers})
             this.http.post(this.appsetting.myGlobalVar + 'user/add_saved_address', Serialized, options).map(res => res.json()).subscribe(response2 => {
                 console.log(response2);
                 if(response2.status == true){
+                    if(response2.data){
                  localStorage.setItem('UserDetail',JSON.stringify(response2.data[0]));
+                    }
                  }
             })    
       this.viewCtrl.dismiss({

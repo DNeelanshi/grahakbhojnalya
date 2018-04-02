@@ -116,8 +116,14 @@
 			</ul>
 		</div>
 		<div class="head"  *ngSwitchCase="'Restriction'">
-			<ul>
+			<ul *ngIf ="splarr.diet_restriction">
 				<li [innerHTML]="splarr.diet_restriction"></li>
+				
+				
+				
+			</ul>
+                    <ul *ngIf ="!splarr.diet_restriction">
+				<li>No restrictions</li>
 				
 				
 				

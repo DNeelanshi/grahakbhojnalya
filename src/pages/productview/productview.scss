@@ -216,7 +216,7 @@ page-productview {
 		width: 100%;
 	    float: left;
 	    border-top: 1px solid #c1c1c1;
-	    margin-top: 14px;
+	    margin-top: 0px;
 	    
 	}
 	.segment-section ul{
@@ -255,7 +255,9 @@ page-productview {
             }
              .select-sec .item{
                     border: 1px solid #bbb9b8;
-                    border-radius: 5px;                   
+                    border-radius: 5px; 
+                    height: 38px;
+                    min-height: auto;
                 }
              .select-sec ion-select{
                         font-size: 14px;

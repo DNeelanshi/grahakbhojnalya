@@ -175,7 +175,7 @@
                             <ion-col col-12 class="left right">
                                 <ion-item>
                                     <ion-label stacked>Email</ion-label>
-                                    <ion-input type="text" [(ngModel)]="data.email" name="email" #email="ngModel" pattern="^[a-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{1,63})$" required></ion-input>
+                                    <ion-input type="text" [(ngModel)]="data.email" name="email" #email="ngModel" pattern="^[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{1,63})$" required></ion-input>
                                 </ion-item>                                                                                
                                 <div class="alert alert-danger red" color="danger">
                                     <div *ngIf="email.errors && (email.dirty || email.touched)">  

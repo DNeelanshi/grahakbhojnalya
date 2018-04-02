@@ -35,7 +35,7 @@ export class MyApp {
   public appsetting: Appsetting)
         {
            
-             alert('Welcome to Rafaho app');
+             alert('Welcome to Rafaho');
    platform.ready().then(() => {
 
 //           

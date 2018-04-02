@@ -179,6 +179,7 @@ cartpro(){
       toast.present();
   }}
    getdishdetail(){
+     
          if (localStorage.getItem('producttss')) {
              this.splarr = JSON.parse(localStorage.getItem('producttss'));
 //               this.array = JSON.parse(localStorage.getItem('Extrastaff'));
@@ -198,6 +199,8 @@ for(var i = 0; i < str_array.length; i++) {
 }
             console.log(this.ar); 
          }
+
+             
         this.price = this.splarr.product_price;
         this.quantity = this.splarr.minimum_order;
         if((this.splarr.take_away)||(this.splarr.cook_at_user_place)||(this.splarr.home_delivery)){
@@ -241,6 +244,39 @@ for(var i = 0; i < str_array.length; i++) {
       }
       console.log(this.services);
         console.log(this.price,this.quantity);
+          let headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+    let options = new RequestOptions({ headers: headers });
+    var userid = JSON.parse(localStorage.getItem('UserDetail'))._id;
+    console.log(userid);
+ var postdata = {
+      id: userid
+    };
+     var Loading = this.loadingCtrl.create({
+           spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
+    dismissOnPageChange:true
+        });
+           Loading.present().then(() => {
+    var serialized = this.serializeObj(postdata);
+    console.log(postdata);
+    this.http.post(this.appsetting.myGlobalVar + 'userinfo', serialized, options).map(res => res.json()).subscribe(data => {
+        console.log(data);
+        Loading.dismiss();
+        this.a = data.data;
+        console.log(this.a);
+        if(this.a.favorite){
+       console.log(this.a.favorite);
+       for(var t=0;t<this.a.favorite.length;t++){
+           if(this.splarr._id == this.a.favorite[t].favorite_product_id){
+//               alert('matched');
+               this.iconname = 'heart';
+               break;
+           }
+       }}
+    })})
+   
   }
   crt11(dish1){
       console.log(this.quantity);

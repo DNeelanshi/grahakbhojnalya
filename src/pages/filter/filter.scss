@@ -42,11 +42,70 @@ page-filter {
 		border-color: #f27242;
     	background-color: #f27242;
 	}
+	ion-datetime{
+		background-color: #fff;
+	    border-radius: 5px;
+	    padding: 0 !important;
+
+	    .item-cover{
+	    	display: none !important;
+	    }
+	}
+	.datetime-text{
+		font-size: 12px;
+	    color: #a8a7a7;
+	    font-weight: 400;
+	    padding-left: 6px;
+	    height: 15px;
+	    margin: 13px 8px;
+	    line-height: 17px;
+	}
+	ion-select{
+		background-color: #fff;
+	    border-radius: 5px;
+	    .item-cover{
+	    	display: none !important;
+	    }
+	    .select-icon{
+	    	height: 15px !important;
+	    }
+	}
+	.select-text{
+		font-size: 12px;
+	    color: #a8a7a7;
+	    font-weight: 400;
+	    padding-left: 6px;
+	    height: 15px;
+	  
+	}
+	.attr{
+		background-color: #fff;
+	    border-radius: 5px;
+	    border: none !important;
+	    min-height: auto;
+	    padding: 0;
+
+	    .item-inner{
+	    	border: none !important;
+	    }
+	    .label{
+	    	font-size: 12px;
+		    color: #a8a7a7;
+		    font-weight: 400;
+		    padding-left: 6px;
+		    height: 15px;
+		    margin: 13px 8px;
+		    line-height: 17px;
+	    }
+	}
 	.content-sec .item{
 	    width: 100%;
 	    float: left;
-	    padding: 0;
-	    border: none !important;
+	    border-bottom: 1px solid #dedede;
+	}
+	.content-sec .item-inner{
+		padding-right: 0;
+		border-bottom: none !important;
 	}
 	.content-sec .item:last-child{
 		border: none;
@@ -65,7 +124,7 @@ page-filter {
 	.footer .button{
 	    margin: 0;
 	    text-align: center;
-	    background-color: #ff563f;
+	    background-color: #f27242;
 	    font-size: 14px;
 	    font-weight: 500;
 	    width: 100%;
@@ -76,5 +135,15 @@ page-filter {
 	}
 	.footer .toolbar-background{
 		border: none;
+	}
+	.radio-checked{
+		border-color: #f27242 !important;
+	}
+	.radio-md .radio-checked .radio-inner{
+		background-color: #f27242;
+		
+	}
+	.radio-checked .radio-inner{
+		border-color: #f27242 !important;
 	}
 }

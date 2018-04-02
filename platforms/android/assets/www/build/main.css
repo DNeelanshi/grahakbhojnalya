@@ -53308,11 +53308,78 @@ page-filter .content-sec .checkbox-checked {
   background-color: #f27242;
 }
 
+page-filter ion-datetime {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0 !important;
+}
+
+page-filter ion-datetime .item-cover {
+  display: none !important;
+}
+
+page-filter .datetime-text {
+  font-size: 12px;
+  color: #a8a7a7;
+  font-weight: 400;
+  padding-left: 6px;
+  height: 15px;
+  margin: 13px 8px;
+  line-height: 17px;
+}
+
+page-filter ion-select {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+page-filter ion-select .item-cover {
+  display: none !important;
+}
+
+page-filter ion-select .select-icon {
+  height: 15px !important;
+}
+
+page-filter .select-text {
+  font-size: 12px;
+  color: #a8a7a7;
+  font-weight: 400;
+  padding-left: 6px;
+  height: 15px;
+}
+
+page-filter .attr {
+  background-color: #fff;
+  border-radius: 5px;
+  border: none !important;
+  min-height: auto;
+  padding: 0;
+}
+
+page-filter .attr .item-inner {
+  border: none !important;
+}
+
+page-filter .attr .label {
+  font-size: 12px;
+  color: #a8a7a7;
+  font-weight: 400;
+  padding-left: 6px;
+  height: 15px;
+  margin: 13px 8px;
+  line-height: 17px;
+}
+
 page-filter .content-sec .item {
   width: 100%;
   float: left;
-  padding: 0;
-  border: none !important;
+  border-bottom: 1px solid #dedede;
+}
+
+page-filter .content-sec .item-inner {
+  padding-right: 0;
+  border-bottom: none !important;
 }
 
 page-filter .content-sec .item:last-child {
@@ -53336,7 +53403,7 @@ page-filter .scroll-content {
 page-filter .footer .button {
   margin: 0;
   text-align: center;
-  background-color: #ff563f;
+  background-color: #f27242;
   font-size: 14px;
   font-weight: 500;
   width: 100%;
@@ -53349,6 +53416,18 @@ page-filter .footer .toolbar {
 
 page-filter .footer .toolbar-background {
   border: none;
+}
+
+page-filter .radio-checked {
+  border-color: #f27242 !important;
+}
+
+page-filter .radio-md .radio-checked .radio-inner {
+  background-color: #f27242;
+}
+
+page-filter .radio-checked .radio-inner {
+  border-color: #f27242 !important;
 }
 
 page-forgtpwd .content-sec {
@@ -55224,7 +55303,7 @@ page-productview .segment-section {
   width: 100%;
   float: left;
   border-top: 1px solid #c1c1c1;
-  margin-top: 14px;
+  margin-top: 0px;
 }
 
 page-productview .segment-section ul {
@@ -55268,6 +55347,8 @@ page-productview .select-sec {
 page-productview .select-sec .item {
   border: 1px solid #bbb9b8;
   border-radius: 5px;
+  height: 38px;
+  min-height: auto;
 }
 
 page-productview .select-sec ion-select {

@@ -38,16 +38,16 @@ export class SigninPage {
     
     ) {
 //    alert('Neelanshi');
-//     fcm.getToken().then(token=>{
-//      this.devicetoken = token;
-//      })
-//      fcm.onNotification().subscribe(data=>{
-//   if(data.wasTapped){
-//     console.log("Received in background");
-//   } else {
-//     console.log("Received in foreground");
-//   };
-// })
+     fcm.getToken().then(token=>{
+      this.devicetoken = token;
+      })
+      fcm.onNotification().subscribe(data=>{
+   if(data.wasTapped){
+     console.log("Received in background");
+   } else {
+     console.log("Received in foreground");
+   };
+ })
   }
    showPassword() {    
    console.log('showpassword');   

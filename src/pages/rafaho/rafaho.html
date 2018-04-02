@@ -48,7 +48,7 @@
 	        <img [src]="dats?.products[0].image">
 	      </ion-thumbnail>
 	      <div class="main">
-	      	<div class="image">
+	      	<div class="image" *ngIf="dats?.user_data">
                     <img *ngIf="dats?.user_data[0].user_image" [src]="dats?.user_data[0].user_image">
 	      		<img *ngIf="!dats?.user_data[0].user_image" src="assets/img/us.png">
 	      	</div>

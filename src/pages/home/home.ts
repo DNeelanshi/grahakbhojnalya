@@ -8,12 +8,13 @@ import {CartPage} from "../cart/cart";
 import {ProductlistPage} from '../productlist/productlist';
 import {Http, RequestOptions, Headers} from "@angular/http";
 import {Appsetting} from "../../providers/appsetting";
-
 import {NativeGeocoder, NativeGeocoderForwardResult} from '@ionic-native/native-geocoder';
 import * as moment from 'moment';
+declare var google;
 import {Geolocation,GeolocationOptions ,Geoposition ,PositionError} from '@ionic-native/geolocation';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
-declare var google;
+
+
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
@@ -25,12 +26,15 @@ export class HomePage {
     searcharray1: any = [];
     array: any;
     array1: any;
+    pagon:number=1;
     arry: any = true;
     srcimage: any;
     arr: any;
-    maingreenavail:number=1;
-     mainredavail:number=1;
-    altgreenavail:number=1;
+    infiniteScroll:any;
+    Pagetotal:number=1;
+    alternatedate:any;
+     mainredavail:number;
+    array11:any = [];
   altredavail:number=1;
     lat: any;
     lostatus:boolean = false;
@@ -39,9 +43,11 @@ export class HomePage {
     arr1: any = null;
     date: any;
     userdetail: any;
+    maind:any;
     bit: any;
     srcImage: any;
     ar: any = [];
+    filtrarray:any=[];
     data: any = {};
     bukingdate: any;
     blurclass: any;
@@ -61,17 +67,18 @@ export class HomePage {
         public toastCtrl: ToastController,
         public events: Events,
     ) {
-//        alert('constructor');
+    
 //        this.getcurrentlocationanddata();
               this.firsthit();
                 this.get();
+                
 //        this.platform.ready().then(() => {
 //            var lastTimeBackPress = 0;
 //            var timePeriodToExit = 2000;
 //
 //            this.platform.registerBackButtonAction(() => {
 //                // get current active page
-//                let view = this.navCtrl.getActive();
+//                let view = this.navCtrl.getctive();
 //                if (new Date().getTime() - lastTimeBackPress < timePeriodToExit) {
 //                    this.platform.exitApp(); //Exit from app
 //                } else {
@@ -98,12 +105,10 @@ export class HomePage {
                 this.firsthit();
                 this.get();
 
-
             } else {
             
             }
-        })
-        //                    
+        })              
         //                events.subscribe('homepage', (home) =>         {
         //      console.log(home)        ;
         //      clearInterval(this.appsetting.interval)        ;
@@ -112,7 +117,7 @@ export class HomePage {
 
     }
     firsthit() {
-//        alert('firsthit');
+
 
                       this.data.datetime = this.date;
         //            alert(this.data.datetime);
@@ -214,7 +219,7 @@ export class HomePage {
             this.ToastMsg('Please enable your Location.')
         })
         
-
+//        localStorage.setItem('Currentlocation',this.chefsearch.search);
   
        
     }
@@ -222,30 +227,372 @@ export class HomePage {
         console.log('Begin async operation', refresher);
 
         setTimeout(() => {
-            this.firsthit();
+//            this.firsthit();
+         
              this.get();
             console.log('Async operation has ended');
             refresher.complete();
         }, 3000);
     }
+
     cartpage() {
         this.navCtrl.push(CartPage);
     }
-    fltr_opn() {
-        let fltr_opn = this.modalCtrl.create(FilterPage);
-        fltr_opn.present();
+    doInfinite(event){
+        console.log(event);
+        this.infiniteScroll = event;
+        if(this.pagon < this.Pagetotal){
+            console.log(this.Pagetotal);
+        this.pagon++ ; 
+        console.log( this.pagon );
+       this.scrollupdate(this.pagon)}else{
+           event.complete();
+       }
+    }  
+    
+    scrollupdate(pages){
+//         this.array =[];
+        console.log(pages);
+         var temp=this;
+        var totalvalue =0;
+        this.maind =  moment(this.data.datetime).format('YYYY-MM-DD')
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+        let options = new RequestOptions({headers: headers});
+//        console.log(this.filtrarray);
+   
+        if((this.filtrarray.length > 0)||(this.filtrarray != [])){
+             console.log(this.filtrarray);
+        if(this.array.length>0){
+         var postdata = {
+            lat: this.filtrarray.lat,
+            long: this.filtrarray.long,
+            notavalibility_dates: this.filtrarray.notavalibility_dates,
+            experience: this.filtrarray.experience,
+            cuisine:  this.filtrarray.cuisine,
+            attribute: this.filtrarray.attribute,
+            page:pages
+        };
+
+        console.log(postdata);
+        var serialized = this.serializeObj(postdata);
+        setTimeout(() => {
+        this.http.post(this.appsetting.myGlobalVar + 'users/filterall', serialized, options).map(res => res.json()).subscribe(data => {
+           console.log(data);
+           this.Pagetotal = data.pages;
+                    if (data.status == true) {
+                        if (data.data.length > 0) {
+                           var trial = data.data;
+                           console.log(trial);
+                           for(var t =0; t<data.data.length ; t++){
+                            this.array11.push(data.data[t]);}
+//                            this.filtrarray = this.array;
+                            console.log(this.array11);
+//                          var m =  moment(this.data.datetime).format('YYYY-MM-DD')
+//                            console.log(m);
+//                          data.data.forEach(function(value,key){
+//                              console.log(value.avalibilities);
+//                              if(value.avalibilities.length>0) {
+//                                  value.avalibilities.forEach(function(val,k){
+//                                      console.log(val);
+//                                      console.log(k);
+//                                       if(moment(temp.alternatedate).isSame(val.notavalibility_dates)){
+//                                      console.log('matched'+k);
+//                                            temp.altredavail = 0;
+//                                            val.altredavail = 0;
+//                                        }else{
+//                                        
+//                                            console.log('not matched');
+//                                            val.altredavail = 1+':'+k;
+//                                        }
+//                                        })
+//                              }
+//                          })
+                          for(let i=0;i<trial.length;i++){
+                               if(trial[i].avalibilities.length>0) {
+                                   for(let j=0;j<trial[i].avalibilities.length;j++){
+                                       
+                                       if(moment(temp.alternatedate).isSame(trial[i].avalibilities[j].notavalibility_dates)){
+                                      console.log('matched');
+                                       console.log(temp.alternatedate);
+                                       console.log(trial[i].avalibilities[j].notavalibility_dates);
+                                            temp.altredavail = 0;
+                                            trial[i].altredavail = 0;
+                                            break;
+                                        }else{
+                                            console.log('not matched');
+                                             console.log(temp.alternatedate);
+                                       console.log(trial[i].avalibilities[j].notavalibility_dates);
+                                           trial[i].altredavail = 1;
+                                        }
+                                     
+                                   }
+                               }else{
+                                  trial[i].mainredavail = 1;
+                                    trial[i].altredavail = 1;
+                               }
+                              
+                          }
+                          
+                           for(let d=0;d<trial.length;d++){
+                               if(trial[d].avalibilities.length>0) {
+                                   for(let j=0;j<trial[d].avalibilities.length;j++){
+                                       
+                                     if (moment(temp.maind).isSame(trial[d].avalibilities[j].notavalibility_dates)){
+                                      console.log('matched');
+                                      
+                                       console.log(trial[d].avalibilities[j].notavalibility_dates);
+                                            temp.mainredavail = 0;
+                                            trial[d].mainredavail = 0;
+                                            break;
+                                        }else{
+                                            console.log('not matched');
+                                       console.log(trial[d].avalibilities[j].notavalibility_dates);
+                                           trial[d].mainredavail = 1;
+                                        }
+                                     
+                                   }
+                               }else{
+                                   trial[d].mainredavail = 1;
+                                    trial[d].altredavail = 1;
+                               }
+                          }
+                          
+ 
+//                      console.log( this.mainredavail);
+                       console.log(this.array11);
+                          this.array11.forEach(function(value,key){
+                               temp.rating =0;
+                                    value.comments_and_ratings.forEach(function(value1,key1){
+                            if(value1 == []){
+                                value1.avgrating=0;
+                            }else{
+                            console.log(value1.rating);
+                        console.log( value.comments_and_ratings.length);
+                      console.log( temp.rating);
+                            temp.rating =(temp.rating+value1.rating);
+                            console.log(temp.rating);
+                          }
+                          totalvalue = temp.rating/value.comments_and_ratings.length   
+                            totalvalue = Number((totalvalue).toFixed(1));
+                             value.avgrating =  totalvalue;
+                               
+                                 })})
+                            this.array = this.array11;
+                            this.bit = 1;
+                            this.arr1 = 1;
+                        } else {
+                            this.array = [];
+                            this.arr1 = null;
+                            this.bit = 1;
+                            console.log('hjuij');
+                        }
+                    }
+                    else {
+                        this.array = [];
+                        this.arr1 = null;
+                        this.bit = 1;
+                    }
+                }, (err) => {
+                    this.ToastMsg('Something went wrong');
+                 
+                    console.log(err)
+                });
+                if(this.infiniteScroll){
+                this.infiniteScroll.complete();}
+    }, 3000);
+        }}
     }
+
+    fltr_opn() {
+        var temp=this;
+        var totalvalue =0;
+        this.maind =  moment(this.data.datetime).format('YYYY-MM-DD')
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+        let options = new RequestOptions({headers: headers});
+        var curr:any = [];
+         console.log(this.chefsearch.search);
+       curr.push({loc:this.chefsearch.search,lat:this.lat,long:this.long}) ;
+       console.log(curr);
+    
+        localStorage.setItem('Currentaddr',JSON.stringify(curr));
+        let fltr_opn = this.modalCtrl.create(FilterPage);
+
+        fltr_opn.onDidDismiss(filterdata => {
+           console.log(filterdata);
+           
+             this.filtrarray = filterdata;
+   var postdata = {
+            lat: filterdata.lat,
+            long:filterdata.long,
+            notavalibility_dates:filterdata.notavalibility_dates,
+            experience:filterdata.experience,
+            cuisine: filterdata.cuisine,
+            attribute:filterdata.attribute,
+            page:1
+        };
+        
+        console.log(postdata);
+         this.array11 = []
+        var serialized = this.serializeObj(postdata);
+        this.http.post(this.appsetting.myGlobalVar + 'users/filterall', serialized, options).map(res => res.json()).subscribe(data => {
+
+            console.log(data);
+            this.Pagetotal = data.pages;
+                    if (data.status == true) {
+                        if (data.data.length > 0) {
+                           var trial = data.data;
+                           console.log(trial);
+                           for(var t =0; t<data.data.length ; t++){
+                            this.array11.push(data.data[t]);}
+//                            this.filtrarray = this.array;
+                            console.log(this.array11);
+//                          var m =  moment(this.data.datetime).format('YYYY-MM-DD')
+//                            console.log(m);
+//                          data.data.forEach(function(value,key){
+//                              console.log(value.avalibilities);
+//                              if(value.avalibilities.length>0) {
+//                                  value.avalibilities.forEach(function(val,k){
+//                                      console.log(val);
+//                                      console.log(k);
+//                                       if(moment(temp.alternatedate).isSame(val.notavalibility_dates)){
+//                                      console.log('matched'+k);
+//                                            temp.altredavail = 0;
+//                                            val.altredavail = 0;
+//                                        }else{
+//                                        
+//                                            console.log('not matched');
+//                                            val.altredavail = 1+':'+k;
+//                                        }
+//                                        })
+//                              }
+//                          })
+                          for(let i=0;i<trial.length;i++){
+                               if(trial[i].avalibilities.length>0) {
+                                   for(let j=0;j<trial[i].avalibilities.length;j++){
+                                       
+                                       if(moment(temp.alternatedate).isSame(trial[i].avalibilities[j].notavalibility_dates)){
+                                      console.log('matched');
+                                       console.log(temp.alternatedate);
+                                       console.log(trial[i].avalibilities[j].notavalibility_dates);
+                                            temp.altredavail = 0;
+                                            trial[i].altredavail = 0;
+                                            break;
+                                        }else{
+                                            console.log('not matched');
+                                             console.log(temp.alternatedate);
+                                       console.log(trial[i].avalibilities[j].notavalibility_dates);
+                                           trial[i].altredavail = 1;
+                                        }
+                                     
+                                   }
+                               }else{
+                                  trial[i].mainredavail = 1;
+                                    trial[i].altredavail = 1;
+                               }
+                              
+                          }
+                          
+                           for(let d=0;d<trial.length;d++){
+                               if(trial[d].avalibilities.length>0) {
+                                   for(let j=0;j<trial[d].avalibilities.length;j++){
+                                       
+                                     if (moment(temp.maind).isSame(trial[d].avalibilities[j].notavalibility_dates)){
+                                      console.log('matched');
+                                      
+                                       console.log(trial[d].avalibilities[j].notavalibility_dates);
+                                            temp.mainredavail = 0;
+                                            trial[d].mainredavail = 0;
+                                            break;
+                                        }else{
+                                            console.log('not matched');
+                                       console.log(trial[d].avalibilities[j].notavalibility_dates);
+                                           trial[d].mainredavail = 1;
+                                        }
+                                     
+                                   }
+                               }else{
+                                   trial[d].mainredavail = 1;
+                                    trial[d].altredavail = 1;
+                               }
+                          }
+                          
+ 
+                      console.log( this.mainredavail);
+                       console.log(this.array11);
+                          this.array11.forEach(function(value,key){
+                               temp.rating =0;
+                                    value.comments_and_ratings.forEach(function(value1,key1){
+                            if(value1 == []){
+                                value1.avgrating=0;
+                            }else{
+                            console.log(value1.rating);
+                        console.log( value.comments_and_ratings.length);
+                      console.log( temp.rating);
+                            temp.rating =(temp.rating+value1.rating);
+                            console.log(temp.rating);
+                        
+                          }
+                          totalvalue = temp.rating/value.comments_and_ratings.length   
+                            totalvalue = Number((totalvalue).toFixed(1));
+                             value.avgrating =  totalvalue;
+                               
+                                 })})
+                       
+                            this.array = this.array11;
+                            this.bit = 1;
+                            this.arr1 = 1;
+                        } else {
+                            this.array = [];
+                            this.arr1 = null;
+                            this.bit = 1;
+                            console.log('hjuij');
+                        }
+                    }
+                    else {
+                        this.array = [];
+                        this.arr1 = null;
+                        this.bit = 1;
+                    }
+
+
+
+                }, (err) => {
+                    this.ToastMsg('Something went wrong');
+                 
+                    console.log(err)
+                });
+        });
+          fltr_opn.present();
+    }
+    
+    
     detail(dat) {
+ console.log(dat.mainredavail)
+ console.log(dat.altredavail);
+ if(dat.mainredavail == 0){
+//      this.bukingdate = this.data.altdate.match(/:00Z/g);
+        console.log(this.bukingdate)
+        if (this.bukingdate == null) {
+            this.bukingdate = this.data.altdate + ':00Z'
+            console.log(this.bukingdate);
+        } else {
+            this.bukingdate = this.data.altdate
+        }
+ }else{
         this.bukingdate = this.data.datetime.match(/:00Z/g);
         console.log(this.bukingdate)
         if (this.bukingdate == null) {
-            this.bukingdate = this.data.datetime + ':00Z'
+            this.bukingdate = this.data.datetime + ':00Z'    
             console.log(this.bukingdate);
         } else {
             this.bukingdate = this.data.datetime
         }
+        
+ }
         console.log(this.bukingdate);
-        console.log(this.data.altdate);
+      
 
         localStorage.setItem('Chefdetail', JSON.stringify(dat));
         localStorage.setItem('Bookingdatetime', JSON.stringify(this.bukingdate));
@@ -314,7 +661,7 @@ export class HomePage {
             user_id: this.userdetail._id,
             saved_address_id: productid1
         }
-
+   
         console.log(postdata1)
         var Serialized = this.serializeObj(postdata1);
         this.http.post(this.appsetting.myGlobalVar + 'user/delete_saved_address', Serialized, options).map(res => res.json()).subscribe(response11 => {
@@ -324,8 +671,7 @@ export class HomePage {
             }
         })
         //         this.appsetting.svd=this.searcharray
-        //       console.log(this.searcharray)
-        //         localStorage.setItem('Svedaddress',JSON.stringify(this.appsetting.svd));
+
     }
     del1(index) {
         this.searcharray1.pop(index);
@@ -399,7 +745,8 @@ export class HomePage {
         this.blurclass = 'blurbg1'
     }
     openmapmodal() {
-          if( this.lostatus == true){let modal = this.modalCtrl.create(MapmodalPage);
+          if( this.lostatus == true){
+              let modal = this.modalCtrl.create(MapmodalPage);
         modal.onDidDismiss(data => {
             this.chefsearch.search = data.address;
 
@@ -423,9 +770,59 @@ export class HomePage {
       }
            
     }
+        getchefavail(dataalt){
+        console.log(dataalt);
+          this.alternatedate =  moment(dataalt).format('YYYY-MM-DD')
+          console.log( this.alternatedate);
+          console.log( this.filtrarray);
+          if((this.filtrarray.length == 0)||(this.filtrarray == [])){
+             this.get();
+          }else{
+          var Loading = this.loadingCtrl.create({
+                spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
+                dismissOnPageChange: true
+            });
+            Loading.present().then(() => {
+              this.array11 = [];
+         this.scrollupdate(1);
+         setTimeout(() => {
+                        Loading.dismissAll();
+                    }, 2500);
+         })
+        }
+    }
+    getchefavail1(datamain){
+         console.log(datamain);
+          this.maind =  moment(datamain).format('YYYY-MM-DD')
+          console.log(this.maind);
+           console.log( this.filtrarray);
+                     if((this.filtrarray.length == 0)||(this.filtrarray == [])){
+             this.get();
+          }else{
+        
+        var Loading = this.loadingCtrl.create({
+                spinner: 'bubbles',
+            cssClass: 'loader',
+            content: "Loading",
+                dismissOnPageChange: true
+            });
+            Loading.present().then(() => {
+             this.array11 = [];
+         this.scrollupdate(1);
+          setTimeout(() => {
+                        Loading.dismissAll();
+                    }, 2500);
+                    })
+        }
+    }
+
     get() {
+           this.filtrarray =[];
         var temp=this;
         var totalvalue =0;
+        this.maind =  moment(this.data.datetime).format('YYYY-MM-DD')
 //         alert('get');
         let headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
@@ -452,8 +849,12 @@ export class HomePage {
             });
             Loading.present().then(() => {
                 this.http.post(this.appsetting.myGlobalVar + 'getchefsbyprefrence', serialized, options).map(res => res.json()).subscribe(data => {
+                     if (localStorage.getItem('chefdata')){
+                    console.log(JSON.parse(localStorage.getItem('chefdata')));
+                }
 
                     console.log(data);
+                    
                     setTimeout(() => {
                         Loading.dismissAll();
                     }, 2500);
@@ -462,25 +863,58 @@ export class HomePage {
                         if (data.data.length > 0) {
                             this.array = data.data;
                             console.log(this.array);
-                          var m =  moment(this.data.datetime).format('YYYY-MM-DD')
-                            console.log(m);
-                            this.array.forEach(function(value,key){
-                          if(value.avalibilities.length>0) {
-                              value.avalibilities.forEach(function(value2,key2){
-                                  if(moment(m).isSame(value2.notavalibility_dates)){
-                                      temp.mainredavail = 0;
-                                      value.mainredavail = 0;
-                                  }
-                              })
-                          }else{ value.mainredavail = 1;}
-                            })
-//                            for(var d =0; d<this.array.length ; d++){
-//                                if(this.array[d].avalibilities.length>0){
-//                            for(var t=0;t< this.array[d].avalibilities.length; t++){
-//                                if(moment(m).isSame(this.array[d].avalibilities[t].notavalibility_dates))
-//                                {    this.mainredavail = 1;}
-//
-//                            }}}
+
+                          for(let i=0;i<data.data.length;i++){
+                               if(data.data[i].avalibilities.length>0) {
+                                   for(let j=0;j<data.data[i].avalibilities.length;j++){
+                                       
+                                       if(moment(temp.alternatedate).isSame(data.data[i].avalibilities[j].notavalibility_dates)){
+                                      console.log('matched');
+                                       console.log(temp.alternatedate);
+                                       console.log(data.data[i].avalibilities[j].notavalibility_dates);
+                                            temp.altredavail = 0;
+                                            data.data[i].altredavail = 0;
+                                            break;
+                                        }else{
+                                            console.log('not matched');
+                                             console.log(temp.alternatedate);
+                                       console.log(data.data[i].avalibilities[j].notavalibility_dates);
+                                           data.data[i].altredavail = 1;
+                                        }
+                                     
+                                   }
+                               }else{
+                                   data.data[i].mainredavail = 1;
+                                    data.data[i].altredavail = 1;
+                               }
+                              
+                          }
+                          
+                           for(let d=0;d<data.data.length;d++){
+                               if(data.data[d].avalibilities.length>0) {
+                                   for(let j=0;j<data.data[d].avalibilities.length;j++){
+                                       
+                                     if (moment(temp.maind).isSame(data.data[d].avalibilities[j].notavalibility_dates)){
+                                      console.log('matched');
+                                      
+                                       console.log(data.data[d].avalibilities[j].notavalibility_dates);
+                                            temp.mainredavail = 0;
+                                            data.data[d].mainredavail = 0;
+                                            break;
+                                        }else{
+                                            console.log('not matched');
+                                       console.log(data.data[d].avalibilities[j].notavalibility_dates);
+                                           data.data[d].mainredavail = 1;
+                                        }
+                                     
+                                   }
+                               }else{
+                                   data.data[d].mainredavail = 1;
+                                    data.data[d].altredavail = 1;
+                               }
+                          }
+                          
+ 
                       console.log( this.mainredavail);
                        console.log(this.array);
                           this.array.forEach(function(value,key){
@@ -530,6 +964,9 @@ export class HomePage {
             this.bit = null;
             this.arr1 = 2;
         }
+        
+        
+
     }
     ToastMsg(msg) {
         let toast = this.toastCtrl.create({
@@ -568,6 +1005,7 @@ export class HomePage {
 
             this.http.post(this.appsetting.myGlobalVar + 'prefrence/searchbychefname', serialized, options).map(res => res.json()).subscribe(data => {
                 console.log(data);
+               
                 if (data.status == true) {
 
                     this.arr1 = 1;
@@ -653,8 +1091,6 @@ export class HomePage {
                 searchvalue: vali,
             };
             var serialized = this.serializeObj(postdata);
-
-
             this.http.post(this.appsetting.myGlobalVar + 'prefrence/searchbydishname', serialized, options).map(res => res.json()).subscribe(data => {
 
                 console.log(data);
@@ -715,7 +1151,7 @@ export class HomePage {
                         }
                         console.log(this.arr);
 
-                    }
+    }
 
                 }
                 else {

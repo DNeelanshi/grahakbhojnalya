@@ -28,7 +28,7 @@
 
     <div class="listout">  
 <ion-list class="listitm" style="margin:0 !important; padding:0;" *ngIf="openllist == 1" >
-   
+
       <ion-item>
          <button (click)= "openmapmodal()" outline ion-button color="dark" icon-right round>Go To Other Address <ion-icon name="navigate"></ion-icon> </button>
          <button ion-button color="danger" outline round icon-right  (click)="cancellist()"> Close</button>
@@ -63,12 +63,12 @@
 
   <ion-toolbar class="dateleft">
       <p>Main Date</p>
-            <ion-datetime  placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm"  min="{{date}}" [(ngModel)]= "data.datetime" name="datetime" #datetime="ngModel" ></ion-datetime>
+            <ion-datetime  placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm"  min="{{date}}" [(ngModel)]= "data.datetime" name="datetime" #datetime="ngModel" (ngModelChange)="getchefavail1(data.datetime)"></ion-datetime>
   </ion-toolbar>
       
     <ion-toolbar class="dateleftr">
         <p>Alternative Date</p>
-            <ion-datetime  placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}" [(ngModel)]= "data.altdate" name="altdate" #altdate="ngModel" ></ion-datetime>
+            <ion-datetime  placeholder="MM/DD/YYYY HH:MM" displayFormat="MMM/DD/YYYY HH:mm" pickerFormat="MMM DD YYYY HH mm" min="{{date}}" [(ngModel)]= "data.altdate" name="altdate" #altdate="ngModel" (ngModelChange)="getchefavail(data.altdate)" ></ion-datetime>
             
     </ion-toolbar> 
     
@@ -101,10 +101,8 @@
   <div class="banner">
   <img src="assets/img/off.png">
 </div>
-  
-  <div class="content-sec">
-    
 
+  <div class="content-sec">
   <div [ngSwitch]="pet">
     <ion-list *ngSwitchCase="'kittens'">
         <div class="serch">
@@ -113,8 +111,8 @@
       <img src="assets/img/option.png" (click)="fltr_opn()">
   </div>
 </div>
-  <ion-list>
-      <ion-item *ngFor="let dat of array" (click)="detail(dat)">
+  <ion-list><div *ngFor="let dat of array" (click)="detail(dat)">
+      <ion-item *ngIf="!((dat.mainredavail == 0)&&(dat.altredavail == 0))">
           
         <ion-avatar item-start>
              <img *ngIf ="dat?.user_image"  src="{{dat?.user_image}}">
@@ -130,19 +128,24 @@
         </div>
         <div class="leftbtn">
           <button ion-button icon-left clear>
-             <ion-icon name="radio-button-on" style="color: #2bb600; line-height: 1;float: left; width: 34px;"></ion-icon>
-            Available Today
+             <ion-icon *ngIf="dat.mainredavail == 1" name="radio-button-on" style="color: #2bb600; line-height: 1;float: left; width: 34px;"></ion-icon>
+              <ion-icon *ngIf="dat.mainredavail == 0" name="radio-button-on" style="color: #ff0000; line-height: 1;float: left; width: 34px;"></ion-icon>
+                 <!--<ion-icon *ngIf="!dat.mainredavail" name="radio-button-on" style="color: #2bb600; line-height: 1;float: left; width: 34px;"></ion-icon>-->
+            Main Date Availability
           </button>
         </div>
         <div class="right">
           <button ion-button icon-left clear>
-             <ion-icon name="radio-button-on" style="color: #dcca00; line-height: 1; float: left; width: 34px;"></ion-icon>
-            Alternative date available
+             <ion-icon *ngIf="dat.altredavail == 1" name="radio-button-on" style="color: #2bb600; line-height: 1; float: left; width: 34px;"></ion-icon>
+             <ion-icon *ngIf="dat.altredavail == 0" name="radio-button-on" style="color: #ff0000; line-height: 1; float: left; width: 34px;"></ion-icon>
+              <!--<ion-icon *ngIf="!dat.altredavail" name="radio-button-on" style="color: #2bb600; line-height: 1;float: left; width: 34px;"></ion-icon>-->
+            Alternative Availability
           </button>
         </div>
           </div>
-      </ion-item> </ion-list>
+      </ion-item></div> </ion-list>
 
+        
 <!--      <ion-item>
         <ion-avatar item-start>
           <img src="assets/img/arenda.png">
@@ -170,9 +173,6 @@
 <div *ngIf="arr1 == null"><div class="loadimg"><img width="220px" src="assets/img/RafahoLogo-02.png"></div></div>
     </ion-list>
   </div>
-
-
-
 
 
   <div [ngSwitch]="pet">
@@ -240,6 +240,13 @@
         <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>
     </div> -->
   </div>
-
+  
 </div>
+   <ion-infinite-scroll (ionInfinite)="doInfinite($event)" style="position: fixed;  bottom: 0;">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
+
